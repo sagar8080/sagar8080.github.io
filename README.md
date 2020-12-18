@@ -1,12 +1,2 @@
-Portfolio website
-Credits:
+Portfolio website - https://sagar8080.github.io/#
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
