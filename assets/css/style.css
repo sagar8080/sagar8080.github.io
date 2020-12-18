@@ -1,12 +1,12 @@
 .gallery{
-  margin: 10px 10px;
+  margin: 10px 20px;
 }
 
 .gallery img{
   transition: 1s;
   padding: 15px;
-  width: 250px;
-  filter: grayscale(1.5);
+  width: 520px;
+  filter: blur(20px);
 }
 
 .gallery img:hover {
