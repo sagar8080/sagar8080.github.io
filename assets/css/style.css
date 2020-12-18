@@ -1,11 +1,11 @@
 .gallery{
-  margin: 10px 20px;
+  margin: 10px 10px;
 }
 
 .gallery img{
   transition: 1s;
-  padding: 15px;
-  width: 520px;
+  padding: 10px;
+  width: 300px;
   filter: blur(20px);
 }
 
