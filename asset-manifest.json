@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sagar8080.github.io/static/css/main.ca17d814.css",
+    "main.js": "/sagar8080.github.io/static/js/main.983b7b63.js",
+    "index.html": "/sagar8080.github.io/index.html",
+    "main.ca17d814.css.map": "/sagar8080.github.io/static/css/main.ca17d814.css.map",
+    "main.983b7b63.js.map": "/sagar8080.github.io/static/js/main.983b7b63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca17d814.css",
+    "static/js/main.983b7b63.js"
+  ]
+}
