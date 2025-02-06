@@ -140,10 +140,10 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #ffffff;
-		font-family: "Source Sans Pro", sans-serif;
-		font-weight: 300;
-		font-size: 1rem;
+		color: #e9e6e6;
+		font-family: "Optima", monospace;
+		font-weight: 200;
+		font-size: 0.8rem;
 		line-height: 1.65;
 	}
 
@@ -162,12 +162,12 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #ffffff;
+		color: #e9e7e7;
 		font-weight: 600;
 	}
 
 	em, i {
-		font-style: italic;
+		font-style: normal;
 	}
 
 	p {
@@ -1637,11 +1637,16 @@ input, select, textarea {
 	}
 
 		#footer .copyright {
-			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
-			opacity: 0.75;
-			margin-bottom: 0;
-			text-transform: uppercase;
+			color: #ffffff;
+			font-size: 0.9rem;
+			letter-spacing: 0.05em;
+			margin: 0;
+			opacity: 0.8;
+			transition: opacity 0.3s ease;
+		}
+
+		#footer:hover .copyright {
+			opacity: 1;
 		}
 
 		body.is-article-visible #footer {
@@ -1659,3 +1664,250 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+.achievement-category {
+	margin: 1.5rem 0;
+	border-left: 3px solid #4CAF50;
+	padding-left: 1rem;
+	}
+	
+	.tech-details {
+	list-style-type: circle;
+	margin-left: 1.5rem;
+	color: #d0eecc;
+	}
+	
+	.role-title {
+	font-size: 1.1rem;
+	color: #d1f5b4;
+	margin: 0.5rem 0 1.5rem;
+	}
+
+.education-card {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	border-left: 3px solid #4CAF50;
+	}
+	
+	.degree-details {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5rem 0;
+	}
+	
+	.academic-focus ul {
+	columns: 2;
+	margin: 1rem 0;
+	}
+	
+	.academic-philosophy {
+	margin-top: 2rem;
+	font-style: italic;
+	color: #666;
+	}
+
+.project-card {
+	background: #1b1f22;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+	border-radius: 8px;
+}
+
+.tech-stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.5rem 0;
+}
+
+.tech-stack span {
+	background: #242424;
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+	font-size: 0.9em;
+}
+
+.skill-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 0.75rem;
+	margin: 1rem 0;
+}
+
+.competency-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.project-link {
+	display: inline-block;
+	margin-top: 1rem;
+	color: #4CAF50;
+	font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+.contact-container {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    background: #f8f9fa;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #495969;
+    text-decoration: none;
+}
+
+.contact-card .icon {
+    font-size: 1.8rem;
+}
+
+.availability-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #4CAF50; /* Your theme's green */
+    color: #1b1f22; /* Dark text */
+    border-radius: 10px;
+    margin: 1rem 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.availability-badge:hover {
+    background: #45a049; /* Darker green */
+    color: #ffffff; /* White text */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.availability-badge:active {
+    background: #3d8b40; /* Even darker green */
+    transform: scale(0.98);
+}
+
+
+/* Resume Download Styling */
+.resume-download {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.download-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.resume-download small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.skill-categories {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-column {
+    padding: 1rem;
+    background: rgba(76, 175, 80, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #4CAF50;
+}
+
+.skill-column h5 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.skill-column ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-column li {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .skill-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+.typewriter-container {
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	min-height: 60px;
+}
+
+.static-text {
+	color: #fff;
+	margin-right: 8px;
+}
+
+.typewriter {
+	color: #56b65a;
+	border-right: 2px solid #dbdbdb;
+	padding-right: 5px;
+	font-weight: bold;
+}
+
+@keyframes blink {
+	0%, 100% { border-color: transparent }
+	50% { border-color: #4CAF50 }
+}

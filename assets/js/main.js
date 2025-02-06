@@ -3,6 +3,52 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+class TypeWriter {
+	constructor(element) {
+		this.element = element;
+		this.words = JSON.parse(element.getAttribute('data-text'));
+		this.wait = 3000;
+		this.isDeleting = false;
+		this.text = '';
+		this.wordIndex = 0;
+		this.type();
+	}
+
+	type() {
+		const current = this.wordIndex % this.words.length;
+		const fullText = this.words[current];
+
+		if(this.isDeleting) {
+			this.text = fullText.substring(0, this.text.length - 1);
+		} else {
+			this.text = fullText.substring(0, this.text.length + 1);
+		}
+
+		this.element.innerHTML = this.text;
+
+		let typeSpeed = 100;
+
+		if(this.isDeleting) {
+			typeSpeed /= 2;
+		}
+
+		if(!this.isDeleting && this.text === fullText) {
+			typeSpeed = this.wait;
+			this.isDeleting = true;
+		} else if(this.isDeleting && this.text === '') {
+			this.isDeleting = false;
+			this.wordIndex++;
+			typeSpeed = 500;
+		}
+
+		setTimeout(() => this.type(), typeSpeed);
+	}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	const element = document.querySelector('.typewriter');
+	new TypeWriter(element);
+});
 
 (function($) {
 
