@@ -1664,49 +1664,145 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+.value-pillars {
+	list-style: disc;
+	margin-left: 1.5rem;
+}
+
+.resume-download {
+	text-align: center;
+}
+
+.career-journey {
+    display: grid;
+    gap: 0.5rem; /* Reduced gap between sections */
+    margin-top: 1rem; /* Compact top margin */
+}
+
+.career-journey h4 {
+    color: #4CAF50;
+    font-size: 1rem; /* Compact header size */
+    border-bottom: 1px solid rgba(76, 175, 80, 0.3); /* Subtle underline */
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.5rem; /* Reduced spacing */
+}
+
+.career-journey p {
+    font-size: 0.9rem; /* Smaller font size for compactness */
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.career-journey ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0;
+    margin: 0;
+}
+
+.career-journey ul li {
+    background: rgba(82, 151, 84, 0.055); /* Light green background */
+    padding: 0.5rem; /* Compact padding for list items */
+    margin-bottom: 0.3rem; /* Reduced spacing between items */
+    border-radius: 4px; /* Rounded corners for better visuals */
+    font-size: 0.85rem; /* Smaller font size */
+    color: #ebe8e8;
+    display: flex;
+    align-items: center;
+}
+
+.career-journey ul li::before {
+    content: "⚡"; /* Icon for list items */
+    color: #4CAF50;
+    font-size: 1rem; /* Adjusted icon size */
+    margin-right: 0.5rem; /* Compact spacing */
+}
+
+/* Hover Effect for List Items */
+.career-journey ul li:hover {
+    background-color: #4CAF50; /* Highlighted green on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+    transition: all 0.2s ease-in-out; /* Smooth and fast transition */
+}
+
+/* Block Separation Styling */
+.career-journey > div {
+    padding: 1rem; /* Compact padding for sections */
+    background-color: rgba(0, 0, 0, 0.03); /* Light gray background for separation */
+    border-radius: 6px; /* Slightly rounded corners for a modern look */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .career-journey {
+        gap: 0.8rem; /* Reduced gap for smaller screens */
+        margin-top: 0.5rem;
+    }
+
+    .career-journey h4 {
+        font-size: 0.9rem; /* Smaller headers on small screens */
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .career-journey ul li {
+        font-size: 0.8rem; /* Adjust text size for smaller screens */
+        padding: 0.4rem;
+        margin-bottom: 0.2rem;
+    }
+}
+
+
 .achievement-category {
-	margin: 1.5rem 0;
+	margin: 1rem 0; /* Reduced from 1.5rem to 1rem */
 	border-left: 3px solid #4CAF50;
 	padding-left: 1rem;
-	}
-	
-	.tech-details {
+	gap: 0.3rem; /* Reduced from 0.5rem to 0.3rem */
+}
+
+.tech-details {
 	list-style-type: circle;
-	margin-left: 1.5rem;
-	color: #d0eecc;
-	}
-	
-	.role-title {
-	font-size: 1.1rem;
-	color: #d1f5b4;
-	margin: 0.5rem 0 1.5rem;
-	}
+	margin-left: 0.5rem;
+	color: #adf8a3;
+	gap: 0.3rem; /* Reduced from 0.5rem to 0.3rem */
+}
+
+.achievement-category ul li {
+	margin-bottom: 0.5rem; /* Add this to control spacing between list items */
+}
+
+.role-title {
+font-size: 5rem;
+color: #d1f5b4;
+margin: 0.5rem 0 1.5rem;
+}
 
 .education-card {
 	margin-bottom: 2rem;
 	padding: 1rem;
-	border-left: 3px solid #4CAF50;
+	border-left: 3px solid #48be4c;
 	}
 	
-	.degree-details {
-	display: flex;
-	justify-content: space-between;
-	margin: 0.5rem 0;
-	}
-	
-	.academic-focus ul {
-	columns: 2;
-	margin: 1rem 0;
-	}
-	
-	.academic-philosophy {
-	margin-top: 2rem;
-	font-style: italic;
-	color: #666;
-	}
+.degree-details {
+display: flex;
+justify-content: space-between;
+margin: 0.5rem 0;
+}
+
+.academic-focus ul {
+columns: 2;
+margin: 1rem 0;
+}
+
+.academic-philosophy {
+margin-top: 2rem;
+font-style: italic;
+color: #666;
+}
 
 .project-card {
-	background: #1b1f22;
+	background: #222222;
 	padding: 1.5rem;
 	margin-bottom: 2rem;
 	border-radius: 8px;
@@ -1720,7 +1816,7 @@ input, select, textarea {
 }
 
 .tech-stack span {
-	background: #242424;
+	background: #303030;
 	padding: 0.25rem 0.5rem;
 	border-radius: 4px;
 	font-size: 0.9em;
@@ -1728,15 +1824,15 @@ input, select, textarea {
 
 .skill-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-	gap: 0.75rem;
-	margin: 1rem 0;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+	gap: 1rem;
+	margin: 0.5rem 0;
 }
 
 .competency-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 1.5rem;
+	gap: 1rem;
 }
 
 .project-link {
@@ -1783,22 +1879,29 @@ input, select, textarea {
 .availability-badge {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     background: #4CAF50; /* Your theme's green */
-    color: #1b1f22; /* Dark text */
-    border-radius: 10px;
+    color: #272727; /* Dark text */
+    border-radius: 6px;
     margin: 1rem 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     border: 2px solid transparent;
+	flex-direction: column; /* Stack items vertically */
+	justify-content: center; /* Center vertically */
+	text-align: center;      /* Center text content */
+	gap: 0.5rem;            /* Space between icon and text */
 }
+
+.fas.fa-bolt {
+	font-size: 1.5rem; /* Adjust icon size as needed */
+  }
 
 .availability-badge:hover {
     background: #45a049; /* Darker green */
     color: #ffffff; /* White text */
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(81, 219, 86, 0.3);
 }
 
 .availability-badge:active {
@@ -1851,9 +1954,15 @@ input, select, textarea {
 
 .skill-column {
     padding: 1rem;
-    background: rgba(76, 175, 80, 0.05);
+    background: rgba(0, 0, 0, 0.05); /* Subtle background */
     border-radius: 8px;
     border-left: 3px solid #4CAF50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.skill-column:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); /* Add shadow on hover */
 }
 
 .skill-column h5 {
@@ -1866,7 +1975,7 @@ input, select, textarea {
 
 .skill-column ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Ensure items wrap in smaller containers */
     gap: 0.5rem;
     list-style: none;
     padding: 0;
@@ -1874,17 +1983,25 @@ input, select, textarea {
 }
 
 .skill-column li {
-    display: inline-block;
     padding: 0.3rem 0.6rem;
-    background: rgba(76, 175, 80, 0.1);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    white-space: nowrap;
+    background: rgba(76, 175, 80, 0.1); /* Subtle green background */
+    border-radius: 4px; /* Rounded corners for pills */
+    font-size: 0.85rem; /* Slightly larger font for readability */
+    white-space: nowrap; /* Prevent text wrapping inside pills */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover animation */
 }
 
+.skill-column li:hover {
+    background-color: #4CAF50; /* Highlighted green on hover */
+    color: white; /* White text on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .skill-categories {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+        gap: 1rem;
     }
 }
 
@@ -1910,4 +2027,33 @@ input, select, textarea {
 @keyframes blink {
 	0%, 100% { border-color: transparent }
 	50% { border-color: #4CAF50 }
+}
+
+.intro-footer {
+    font-size: 0.85rem; /* Keeps it small */
+    color: #888; /* Subtle text color */
+    text-align: center; /* Centered for better aesthetics */
+    font-style: italic; /* Adds a soft touch */
+    padding: 8px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light separator */
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bioluminescence-fact strong {
+    color: #ffcc00; /* Highlights key info */
+}
+
+.bioluminescence-fact em {
+    color: #f39c12; /* Slight contrast for emphasis */
+}
+
+.bioluminescence-fact {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bioluminescence-fact:hover {
+    opacity: 0.8; /* Subtle fade effect on hover */
 }
