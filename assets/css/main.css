@@ -1802,25 +1802,77 @@ color: #666;
 }
 
 .project-card {
-	background: #222222;
-	padding: 1.5rem;
-	margin-bottom: 2rem;
-	border-radius: 8px;
+    background: #1e1e1e; /* Slightly darker background for better contrast */
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px; /* Subtle rounding for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover animations */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
 .tech-stack {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0; /* Increased spacing for better layout */
 }
 
 .tech-stack span {
-	background: #303030;
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
-	font-size: 0.9em;
+    background: #2a2a2a; /* Darker background for tags */
+    padding: 0.3rem 0.7rem; /* Adjusted padding for better readability */
+    border-radius: 6px; /* Slightly more rounded corners */
+    font-size: 0.85em;
+    color: #adadad; /* Softer text color for tags */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
+
+.tech-stack span:hover {
+    background-color: #4CAF50; /* Highlighted green on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.project-card h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff; /* White text for titles */
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: circle;
+    margin-left: 1rem; /* Consistent indentation for list items */
+}
+
+.project-card ul li {
+    margin-bottom: 0.3rem; /* Reduced spacing between list items */
+    line-height: 1.4; /* Adjusted line height for better readability */
+}
+
+.project-card ul li strong {
+    color: #4CAF50; /* Highlighted green for key metrics or keywords */
+}
+
+.project-card a {
+    display: inline-block; /* Ensures proper spacing alignment */
+    margin-top: 1rem; /* Reduced spacing above the link */
+    color: #4CAF50; /* Green link color matching theme */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #76d275; /* Lighter green on hover */
+    text-decoration-color: #76d275; /* Match underline with hover color */
+}
+
 
 .skill-grid {
 	display: grid;
@@ -2006,28 +2058,44 @@ color: #666;
 }
 
 .typewriter-container {
-	font-size: 2rem;
-	display: flex;
-	align-items: center;
-	min-height: 60px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(123, 243, 107, 0.1);
+    border-radius: 8px;
 }
 
 .static-text {
-	color: #fff;
-	margin-right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .typewriter {
-	color: #56b65a;
-	border-right: 2px solid #dbdbdb;
-	padding-right: 5px;
-	font-weight: bold;
+    color: #56b65a;
+    font-weight: 600;
+    font-size: 1.3rem;
+    position: relative;
+    padding-right: 8px;
+    animation: 
+        typing 2.5s steps(40, end),
+        blink-caret 1s step-end infinite;
 }
 
-@keyframes blink {
-	0%, 100% { border-color: transparent }
-	50% { border-color: #4CAF50 }
+/* @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+} */
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #dbdbdb; }
 }
+
 
 .intro-footer {
     font-size: 0.85rem; /* Keeps it small */
