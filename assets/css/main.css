@@ -1930,7 +1930,7 @@ color: #666;
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    background:  #1b1f22;; /* Your theme's green */
+    background:  #1b1f22; /* Your theme's green */
     color: #adf8a3; /* Dark text */
     border-radius: 6px;
     margin: 1rem 0;
@@ -1940,7 +1940,6 @@ color: #666;
 	flex-direction: column; /* Stack items vertically */
 	justify-content: center; /* Center vertically */
 	text-align: center;      /* Center text content */
-	gap: 0.5rem;            /* Space between icon and text */
 }
 
 
