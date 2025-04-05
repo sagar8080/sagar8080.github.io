@@ -45,6 +45,8 @@ class TypeWriter {
 	}
 }
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 	const element = document.querySelector('.typewriter');
 	new TypeWriter(element);
@@ -445,3 +447,133 @@ document.addEventListener('DOMContentLoaded', () => {
 					});
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Define categories of technical keywords with descriptions
+    const keywordData = {
+        "languages": {
+            "Python": "General-purpose programming language",
+            "R": "Language for statistical computing",
+            "SQL": "Structured Query Language for databases",
+            "Scala": "Functional programming language for JVM"
+        },
+        "Framework": {
+            "PyTorch": "Open source machine learning framework",
+            "LangChain": "Framework for developing LLM-powered applications",
+            "HuggingFace Transformers": "Library for state-of-the-art NLP",
+            "FastAPI": "Modern web framework for building APIs",
+            "Flask": "Lightweight WSGI web application framework",
+			"RBAC": "Role-Based Access Control",
+            "IAM": "Identity and Access Management",
+			"ELK stack": "The ELK Stack (Elasticsearch, Logstash, Kibana) collects, processes, and visualizes data, especially logs, for analysis."
+        },
+        "Cloud": {
+            "GCP": "Google Cloud Platform",
+            "AWS": "Amazon Web Services",
+            "S3": "AWS Simple Storage Service",
+            "BigQuery": "Google's serverless data warehouse",
+            "Pub/Sub": "Google's messaging service",
+			"MLFlow": "MLflow streamlines machine learning lifecycle management: experiment tracking, model registry, and deployment. ",
+			"Databricks": "Databricks is a cloud-based, unified platform for data engineering, analytics, and AI, built on Apache Spark"
+        },
+        "Big Data Tool": {
+            "Docker": "Platform for developing, shipping, and running applications",
+            "Terraform": "Infrastructure as code software tool",
+            "ShinyProxy": "Open source tool for deploying Shiny applications",
+            "Apache Beam": "Unified model for batch and streaming data processing",
+            "Apache Superset": "Modern data exploration and visualization platform",
+            "Airflow": "Platform to programmatically author, schedule, and monitor workflows",
+			"Kafka": "A distributed publish-subscribe messaging system",
+			"Apache Iceberg": "An open-source table format for big data, enabling efficient data lake management and querying",
+			"Ray" : "An unified, open-source framework for scaling Python and AI workloads, simplifying distributed computing",
+			"ETL": "Extract, Transform, Load process",
+            "CTEs": "Common Table Expressions in SQL",
+			"SCD Type-2": "Track historical data in dimension tables, preserving changes over time",
+			"Great Expectations": "A Python library that validates, documents, and profiles data for quality assurance",
+			"Apache Spark": "An unified analytics engine for big data processing and machine learning",
+			"LinkedIn DataHub" : "An open-source metadata platform for data discovery, observability, and governance. ",
+			"Grafana": "Grafana is an open-source platform for visualizing and exploring data through interactive dashboards. "
+        }
+    };
+    
+    // Flatten the keyword data for searching
+    let allKeywords = {};
+    for (const category in keywordData) {
+        for (const keyword in keywordData[category]) {
+            allKeywords[keyword] = {
+                description: keywordData[category][keyword],
+                category: category
+            };
+        }
+    }
+    
+    // Find and highlight keywords in the resume
+    highlightKeywords();
+    
+    function highlightKeywords() {
+        const elements = document.querySelectorAll('.achievement-category li');
+        
+        elements.forEach(element => {
+            let html = element.innerHTML;
+            
+            // Sort keywords by length (longest first) to avoid partial matches
+            const sortedKeywords = Object.keys(allKeywords).sort((a, b) => b.length - a.length);
+            
+            for (const keyword of sortedKeywords) {
+                const regex = new RegExp(`\\b${escapeRegExp(keyword)}\\b`, 'g');
+                html = html.replace(regex, `<span class="keyword" data-keyword="${keyword}">$&</span>`);
+            }
+            
+            element.innerHTML = html;
+        });
+        
+        // Add event listeners to keywords
+        document.querySelectorAll('.keyword').forEach(keyword => {
+            keyword.addEventListener('mouseenter', showTooltip);
+            keyword.addEventListener('mouseleave', hideTooltip);
+        });
+    }
+    
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    
+    function showTooltip(e) {
+        const keyword = e.target.getAttribute('data-keyword');
+        const data = allKeywords[keyword];
+        
+        if (!data) return;
+        
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'keyword-tooltip';
+        tooltip.innerHTML = `
+            <strong>${keyword}</strong> - ${data.category}<br>
+            ${data.description}
+        `;
+        
+        // Position tooltip
+        document.body.appendChild(tooltip);
+        const rect = e.target.getBoundingClientRect();
+        tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        
+        // Show tooltip with animation
+        setTimeout(() => tooltip.classList.add('visible'), 10);
+        
+        // Store reference to the tooltip
+        e.target.tooltip = tooltip;
+    }
+    
+    function hideTooltip(e) {
+        if (e.target.tooltip) {
+            e.target.tooltip.classList.remove('visible');
+            setTimeout(() => {
+                if (e.target.tooltip) {
+                    e.target.tooltip.remove();
+                    e.target.tooltip = null;
+                }
+            }, 300);
+        }
+    }
+});
