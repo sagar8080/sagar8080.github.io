@@ -189,6 +189,7 @@ input, select, textarea {
 		}
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+			border-bottom: solid 1px #ffffff;
 			width: -moz-max-content;
 			width: -webkit-max-content;
 			width: -ms-max-content;
@@ -261,7 +262,7 @@ input, select, textarea {
 	code {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
-		font-family: "ui-rounded", monospace;
+		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -659,12 +660,12 @@ input, select, textarea {
 		}
 
 		.image img {
-			border-radius: 2px;
+			border-radius: 4px;
 			display: block;
 		}
 
 		.image.left, .image.right {
-			max-width: 100%;
+			max-width: 40%;
 		}
 
 			.image.left img, .image.right img {
@@ -684,18 +685,18 @@ input, select, textarea {
 		}
 
 		.image.fit {
-			display: inline-flex;
-			margin: 0 0 1rem 0;
+			display: block;
+			margin: 0 0 2rem 0;
 			width: 100%;
 		}
 
 			.image.fit img {
-				width: 50%;
+				width: 100%;
 			}
 
 		.image.main {
 			display: block;
-			margin: 1.5rem 0;
+			margin: 2.5rem 0;
 			width: 100%;
 		}
 
@@ -1138,6 +1139,7 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
 			background-size: auto,
  256px 256px;
 			background-position: center,
@@ -1252,6 +1254,10 @@ input, select, textarea {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+		background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+		background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+		background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
 		max-width: 100%;
 		text-align: center;
 	}
@@ -1536,9 +1542,9 @@ input, select, textarea {
 			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
 			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-			padding: 2.5rem 2.5rem 2.5rem 2.5rem ;
+			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 50rem;
+			width: 40rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
@@ -1596,7 +1602,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#main article {
-				padding: 2.5rem 2rem 2.5rem 2rem ;
+				padding: 3.5rem 2rem 0.5rem 2rem ;
 			}
 
 				#main article .close:before {
@@ -1836,6 +1842,7 @@ color: #666;
 }
 
 .project-card h3 {
+    font-size: 1rem;
     font-weight: bold;
     color:  #7eee23; /* White text for titles */
     margin-bottom: 1rem;
@@ -1986,6 +1993,7 @@ color: #666;
     color: #4CAF50;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    font-size: 0.9rem;
     letter-spacing: 0.05em;
 }
 
@@ -2022,7 +2030,7 @@ color: #666;
 }
 
 .typewriter-container {
-    display: run-in;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     margin: 1rem auto;
@@ -2035,18 +2043,18 @@ color: #666;
     color: #fff;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
-    line-height: 1.4;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .typewriter {
     color:  #7eee23;
-    font-weight: 500;
-	letter-spacing: 0.05em;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
     position: relative;
-    padding-right: 2px;
+    padding-right: 8px;
     animation: 
-        typing 1.5s steps(40, end),
+        typing 2.5s steps(40, end),
         blink-caret 1s step-end infinite;
 }
 
@@ -2057,7 +2065,7 @@ color: #666;
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    /* 50% { border-color: #dbdbdb; } */
+    50% { border-color: #dbdbdb; }
 }
 
 
@@ -2113,6 +2121,7 @@ color: #666;
 /* University name styling */
 .education-card h3 {
     color:  #7eee23;
+    font-size: 1rem;
     margin-bottom: 0.8rem;
     position: relative;
     padding-bottom: 5px;
@@ -2219,6 +2228,7 @@ color: #666;
   }
   
   .profile-header h2 {
+	font-size: 1rem;
 	color:#fafafa;
 	margin-bottom: 0rem;
 	padding-bottom: 0.5rem;
