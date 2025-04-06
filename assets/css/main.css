@@ -2220,9 +2220,13 @@ color: #666;
 	font-size: 0.9rem;
 	line-height: 1.4;
   }
+
+  .core-statement image {
+	align-self: center;
+  }
   
   .core-statement p {
-	text-align: center;
+	text-align: left;
 	color: #e0a90f;
 	font-weight: 500;
   }
