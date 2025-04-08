@@ -23,7 +23,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -152,9 +153,8 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
 		text-decoration: none;
-		color: inherit;
+		color: #7eee23;
 	}
 
 		a:hover {
@@ -403,7 +403,7 @@ input, select, textarea {
 		border: solid 1px #ffffff;
 		color: inherit;
 		display: block;
-		outline: 0;
+		outline: none;
 		padding: 0 1rem;
 		text-decoration: none;
 		width: 100%;
@@ -1022,9 +1022,10 @@ input, select, textarea {
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
 		line-height: 2.75rem;
-		outline: 0;
+		outline: none;
 		padding: 0 1.25rem 0 1.35rem;
 		text-align: center;
+		outline: none;
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
@@ -1271,7 +1272,7 @@ input, select, textarea {
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
-				width: 1px;
+				width: 2px;
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
@@ -1288,7 +1289,7 @@ input, select, textarea {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid 1px #ffffff;
+			border: solid 2px #ffffff;
 			border-radius: 100%;
 		}
 
@@ -1300,7 +1301,7 @@ input, select, textarea {
 			border-style: solid;
 			border-color: #ffffff;
 			border-top-width: 0px;
-			border-bottom-width: 1px;
+			border-bottom-width: 2px;
 			max-width: 100%;
 		}
 
@@ -1313,7 +1314,7 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
+				padding: 1rem 1rem;
 				max-height: 40rem;
 				overflow: hidden;
 			}
@@ -1634,10 +1635,10 @@ input, select, textarea {
 
 		#footer .copyright {
 			color: #ffffff;
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 			letter-spacing: 0.05em;
 			margin: 0;
-			opacity: 0.8;
+			opacity: 0.2;
 			transition: opacity 0.3s ease;
 		}
 
@@ -1711,28 +1712,30 @@ input, select, textarea {
 }
 
 .work-experience-card .achievement-category li {
-	font-size: 0.8em;
+	font-size: 1em;
     background: rgba(30, 30, 30, 0.5);
 	font-style: normal;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
-    border-radius: 6px;
+    border-radius: 4px;
     border-left: 1px solid rgba(76, 175, 80, 0.5);
     transition: all 0.3s ease;
 }
 
 .work-experience-card .achievement-category li:hover {
     background-color: rgba(40, 40, 40, 0.8);
-    transform: translateX(5px);
-    border-left: 2px solid #7eee23;
+    transform: translateX(-10px);
+    border-left: 8px solid #7eee23;
+	transition: ease-in-out;
 }
 
 .work-experience-card .role-title {
-    color: #7eee23;
+    color: #e0a90f;
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 0.5rem;
     display: block;
+	bottom: 0;
 }
 
 .work-experience-card .company-link {
@@ -1935,19 +1938,21 @@ margin: 0.5rem 0;
 }
 
 .availability-badge {
-    display: flex;
+    display: block;
     align-items: center;
     padding: 0.5rem;
     background:  #1b1f22; /* Your theme's green */
     color: #7eee23; /* Dark text */
     border-radius: 6px;
-    margin: 1rem 0;
+    margin: 0 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     border: 2px solid transparent;
 	flex-direction: column; /* Stack items vertically */
 	justify-content: center; /* Center vertically */
 	text-align: center;      /* Center text content */
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
 }
 
 
@@ -2002,8 +2007,8 @@ margin: 0.5rem 0;
 .skill-column li {
     padding: 0.3rem 0.6rem;
     background: rgba(76, 175, 80, 0.1); /* Subtle green background */
-    border-radius: 4px; /* Rounded corners for pills */
-    font-size: 0.85rem; /* Slightly larger font for readability */
+    border-radius: 10px; /* Rounded corners for pills */
+    font-size: 0.8rem; /* Slightly larger font for readability */
     white-space: nowrap; /* Prevent text wrapping inside pills */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover animation */
 }
@@ -2015,42 +2020,47 @@ margin: 0.5rem 0;
 }
 
 .typewriter-container {
+	width: max-content;
+    display: run-in;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* .typewriter-container:hover {
     display: run-in;
     align-items: center;
     gap: 0.5rem;
     margin: 1rem auto;
     padding: 1rem;
-    background: rgba(123, 243, 107, 0.1);
-    border-radius: 8px;
-}
-
-.static-text {
-    color: #fff;
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-}
+    border-radius: 9.6px;
+	transform:scale(1.5);
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
 
 .typewriter {
     color:  #7eee23;
-    font-weight: 500;
+	font-size: large;
+    font-weight: 400;
 	letter-spacing: 0.05em;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: relative;
-    padding-right: 2px;
+    padding-right: 1px;
     animation: 
-        typing 1.5s steps(40, end),
+        typing 10s steps(40, end),
         blink-caret 1s step-end infinite;
 }
 
 @keyframes typing {
-    from { width: 0 }
+    from { width: 50% }
     to { width: 100% }
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    /* 50% { border-color: #dbdbdb; } */
+    50% { border-color: #dbdbdb; }
 }
 
 
@@ -2069,6 +2079,7 @@ margin: 0.5rem 0;
 
 /* Education section enhancements */
 .education-card {
+	font-size: medium;
     margin-bottom: 2rem;
     padding: 1rem;
     border-left: 3px solid #4CAF50;
@@ -2091,7 +2102,7 @@ margin: 0.5rem 0;
 /* University name styling */
 .education-card h3 {
     color:  #7eee23;
-    margin-bottom: 0.8rem;
+    margin-bottom: large;
     position: relative;
     padding-bottom: 5px;
     transition: transform 0.5s ease;
@@ -2099,13 +2110,11 @@ margin: 0.5rem 0;
 
 /* Underline effect for university name */
 .education-card h3::after {
-    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 60px;
     height: 2px;
-	font-weight: 400;
     background-color: #4CAF50;
     transition: width 0.2s ease;
 }
@@ -2135,6 +2144,7 @@ margin: 0.5rem 0;
 /* Coursework styling */
 .key-coursework {
     font-style: italic;
+	font-size: small;
     color: #bdbdbd;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
@@ -2147,7 +2157,6 @@ margin: 0.5rem 0;
 .education-card:hover .key-coursework {
 	color: #fafafa;
     font-style: normal;
-	font-weight: 600;
     transition: all 0.1s ease;
 }
 
@@ -2223,6 +2232,8 @@ margin: 0.5rem 0;
   }
   
   .resume-download {
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
 	margin-top: 2rem;
 	text-align: center;
   }
@@ -2235,11 +2246,15 @@ margin: 0.5rem 0;
 	border-radius: 8px;
 	font-weight: bold;
 	transition: all 0.3s ease;
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
   }
   
   .download-button:hover {
 	background-color: #7eee23;
 	transform: translateY(-10px);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	outline: none; /* or outline: 0; */
+    text-decoration: none; /* Optional: remove underline */
   }
 	
