@@ -1272,7 +1272,7 @@ input, select, textarea {
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
-				width: 2px;
+				width: 1px;
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
@@ -1289,7 +1289,7 @@ input, select, textarea {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid 2px #ffffff;
+			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
 
@@ -1301,7 +1301,7 @@ input, select, textarea {
 			border-style: solid;
 			border-color: #ffffff;
 			border-top-width: 0px;
-			border-bottom-width: 2px;
+			border-bottom-width: 1px;
 			max-width: 100%;
 		}
 
