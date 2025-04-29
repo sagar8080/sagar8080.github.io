@@ -1664,16 +1664,63 @@ input, select, textarea {
 
 
 :root {
-	color-scheme: dark;
-	--dark-bg: #1b1f22;
-	--dark-text: #e0e0e0;
-	}
-	
-	body {
-	background-color: var(--dark-bg);
-	color: var(--dark-text);
-	}
+	--primary: #1b1f22; /* Primary dark color */
+	--secondary: #4CAF50; /* Accent color (Green) */
+	--dark: #1b1f22; /* Main background */
+	--light: #eeeeee; /* Main text color */
+	--card-bg-start: #1b1f22; /* Card background gradient start */
+	--card-bg-end: #1b1f22; /* Card background gradient end */
+	--input-bg: #1b1f22; /* Input background */
+	--border-color: #1b1f22; /* Border color for elements */
+	--accent-gradient-start: #7eee23; /* Gradient text start */
+	--accent-gradient-end: #4CAF50; /* Gradient text end */
+	--hover-shadow-color: rgba(76, 175, 80, 0.2); /* Shadow for hover effects */
+	--project-hover-shadow-color: rgba(127, 245, 136, 0.3); /* Specific shadow for project cards */
+	--terminal-bg: #1e1e1e; /* Terminal background */
+	--timeline-line-color: var(--secondary); /* Timeline vertical line color */
+	--timeline-dot-bg: var(--primary); /* Timeline dot background */
+	--timeline-dot-border: var(--secondary); /* Timeline dot border */
+	--skill-bar-bg: var(--secondary); /* Skill bar background */
+	--skill-progress-start: var(--primary); /* Skill progress gradient start */
+	--skill-progress-end: #ffffff; /* Skill progress gradient end */
+	--tag-bg: #2a2a2a; /* Background for tags */
+	--tag-text: #adadad; /* Text color for tags (adjust if needed) */
+	--cyan-accent: #4CAF50; /* Specific cyan accent (can replace #7eee23 if preferred) */
+	--focus-shadow-color: rgba(77, 243, 99, 0.76); /* Focus shadow for inputs */
+}
+
+/* Global Body Styles */
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--dark);
+	color: var(--light);
+	scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Code Font Style */
+.code-font {
+	font-family: 'Fira Code', monospace;
+}
 		  
+/* Add this within your <style> tag */
+#terminal-output::after {
+    content: '|'; /* The cursor character */
+    display: inline-block;
+    animation: blink-caret 1s step-end infinite;
+    margin-left: 2px; /* Small space before cursor */
+    opacity: 0; /* Hidden by default, shown by JS */
+    color: var(--secondary); /* Use your accent color */
+    font-weight: bold;
+}
+
+#terminal-output.typing-active::after {
+    opacity: 1; /* Show cursor when typing */
+}
+
+@keyframes blink-caret {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
+}
 
 
 
@@ -1811,12 +1858,14 @@ margin: 0.5rem 0;
 }
 
 .project-card {
+	gap: 1rem;
+	margin: 0.5rem 0;
     background: #1e1e1e; /* Slightly darker background for better contrast */
     padding: 1rem;
 	font-size: medium;
     margin-bottom: 1rem;
     border-radius: 10px; /* Subtle rounding for a modern look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    box-shadow: 0 4px 15px rgba(145, 144, 144, 0.2); /* Soft shadow for depth */
     transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover animations */
 }
 
@@ -2257,4 +2306,28 @@ margin: 0.5rem 0;
 	outline: none; /* or outline: 0; */
     text-decoration: none; /* Optional: remove underline */
   }
-	
+
+  
+
+/* Terminal Style */
+.terminal {
+background-color: var(--terminal-bg);
+border-radius: 8px;
+padding: 1rem;
+font-family: 'Fira Code', monospace;
+position: relative;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for terminal */
+}
+
+/* Terminal Window Buttons Simulation */
+.terminal::before {
+content: '';
+position: absolute;
+top: 10px;
+left: 15px;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: #ff5f56; /* Red */
+box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f; /* Yellow, Green */
+}
