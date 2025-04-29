@@ -1,1 +1,597 @@
+:root {
+	color-scheme: dark;
+	--dark-bg: #1b1f22;
+	--dark-text: #e0e0e0;
+	}
+	
+	body {
+	background-color: var(--dark-bg);
+	color: var(--dark-text);
+	}
+		  
 
+
+
+.value-pillars {
+	list-style: disc;
+	margin-left: 1rem;
+}
+
+/* Work Experience Cards */
+.work-experience-card {
+    background: #1e1e1e;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-top: 2px solid #4CAF50;
+    max-width:none;
+    align-items: center;
+}
+
+.work-experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.work-experience-card h6 {
+    color: #adadad;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.work-experience-card .achievement-category {
+    border-left: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.work-experience-card .achievement-category li {
+	font-size: 1em;
+    background: rgba(30, 30, 30, 0.5);
+	font-style: normal;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    border-left: 1px solid rgba(76, 175, 80, 0.5);
+    transition: all 0.3s ease;
+}
+
+.work-experience-card .achievement-category li:hover {
+    background-color: rgba(40, 40, 40, 0.8);
+    transform: translateX(-10px);
+    border-left: 8px solid #7eee23;
+	transition: ease-in-out;
+}
+
+.work-experience-card .role-title {
+    color: #e0a90f;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+    display: block;
+	bottom: 0;
+}
+
+.work-experience-card .company-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+	color: #f8f9fa;
+	font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 0.5rem;
+	marker: none;
+}
+
+.work-experience-card .company-link:hover {
+    text-decoration: none;
+	marker: none;
+}
+
+.work-break-note {
+    text-align: center;
+    font-style: italic;
+    color: #adadad;
+    margin: 1.5rem 0;
+    padding: 0.5rem;
+    background: #1b1f22;
+    border-radius: 2px;
+}
+
+/* Styles for highlighted keywords */
+.keyword {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #4CAF50;
+    font-weight: bold;
+    padding: 0 4px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.keyword:hover {
+    background-color: rgba(76, 175, 80, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip styles */
+.keyword-tooltip {
+    position: absolute;
+    background: #222;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    max-width: 250px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border-left: 3px solid #4CAF50;
+    font-size: 0.9em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.keyword-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+	
+.degree-details {
+display: flex;
+justify-content: space-between;
+margin: 0.5rem 0;
+}
+
+.project-card {
+    background: #1e1e1e; /* Slightly darker background for better contrast */
+    padding: 1rem;
+	font-size: medium;
+    margin-bottom: 1rem;
+    border-radius: 10px; /* Subtle rounding for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover animations */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0; /* Increased spacing for better layout */
+}
+
+.tech-stack span {
+    background: #2a2a2a; /* Darker background for tags */
+    padding: 0.3rem 0.8rem; /* Adjusted padding for better readability */
+    border-radius: 6px; /* Slightly more rounded corners */
+    font-size: 0.85em;
+    color: #adadad; /* Softer text color for tags */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.tech-stack span:hover {
+    background-color:  #7eee23; /* Highlighted green on hover */
+    color: #000000; /* White text on hover */
+}
+
+.project-card h3 {
+    font-weight: bold;
+    color:  #7eee23; /* White text for titles */
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: circle;
+    margin-left: 1rem; /* Consistent indentation for list items */
+}
+
+.project-card ul li {
+    margin-bottom: 0.3rem; /* Reduced spacing between list items */
+    line-height: 1.4; /* Adjusted line height for better readability */
+}
+
+.project-card ul li strong {
+    color: #4CAF50; /* Highlighted green for key metrics or keywords */
+}
+
+.project-card a {
+    display: inline-block; /* Ensures proper spacing alignment */
+    margin-top: 1rem; /* Reduced spacing above the link */
+    color: #7eee23; /* Green link color matching theme */
+    font-weight: normal;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #76d275; /* Lighter green on hover */
+    text-decoration-color: #76d275; /* Match underline with hover color */
+}
+
+
+.skill-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+	gap: 1rem;
+	margin: 0.5rem 0;
+}
+
+.competency-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+.project-link {
+	display: inline-block;
+	margin-top: 1rem;
+	color: #4CAF50;
+	font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+.contact-container {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    background: #f8f9fa;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #495969;
+    text-decoration: none;
+}
+
+.contact-card .icon {
+    font-size: 1.8rem;
+}
+
+.availability-badge {
+    display: block;
+    align-items: center;
+    padding: 0.5rem;
+    background:  #1b1f22; /* Your theme's green */
+    color: #7eee23; /* Dark text */
+    border-radius: 6px;
+    margin: 0 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 2px solid transparent;
+	flex-direction: column; /* Stack items vertically */
+	justify-content: center; /* Center vertically */
+	text-align: center;      /* Center text content */
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
+}
+
+
+.availability-badge:hover {
+    background: #4CAF50; /* Darker green */
+    color: #ffffff; /* White text */
+    transform: translateY(-10px);
+}
+
+.availability-badge:active {
+    background: #1b1f22; /* Even darker green */
+    transform: scale(2);
+}
+
+
+.skill-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-column {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05); /* Subtle background */
+    border-radius: 8px;
+    border-left: 3px solid #4CAF50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.skill-column:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); /* Add shadow on hover */
+}
+
+.skill-column h5 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.skill-column ul {
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap in smaller containers */
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-column li {
+    padding: 0.3rem 0.6rem;
+    background: rgba(76, 175, 80, 0.1); /* Subtle green background */
+    border-radius: 10px; /* Rounded corners for pills */
+    font-size: 0.8rem; /* Slightly larger font for readability */
+    white-space: nowrap; /* Prevent text wrapping inside pills */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover animation */
+}
+
+.skill-column li:hover {
+    background-color:  #7eee23; /* Highlighted green on hover */
+    color: rgb(17, 17, 17); /* White text on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.typewriter-container {
+	width: max-content;
+    display: run-in;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* .typewriter-container:hover {
+    display: run-in;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 9.6px;
+	transform:scale(1.5);
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
+
+.typewriter {
+    color:  #7eee23;
+	font-size: large;
+    font-weight: 400;
+	letter-spacing: 0.05em;
+    font-size: 1.3rem;
+    position: relative;
+    padding-right: 1px;
+    animation: 
+        typing 10s steps(40, end),
+        blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 50% }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #dbdbdb; }
+}
+
+
+.intro-footer {
+    font-size: 0.85rem; /* Keeps it small */
+    color: #888; /* Subtle text color */
+    text-align: center; /* Centered for better aesthetics */
+    font-style: italic; /* Adds a soft touch */
+    padding: 8px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light separator */
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Education section enhancements */
+.education-card {
+	font-size: medium;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 3px solid #4CAF50;
+    background-color: rgba(40, 40, 40, 0.4);
+    border-radius: 0 5px 5px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for the entire card */
+.education-card:hover {
+    transform: translateX(-10px);
+    border-left: 25px solid #4CAF50;
+    background-color: rgba(50, 50, 50, 0.6);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+	font-size: large;
+}
+
+/* University name styling */
+.education-card h3 {
+    color:  #7eee23;
+    margin-bottom: large;
+    position: relative;
+    padding-bottom: 5px;
+    transition: transform 0.5s ease;
+}
+
+/* Underline effect for university name */
+.education-card h3::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #4CAF50;
+    transition: width 0.2s ease;
+}
+
+.education-card:hover h3::after {
+    width: 100%;
+}
+
+/* Degree details styling */
+.degree-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.degree {
+    font-weight: bold;
+    color: #bdbdbd;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover .degree {
+    transform: translateX(15px);
+    color: #fafafa;
+}
+
+/* Coursework styling */
+.key-coursework {
+    font-style: italic;
+	font-size: small;
+    color: #bdbdbd;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+	font-weight: 300;
+	font-size: 0.8rem;
+    border-top: 1px dashed rgba(76, 175, 80, 0.3);
+    transition: color 0.3s ease;
+}
+
+.education-card:hover .key-coursework {
+	color: #fafafa;
+    font-style: normal;
+    transition: all 0.1s ease;
+}
+
+.company-name {
+    color: #7eee23;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.05em;
+    display: inline-block;
+    position: relative;
+}
+
+.company-name::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e8eee9;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.company-name:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Intro section redesign */
+  
+  .profile-header h2 {
+	color:#fafafa;
+	margin-bottom: 0rem;
+	padding-bottom: 0.5rem;
+	display: inline-block;
+  }
+  
+  .core-statement {	
+	font-size: 0.9rem;
+	line-height: 1.4;
+  }
+
+  .core-statement image {
+	align-self: center;
+  }
+  
+  .core-statement p {
+	text-align: left;
+	color: #e0a90f;
+	font-size: 0.9rem;
+	font-style: normal;
+	font-family: monospace;
+	display: block;
+  }
+  
+  .career-journey {
+	margin-top: 1.5rem;
+  }
+  
+  .career-journey p {
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-size: 0.85rem;
+	font-style: normal;
+	font-family: monospace;
+  }
+  .career-journey p:hover {
+	margin-bottom: 1rem;
+	color: #4CAF50;
+  }
+  
+  .resume-download {
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
+	margin-top: 2rem;
+	text-align: center;
+  }
+  
+  .download-button {
+	display: inline-block;
+	padding: 0.7rem 1.4rem;
+	color: white;
+	text-decoration: none;
+	border-radius: 8px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	outline: none; /* or outline: 0; */
+	text-decoration: none; /* Optional: remove underline */
+  }
+  
+  .download-button:hover {
+	background-color: #7eee23;
+	transform: translateY(-10px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	outline: none; /* or outline: 0; */
+    text-decoration: none; /* Optional: remove underline */
+  }
+	

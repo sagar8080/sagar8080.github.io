@@ -578,3 +578,81 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// --- Start of Terminal Typing Script ---
+
+document.addEventListener('DOMContentLoaded', () => {
+	const terminalOutput = document.getElementById('terminal-output');
+	const availabilityBadge = document.getElementById('availability-badge');
+	
+	// Use backticks for multi-line strings and easier embedding of HTML (like the link)
+	const lines = [
+		{ text: "Hi, I am Sagar!", speed: 50, prompt: "$whoami " },
+		{ text: "", speed: 0 }, // Blank line for spacing
+		{ text: "A software engineer passionate about distributed systems and data engineering. I relish the challenge of building well-architected systems that turn raw data into reliable, analytics-ready actionable insights.", speed: 40, prompt: "> "},
+		{ text: "", speed: 0 },
+		{ text: "From real-time event processing to cloud-native data pipelines, I specialize in designing scalable architectures using big data tools and modern cloud platforms (AWS & GCP).", speed: 35, prompt: "> "},
+		{ text: "", speed: 0 },
+		{ text: "Whether it's ingesting millions of clickstream records, deploying secure data apps, or enabling time-travel on petabyte-scale data lakes, I bring a systems-thinking mindset to solve data challenges that power decision-making at scale.", speed: 35 , prompt: "> "},
+		{ text: "", speed: 0 },
+		{ text: `When production issues dont bug me, I'm either watching Liverpool attempt to give me a heart attack in stoppage time, playing football myself, or out with my Olympus pretending I understand composition. I also write tech musings on Medium when caffeine hits just right.`, speed: 40, prompt: "Interests > "},
+		{ text: "", speed: 0 },
+		{ text: "Let's build something impactful — feel free to explore my work or reach out to connect!", speed: 50, prompt: "Connect > " },
+	];
+
+	let lineIndex = 0;
+	let charIndex = 0;
+	let currentTimeout;
+
+	function typeWriter() {
+		if (lineIndex >= lines.length) {
+			terminalOutput.classList.remove('typing-active'); // Stop cursor blinking
+			if (availabilityBadge) {
+				availabilityBadge.style.display = 'block'; // Show the badge
+					// Optional: Smooth fade-in for the badge
+				availabilityBadge.style.opacity = '0';
+				availabilityBadge.style.transition = 'opacity 0.5s ease-in';
+				setTimeout(() => { availabilityBadge.style.opacity = '1'; }, 10); // Trigger transition
+			}
+			return; // Stop the function
+		}
+
+		const currentLineData = lines[lineIndex];
+		const currentText = currentLineData.text;
+		const typingSpeed = currentLineData.speed || 50; // Default speed 50ms
+		const prompt = currentLineData.prompt || ""; // Optional prompt
+
+		// Add prompt only at the beginning of the line
+		if (charIndex === 0 && prompt) {
+				const promptSpan = document.createElement('span');
+				promptSpan.className = 'text-green-400 mr-1'; // Style prompt
+				promptSpan.textContent = prompt;
+				terminalOutput.appendChild(promptSpan);
+		}
+
+		// Handle blank lines immediately
+		if (currentText === "" && charIndex === 0) {
+				terminalOutput.innerHTML += '<br>';
+				lineIndex++;
+				charIndex = 0;
+				currentTimeout = setTimeout(typeWriter, 200); // Short pause after blank line
+				return;
+		}
+		
+		if (charIndex < currentText.length) {
+			// Append character by character, preserving HTML within the string
+			terminalOutput.innerHTML += currentText.charAt(charIndex);
+			charIndex++;
+			currentTimeout = setTimeout(typeWriter, typingSpeed);
+		} else {
+			// End of the line
+			terminalOutput.innerHTML += '<br>'; // Add line break
+			lineIndex++;
+			charIndex = 0;
+			currentTimeout = setTimeout(typeWriter, 300); // Pause slightly longer between lines
+		}
+	}
+
+	// Start the typing effect
+	terminalOutput.classList.add('typing-active'); // Start cursor blinking
+	typeWriter();
+});

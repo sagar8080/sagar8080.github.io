@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Das | Data/ML Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+                <header id="header">
+                    <div class="content">
+                        <div class="inner">
+                            <img 
+                                src="images/profile_picture.png" 
+                                style="height: 200px; width: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;"
+                            >
+                            <br>
+                            <h1 class="text-xl font-bold mb-3">SAGAR DAS</h1>
+                            <div class="typewriter-container">
+                                <span class="typewriter" data-text='[" DATA ENGINEER ", "MLOPS ENGINEER", "SOFTWARE ENGINEER"]'></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="#intro">About Me</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#work">Experience</a></li>
+                            <li><a href="#projects">projects</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+            <!-- Main -->
+                <div id="main">
+
+                    <article id="intro">
+                        <!-- Terminal Container -->
+                        <div class="terminal max-w-3xl mx-auto p-6 text-left mb-8 code-font">
+                            <!-- This div will hold the typed output -->
+                            <div id="terminal-output"></div> 
+                        </div>
+                    
+                        <!-- Availability Badge (Initially Hidden) -->
+                        <div id="availability-badge" class="text-center mt-8 p-6">
+                            <h3 class="text-xl font-bold text-teal-400 mb-3">Open to offers</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Roles: Software Engineer | Data Engineer | ML Engineer | AI Engineer | Analytics Engineer</p>
+                            <a href="https://drive.google.com/file/d/1j6eHGEDouirhRi8-Ob9FPyOw-whSc_H5/view?usp=sharing" 
+                               download="Sagar_Das_Resume.pdf" 
+                               class="inline-block px-6 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full font-semibold hover:opacity-90 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm">
+                                <i class="fas fa-download mr-2"></i> Download Resume
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Work -->
+                    <article id="work">
+                        <h2 class="major">Work Experience</h2>
+                            <div class="work-experience-card">
+                                <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                                    <h3 class="text-l font-bold text-white mb-2 sm:mb-0">Data Specialist</h3>
+                                    <span class="text-xs sm:text-sm code-font bg-gray-700 text-teal-400 px-3 py-1 rounded-full self-start sm:self-center">Part-Time</span>
+                                </div>
+                                <div class="flex flex-wrap items-center text-gray-400 text-sm mb-4">
+                                    <i class="fas fa-university mr-2"></i>
+                                    <span>University of Maryland</span>
+                                    <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span> <!-- Line break on small screens -->
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span class="mr-2">College Park, MD</span>
+                                        <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span>
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>09/2023 - 05/2025</span>
+                                </div>
+                                <div class="achievement-category">
+                                    <li>Developed an LLM-augmented NLP pipeline leveraging Streamlit, Gemma2 on Ollama, PyTorch, LangChain, and HuggingFace Transformers to model unstructured survey data into analytics-ready datasets, saving 5 analysts 20+ hours weekly in manual data querying</li>
+                                    <li>Streamlined an access system on GCP for sensitive research applications, using ShinyProxy, Docker, and Terraform; implemented IAM/RBAC authentication via a Flask gateway (Google OAuth, Active Directory) and SSL reverse-proxy, supporting 15+ researchers with minimal downtime</li>
+                                    <li>Built a streaming data pipeline on GCP using Pub/Sub, Apache Beam, BigQuery, & Apache Superset, processing over 20 million daily clickstream events to deliver 15+ engagement metrics, providing academic leadership with instant classroom insights across the university</li>
+                                    <li>Optimized AWS ETL workflows by implementing incremental ingestion and advanced SQL techniques (CTEs, partitioning, indexing) slashing processing time from 7 hrs to 4 hrs while ensuring high data accuracy for reporting.</li>
+                                </div>
+                            </div>
+                        
+                            <div class="work-experience-card">
+                                <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                                    <h3 class="text-l font-bold text-white mb-2 sm:mb-0">Senior Software Engineer - Data</h3>
+                                    <span class="text-xs sm:text-sm code-font bg-gray-700 text-teal-400 px-3 py-1 rounded-full self-start sm:self-center">Full-Time</span>
+                                </div>
+                                <div class="flex flex-wrap items-center text-gray-400 text-sm mb-4">
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    <span>Tiger Analytics</span>
+                                        <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span>
+                                        <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span class="mr-2">Chennai, India</span>
+                                    <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span>
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>07/2021 - 07/2023</span>
+                                </div>
+                                <div class="achievement-category">
+                                    <li>Collaborated with lead data architects to prototype and launch 2 enterprise data management platforms - Tiger Intelligent Data Express & Data Observability Framework.</li>
+                                    <li>Developed a serverless MVP of the platform and scaled it to a microservice-based architecture with Docker, FastAPI to handle 3x user loads</li>
+                                    <li>Composed a metadata-driven ingestion framework (Airbyte, Airflow, Spark, and Python), supporting 15+ enterprise sources (CDC, streaming, batch, RDBMS), slashing asset onboarding time from days to hours</li>
+                                    <li>Built an ACID‑compliant Lakehouse (AWS S3 + Apache Iceberg + Redshift), implementing Slowly Changing Dimensions (SCD Type 2) and time‑travel capabilities, enabling historical data management & maintaining data freshness for scalable analytics across ML and BI teams</li>
+                                    <li>Integrated a Great Expectations‑based data‑quality engine (30 + custom rules) orchestrated by Spark + Airflow; reduced data anomalies by 60 %.</li>
+                                    <li>Engineered an infrastructure monitoring tool combining AWS CloudWatch, ELK Stack, and Grafana, achieving a 40% reduction in Mean-Time-To-Resolution (MTTR) for production incidents. This feature was later integrated within Tiger’s Data Observability Framework</li>
+                                    <li>Established data governance using LinkedIn DataHub for lineage, auditability, and compliance.</li>
+                                </div>
+                            </div>
+
+                        <div class="work-experience-card">
+                            <div class="p-6">
+                                <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                                    <h3 class="text-l font-bold text-white mb-2 sm:mb-0">Intern & Software Engineer</h3>
+                                        <span class="text-xs sm:text-sm code-font bg-gray-700 text-teal-400 px-3 py-1 rounded-full self-start sm:self-center">Full-Time</span>
+                                </div>
+                                    <div class="flex flex-wrap items-center text-gray-400 text-sm">
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    <span>Xenonstack Pvt. Limited</span>
+                                    <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span>
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span class="mr-2">Chandigarh, India</span>
+                                    <span class="mx-2 hidden sm:inline">•</span><span class="w-full sm:w-auto block my-1 sm:my-0"></span>
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>01/2019 - 11/2019</span>
+                                </div>
+
+                            <div class="achievement-category">
+                                <li>Modernized data platform migrating Hadoop/Pig to Scala/PySpark ETL on Databricks (IoT/Weather data via Kafka).</li>
+                                <li>Built Python framework (MLFlow) improving feature engineering efficiency by 33% and reducing model discovery time.</li>
+                                <li>Scaled TensorFlow training using Ray distributed pipeline, reducing computation time by ~10%.</li>
+                                <li>Developed cost-optimization strategy for AWS EMR jobs using EC2 spot instances.</li>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <!-- About -->
+                    <article id="education">
+                        <h2 class="major">Education</h2>
+                        <div class="education-card">
+                            <h3>University of Maryland - College Park | USA</h3>
+                            <div class="degree-details">
+                                <span class="degree">Master's in Information Management</span>
+                                <span class="degree">2023-2025 | GPA: 4.0/4.0</span>
+                            </div>
+                            <div class="key-coursework">
+                                <li>Relevant Coursework: Big Data Infrastructure, Data Analytics, Data Integration, Advance Data Science, Cloud Computing, Product Management</li>
+                                <li>Received complete tuition fee waiver for the entire duration of the degree program</li>
+                            </div>
+                            
+                        </div>
+                    
+                        <div class="education-card">
+                            <h3>Panjab University - Chandigarh | India</h3>
+                            <div class="degree-details">
+                                <span class="degree">B.E. Information Technology</span>
+                                <span class="degree">2015-2019 | GPA: 3.74/4.0</span>
+                            </div>
+                            <div class="key-coursework">
+                                <li>Relevant Coursework: Data Structures and Algorithms, Database Systems, Network Security, Operating Systems, Object Oriented Programming</li>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="skills">
+                        <div class="technical-prowess">
+                            <h2>Core Competencies</h2>
+                            
+                            <div class="skill-categories">
+                                <!-- Column 1: Data Engineering -->
+                                <div class="skill-column">
+                                    <h5>Data Engineering</h5>
+                                    <ul>
+                                        <li>AWS and GCP cloud tools</li>
+                                        <li>Apache Spark | Apache Beam</li>
+                                        <li>Kafka</li>
+                                        <li>BigQuery | Redshift</i>
+                                        <li>Airflow</li>
+                                        <li>Apache Iceberg | Delta Lake</li>
+                                        <li>Hadoop Ecosystem</li>
+                                        <li>DBT Core</li>
+                                        <li>Apache Superset</li>
+                                        <li>Distributed Systems</li>
+                                    </ul>
+                                </div>
+                        
+                                <!-- Column 2: Software Engineering -->
+                                <div class="skill-column">
+                                    <h5>Software Engineering</h5>
+                                    <ul>
+                                        <li>Data Structures & Algorithms</li>
+                                        <li>Python | Scala | Rust</li>
+                                        <li>Git | GitOps</li>
+                                        <li>CI/CD Pipelines</li>
+                                        <li>Docker</li>
+                                        <li>Kubernetes</li>
+                                        <li>Terraform</li>
+                                        <li>REST APIs</li>
+                                        <li>Backend Development</li>
+                                        <li>Shell Scripting</li>
+                                        <li>Server Side Programming</li>
+                                        <li>HTML | CSS | Javascript</li>
+                                    </ul>
+                                </div>
+                        
+                                <!-- Column 3: Data Science & MLOps -->
+                                <div class="skill-column">
+                                    <h5>ML Engineering</h5>
+                                    <ul>
+                                        <li>Feature Engineering</li>
+                                        <li>Supervised & Unsupervised learning</li>
+                                        <li>Pytorch</li>
+                                        <li>Advanced SQL</li>
+                                        <li>Weights & Biases</li>
+                                        <li>Scikit-learn</li>
+                                        <li>XGBoost</li>
+                                        <li>MLflow</li>
+                                        <li>Kubeflow</li>
+                                        <li>Metaflow</li>
+                                        <li>SparkML</li>
+                                        <li>Model Serving and Management</li>
+                                    </ul>
+                                </div>
+                        
+                                <!-- Column 4: GenAI -->
+                                <div class="skill-column">
+                                    <h5>Generative AI</h5>
+                                    <ul>
+                                        <li>LangChain</li>
+                                        <li>Natural Language Processing</li>
+                                        <li>Vector DBs</li>
+                                        <li>RAG Architecture</li>
+                                        <li>LLM and Fine-tuning</li>
+                                        <li>Prompt Engineering</li>
+                                        <li>Hugging Face Transformers</li>
+                                        <li>Agentic AI systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+
+                    <article id="projects">
+                        <h2 class="major">Selected Works</h2>
+
+                        <div class="project-card">
+                            <h3>Data Fusion Engineering</h3>
+                            <div class="tech-stack">
+                                <span>GCP Serverless</span>
+                                <span>Apache Spark</span>
+                                <span>Terraform</span>
+                                <span>Apache Superset</span>
+                                <span>BASH</span>
+                                <span>SQL</span>
+                            </div>
+                            <ul>
+                                <li>Developed a complete analytics solution on GCP to ingest, store, transform, and analyze data</li>
+                                <li>Automated data ingestion using time-driven cloud function from 6 Open NYC dataset APIs incrementally</li>
+                                <li>Created automated Dataproc pipelines to process and transform ingested data into a BigQuery</li>
+                                <li>Prepared auto-updating Apache Superset dashboards to visualize KPIs to identify accident-prone areas</li>
+                            </ul>
+                            <a href="https://github.com/sagar8080/data-fusion-engineering/" class="project-link">View on GitHub →</a>
+                        </div>
+                    
+                        <div class="project-card">
+                            <h3>Intelligent Record Management</h3>
+                            <div class="tech-stack">
+                                <span>PyTorch</span>
+                                <span>NLP Tools</span>
+                                <span>Langchain</span>
+                                <span>Streamlit</span>
+                                <span>Elasticsearch</span>
+                                <span>Gemma2</span>
+                            </div>
+                            <ul>
+                                <li>A document processing and semantic search system for intelligent indexing of congressional archives</li>
+                                <li>Allows users to input a query via Streamlit UI and retrieve relevant past press releases</li>
+                                <li>LLM based document summaries infused with NLP: Topic Modeling, NER, and keyword extraction</li>
+                            </ul>
+                            <a href="https://github.com/sagar8080/semantic-search-system" class="project-link">View on GitHub →</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Loan Default Prediction System</h3>
+                            <div class="tech-stack">
+                                <span>PySpark</span>
+                                <span>Seaborn</span>
+                                <span>SciKit Learn</span>
+                                <span>XGBoost</span>
+                                <span>Random Forest</span>
+                                <span>K-Means Clustering</span>
+                                <span>PCA</span>
+                            </div>
+                            <ul>
+                                <li>End-to-end machine learning pipeline to predict loan defaults using the LendingClub dataset</li>
+                                <li>Incorporated data preprocessing, feature engineering, & supervised ML modeling</li>
+                                <li>Prepared a borrower segmentation using K-Means clustering to identify high-risk defaulter profiles</li>
+                            </ul>
+                            <a href="https://github.com/sagar8080/loan-default-prediction" class="project-link">View on GitHub →</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Data Preparation for Fintech Analytics</h3>
+                            <div class="tech-stack">
+                                <span>AWS</span>
+                                <span>Python</span>
+                                <span>Great Expectations</span>
+                                <span>Postgres</span>
+                                <span>Tableau</span>
+                            </div>
+                            <ul>
+                                <li>A serverless framework to automate metadata extraction, profiling, validation, and transformation.</li>
+                                <li>Event-driven workflows on AWS Lambda, Step Functions, and S3 for DQ checks and transformations.</li>
+                                <li>Stored cleaned datasets into AWS RDS and created Tableau dashboards to visualize KPIs</li>
+                            </ul>
+                            <a href="https://github.com/sagar8080/data-prep-for-fintech-loan-analytics" class="project-link">View on GitHub →</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Monitoring EKS Cluster</h3>
+                            <div class="tech-stack">
+                                <span>AWS</span>
+                                <span>Terraform</span>
+                                <span>HELM</span>
+                                <span>Prometheus</span>
+                                <span>Jenkins CI/CD</span>
+                                <span>Kubernetes</span>
+                            </div>
+                            <ul>
+                                <li>Streamlined the setup for deploying OpenTelemetry Webshop</li>
+                                <li>Enabled modular deployment by splitting large Kubernetes manifests into component YAML files</li>
+                                <li>Provisioned EKS, Grafana, and Prometheus with Terraform and Helm</li>
+                                <li>Developed a system to collect logs from the kube-system and track unhealthy pods</li>
+                                <li>Built pipelines to test and build Docker images via a remote Jenkins server</li>
+                            </ul>
+                            <a href="https://github.com/sagar8080/eks-and-monitoring" class="project-link">View on GitHub →</a>
+                        </div>
+                    
+                        <div class="project-card">
+                            <h3>Sports Analytics System</h3>
+                            <div class="tech-stack">
+                                <span>Python</span>
+                                <span>Plotly</span>
+                                <span>Pandas</span>
+                                <span>Tableau</span>
+                            </div>
+                            <ul>
+                                <li>Developed EDA framework analyzing 10+ performance KPIs</li>
+                                <li>Created interactive dashboards for tactical analysis</li>
+                                <li>Identified 3 key success factors through Bayesian analysis</li>
+                            </ul>
+                            <a href="https://www.kaggle.com/code/sagardas96/das-inst627-fall-2023" class="project-link">View on Kaggle →</a>
+                        </div>
+                    </div>
+                    </article>
+                    
+                    <br>
+                <div>
+                    <div>
+                        <div>
+                            <ul class="icons" style="text-align: center;">
+                                <li><a href="https://www.linkedin.com/in/sagardas08/" class="icon brands fa-linkedin-in"><span class="label"></span></a></li>
+                                <li><a href="https://github.com/sagar8080" class="icon brands fa-github"><span class="label"></span></a></li>
+                                <li><a href="mailto:sagardas.work@gmail.com?subject=Hey Sagar, I am reaching out to you regarding: & body=Message" class="fa fa-envelope"><span class="label"></span></a></li>
+                                <li><a href="tel:+1-2404959874" class="fa fa-mobile-alt"><span class="label"></span></a></li>
+                                <li><a href="https://leetcode.com/sagar8080/" class="fa fa-code"><span class="label"></span></a></li>										  
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <footer id="footer">
+                            <p class="copyright">&copy; Sagar Das 2025</p>
+                        </footer>
+                    </div>
+                </div>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+</body>
+</html>
