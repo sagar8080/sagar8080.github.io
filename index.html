@@ -36,7 +36,7 @@
             --skill-bar-bg: var(--secondary); /* Skill bar background */
             --skill-progress-start: var(--primary); /* Skill progress gradient start */
             --skill-progress-end: #ffffff; /* Skill progress gradient end */
-            --tag-bg: #26A69A; /* Background for tags */
+            --tag-bg: #80f18f; /* Background for tags */
             --tag-text: #131313; /* Text color for tags (adjust if needed) */
             --tag-name: #26A69A;
             --cyan-accent:#26A69A; /* Specific cyan accent (can replace #7eee23 if preferred) */
@@ -111,7 +111,7 @@
             position: relative;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for terminal */
         }
-        
+
         /* Terminal Window Buttons Simulation */
         .terminal::before {
             content: '';
@@ -139,20 +139,20 @@
     50% { opacity: 0; }
   }
 
-  /* Terminal Styling */
-  .terminal {
-    position: relative;
-    overflow: auto;
-    max-height: 600px; /* Adjust based on content length */
-  }
+        /* Terminal Styling */
+        .terminal {
+          position: relative;
+          overflow: auto;
+          max-height: 600px; /* Adjust based on content length */
+        }
 
-  .terminal-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: var(--terminal-bg);
-    padding-bottom: 10px;
-  }
+        .terminal-header {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          background-color: var(--terminal-bg);
+          padding-bottom: 10px;
+        }
         
         /* Timeline Item Dot Style */
         .timeline-item::before {
@@ -391,29 +391,29 @@
 
 <!-- About Section -->
 <section id="about" class="py-20 px-4 sm:px-6 lg:px-8" style="background: var(--dark);">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center" style="color: var(--light);">
-        About Me
-      </h2>
-      <div class="flex flex-col items-center">
-        <div class="w-full rounded-2xl shadow-lg p-0 overflow-hidden"
-             style="background: var(--terminal-bg); border: 1.5px solid var(--border-color); box-shadow: 0 6px 32px var(--hover-shadow-color);">
-          <!-- Terminal Header -->
-          <div class="flex items-center px-4 py-2" style="background: rgba(0,0,0,0.15); border-bottom: 1px solid var(--border-color);">
-            <span class="w-3 h-3 rounded-full mr-2" style="background: #FF5F56;"></span>
-            <span class="w-3 h-3 rounded-full mr-2" style="background: #FFBD2E;"></span>
-            <span class="w-3 h-3 rounded-full" style="background: #27C93F;"></span>
-            <span class="mx-auto text-xs tracking-wide" style="color: var(--accent-gradient-start); opacity: 0.7;">sagar@portfolio:~/about</span>
-          </div>
-          <!-- Terminal Body -->
-          <div class="px-6 py-6 font-mono text-base leading-relaxed min-h-[280px] terminal-body"
-               style="color: var(--light); background: transparent;">
-            <div id="terminal-output"></div>
-          </div>
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center" style="color: var(--light);">
+      About Me
+    </h2>
+    <div class="flex flex-col items-center">
+      <div class="w-full rounded-2xl shadow-lg p-0 overflow-hidden" style="background: var(--terminal-bg); border: 1.5px solid var(--border-color);">
+        <!-- Terminal Header -->
+        <div class="flex items-center px-4 py-2" style="background: rgba(0,0,0,0.15); border-bottom: 1px solid var(--border-color);">
+          <span class="w-3 h-3 rounded-full mr-2" style="background: #FF5F56;"></span>
+          <span class="w-3 h-3 rounded-full mr-2" style="background: #FFBD2E;"></span>
+          <span class="w-3 h-3 rounded-full" style="background: #27C93F;"></span>
+          <span class="mx-auto text-xs tracking-wide" style="color: var(--accent-gradient-start); opacity: 0.7;">sagar@portfolio:~/about</span>
+        </div>
+        <!-- Terminal Body -->
+        <div class="px-4 py-6 font-mono text-base leading-relaxed h-[550px] overflow-y-auto terminal-body"
+             style="color: var(--light); background: transparent;">
+          <div id="terminal-output"></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   
 
     <!-- Experience Section -->
@@ -520,7 +520,7 @@
         <div class="project-card rounded-xl overflow-hidden flex flex-col transition-all duration-300"
              style="background-color: var(--card-bg-start); border: 1px solid var(--border-color);">
           <div class="h-48 overflow-hidden">
-            <img src="images/gcp.jpg" alt="Data Fusion Engineering" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <img src="images/gcp.jpg" alt="Data Fusion Engineering" class="w-full h-full object-cover transition-transform duration-500 hover:scale-85">
           </div>
           <div class="p-5 flex-1 flex flex-col">
             <h3 class="text-xl font-bold mb-3 text-center" style="color: var(--light);">Data Fusion Engineering</h3>
@@ -682,7 +682,7 @@
   </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-10">
+    <section id="skills" class="py-6 px-4 sm:px-6 lg:px-10">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center ">Technical Skills</h2>
             
@@ -855,31 +855,38 @@
         <div class="mt-8 flex justify-center gap-6">
           <a href="tel:+1-2404959874" target="_blank" 
              class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-             style="background-color: var(--dark); color: var(--light);"
-             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--light)';"
-             onmouseout="this.style.backgroundColor='var(--tag-bg)'; this.style.color='var(--light)';">
+             style="background-color: var(--dark); color: var(--cyan-accent);"
+             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--cyan)';"
+             onmouseout="this.style.backgroundColor='var(--dark)'; this.style.color='var(--tag-bg)';">
             <i class="fa-duotone fa-solid fa-mobile-screen text-xl"></i>
           </a>
           <a href="mailto:sagardas.work@gmail.com" target="_blank" 
              class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-             style="background-color: var(--dark); color: var(--light);"
-             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--light)';"
-             onmouseout="this.style.backgroundColor='var(--tag-bg)'; this.style.color='var(--light)';">
+             style="background-color: var(--dark); color: var(--cyan-accent);"
+             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--cyan)';"
+             onmouseout="this.style.backgroundColor='var(--dark)'; this.style.color='var(--tag-bg)';">
             <i class="fa-solid fa-envelope text-xl"></i>
           </a>
           <a href="https://linkedin.com/in/sagardas08" target="_blank" 
              class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-             style="background-color: var(--dark); color: var(--light);"
-             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--light)';"
-             onmouseout="this.style.backgroundColor='var(--tag-bg)'; this.style.color='var(--light)';">
+             style="background-color: var(--dark); color: var(--cyan-accent);"
+             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--cyan)';"
+             onmouseout="this.style.backgroundColor='var(--dark)'; this.style.color='var(--tag-bg)';">
             <i class="fab fa-linkedin-in text-xl"></i>
           </a>
           <a href="https://github.com/sagar8080" target="_blank" 
              class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-             style="background-color: var(--dark); color: var(--light);"
-             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--light)';"
-             onmouseout="this.style.backgroundColor='var(--tag-bg)'; this.style.color='var(--light)';">
+             style="background-color: var(--dark); color: var(--cyan-accent);"
+             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--cyan)';"
+             onmouseout="this.style.backgroundColor='var(--dark)'; this.style.color='var(--tag-bg)';">
             <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://medium.com/@sgx08" target="_blank" 
+             class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+             style="background-color: var(--dark); color: var(--cyan-accent);"
+             onmouseover="this.style.backgroundColor='var(--secondary)'; this.style.color='var(--cyan)';"
+             onmouseout="this.style.backgroundColor='var(--dark)'; this.style.color='var(--tag-bg)';">
+             <i class="fab fa-medium"></i>
           </a>
         </div>
       </div>
@@ -906,86 +913,66 @@
                 </div>
             </div>
             <!-- Footer Bottom Bar -->
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">© <span id="current-year"></span> Sagar Das. All rights reserved.</p>
-                 <!-- Optional Footer Links -->
-                <!-- <div class="flex space-x-4">
-                    <a href="#" class="text-gray-500 hover:text-gray-300 transition text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-300 transition text-sm">Terms of Service</a>
-                </div> -->
             </div>
         </div>
     </footer>
 
     <!-- JavaScript for Interactivity -->
     <script>
-        // // Mobile menu toggle
-        // const menuBtn = document.getElementById('menu-btn');
-        // const mobileMenu = document.getElementById('mobile-menu');
-        // const navLinks = mobileMenu.querySelectorAll('a'); // Get all links in mobile menu
-        
-        // menuBtn.addEventListener('click', () => {
-        //     mobileMenu.classList.toggle('hidden');
-        // });
-
-        // // Close mobile menu when a link is clicked
-        // navLinks.forEach(link => {
-        //     link.addEventListener('click', () => {
-        //         mobileMenu.classList.add('hidden');
-        //     });
-        // });
 
           // Mobile Menu Toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuOpen = document.getElementById('menu-open');
-  const menuClose = document.getElementById('menu-close');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpen = document.getElementById('menu-open');
+        const menuClose = document.getElementById('menu-close');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuOpen.classList.toggle('hidden');
-    menuClose.classList.toggle('hidden');
-  });
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          menuOpen.classList.toggle('hidden');
+          menuClose.classList.toggle('hidden');
+        });
 
-  // Close mobile menu when a link is clicked
-  const mobileLinks = mobileMenu.querySelectorAll('a');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuOpen.classList.remove('hidden');
-      menuClose.classList.add('hidden');
-    });
-  });
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuOpen.classList.remove('hidden');
+            menuClose.classList.add('hidden');
+          });
+        });
 
-  // Scroll Effects: Hide/Show Navbar and Transparency Toggle
-  let prevScrollPos = window.pageYOffset;
-  const navbar = document.getElementById('navbar');
-  const scrollThreshold = 100; // Pixels before hiding or changing opacity
+        // Scroll Effects: Hide/Show Navbar and Transparency Toggle
+        let prevScrollPos = window.pageYOffset;
+        const navbar = document.getElementById('navbar');
+        const scrollThreshold = 100; // Pixels before hiding or changing opacity
 
-  window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
+        window.onscroll = function() {
+          let currentScrollPos = window.pageYOffset;
 
-    // Transparency to Solid on Scroll
-    if (currentScrollPos > scrollThreshold) {
-      navbar.style.backgroundColor = 'var(--dark)';
-      navbar.style.boxShadow = '0 4px 12px var(--hover-shadow-color)';
-    } else {
-      navbar.style.backgroundColor = 'transparent';
-      navbar.style.boxShadow = 'none';
-    }
+          // Transparency to Solid on Scroll
+          if (currentScrollPos > scrollThreshold) {
+            navbar.style.backgroundColor = 'var(--dark)';
+            navbar.style.boxShadow = '0 4px 12px var(--hover-shadow-color)';
+          } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+          }
 
-    // Hide on Scroll Down, Show on Scroll Up
-    if (currentScrollPos > scrollThreshold) {
-      if (prevScrollPos > currentScrollPos) {
-        navbar.style.top = '0';
-      } else {
-        navbar.style.top = '-80px'; // Adjust based on navbar height
-      }
-    } else {
-      navbar.style.top = '0'; // Always show if near top of page
-    }
-    prevScrollPos = currentScrollPos;
-  };
+          // Hide on Scroll Down, Show on Scroll Up
+          if (currentScrollPos > scrollThreshold) {
+            if (prevScrollPos > currentScrollPos) {
+              navbar.style.top = '0';
+            } else {
+              navbar.style.top = '-80px'; // Adjust based on navbar height
+            }
+          } else {
+            navbar.style.top = '0'; // Always show if near top of page
+          }
+          prevScrollPos = currentScrollPos;
+        };
         
         // Smooth scrolling for all anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1048,11 +1035,11 @@
   
         // Use backticks for multi-line strings and easier embedding of HTML
         const lines = [
-            { text: "Hi, I am Sagar!", speed: 50, prompt: "$ whoami " },
+            { text: "Hi, I am Sagar! I am a Software Engineer by profession.", speed: 5, prompt: "$ whoami " },
             { text: "", speed: 0 }, // Blank line for spacing
-            { text: "A software engineer passionate about distributed systems and data engineering.", speed: 10, prompt: "> " },
+            { text: "My area of specialization revolves around data engineering, MLOPS, and GenAI.", speed: 10, prompt: "> " },
             { text: "", speed: 0 },
-            { text: "From real-time event processing to cloud-native data pipelines, I specialize in designing scalable architectures using big data tools and modern cloud platforms (AWS & GCP).", speed: 10, prompt: "> " },
+            { text: "From real-time event processing to cloud-native data pipelines, I specialize in designing scalable solutions using big data tools and modern cloud platforms (AWS & GCP).", speed: 10, prompt: "> " },
             { text: "", speed: 0 },
             { text: "Whether it's ingesting millions of clickstream records, deploying secure data apps, or enabling time-travel on petabyte-scale data lakes, I bring a systems-thinking mindset to solve data challenges that power decision-making at scale.", speed: 10, prompt: "> " },
             { text: "", speed: 0 },
