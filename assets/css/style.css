@@ -30,10 +30,10 @@
 
 /* Global Body Styles */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family:Google Sans Text,Google Sans;
     background-color: var(--dark);
     color: var(--light);
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 /* Code Font Style */
@@ -226,7 +226,6 @@ margin-left: 2px;
 
 .work-experience-card {
     background-color: transparent;
-    font-family: 'Inter', sans-serif;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 8px;
@@ -243,7 +242,6 @@ margin-left: 2px;
 
 .work-experience-card .role-title {
     color: var(--tag-name);
-    font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
     display: block;
@@ -370,7 +368,6 @@ margin: 0.5rem 0;
 }
 
 .project-card h3 {
-    font-weight: bold;
     color:  #7eee23; /* White text for titles */
     margin-bottom: 1rem;
 }
@@ -450,12 +447,6 @@ margin: 0.5rem 0;
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2); /* Add shadow on hover */
 }
 
-.skill-column h5 {
-    color: #80f18f;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
 
 .skill-column ul {
     display: flex;
@@ -559,4 +550,64 @@ margin: 0.5rem 0;
     background-color: rgba(50, 50, 50, 0.6);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 	font-size: large;
+}
+
+.qxCTlb{
+    min-height:36px;
+    padding:8px 16px;
+    border-radius:4px;
+    font-family:Google Sans Text,Google Sans;
+    font-weight:400;
+    line-height:20px;
+    letter-spacing:.25px;
+    color:white;
+    border-width:0;
+    cursor:pointer;
+    white-space:break-spaces;
+    word-break:break-word
+}
+.hur54b{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    background-color:rgba(32,33,36,.6);
+    padding:72px;
+    z-index:9999
+}
+.mmGMM{
+    border:none;
+    border-radius:8px;
+    background-color:white;
+    width:100%;
+    height:100%
+}
+.Xfsokf{
+    position:fixed;
+    top:26px;
+    right:72px;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    align-items:center;
+    border:none;
+    border-radius:18px;
+    background-color:#1f1f1f;
+    height:36px;
+    padding:16px;
+    cursor:pointer}
+.L0Dvsd{
+    color:#fff;
+    font-size:18px;
+    margin-right:8px}
+
+.uE25ec{
+    font-size:14px;
+    font-family:"Google Sans",Arial,sans-serif;
+    font-weight:500;
+    letter-spacing:.25px;color:#fff
 }
