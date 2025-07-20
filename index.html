@@ -212,7 +212,7 @@
                   </div>
                   <!-- ADD achievement-category class HERE -->
                   <ul class="achievement-category"> <!-- Removed list-disc/pl-5/space-y, using CSS instead -->
-                    <li>Building an NLP pipeline to transform surveys into analytics-ready datasets, leveraging PyTorch, LangChain, and HuggingFace Transformers, helping 8 research analysts save 20+ hours collectively on manual data querying efforts</li>
+                    <li>Developed an NLP-driven prototype using RAG architecture (LangChain, FAISS, OpenAI, Gemma), enabling Q&A andsummarization over 50+ Excel-based survey datasets (100K+ responses); fine-tuned prompts and rerankers, achieving 70% QA relevance.</li>
                     <li>Deployed R Shiny applications on GCP using ShinyProxy, Docker, and Terraform for multi-user collaboration on internal research applications.</li>
                     <li>Incorporated security controls (IAM, RBAC) alongside a Flask application gateway with Google OAuth and reverse-proxy SSL to ensure secure access.</li>
                     <li>Prepared a POC using GCP Pub/Sub, Apache Beam, and BigQuery to process 20M+ daily clickstream events from Canvas ELMS, enabling instant classroom analytics for the academic leadership team via Apache Superset dashboards</li>
@@ -242,14 +242,12 @@
                   </div>
                   <!-- ADD achievement-category class HERE -->
                   <ul class="achievement-category">
-                    <li>Partnered with data architects to prototype MVP's and launch 2 enterprise solutions: <a href="https://aws.amazon.com/marketplace/pp/prodview-mhhbi7gtwptgk">Intelligent Data Express</a> and <a href="https://aws.amazon.com/marketplace/pp/prodview-hxpwkwaynhgcq">Data Observability Framework.</a></li>
+                    <li>Partnered with data architects to prototype a minimum viable product, define product roadmaps, and deliver end-to-end platform features for the successful launch of Tiger Intelligent Data Express, now utilized by key clients and external teams.</li>
                     <li>Developed the backend of the MVP's using AWS serverless tools and later scaled it to a microservice architecture using FastAPI and Docker to support 3X user growth.</li>
                     <li>Developed a metadata-driven ETL ingestion framework using Airbyte, Apache Airflow, AWS Glue, and Python, enabling rapid ingestion from diverse enterprise data sources (CDC, streaming, batch, on-premise databases), reducing asset onboarding time from weeks to hours</li>
-                    <li>Engineered an ACID-compliant Lakehouse using Apache Iceberg, AWS S3, Athena, and Redshift. Implemented SCD Type-2 and time travel capabilities to ensure historical data integrity and support analytical workloads</li>
+                    <li>Engineered an ACID-compliant Lakehouse using Apache Iceberg, AWS S3, Athena, and Redshift. Implemented iceberg optimizations such as scheduling compaction, orphan file cleanup, and retention jobs which improved read query performance and cost efficiency for analytical workloads</li>
                     <li>Built a data quality tool with Great Expectations, Apache Spark, and Airflow to validate 30+ custom checks on data at rest, reducing data anomalies by 60% across downstream BI and analytics pipelines</li>
-                    <li>Implemented an infrastructure observability pipeline utilizing CloudWatch logs, ELK stack and Grafana, accelerating root cause analysis and decreasing Mean-Time-To-Resolution (MTTR) for production issues by 40%</li>
-                    <li>Established data governance capabilities by integrating LinkedIn DataHub, providing detailed tracking, auditability, and visualization of data flow, aiding regulatory compliance (GDPR, CCPA) and trust in data assets</li>
-                    <li>Collaborated with business analysts and sales teams to translate functional requirements into engineering solutions</li>
+                    <li>Established data governance capabilities by integrating DataHub with Postgres to track data lineage and metadata across 100+ Airflow DAGs, Glue ETLs, and Iceberg tables.</li>
                     <li>Provided MVP demos and simplified complex technical architectures to clients through concise presentations</li>
                   </ul>
               </div>
@@ -276,10 +274,10 @@
                   </div>
                   <!-- ADD achievement-category class HERE -->
                   <ul class="achievement-category">
-                    <li>Modernized a data platform by migrating legacy Hadoop workflows and Pig scripts to Scala/PySpark ETL jobs on Databricks, processing IoT sensor and weather data from 45 geo-locations via Kafka to create a high-availability data lake powering data science workflows</li>
-                    <li>Collaborated with MLOPS team to build a Python framework using MLFlow to automate model management & scoring, improving feature engineering efficiency by 33% and reducing model discovery time in production</li>
-                    <li>Scaled TensorFlow model training by implementing a Ray-based distributed pipeline across a 6-node cluster, reducing computation time by ~10%</li>
-                    <li>Developed a cost-optimization strategy to bid and select EC2 spot instances for AWS EMR jobs during off-peak hours.</li>
+                    <li>Migrated legacy Hadoop jobs to a modern Kappa architecture using Scala and Spark Streaming on Databricks, integrating Kafka and Delta Lake for optimized data processing.</li>
+                    <li>Enabled granular micro-batch feeds (15, 30, 60 minutes) for downstream forecasting models by streaming 10GB/day of IoT data from 45 global regions via the Kappa architecture.</li>
+                    <li>Collaborated with the MLOps team to develop a Python and MLflow integration, automating model management and scoring processes; increased feature engineering efficiency by 33% and reduced champion model discovery time.</li>                    
+                    <li>Automated CI/CD workflows by creating a custom Linux CLI tool to deploy Dockerized applications to Amazon ECR via Jenkins and Terraform, eliminating manual operations.</li>
                   </ul>
               </div>
           </div>
