@@ -131,14 +131,6 @@
   
       <!-- Action Buttons -->
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://drive.google.com/file/d/1j6eHGEDouirhRi8-Ob9FPyOw-whSc_H5/view?usp=sharing" 
-           download="Sagar_Das_Resume.pdf" 
-           class="px-6 py-3 rounded-full text-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-           style="background-color: var(--tag-name); color: var(--dark);"
-           onmouseover="this.style.backgroundColor='var(--tag-bg)'"
-           >
-           View Resume
-        </a>
         <a href="#contact" 
            class="px-6 py-3 rounded-full text-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
            style="background-color: var(--tag-name); color: var(--dark);"
@@ -212,11 +204,18 @@
                   </div>
                   <!-- ADD achievement-category class HERE -->
                   <ul class="achievement-category"> <!-- Removed list-disc/pl-5/space-y, using CSS instead -->
-                    <li>Developed an NLP-driven prototype using RAG architecture (LangChain, FAISS, OpenAI, Gemma), enabling Q&A andsummarization over 50+ Excel-based survey datasets (100K+ responses); fine-tuned prompts and rerankers, achieving 70% QA relevance.</li>
-                    <li>Deployed R Shiny applications on GCP using ShinyProxy, Docker, and Terraform for multi-user collaboration on internal research applications.</li>
-                    <li>Incorporated security controls (IAM, RBAC) alongside a Flask application gateway with Google OAuth and reverse-proxy SSL to ensure secure access.</li>
-                    <li>Prepared a POC using GCP Pub/Sub, Apache Beam, and BigQuery to process 20M+ daily clickstream events from Canvas ELMS, enabling instant classroom analytics for the academic leadership team via Apache Superset dashboards</li>
-                    <li>Optimized AWS ETL workflows by implementing incremental ingestion and advanced SQL techniques (CTEs, partitioning, indexing) slashing processing time from 7 hrs to 4 hrs while ensuring high data accuracy for reporting.</li>
+                    <li>
+                      Designed an streaming analytics pipeline on GCP to process and analyze 20M+ clickstream events and logs per day using Pub/Sub, Apache Beam, Big Query streaming; developed a Superset dashboard for academic leadership to track 15+ engagement KPIs.
+                    </li>
+                    <li>
+                      Developed an NLP-driven prototype using RAG architecture (LangChain, FAISS, OpenAI, Gemma), enabling Q&A andsummarization over 50+ Excel-based survey datasets (100K+ responses); fine-tuned prompts and rerankers, achieving 70% QA relevance.
+                    </li>
+                    <li>
+                      Developed a Flask web app for researchers to self-provision GCP/AWS compute via Terraform with pre-configured runtimes, secured with nginx reverse proxy SSL, SSO, and role-based access control - eliminating repetitive IT requests.
+                    </li>
+                    <li>
+                      Optimized AWS ETL workflows by implementing incremental ingestion and advanced SQL techniques (CTEs, partitioning, indexing) slashing processing time from 7 hrs to 4 hrs while ensuring high data accuracy for reporting.
+                    </li>
                   </ul>
               </div>
           </div>
@@ -248,7 +247,6 @@
                     <li>Engineered an ACID-compliant Lakehouse using Apache Iceberg, AWS S3, Athena, and Redshift. Implemented iceberg optimizations such as scheduling compaction, orphan file cleanup, and retention jobs which improved read query performance and cost efficiency for analytical workloads</li>
                     <li>Built a data quality tool with Great Expectations, Apache Spark, and Airflow to validate 30+ custom checks on data at rest, reducing data anomalies by 60% across downstream BI and analytics pipelines</li>
                     <li>Established data governance capabilities by integrating DataHub with Postgres to track data lineage and metadata across 100+ Airflow DAGs, Glue ETLs, and Iceberg tables.</li>
-                    <li>Provided MVP demos and simplified complex technical architectures to clients through concise presentations</li>
                   </ul>
               </div>
           </div>
