@@ -73,8 +73,7 @@ const Projects = () => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl mb-16 text-center"
-          style={{ color: 'var(--light)' }}
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -87,7 +86,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="project-card rounded-xl overflow-hidden flex flex-col"
+              className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-lg rounded-xl overflow-hidden flex flex-col border border-gray-200/20 dark:border-gray-700/20 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/20 hover:-translate-y-2 hover:scale-105"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -104,7 +103,7 @@ const Projects = () => {
               </div>
 
               <div className="p-5 flex-1 flex flex-col">
-                <h3 className="text-xl mb-3 text-center font-semibold" style={{ color: 'var(--light)' }}>
+                <h3 className="text-xl mb-3 text-center font-semibold text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
 
@@ -112,11 +111,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-2 py-1 text-xs rounded-full"
-                      style={{
-                        backgroundColor: 'var(--tag-bg)',
-                        color: 'var(--tag-text)'
-                      }}
+                      className="px-2 py-1 text-xs rounded-full bg-blue-500/20 dark:bg-blue-500/30 text-blue-700 dark:text-blue-300 border border-blue-300/30 dark:border-blue-400/30"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ delay: (index * 0.1) + (techIndex * 0.05) }}
@@ -127,7 +122,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <p className="text-sm mb-4 flex-1" style={{ color: 'var(--light)' }}>
+                <p className="text-sm mb-4 flex-1 text-gray-700 dark:text-gray-300">
                   {project.description}
                 </p>
 
@@ -136,9 +131,8 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full transition-all duration-300"
-                    style={{ color: 'var(--light)' }}
-                    whileHover={{ scale: 1.1, color: 'var(--tag-name)' }}
+                    className="p-2 rounded-full transition-all duration-300 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Github size={20} />
@@ -147,9 +141,8 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full transition-all duration-300"
-                    style={{ color: 'var(--light)' }}
-                    whileHover={{ scale: 1.1, color: 'var(--tag-name)' }}
+                    className="p-2 rounded-full transition-all duration-300 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <ExternalLink size={20} />

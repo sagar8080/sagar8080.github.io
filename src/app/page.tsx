@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className="min-h-screen bg-white dark:bg-transparent">
       <AnimatedBackground />
       <Navigation activeSection={activeSection} />
       <ThemeToggle isDark={isDarkMode} toggle={toggleTheme} />

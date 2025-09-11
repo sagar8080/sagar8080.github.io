@@ -124,7 +124,7 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/3 to-indigo-900/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/3 to-indigo-900/5 dark:from-blue-100/5 dark:via-purple-100/3 dark:to-indigo-100/5" />
 
       {/* Animated Background */}
       <AnimatedBackground />
@@ -166,7 +166,7 @@ const Hero = () => {
 
             {/* Name */}
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent font-bold"
+              className="text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-200 dark:to-blue-400 bg-clip-text text-transparent font-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -181,7 +181,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <p className="text-lg md:text-xl font-medium text-blue-300">
+              <p className="text-lg md:text-xl font-medium text-blue-300 dark:text-blue-400">
                 {typedText}<span className="animate-pulse">|</span>
               </p>
             </motion.div>
@@ -243,16 +243,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <p className="text-sm text-gray-300 font-medium">
+              <p className="text-sm text-gray-300 dark:text-gray-400 font-medium">
                 {hellos[currentHello].language}
               </p>
-              <p className="text-xs text-gray-500 italic mt-1">
+              <p className="text-xs text-gray-500 dark:text-gray-600 italic mt-1">
                 Pronunciation: {hellos[currentHello].pronunciation}
               </p>
             </motion.div>
 
             <motion.p
-              className="text-sm md:text-base text-gray-400 text-center max-w-sm mt-6"
+              className="text-sm md:text-base text-gray-400 dark:text-gray-500 text-center max-w-sm mt-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -272,7 +272,7 @@ const Hero = () => {
       >
         <motion.button
           onClick={scrollToAbout}
-          className="text-white/60 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-white/10"
+          className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 p-2 rounded-full hover:bg-gray-100/10 dark:hover:bg-gray-800/10"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           whileHover={{ scale: 1.1 }}

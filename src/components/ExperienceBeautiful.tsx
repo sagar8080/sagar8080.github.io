@@ -206,7 +206,7 @@ const Experience = () => {
       'Architecture': 'bg-teal-500/20 text-teal-300 border-teal-500/30',
       'Platform': 'bg-lime-500/20 text-lime-300 border-lime-500/30'
     }
-    return colors[category] || 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+    return colors[category] || 'bg-gray-500/20 text-gray-700 dark:text-gray-300 border-gray-500/30'
   }
 
   return (
@@ -300,7 +300,7 @@ const Experience = () => {
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -318,80 +318,6 @@ const Experience = () => {
           transition={{ duration: 1, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className="relative inline-block p-12 rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-indigo-500/10 border border-blue-500/20 backdrop-blur-xl shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            viewport={{ once: true }}
-          >
-            {/* Decorative Elements */}
-            <motion.div
-              className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-60 cursor-pointer"
-              whileHover={{
-                scale: 1.3,
-                opacity: 1,
-                boxShadow: "0 0 20px rgba(59, 130, 246, 0.8)",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.9 }}
-            />
-            <motion.div
-              className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full opacity-60 cursor-pointer"
-              whileHover={{
-                scale: 1.4,
-                opacity: 1,
-                boxShadow: "0 0 20px rgba(147, 51, 234, 0.8)",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.9 }}
-            />
-            <motion.div
-              className="absolute top-1/2 -right-6 w-4 h-4 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-full opacity-60 cursor-pointer"
-              whileHover={{
-                scale: 1.5,
-                opacity: 1,
-                boxShadow: "0 0 20px rgba(99, 102, 241, 0.8)",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.9 }}
-            />
-
-            <motion.h3
-              className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              viewport={{ once: true }}
-            >
-              Continuous Growth Trajectory
-            </motion.h3>
-
-            <motion.p
-              className="text-base text-gray-300 leading-relaxed max-w-3xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              viewport={{ once: true }}
-            >
-              From foundational engineering to enterprise leadership and cutting-edge AI research,
-              each experience has built upon the last, creating a comprehensive foundation in
-              modern data engineering, MLOps, and AI-driven solutions.
-            </motion.p>
-
-            <motion.div
-              className="mt-8 flex justify-center"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1.3 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30">
-                <Sparkles className="w-5 h-5 text-blue-400" />
-                <span className="text-blue-300 font-medium">Always Learning, Always Growing</span>
-              </div>
-            </motion.div>
-          </motion.div>
         </motion.div>
 
         {/* Experience Timeline */}
@@ -425,7 +351,7 @@ const Experience = () => {
                   whileTap={{ scale: 0.9 }}
                 >
                   <motion.div
-                    className="text-white"
+                    className="text-gray-900 dark:text-white"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -469,7 +395,7 @@ const Experience = () => {
                       {/* Company Info */}
                       <div className="space-y-4">
                         <motion.h3
-                          className="text-2xl md:text-3xl font-bold text-white"
+                          className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.6, delay: index * 0.2 + 0.7 }}
@@ -479,7 +405,7 @@ const Experience = () => {
                         </motion.h3>
 
                         <motion.p
-                          className="text-lg md:text-xl text-gray-300 font-medium"
+                          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 font-medium"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
@@ -515,7 +441,7 @@ const Experience = () => {
                       transition={{ duration: 0.6, delay: index * 0.2 + 1.0 }}
                       viewport={{ once: true }}
                     >
-                      <p className="text-gray-300 leading-relaxed text-base mb-6">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base mb-6">
                         {exp.narrative}
                       </p>
 
@@ -548,11 +474,11 @@ const Experience = () => {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.5, ease: "easeInOut" }}
-                          className="border-t border-gray-700/50"
+                          className="border-t border-gray-300 dark:border-gray-700/50"
                         >
                           <div className="p-8 md:p-10">
                             <motion.h4
-                              className="text-xl font-bold text-white mb-6 flex items-center"
+                              className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.4, delay: 0.2 }}
@@ -570,7 +496,7 @@ const Experience = () => {
                                   animate={{ opacity: 1, y: 0 }}
                                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 >
-                                  <div className="relative p-6 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-black/20">
+                                  <div className="relative p-6 rounded-2xl bg-gray-100/20 dark:bg-gray-800/40 border border-gray-300/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-black/20">
                                     {/* Achievement Icon */}
                                     <motion.div
                                       className={`absolute -top-3 -left-3 w-12 h-12 rounded-full bg-gradient-to-r ${exp.gradient} flex items-center justify-center shadow-lg cursor-pointer`}
@@ -585,7 +511,7 @@ const Experience = () => {
                                       transition={{ duration: 0.2 }}
                                     >
                                       <motion.div
-                                        className="text-white"
+                                        className="text-gray-900 dark:text-white"
                                         whileHover={{ scale: 1.1 }}
                                         transition={{ duration: 0.2 }}
                                       >
@@ -596,7 +522,7 @@ const Experience = () => {
                                     {/* Achievement Content */}
                                     <div className="ml-8">
                                       <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                                        <h5 className="text-base font-semibold text-white leading-tight flex-1">
+                                        <h5 className="text-base font-semibold text-gray-900 dark:text-white leading-tight flex-1">
                                           {achievement.text}
                                         </h5>
                                         <div className="flex flex-col items-end gap-2">
@@ -614,7 +540,7 @@ const Experience = () => {
                                         {achievement.technologies.map((tech, techIdx) => (
                                           <motion.span
                                             key={techIdx}
-                                            className="px-3 py-1 rounded-full bg-gray-700/50 text-gray-300 text-xs font-medium border border-gray-600/30 cursor-pointer"
+                                            className="px-3 py-1 rounded-full bg-gray-200/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium border border-gray-300/30 dark:border-gray-600/30 cursor-pointer"
                                             initial={{ scale: 0 }}
                                             animate={{ scale: 1 }}
                                             transition={{ duration: 0.3, delay: (idx * 0.1) + (techIdx * 0.05) }}

@@ -97,10 +97,10 @@ const FeaturedArticles = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
             Featured Articles
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
             Insights and tutorials on data engineering, machine learning, and cloud technologies
           </p>
         </motion.div>
@@ -131,20 +131,20 @@ const FeaturedArticles = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="glassmorphism-strong p-6 rounded-xl h-full hover:scale-105 transition-all duration-300 border border-gray-700/50 hover:border-blue-500/30">
+                <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-lg p-6 rounded-xl h-full hover:scale-105 transition-all duration-300 border border-gray-300/50 dark:border-gray-700/50 hover:border-blue-500/30">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center text-sm text-gray-400">
+                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                       <Calendar className="w-4 h-4 mr-2" />
                       {formatDate(article.pubDate)}
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                    <ExternalLink className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-400 transition-colors" />
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-blue-300 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-blue-300 transition-colors line-clamp-2">
                     {article.title}
                   </h3>
 
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
                     {article.description}
                   </p>
 

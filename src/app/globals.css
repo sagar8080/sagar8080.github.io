@@ -42,6 +42,13 @@
     font-family: 'Google Sans', sans-serif;
   }
 
+  /* Light mode body background */
+  html:not(.dark) body {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #e2e8f0 75%, #ffffff 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -74,10 +81,16 @@
 
 @layer components {
   .glassmorphism {
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .glassmorphism {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   }
 
   .glassmorphism-strong {
@@ -85,6 +98,12 @@
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .dark .glassmorphism-strong {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
   }
 
   .card-hover {
@@ -233,7 +252,7 @@
 
   /* Button styles */
   .btn-primary {
-    background: linear-gradient(135deg, var(--tag-bg) 0%, var(--tag-name) 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     border: none;
     border-radius: 0.75rem;
     padding: 0.75rem 1.5rem;
@@ -253,16 +272,26 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0.75rem;
     padding: 0.75rem 1.5rem;
-    color: var(--light);
+    color: #374151;
     font-weight: 600;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+  }
+
+  .dark .btn-secondary {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f3f4f6;
   }
 
   .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
+  }
+
+  .dark .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 }
 

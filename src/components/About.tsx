@@ -15,8 +15,7 @@ const About = () => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl mb-20 text-center"
-          style={{ color: 'var(--light)' }}
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -43,12 +42,12 @@ const About = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-400">
               Background & Education
             </h3>
-            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/30 shadow-xl">
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-300/30 dark:border-gray-700/30 shadow-xl">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 I hold a Master's degree in Information Systems from the University of Maryland, where I specialized in data engineering and machine learning.
                 My academic journey equipped me with a strong foundation in computer science principles, statistical analysis, and modern data architectures.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 My professional path has been driven by a passion for solving complex data challenges at scale. I've worked with Fortune 500 companies,
                 academic institutions, and innovative startups, consistently delivering solutions that transform raw data into actionable insights.
               </p>
@@ -66,11 +65,11 @@ const About = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-purple-400">
               What I Bring to the Table
             </h3>
-            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/30 shadow-xl">
+            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-300/30 dark:border-gray-700/30 shadow-xl">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Technical Excellence</h4>
-                  <ul className="text-gray-300 space-y-2">
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technical Excellence</h4>
+                  <ul className="text-gray-700 dark:text-gray-300 space-y-2">
                     <li>• <strong className="text-blue-400">Scalable Architecture:</strong> Designed systems handling 20M+ daily events</li>
                     <li>• <strong className="text-blue-400">Performance Optimization:</strong> Reduced pipeline runtimes from 6 hours to 45 minutes</li>
                     <li>• <strong className="text-blue-400">AI/ML Integration:</strong> Built RAG systems processing 100K+ documents</li>
@@ -78,8 +77,8 @@ const About = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Leadership & Impact</h4>
-                  <ul className="text-gray-300 space-y-2">
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Leadership & Impact</h4>
+                  <ul className="text-gray-700 dark:text-gray-300 space-y-2">
                     <li>• <strong className="text-purple-400">Cross-functional Leadership:</strong> Led teams delivering enterprise data platforms</li>
                     <li>• <strong className="text-purple-400">Innovation Driver:</strong> Pioneered AI adoption reducing analysis time by 60%</li>
                     <li>• <strong className="text-purple-400">Mentorship:</strong> Guided junior engineers in modern data practices</li>
@@ -102,11 +101,11 @@ const About = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-green-400">
                 Data Defender Challenge
               </h3>
-              <p className="text-sm md:text-base text-gray-400 max-w-sm mx-auto">
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-sm mx-auto">
                 Test your skills in this interactive data challenge game
               </p>
             </div>
-            <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 shadow-2xl">
+            <div className="bg-gray-100/20 dark:bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-300/50 dark:border-gray-700/50 shadow-2xl">
               <DataDefenderGame />
             </div>
           </motion.div>
