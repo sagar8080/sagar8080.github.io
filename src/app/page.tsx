@@ -40,6 +40,11 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Set dark mode by default on component mount
+  useEffect(() => {
+    document.documentElement.classList.add('dark')
+  }, [])
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode)
     document.documentElement.classList.toggle('dark')
