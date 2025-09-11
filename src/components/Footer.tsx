@@ -23,14 +23,13 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm" style={{ color: 'var(--light-alt)' }}>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               © {currentYear} Sagar Das. All rights reserved.
             </p>
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-2 text-sm"
-            style={{ color: 'var(--light-alt)' }}
+            className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -49,13 +48,13 @@ const Footer = () => {
 
         {/* Footer Bottom Bar */}
         <motion.div
-          className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center"
+          className="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs text-center" style={{ color: 'var(--light-alt)' }}>
+          <p className="text-xs text-center text-gray-600 dark:text-gray-400">
             Designed and developed by Sagar Das • Data Engineer & ML Enthusiast
           </p>
         </motion.div>

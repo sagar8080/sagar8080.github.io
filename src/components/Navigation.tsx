@@ -32,11 +32,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full z-50 glassmorphism"
-      style={{
-        backgroundColor: 'rgba(10, 10, 10, 0.4)',
-        backdropFilter: 'blur(10px)',
-      }}
+      className="fixed w-full z-50 bg-gray-100/10 dark:bg-gray-900/40 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-20">
@@ -46,8 +42,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative text-sm transition-all duration-300 group"
-                style={{ color: 'var(--light)' }}
+                className="relative text-sm transition-all duration-300 group text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -65,8 +60,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="focus:outline-none transition-all duration-300 p-2"
-              style={{ color: 'var(--light)' }}
+              className="focus:outline-none transition-all duration-300 p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
               whileTap={{ scale: 0.95 }}
             >
               <AnimatePresence mode="wait">
@@ -105,24 +99,18 @@ const Navigation = ({ activeSection }: NavigationProps) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-20 left-0 w-full shadow-lg overflow-hidden"
-            style={{ backgroundColor: 'var(--dark)' }}
+            className="md:hidden absolute top-20 left-0 w-full shadow-lg overflow-hidden bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
           >
             <div className="px-2 pt-2 pb-4 space-y-2">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full px-4 py-3 text-center transition-all duration-300 rounded-md"
-                  style={{
-                    color: 'var(--light)',
-                    backgroundColor: 'var(--card-bg-start)',
-                  }}
+                  className="block w-full px-4 py-3 text-center transition-all duration-300 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-200/50 dark:bg-gray-800/50 hover:bg-gray-300/70 dark:hover:bg-gray-700/70"
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{
-                    backgroundColor: 'var(--tag-bg)',
                     scale: 1.02,
                   }}
                   whileTap={{ scale: 0.98 }}

@@ -148,7 +148,7 @@ const Education = () => {
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -158,7 +158,7 @@ const Education = () => {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -179,7 +179,7 @@ const Education = () => {
               viewport={{ once: true }}
             >
               {/* Card Container */}
-              <div className={`bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border ${edu.borderColor} shadow-2xl hover:shadow-3xl transition-all duration-300 group-hover:scale-[1.02]`}>
+              <div className={`bg-gray-100/20 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border ${edu.borderColor} shadow-2xl hover:shadow-3xl transition-all duration-300 group-hover:scale-[1.02]`}>
                 {/* Header Section */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center">
@@ -188,15 +188,15 @@ const Education = () => {
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <div className="text-white">
+                      <div className="text-gray-900 dark:text-white">
                         {edu.icon}
                       </div>
                     </motion.div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">
                         {edu.degree}
                       </h3>
-                      <p className="text-lg text-gray-300 font-medium">
+                      <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">
                         {edu.institution}
                       </p>
                     </div>
@@ -219,10 +219,10 @@ const Education = () => {
                   {/* GPA Progress Bar */}
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-300">GPA</span>
-                      <span className="text-sm font-bold text-white">{edu.gpa}</span>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">GPA</span>
+                      <span className="text-sm font-bold text-gray-900 dark:text-white">{edu.gpa}</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
                       <motion.div
                         className={`h-2 rounded-full bg-gradient-to-r ${edu.gradient}`}
                         initial={{ width: 0 }}
@@ -236,7 +236,7 @@ const Education = () => {
 
                 {/* Achievements Section */}
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                     <Award className="w-5 h-5 mr-2 text-yellow-400" />
                     Key Achievements
                   </h4>
@@ -251,12 +251,12 @@ const Education = () => {
                         viewport={{ once: true }}
                       >
                         <div className={`p-2 rounded-lg bg-gradient-to-r ${edu.gradient} mr-3 mt-0.5 group-hover/item:scale-110 transition-transform duration-200`}>
-                          <div className="text-white">
+                          <div className="text-gray-900 dark:text-white">
                             {achievement.icon}
                           </div>
                         </div>
                         <div className="flex-1">
-                          <p className="text-gray-300 leading-relaxed group-hover/item:text-white transition-colors duration-200">
+                          <p className="text-gray-700 dark:text-gray-300 leading-relaxed group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-200">
                             {achievement.text}
                           </p>
                           <span className={`inline-block px-2 py-1 text-xs rounded-full bg-gradient-to-r ${edu.gradient} text-white font-medium mt-1`}>
