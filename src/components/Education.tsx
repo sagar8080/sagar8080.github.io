@@ -72,11 +72,7 @@ const Education = () => {
   return (
     <motion.section
       id="education"
-      className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      className="py-24 px-4 sm:px-6 lg:px-8 relative min-h-screen"
     >
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
@@ -131,17 +127,9 @@ const Education = () => {
         {/* Enhanced Header */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
         >
           <motion.div
             className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 mb-6"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             <GraduationCap className="w-5 h-5 text-blue-400 mr-2" />
             <span className="text-blue-300 font-medium">Academic Journey</span>
@@ -149,20 +137,12 @@ const Education = () => {
 
           <motion.h2
             className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
           >
             Education
           </motion.h2>
 
           <motion.p
             className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
           >
             Building a strong foundation through academic excellence and continuous learning in technology and data science.
           </motion.p>
@@ -173,10 +153,6 @@ const Education = () => {
             <motion.div
               key={edu.id}
               className={`relative group`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
             >
               {/* Card Container */}
               <div className={`bg-gray-100/20 dark:bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 border ${edu.borderColor} shadow-2xl hover:shadow-3xl transition-all duration-300 group-hover:scale-[1.02]`}>
@@ -245,10 +221,6 @@ const Education = () => {
                       <motion.div
                         key={idx}
                         className="flex items-start group/item"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: (index * 0.2) + (idx * 0.1) }}
-                        viewport={{ once: true }}
                       >
                         <div className={`p-2 rounded-lg bg-gradient-to-r ${edu.gradient} mr-3 mt-0.5 group-hover/item:scale-110 transition-transform duration-200`}>
                           <div className="text-gray-900 dark:text-white">

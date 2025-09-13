@@ -67,9 +67,9 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 {isMenuOpen ? (
                   <motion.div
                     key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
+                    initial={{ rotate: -90 }}
+                    animate={{ rotate: 0 }}
+                    exit={{ rotate: 90 }}
                     transition={{ duration: 0.2 }}
                   >
                     <X size={24} />
@@ -77,9 +77,9 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 ) : (
                   <motion.div
                     key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
+                    initial={{ rotate: 90 }}
+                    animate={{ rotate: 0 }}
+                    exit={{ rotate: -90 }}
                     transition={{ duration: 0.2 }}
                   >
                     <Menu size={24} />
@@ -95,9 +95,9 @@ const Navigation = ({ activeSection }: NavigationProps) => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ height: 0 }}
+            animate={{ height: 'auto' }}
+            exit={{ height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden absolute top-20 left-0 w-full shadow-lg overflow-hidden bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
           >
@@ -107,8 +107,8 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className="block w-full px-4 py-3 text-center transition-all duration-300 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-200/50 dark:bg-gray-800/50 hover:bg-gray-300/70 dark:hover:bg-gray-700/70"
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ x: -20 }}
+                  animate={{ x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{
                     scale: 1.02,

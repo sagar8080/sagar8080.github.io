@@ -121,7 +121,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 relative"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/3 to-indigo-900/5 dark:from-blue-100/5 dark:via-purple-100/3 dark:to-indigo-100/5" />
@@ -129,15 +129,12 @@ const Hero = () => {
       {/* Animated Background */}
       <AnimatedBackground />
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
+      <div className="max-w-7xl mx-auto relative z-20 w-full">
         {/* Main Content Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center h-[80vh]">
           {/* Left Side - Profile and Info */}
           <motion.div
-            className="text-center lg:text-left space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center lg:text-left space-y-8 flex flex-col justify-center h-[70vh] lg:h-[90vh]"
           >
             {/* Profile Image */}
             <motion.div
@@ -167,9 +164,6 @@ const Hero = () => {
             {/* Name */}
             <motion.h1
               className="text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-200 dark:to-blue-400 bg-clip-text text-transparent font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
             >
               {names[currentName]}
             </motion.h1>
@@ -177,9 +171,6 @@ const Hero = () => {
             {/* Typewriter Title */}
             <motion.div
               className="mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
             >
               <p className="text-lg md:text-xl font-medium text-blue-300 dark:text-blue-400">
                 {typedText}<span className="animate-pulse">|</span>
@@ -189,9 +180,6 @@ const Hero = () => {
             {/* Action Buttons */}
             <motion.div
               className="flex flex-wrap justify-center lg:justify-start gap-4 pt-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
             >
               <motion.a
                 href="#projects"
@@ -214,13 +202,10 @@ const Hero = () => {
 
           {/* Right Side - Huge Hello Display */}
           <motion.div
-            className="flex flex-col items-center justify-center space-y-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            className="flex flex-col items-center justify-center space-y-8 h-[70vh] lg:h-[90vh]"
           >
             <motion.h2
-              className={`text-7xl md:text-9xl lg:text-[11rem] xl:text-[13rem] 2xl:text-[15rem] font-black bg-gradient-to-r ${colorSchemes[currentColor]} bg-clip-text text-transparent leading-none text-center`}
+              className="text-7xl md:text-9xl lg:text-[11rem] xl:text-[13rem] 2xl:text-[15rem] font-black text-white leading-none text-center"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -239,23 +224,17 @@ const Hero = () => {
             {/* Language Info */}
             <motion.div
               className="text-center mt-4"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <p className="text-sm text-gray-300 dark:text-gray-400 font-medium">
+              <p className="text-sm text-gray-200 dark:text-gray-200 font-medium">
                 {hellos[currentHello].language}
               </p>
-              <p className="text-xs text-gray-500 dark:text-gray-600 italic mt-1">
+              <p className="text-xs text-gray-200 dark:text-gray-200 italic mt-1">
                 Pronunciation: {hellos[currentHello].pronunciation}
               </p>
             </motion.div>
 
             <motion.p
-              className="text-sm md:text-base text-gray-400 dark:text-gray-500 text-center max-w-sm mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
+              className="text-sm md:text-base text-gray-600 dark:text-gray-500 text-center max-w-sm mt-6"
             >
               Greeting you in 30 languages around the world
             </motion.p>
@@ -266,9 +245,6 @@ const Hero = () => {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
       >
         <motion.button
           onClick={scrollToAbout}

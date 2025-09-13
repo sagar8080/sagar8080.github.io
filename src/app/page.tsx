@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'experience', 'projects', 'articles', 'skills', 'education', 'contact']
-      const scrollPosition = window.scrollY + 80
+      const scrollPosition = window.scrollY + 96
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -53,17 +53,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-transparent">
       <AnimatedBackground />
-      <Navigation activeSection={activeSection} />
-      <ThemeToggle isDark={isDarkMode} toggle={toggleTheme} />
+      
+      <header>
+        <Navigation activeSection={activeSection} />
+        <ThemeToggle isDark={isDarkMode} toggle={toggleTheme} />
+        <Hero />
+      </header>
 
       <AnimatePresence mode="wait">
         <motion.main
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          className="relative z-10 pt-24"
         >
-          <Hero />
           <About />
           <Experience />
           <Projects />
