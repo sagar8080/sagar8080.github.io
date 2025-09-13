@@ -212,11 +212,7 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
+      className="relative py-24 px-4 sm:px-6 lg:px-8 min-h-screen"
     >
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
@@ -283,17 +279,9 @@ const Experience = () => {
         {/* Enhanced Header */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
         >
           <motion.div
             className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 mb-6"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             <Award className="w-5 h-5 text-blue-400 mr-2" />
             <span className="text-blue-300 font-medium">Professional Journey</span>
@@ -301,10 +289,6 @@ const Experience = () => {
 
           <motion.h2
             className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
           >
             Experience
           </motion.h2>
@@ -313,10 +297,6 @@ const Experience = () => {
         {/* Continuous Growth Trajectory */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          viewport={{ once: true }}
         >
         </motion.div>
 
@@ -329,10 +309,6 @@ const Experience = () => {
               <motion.div
                 key={exp.id}
                 className="relative mb-16"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
               >
                 {/* Timeline Node */}
                 <motion.div
@@ -362,10 +338,6 @@ const Experience = () => {
                 {/* Experience Card */}
                 <motion.div
                   className={`relative ml-8 md:ml-0 ${index % 2 === 0 ? 'md:mr-1/2 md:pr-16' : 'md:ml-1/2 md:pl-16'}`}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
-                  viewport={{ once: true }}
                 >
                   <motion.div
                     className={`relative overflow-hidden rounded-3xl bg-gradient-to-br ${exp.bgGradient} border ${exp.borderColor} backdrop-blur-xl shadow-2xl`}
@@ -375,18 +347,10 @@ const Experience = () => {
                     {/* Card Header */}
                     <motion.div
                       className="relative p-8 md:p-10"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.2 + 0.6 }}
-                      viewport={{ once: true }}
                     >
                       {/* Phase Badge */}
                       <motion.div
                         className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r ${exp.gradient} text-white font-semibold text-sm mb-6 shadow-lg`}
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 + 0.8 }}
-                        viewport={{ once: true }}
                       >
                         <Sparkles className="w-4 h-4 mr-2" />
                         {exp.phase}
@@ -396,30 +360,18 @@ const Experience = () => {
                       <div className="space-y-4">
                         <motion.h3
                           className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.6, delay: index * 0.2 + 0.7 }}
-                          viewport={{ once: true }}
                         >
                           {exp.company}
                         </motion.h3>
 
                         <motion.p
                           className="text-lg md:text-xl text-gray-700 dark:text-gray-300 font-medium"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
-                          viewport={{ once: true }}
                         >
                           {exp.position}
                         </motion.p>
 
                         <motion.div
                           className="flex flex-wrap items-center gap-4 text-gray-400"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.6, delay: index * 0.2 + 0.9 }}
-                          viewport={{ once: true }}
                         >
                           <div className="flex items-center">
                             <Calendar className="w-4 h-4 mr-2" />
@@ -436,10 +388,6 @@ const Experience = () => {
                     {/* Narrative Section */}
                     <motion.div
                       className="px-8 md:px-10 pb-8"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.2 + 1.0 }}
-                      viewport={{ once: true }}
                     >
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base mb-6">
                         {exp.narrative}
@@ -451,10 +399,6 @@ const Experience = () => {
                         className={`w-full py-4 px-6 rounded-2xl bg-gradient-to-r ${exp.gradient} text-white font-semibold transition-all duration-300 hover:shadow-xl flex items-center justify-center group`}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 + 1.1 }}
-                        viewport={{ once: true }}
                       >
                         <span className="mr-3">{isSelected ? 'Collapse Details' : 'View Achievements'}</span>
                         <motion.div
@@ -470,18 +414,15 @@ const Experience = () => {
                     <AnimatePresence>
                       {isSelected && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
+                          initial={{ height: 0 }}
+                          animate={{ height: 'auto' }}
+                          exit={{ height: 0 }}
                           transition={{ duration: 0.5, ease: "easeInOut" }}
                           className="border-t border-gray-300 dark:border-gray-700/50"
                         >
                           <div className="p-8 md:p-10">
                             <motion.h4
                               className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.4, delay: 0.2 }}
                             >
                               <Award className="w-6 h-6 mr-3 text-yellow-400" />
                               Key Achievements
@@ -492,9 +433,6 @@ const Experience = () => {
                                 <motion.div
                                   key={idx}
                                   className="group relative"
-                                  initial={{ opacity: 0, y: 30 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 >
                                   <div className="relative p-6 rounded-2xl bg-gray-100/20 dark:bg-gray-800/40 border border-gray-300/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-black/20">
                                     {/* Achievement Icon */}
@@ -541,9 +479,6 @@ const Experience = () => {
                                           <motion.span
                                             key={techIdx}
                                             className="px-3 py-1 rounded-full bg-gray-200/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium border border-gray-300/30 dark:border-gray-600/30 cursor-pointer"
-                                            initial={{ scale: 0 }}
-                                            animate={{ scale: 1 }}
-                                            transition={{ duration: 0.3, delay: (idx * 0.1) + (techIdx * 0.05) }}
                                             whileHover={{
                                               scale: 1.1,
                                               backgroundColor: "rgba(59, 130, 246, 0.3)",

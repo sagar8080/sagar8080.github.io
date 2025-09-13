@@ -542,9 +542,6 @@ const DataDefenderGame = () => {
   return (
     <motion.div
       className="flex flex-col items-center space-y-4"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
     >
       {/* Game Canvas */}
       <div className="relative">
@@ -561,8 +558,6 @@ const DataDefenderGame = () => {
         {gameOver && (
           <motion.div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-lg flex flex-col items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
           >
             <Trophy className="w-12 h-12 text-yellow-400 mb-2" />
             <h3 className="text-xl font-bold text-white mb-2">Game Over!</h3>
@@ -580,8 +575,6 @@ const DataDefenderGame = () => {
         {!gameRunning && !gameOver && (
           <motion.div
             className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-lg flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
           >
             <div className="text-center">
               <Pause className="w-8 h-8 text-blue-400 mx-auto mb-2" />

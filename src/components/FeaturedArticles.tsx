@@ -84,18 +84,10 @@ const FeaturedArticles = () => {
     <motion.section
       id="articles"
       className="py-20 px-4 sm:px-6 lg:px-8"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
             Featured Articles
@@ -126,10 +118,6 @@ const FeaturedArticles = () => {
               <motion.article
                 key={index}
                 className="group relative"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-lg p-6 rounded-xl h-full hover:scale-105 transition-all duration-300 border border-gray-300/50 dark:border-gray-700/50 hover:border-blue-500/30">
                   <div className="flex items-start justify-between mb-4">
@@ -167,10 +155,6 @@ const FeaturedArticles = () => {
 
         <motion.div
           className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
         >
           <motion.a
             href="https://medium.com/@sgx08"

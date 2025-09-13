@@ -8,37 +8,19 @@ const About = () => {
     <motion.section
       id="about"
       className="py-24 px-4 sm:px-6 lg:px-8"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           About Me
         </motion.h2>
 
         <motion.div
           className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           {/* Background and Education */}
-          <motion.div
-            className="mb-16"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-400">
               Background & Education
             </h3>
@@ -52,16 +34,10 @@ const About = () => {
                 academic institutions, and innovative startups, consistently delivering solutions that transform raw data into actionable insights.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* What I Bring to the Table */}
-          <motion.div
-            className="mb-16"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-purple-400">
               What I Bring to the Table
             </h3>
@@ -87,16 +63,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Data Defender Game */}
-          <motion.div
-            className="flex flex-col space-y-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="flex flex-col space-y-6">
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-green-400">
                 Data Defender Challenge
@@ -108,18 +78,12 @@ const About = () => {
             <div className="bg-gray-100/20 dark:bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-300/50 dark:border-gray-700/50 shadow-2xl">
               <DataDefenderGame />
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Additional Content Section */}
-        <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-        </motion.div>
+        <div className="mt-20 text-center">
+        </div>
       </div>
     </motion.section>
   )

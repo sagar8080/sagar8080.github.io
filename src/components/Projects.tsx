@@ -63,34 +63,22 @@ const Projects = () => {
   ]
 
   return (
-    <motion.section
+    <section
       id="projects"
       className="py-20 px-4 sm:px-6 lg:px-8"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
     >
       <div className="max-w-7xl mx-auto">
-        <motion.h2
+        <h2
           className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           Featured Projects
-        </motion.h2>
+        </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.id}
               className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-lg rounded-xl overflow-hidden flex flex-col border border-gray-200/20 dark:border-gray-700/20 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/20 hover:-translate-y-2 hover:scale-105"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
             >
               <div className="h-48 overflow-hidden">
                 <Image
@@ -109,16 +97,12 @@ const Projects = () => {
 
                 <div className="mb-4 flex flex-wrap justify-center gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <motion.span
+                    <span
                       key={techIndex}
                       className="px-2 py-1 text-xs rounded-full bg-blue-500/20 dark:bg-blue-500/30 text-blue-700 dark:text-blue-300 border border-blue-300/30 dark:border-blue-400/30"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ delay: (index * 0.1) + (techIndex * 0.05) }}
-                      viewport={{ once: true }}
                     >
                       {tech}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
 
@@ -149,11 +133,11 @@ const Projects = () => {
                   </motion.a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
