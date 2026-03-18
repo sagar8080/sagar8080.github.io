@@ -42,10 +42,10 @@ const Contact = () => {
           className="text-center bg-white/20 dark:bg-gray-900/20 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-white/10 dark:border-gray-700/20"
         >
           <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent drop-shadow-lg">
-            Let's Talk About Your Data Needs
+            Let&apos;s Talk About Your Data Needs
           </h3>
           <p className="text-lg md:text-xl mb-16 max-w-3xl mx-auto text-gray-800 dark:text-gray-200 drop-shadow-md">
-            Whether you're looking to build a data platform, optimize existing pipelines, or explore how AI/ML can enhance your data strategy, I'd love to hear from you.
+            Whether you&apos;re looking to build a data platform, optimize existing pipelines, or explore how AI/ML can enhance your data strategy, I&apos;d love to hear from you.
           </p>
         </motion.div>
         </div>
