@@ -17,72 +17,131 @@ const About = () => {
         </motion.h2>
 
         <motion.div
-          className="max-w-4xl mx-auto"
+          className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start"
         >
-          {/* Background and Education */}
-          <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-400">
-              Background & Education
-            </h3>
-            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-300/30 dark:border-gray-700/30 shadow-xl">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                I hold a Master's degree in Information Systems from the University of Maryland, where I specialized in data engineering and machine learning.
-                My academic journey equipped me with a strong foundation in computer science principles, statistical analysis, and modern data architectures.
+          <div className="space-y-10">
+            <div className="bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent dark:from-blue-500/20 dark:via-purple-500/10 rounded-3xl p-8 border border-gray-200/30 dark:border-gray-700/30 shadow-2xl">
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
+                Snapshot
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                My professional path has been driven by a passion for solving complex data challenges at scale. I've worked with Fortune 500 companies,
-                academic institutions, and innovative startups, consistently delivering solutions that transform raw data into actionable insights.
-              </p>
-            </div>
-          </div>
-
-          {/* What I Bring to the Table */}
-          <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-purple-400">
-              What I Bring to the Table
-            </h3>
-            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-xl p-8 border border-gray-300/30 dark:border-gray-700/30 shadow-xl">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technical Excellence</h4>
-                  <ul className="text-gray-700 dark:text-gray-300 space-y-2">
-                    <li>• <strong className="text-blue-400">Scalable Architecture:</strong> Designed systems handling 20M+ daily events</li>
-                    <li>• <strong className="text-blue-400">Performance Optimization:</strong> Reduced pipeline runtimes from 6 hours to 45 minutes</li>
-                    <li>• <strong className="text-blue-400">AI/ML Integration:</strong> Built RAG systems processing 100K+ documents</li>
-                    <li>• <strong className="text-blue-400">Cloud Expertise:</strong> Multi-cloud deployments on AWS, GCP, and Azure</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Leadership & Impact</h4>
-                  <ul className="text-gray-700 dark:text-gray-300 space-y-2">
-                    <li>• <strong className="text-purple-400">Cross-functional Leadership:</strong> Led teams delivering enterprise data platforms</li>
-                    <li>• <strong className="text-purple-400">Innovation Driver:</strong> Pioneered AI adoption reducing analysis time by 60%</li>
-                    <li>• <strong className="text-purple-400">Mentorship:</strong> Guided junior engineers in modern data practices</li>
-                    <li>• <strong className="text-purple-400">Business Value:</strong> Delivered solutions serving 6 Fortune 500 clients</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Data Defender Game */}
-          <div className="flex flex-col space-y-6">
-            <div className="text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-green-400">
-                Data Defender Challenge
+              <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mt-3">
+                I love turning messy data into clarity.
               </h3>
-              <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-sm mx-auto">
-                Test your skills in this interactive data challenge game
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+                I earned my Master&apos;s degree in Information Systems from the University of Maryland, focused on data engineering and machine learning. I care deeply about building systems people can rely on—pipelines that are fast, resilient, and easy to trust.
+              </p>
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+                Over the years, I&apos;ve partnered with Fortune 500 teams, academic labs, and startups, translating complex problems into calm, usable data products that help people move with confidence.
               </p>
             </div>
-            <div className="bg-gray-100/20 dark:bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-gray-300/50 dark:border-gray-700/50 shadow-2xl">
-              <DataDefenderGame />
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <motion.div
+                className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.4 }}
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">Daily events processed</p>
+                <p className="text-3xl font-semibold text-gray-900 dark:text-white mt-2">20M+</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Real-time analytics at scale</p>
+              </motion.div>
+              <motion.div
+                className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
+                viewport={{ once: true, amount: 0.4 }}
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">Pipeline runtime gains</p>
+                <p className="text-3xl font-semibold text-gray-900 dark:text-white mt-2">6h → 45m</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Optimization that unlocks agility</p>
+              </motion.div>
+              <motion.div
+                className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+                viewport={{ once: true, amount: 0.4 }}
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">Docs processed</p>
+                <p className="text-3xl font-semibold text-gray-900 dark:text-white mt-2">100K+</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">LLM-powered search experiences</p>
+              </motion.div>
+              <motion.div
+                className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
+                viewport={{ once: true, amount: 0.4 }}
+              >
+                <p className="text-sm text-gray-500 dark:text-gray-400">Fortune 500 clients</p>
+                <p className="text-3xl font-semibold text-gray-900 dark:text-white mt-2">6+</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Enterprise-grade delivery</p>
+              </motion.div>
             </div>
           </div>
+
+          <div className="space-y-6">
+            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technical Strengths</h4>
+              <ul className="text-gray-700 dark:text-gray-300 space-y-3">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+                  <span><strong className="text-blue-400">Scalable Architecture:</strong> Designed systems handling 20M+ daily events.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+                  <span><strong className="text-blue-400">Performance Optimization:</strong> Reduced pipeline runtimes from 6 hours to 45 minutes.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+                  <span><strong className="text-blue-400">AI/ML Integration:</strong> Built RAG systems processing 100K+ documents.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+                  <span><strong className="text-blue-400">Cloud Expertise:</strong> Multi-cloud deployments on AWS, GCP, and Azure.</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/30 dark:border-gray-700/30 shadow-xl">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Leadership & Impact</h4>
+              <ul className="text-gray-700 dark:text-gray-300 space-y-3">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-purple-400" />
+                  <span><strong className="text-purple-400">Cross-functional Leadership:</strong> Led teams delivering enterprise data platforms.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-purple-400" />
+                  <span><strong className="text-purple-400">Innovation Driver:</strong> Pioneered AI adoption reducing analysis time by 60%.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-purple-400" />
+                  <span><strong className="text-purple-400">Mentorship:</strong> Guided junior engineers in modern data practices.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-purple-400" />
+                  <span><strong className="text-purple-400">Business Value:</strong> Delivered solutions serving 6 Fortune 500 clients.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </motion.div>
 
-        {/* Additional Content Section */}
-        <div className="mt-20 text-center">
+        <div className="mt-16">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-green-400">
+              Data Defender Challenge
+            </h3>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-sm mx-auto mt-2">
+              Test your skills in this interactive data challenge game.
+            </p>
+          </div>
+          <div className="bg-gray-100/20 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-300/50 dark:border-gray-700/50 shadow-2xl">
+            <DataDefenderGame />
+          </div>
         </div>
       </div>
     </motion.section>

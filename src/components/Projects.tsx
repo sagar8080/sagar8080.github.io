@@ -62,6 +62,7 @@ const Projects = () => {
     }
   ]
 
+
   return (
     <section
       id="projects"
@@ -136,6 +137,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

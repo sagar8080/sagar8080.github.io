@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import AnimatedBackground from './AnimatedBackground'
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('')
@@ -126,9 +125,6 @@ const Hero = () => {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/3 to-indigo-900/5 dark:from-blue-100/5 dark:via-purple-100/3 dark:to-indigo-100/5" />
 
-      {/* Animated Background */}
-      <AnimatedBackground />
-
       <div className="max-w-7xl mx-auto relative z-20 w-full">
         {/* Main Content Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center h-[80vh]">
@@ -145,11 +141,11 @@ const Hero = () => {
               <div className="relative group">
                 <div className="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl">
                   <Image
-                    src="/profile_picture.png"
+                    src="profile_picture.png"
                     alt="Sagar Das"
                     width={288}
                     height={288}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[10%_50%]"
                     priority
                   />
                 </div>

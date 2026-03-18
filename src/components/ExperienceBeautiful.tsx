@@ -9,6 +9,43 @@ const Experience = () => {
 
   const experiences = [
   {
+    id: 'wells-fargo-capgemini',
+    phase: 'Enterprise Migration',
+    company: 'Wells Fargo (via Capgemini America Inc.)',
+    position: 'Data Engineer',
+    duration: 'Oct 2025 – Present',
+    location: 'Charlotte, NC',
+    theme: 'enterprise',
+    gradient: 'from-emerald-400 via-teal-500 to-cyan-600',
+    bgGradient: 'from-emerald-500/10 via-teal-500/5 to-cyan-500/10',
+    borderColor: 'border-emerald-500/30',
+    icon: <Award className="w-8 h-8" />,
+    narrative: 'Leading cloud-first modernization and data quality initiatives for enterprise-scale migration programs.',
+    category: 'Architecture',
+    technologies: ['GCP', 'Airflow', 'Dataflow', 'GCS', 'Pub/Sub', 'Iceberg', 'SQL Server'],
+    impact: 'Enterprise migration POC',
+    text: `
+      • Leading the solution delivery of a proof-of-concept on Google Cloud Platform for enterprise-wide Ground-to-Cloud migration strategy.
+      • Building event-driven data quality pipelines where file drops from on-prem SQL Server to GCS trigger Airflow DAGs running schema validation and data quality checks on Dataflow, curating validated data into an Iceberg-based central lakehouse.
+    `,
+    achievements: [
+      {
+        text: 'Leading the solution delivery of a proof-of-concept on Google Cloud Platform for enterprise-wide Ground-to-Cloud migration strategy.',
+        icon: <Rocket className="w-5 h-5" />,
+        impact: 'Ground-to-Cloud POC',
+        category: 'Architecture',
+        technologies: ['GCP', 'Migration Strategy', 'Enterprise Architecture']
+      },
+      {
+        text: 'Building event-driven data quality pipelines where file drops from on-prem SQL Server to GCS trigger Airflow DAGs running schema validation and data quality checks on Dataflow, curating validated data into an Iceberg-based central lakehouse.',
+        icon: <Shield className="w-5 h-5" />,
+        impact: 'Event-driven validation',
+        category: 'Data Quality',
+        technologies: ['SQL Server', 'GCS', 'Airflow', 'Dataflow', 'Iceberg']
+      }
+    ]
+  },
+  {
     id: 'umd-data-specialist',
     phase: 'Innovation & Research',
     company: 'University of Maryland',
@@ -411,96 +448,63 @@ const Experience = () => {
                     </motion.div>
 
                     {/* Achievements Section */}
-                    <AnimatePresence>
-                      {isSelected && (
-                        <motion.div
-                          initial={{ height: 0 }}
-                          animate={{ height: 'auto' }}
-                          exit={{ height: 0 }}
-                          transition={{ duration: 0.5, ease: "easeInOut" }}
-                          className="border-t border-gray-300 dark:border-gray-700/50"
-                        >
-                          <div className="p-8 md:p-10">
-                            <motion.h4
-                              className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+                    <div
+                      className={`border-t border-gray-300 dark:border-gray-700/50 overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${isSelected ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                      style={{ maxHeight: isSelected ? '1600px' : '0px' }}
+                    >
+                      <div className="p-8 md:p-10">
+                        <div className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                          <Award className="w-6 h-6 mr-3 text-yellow-400" />
+                          Key Achievements
+                        </div>
+
+                        <div className="grid gap-6 md:gap-8">
+                          {exp.achievements.map((achievement, idx) => (
+                            <div
+                              key={idx}
+                              className="group relative"
                             >
-                              <Award className="w-6 h-6 mr-3 text-yellow-400" />
-                              Key Achievements
-                            </motion.h4>
-
-                            <div className="grid gap-6 md:gap-8">
-                              {exp.achievements.map((achievement, idx) => (
-                                <motion.div
-                                  key={idx}
-                                  className="group relative"
+                              <div className="relative p-6 rounded-2xl bg-gray-100/20 dark:bg-gray-800/40 border border-gray-300/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-black/20">
+                                <div
+                                  className={`absolute -top-3 -left-3 w-12 h-12 rounded-full bg-gradient-to-r ${exp.gradient} flex items-center justify-center shadow-lg`}
                                 >
-                                  <div className="relative p-6 rounded-2xl bg-gray-100/20 dark:bg-gray-800/40 border border-gray-300/50 dark:border-gray-700/50 hover:border-gray-400/50 dark:hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-black/20">
-                                    {/* Achievement Icon */}
-                                    <motion.div
-                                      className={`absolute -top-3 -left-3 w-12 h-12 rounded-full bg-gradient-to-r ${exp.gradient} flex items-center justify-center shadow-lg cursor-pointer`}
-                                      whileHover={{
-                                        scale: 1.2,
-                                        rotate: 5,
-                                        boxShadow: `0 0 25px ${exp.gradient.includes('emerald') ? 'rgba(16, 185, 129, 0.8)' :
-                                                   exp.gradient.includes('purple') ? 'rgba(147, 51, 234, 0.8)' :
-                                                   exp.gradient.includes('cyan') ? 'rgba(6, 182, 212, 0.8)' : 'rgba(59, 130, 246, 0.8)'}`
-                                      }}
-                                      whileTap={{ scale: 0.9 }}
-                                      transition={{ duration: 0.2 }}
-                                    >
-                                      <motion.div
-                                        className="text-gray-900 dark:text-white"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.2 }}
-                                      >
-                                        {achievement.icon}
-                                      </motion.div>
-                                    </motion.div>
+                                  <div className="text-gray-900 dark:text-white">
+                                    {achievement.icon}
+                                  </div>
+                                </div>
 
-                                    {/* Achievement Content */}
-                                    <div className="ml-8">
-                                      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                                        <h5 className="text-base font-semibold text-gray-900 dark:text-white leading-tight flex-1">
-                                          {achievement.text}
-                                        </h5>
-                                        <div className="flex flex-col items-end gap-2">
-                                          <span className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${exp.gradient} text-white shadow-md`}>
-                                            {achievement.impact}
-                                          </span>
-                                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(achievement.category)} border`}>
-                                            {achievement.category}
-                                          </span>
-                                        </div>
-                                      </div>
-
-                                      {/* Technologies */}
-                                      <div className="flex flex-wrap gap-2">
-                                        {achievement.technologies.map((tech, techIdx) => (
-                                          <motion.span
-                                            key={techIdx}
-                                            className="px-3 py-1 rounded-full bg-gray-200/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium border border-gray-300/30 dark:border-gray-600/30 cursor-pointer"
-                                            whileHover={{
-                                              scale: 1.1,
-                                              backgroundColor: "rgba(59, 130, 246, 0.3)",
-                                              borderColor: "rgba(59, 130, 246, 0.5)",
-                                              color: "#93c5fd",
-                                              transition: { duration: 0.2 }
-                                            }}
-                                            whileTap={{ scale: 0.95 }}
-                                          >
-                                            {tech}
-                                          </motion.span>
-                                        ))}
-                                      </div>
+                                <div className="ml-8">
+                                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                    <h5 className="text-base font-semibold text-gray-900 dark:text-white leading-tight flex-1">
+                                      {achievement.text}
+                                    </h5>
+                                    <div className="flex flex-col items-end gap-2">
+                                      <span className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${exp.gradient} text-white shadow-md`}>
+                                        {achievement.impact}
+                                      </span>
+                                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(achievement.category)} border`}>
+                                        {achievement.category}
+                                      </span>
                                     </div>
                                   </div>
-                                </motion.div>
-                              ))}
+
+                                  <div className="flex flex-wrap gap-2">
+                                    {achievement.technologies.map((tech, techIdx) => (
+                                      <span
+                                        key={techIdx}
+                                        className="px-3 py-1 rounded-full bg-gray-200/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium border border-gray-300/30 dark:border-gray-600/30"
+                                      >
+                                        {tech}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 </motion.div>
               </motion.div>
