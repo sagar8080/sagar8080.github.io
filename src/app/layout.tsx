@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Google_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const googleSans = Google_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
-  variable: '--font-google-sans'
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`min-h-screen font-sans bg-white text-gray-900 dark:bg-dark dark:text-light ${googleSans.variable}`}>
+      <body className={`min-h-screen font-sans bg-white text-gray-900 dark:bg-dark dark:text-light ${inter.variable}`}>
         {children}
       </body>
     </html>
