@@ -7,6 +7,7 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Experience from '@/components/ExperienceBeautiful'
 import Projects from '@/components/Projects'
+import PhotographyCarousel from '@/components/PhotographyCarousel'
 import Skills from '@/components/Skills'
 import Education from '@/components/Education'
 import FeaturedArticles from '@/components/FeaturedArticles'
@@ -21,7 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'articles', 'skills', 'education', 'contact']
+      const sections = ['hero', 'about', 'experience', 'projects', 'photography', 'articles', 'skills', 'education', 'contact']
       const scrollPosition = window.scrollY + 96
 
       for (const section of sections) {
@@ -40,19 +41,27 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Set dark mode by default on component mount
   useEffect(() => {
-    document.documentElement.classList.add('dark')
+    const storedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const shouldUseDark = storedTheme ? storedTheme === 'dark' : systemPrefersDark
+
+    document.documentElement.classList.toggle('dark', shouldUseDark)
+    setIsDarkMode(shouldUseDark)
   }, [])
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle('dark')
+    setIsDarkMode((prev) => {
+      const next = !prev
+      document.documentElement.classList.toggle('dark', next)
+      localStorage.setItem('theme', next ? 'dark' : 'light')
+      return next
+    })
   }
 
   return (
     <div className="min-h-screen bg-white dark:bg-transparent">
-      <AnimatedBackground />
+      <AnimatedBackground isDark={isDarkMode} />
       
       <header>
         <Navigation activeSection={activeSection} />
@@ -71,6 +80,7 @@ export default function Home() {
           <Skills />
           <Education />
           <Contact />
+          <PhotographyCarousel />
         </motion.main>
       </AnimatePresence>
 
