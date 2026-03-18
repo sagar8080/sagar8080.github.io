@@ -324,7 +324,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
       document.removeEventListener('visibilitychange', handleVisibilityChange)
       window.cancelAnimationFrame(animationFrameId)
     }
-  }, [])
+  }, [isDark])
 
   return (
     <div className="fixed inset-0 z-0">
