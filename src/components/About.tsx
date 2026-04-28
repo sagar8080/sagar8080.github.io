@@ -70,24 +70,18 @@ const About = () => {
                 ))}
               </ul>
             </div>
-            <div className="surface-card p-6">
-              <p className="eyebrow">Interactive lab</p>
-              <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mt-2">Data Defender Challenge</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mt-3">
-                A small game I built to make data reliability concepts playful. Treat this as an Easter egg between case studies.
-              </p>
-            </div>
           </div>
         </div>
 
-        <div className="mt-12 surface-card p-4">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Data Defender Challenge</h3>
-            <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">Test your reflexes against data bugs and pipeline threats.</p>
+        <div className="mt-14 pt-12 border-t border-slate-200/70 dark:border-slate-700/60">
+          <div className="text-center mb-8 max-w-2xl mx-auto">
+            <p className="eyebrow">Interactive lab</p>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-3">Data Defender Challenge</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              A small game about dodging data bugs and pipeline threats — an Easter egg between case studies. Use arrow keys or the mouse to move, spacebar to shoot.
+            </p>
           </div>
-          <div className="rounded-2xl p-2 bg-slate-100/40 dark:bg-slate-950/45">
-            <DataDefenderGame />
-          </div>
+          <DataDefenderGame />
         </div>
       </div>
     </motion.section>

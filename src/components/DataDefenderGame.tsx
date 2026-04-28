@@ -545,7 +545,7 @@ const DataDefenderGame = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center space-y-4 w-full"
+      className="flex flex-col items-center gap-6 w-full"
     >
       {/* Game Canvas */}
       <div className="relative w-full max-w-[600px]">
@@ -553,7 +553,7 @@ const DataDefenderGame = () => {
           ref={canvasRef}
           width={canvasWidth}
           height={canvasHeight}
-          className="w-full h-auto border-2 border-blue-500/30 rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm cursor-crosshair"
+          className="w-full h-auto rounded-xl border border-slate-300/60 dark:border-slate-600/50 shadow-sm bg-slate-950 cursor-crosshair ring-1 ring-slate-900/5 dark:ring-white/5"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onTouchMove={handleTouchMove}
@@ -589,48 +589,36 @@ const DataDefenderGame = () => {
         )}
       </div>
 
-      {/* Game Stats */}
-      <div className="flex items-center justify-between w-full max-w-sm text-sm">
-        <div className="flex items-center space-x-2">
-          <Target className="w-4 h-4 text-blue-400" />
-          <span className="text-white">Score: <span className="text-blue-400 font-semibold">{score}</span></span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Trophy className="w-4 h-4 text-yellow-400" />
-          <span className="text-white">High: <span className="text-yellow-400 font-semibold">{highScore}</span></span>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between w-full max-w-sm text-sm">
-        <div className="flex items-center space-x-2">
-          <span className="text-red-400">❤️</span>
-          <span className="text-white">Lives: <span className="text-red-400 font-semibold">{lives}</span></span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <Zap className="w-4 h-4 text-purple-400" />
-          <span className="text-white">Level: <span className="text-purple-400 font-semibold">{level}</span></span>
-        </div>
-      </div>
-
-      {/* Power-up Status */}
-      <div className="flex items-center space-x-4 text-xs">
-        {multishot && (
-          <div className="flex items-center space-x-1 text-red-400">
-            <span>🔫</span>
-            <span>Multi-shot</span>
-          </div>
-        )}
-        {shield && (
-          <div className="flex items-center space-x-1 text-cyan-400">
-            <span>🛡️</span>
-            <span>Shield</span>
-          </div>
-        )}
-        {rapidfire && (
-          <div className="flex items-center space-x-1 text-yellow-400">
-            <span>🔥</span>
-            <span>Rapid Fire</span>
-          </div>
+      {/* HUD — single row, no extra panels */}
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 w-full max-w-[600px] text-sm text-slate-600 dark:text-slate-300">
+        <span className="inline-flex items-center gap-1.5">
+          <Target className="w-4 h-4 text-blue-500 shrink-0" />
+          Score <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">{score}</span>
+        </span>
+        <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">·</span>
+        <span className="inline-flex items-center gap-1.5">
+          <Trophy className="w-4 h-4 text-amber-500 shrink-0" />
+          High <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">{highScore}</span>
+        </span>
+        <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">·</span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="text-base leading-none" aria-hidden>❤️</span>
+          Lives <span className="font-semibold text-rose-600 dark:text-rose-400 tabular-nums">{lives}</span>
+        </span>
+        <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">·</span>
+        <span className="inline-flex items-center gap-1.5">
+          <Zap className="w-4 h-4 text-violet-500 shrink-0" />
+          Level <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">{level}</span>
+        </span>
+        {(multishot || shield || rapidfire) && (
+          <>
+            <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">·</span>
+            <span className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
+              {multishot && <span>🔫 Multi-shot</span>}
+              {shield && <span>🛡️ Shield</span>}
+              {rapidfire && <span>🔥 Rapid</span>}
+            </span>
+          </>
         )}
       </div>
 
@@ -669,14 +657,14 @@ const DataDefenderGame = () => {
         </motion.button>
       </div>
 
-      {/* Instructions */}
-      <div className="text-center text-xs text-gray-400 max-w-sm px-2">
-        Defend against data threats! Use arrow keys or mouse to move, SPACEBAR to shoot.
-        <br />
-        <span className="text-green-400">📄 Data (10pts)</span> |
-        <span className="text-yellow-400">🐛 Bug (20pts)</span> |
-        <span className="text-red-400">🦠 Virus (30pts)</span>
-      </div>
+      {/* Scoring legend — matches page typography */}
+      <p className="text-center text-xs text-slate-500 dark:text-slate-400 max-w-md px-2 leading-relaxed">
+        <span className="text-emerald-600 dark:text-emerald-400">📄 Data 10</span>
+        <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span>
+        <span className="text-amber-600 dark:text-amber-400">🐛 Bug 20</span>
+        <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span>
+        <span className="text-rose-600 dark:text-rose-400">🦠 Virus 30</span>
+      </p>
     </motion.div>
   )
 }
