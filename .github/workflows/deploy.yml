@@ -32,4 +32,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
-        cname: sagar8080.github.io
+        # Must match DNS + repo Pages settings so sagardas.info resolves (not *.github.io).
+        cname: sagardas.info
