@@ -16,14 +16,19 @@ import Footer from '@/components/Footer'
 import AnimatedBackground from '@/components/AnimatedBackground'
 import ThemeToggle from '@/components/ThemeToggle'
 
+const sections = ['hero', 'projects', 'about', 'experience', 'skills', 'education', 'articles', 'photography', 'contact']
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero')
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'photography', 'articles', 'skills', 'education', 'contact']
-      const scrollPosition = window.scrollY + 96
+      const scrollPosition = window.scrollY + 120
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = documentHeight > 0 ? Math.min(100, (window.scrollY / documentHeight) * 100) : 0
+      setScrollProgress(progress)
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -60,27 +65,53 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-transparent">
+    <div className="min-h-screen bg-slate-50 dark:bg-transparent">
       <AnimatedBackground isDark={isDarkMode} />
       
       <header>
-        <Navigation activeSection={activeSection} />
+        <Navigation activeSection={activeSection} sections={sections} />
         <ThemeToggle isDark={isDarkMode} toggle={toggleTheme} />
         <Hero />
       </header>
+
+      <div className="fixed top-0 left-0 z-[70] h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 transition-all duration-200" style={{ width: `${scrollProgress}%` }} />
+
+      <nav className="hidden xl:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-3" aria-label="Section quick navigation">
+        {sections
+          .filter((section) => section !== 'hero')
+          .map((section) => {
+            const selected = section === activeSection
+            return (
+              <button
+                key={section}
+                onClick={() => {
+                  const el = document.getElementById(section)
+                  el?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className={`h-2.5 rounded-full transition-all duration-200 ${
+                  selected
+                    ? 'w-8 bg-blue-500'
+                    : 'w-2.5 bg-slate-400/50 hover:bg-slate-500/70 dark:bg-slate-500/45 dark:hover:bg-slate-400/70'
+                }`}
+                aria-label={`Jump to ${section}`}
+                aria-current={selected ? 'page' : undefined}
+              />
+            )
+          })}
+      </nav>
 
       <AnimatePresence mode="wait">
         <motion.main
           className="relative z-10 pt-24"
         >
+          <Projects />
           <About />
           <Experience />
-          <Projects />
-          <FeaturedArticles />
           <Skills />
           <Education />
-          <Contact />
+          <FeaturedArticles />
           <PhotographyCarousel />
+          <Contact />
         </motion.main>
       </AnimatePresence>
 

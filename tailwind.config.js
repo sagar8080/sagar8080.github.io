@@ -9,19 +9,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark': '#0a0a0a',
-        'light': '#ffffff',
-        'light-alt': '#e5e5e5',
-        'card-bg-start': '#1a1a1a',
-        'card-bg-end': '#2a2a2a',
-        'border-color': '#333333',
-        'tag-bg': '#3b82f6',
-        'tag-text': '#ffffff',
-        'tag-name': '#60a5fa',
-        'terminal-bg': '#0f0f0f',
-        'accent-gradient-start': '#3b82f6',
-        'accent-gradient-end': '#1d4ed8',
-        'hover-shadow-color': 'rgba(59, 130, 246, 0.3)',
+        surface: {
+          light: '#f8fafc',
+          dark: '#050b14',
+        },
+        accent: {
+          primary: '#3b82f6',
+          secondary: '#14b8a6',
+          highlight: '#8b5cf6',
+        },
       },
       fontFamily: {
         'mono': ['Fira Code', 'monospace'],

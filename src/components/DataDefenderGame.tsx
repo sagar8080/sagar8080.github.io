@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
+import type { TouchEvent } from 'react'
 import { motion } from 'framer-motion'
 import { Play, Pause, RotateCcw, Trophy, Target, Zap } from 'lucide-react'
 
@@ -31,7 +32,6 @@ interface PowerUp {
 const DataDefenderGame = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [playerX, setPlayerX] = useState(250)
-  const [playerVelocity, setPlayerVelocity] = useState(0)
   const [keysPressed, setKeysPressed] = useState<Set<string>>(new Set())
   const [mouseX, setMouseX] = useState<number | null>(null)
   const [enemies, setEnemies] = useState<Enemy[]>([])
@@ -43,7 +43,6 @@ const DataDefenderGame = () => {
   const [gameOver, setGameOver] = useState(false)
   const [lives, setLives] = useState(3)
   const [level, setLevel] = useState(1)
-  const [wave, setWave] = useState(1)
   const [shield, setShield] = useState(false)
   const [multishot, setMultishot] = useState(false)
   const [rapidfire, setRapidfire] = useState(false)
@@ -344,6 +343,13 @@ const DataDefenderGame = () => {
     setMouseX(null)
   }, [])
 
+  const handleTouchMove = useCallback((e: TouchEvent<HTMLCanvasElement>) => {
+    if (!gameRunning) return
+    const touch = e.touches[0]
+    if (!touch) return
+    setMouseX(touch.clientX)
+  }, [gameRunning])
+
   // Handle shooting (separate from movement)
   useEffect(() => {
     if (!gameRunning) return
@@ -504,7 +510,6 @@ const DataDefenderGame = () => {
       setScore(0)
       setLives(3)
       setLevel(1)
-      setWave(1)
       setShield(false)
       setMultishot(false)
       setRapidfire(false)
@@ -524,7 +529,6 @@ const DataDefenderGame = () => {
     setScore(0)
     setLives(3)
     setLevel(1)
-    setWave(1)
     setShield(false)
     setMultishot(false)
     setRapidfire(false)
@@ -541,17 +545,18 @@ const DataDefenderGame = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center space-y-4"
+      className="flex flex-col items-center space-y-4 w-full"
     >
       {/* Game Canvas */}
-      <div className="relative">
+      <div className="relative w-full max-w-[600px]">
         <canvas
           ref={canvasRef}
           width={canvasWidth}
           height={canvasHeight}
-          className="border-2 border-blue-500/30 rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm cursor-crosshair"
+          className="w-full h-auto border-2 border-blue-500/30 rounded-lg shadow-2xl bg-black/80 backdrop-blur-sm cursor-crosshair"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          onTouchMove={handleTouchMove}
         />
 
         {/* Game Over Overlay */}
@@ -585,7 +590,7 @@ const DataDefenderGame = () => {
       </div>
 
       {/* Game Stats */}
-      <div className="flex items-center justify-between w-full max-w-xs text-sm">
+      <div className="flex items-center justify-between w-full max-w-sm text-sm">
         <div className="flex items-center space-x-2">
           <Target className="w-4 h-4 text-blue-400" />
           <span className="text-white">Score: <span className="text-blue-400 font-semibold">{score}</span></span>
@@ -596,7 +601,7 @@ const DataDefenderGame = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between w-full max-w-xs text-sm">
+      <div className="flex items-center justify-between w-full max-w-sm text-sm">
         <div className="flex items-center space-x-2">
           <span className="text-red-400">❤️</span>
           <span className="text-white">Lives: <span className="text-red-400 font-semibold">{lives}</span></span>
@@ -665,7 +670,7 @@ const DataDefenderGame = () => {
       </div>
 
       {/* Instructions */}
-      <div className="text-center text-xs text-gray-400 max-w-xs">
+      <div className="text-center text-xs text-gray-400 max-w-sm px-2">
         Defend against data threats! Use arrow keys or mouse to move, SPACEBAR to shoot.
         <br />
         <span className="text-green-400">📄 Data (10pts)</span> |
