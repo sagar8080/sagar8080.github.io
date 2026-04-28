@@ -4,7 +4,7 @@ A modern, interactive portfolio website built with Next.js, React, and Framer Mo
 
 ## 🚀 Features
 
-- **Modern Tech Stack**: Built with Next.js 14, React 18, and TypeScript
+- **Modern Tech Stack**: Built with Next.js 16+, React 19+, and TypeScript
 - **Interactive Animations**: Smooth animations powered by Framer Motion
 - **Responsive Design**: Mobile-first design that works on all devices
 - **Dark/Light Mode**: Toggle between themes for better user experience
@@ -14,7 +14,7 @@ A modern, interactive portfolio website built with Next.js, React, and Framer Mo
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
