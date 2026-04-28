@@ -6,19 +6,30 @@ import { Menu, X } from 'lucide-react'
 
 interface NavigationProps {
   activeSection: string
+  sections: string[]
 }
 
-const Navigation = ({ activeSection }: NavigationProps) => {
+const Navigation = ({ activeSection, sections }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'photography', label: 'Interests' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
-  ]
+  const labelMap: Record<string, string> = {
+    hero: 'Home',
+    projects: 'Work',
+    about: 'About',
+    experience: 'Experience',
+    skills: 'Skills',
+    education: 'Education',
+    articles: 'Writing',
+    photography: 'Photography',
+    contact: 'Contact'
+  }
+
+  const navItems = sections
+    .filter((section) => section !== 'hero')
+    .map((section) => ({
+      id: section,
+      label: labelMap[section] ?? section
+    }))
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -33,25 +44,38 @@ const Navigation = ({ activeSection }: NavigationProps) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full z-50 bg-gray-100/10 dark:bg-gray-900/40 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20"
+      className="fixed w-full z-50 border-b border-slate-300/40 dark:border-slate-700/40 bg-white/60 dark:bg-slate-950/45 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55 supports-[backdrop-filter]:dark:bg-slate-950/40"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <button
+            onClick={() => scrollToSection('hero')}
+            className="text-sm font-semibold tracking-wide text-slate-800 dark:text-slate-100"
+          >
+            Sagar Das
+          </button>
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative text-sm transition-all duration-300 group text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                aria-current={activeSection === item.id ? 'page' : undefined}
+                className={`relative text-sm transition-colors duration-200 group ${
+                  activeSection === item.id
+                    ? 'text-slate-900 dark:text-white'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                }`}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {item.label}
                 <motion.span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"
-                  initial={{ width: activeSection === item.id ? '100%' : '0%' }}
+                  className="absolute -bottom-1 left-0 h-0.5 bg-blue-500"
+                  initial={false}
                   animate={{ width: activeSection === item.id ? '100%' : '0%' }}
+                  transition={{ duration: 0.2 }}
                 />
               </motion.button>
             ))}
@@ -61,7 +85,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="focus:outline-none transition-all duration-300 p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="focus:outline-none transition-all duration-300 p-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
               whileTap={{ scale: 0.95 }}
             >
               <AnimatePresence mode="wait">
@@ -100,14 +124,14 @@ const Navigation = ({ activeSection }: NavigationProps) => {
             animate={{ height: 'auto' }}
             exit={{ height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-20 left-0 w-full shadow-lg overflow-hidden bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+            className="md:hidden absolute top-16 left-0 w-full shadow-lg overflow-hidden bg-white/95 dark:bg-slate-950/95 border-t border-slate-300/50 dark:border-slate-700/50"
           >
-            <div className="px-2 pt-2 pb-4 space-y-2">
+            <div className="px-2 pt-2 pb-4 space-y-1.5">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full px-4 py-3 text-center transition-all duration-300 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-200/50 dark:bg-gray-800/50 hover:bg-gray-300/70 dark:hover:bg-gray-700/70"
+                  className="block w-full px-4 py-3 text-center transition-all duration-300 rounded-md text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-200/60 dark:bg-slate-800/60 hover:bg-slate-300/80 dark:hover:bg-slate-700/80"
                   initial={{ x: -20 }}
                   animate={{ x: 0 }}
                   transition={{ delay: index * 0.1 }}

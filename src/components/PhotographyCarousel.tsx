@@ -34,20 +34,13 @@ const PhotographyCarousel = () => {
   }
 
   return (
-    <section
-      id="photography"
-      className="py-24 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto border-t border-gray-200/20 dark:border-gray-700/20 pt-16">
+    <section id="photography" className="section-wrap">
+      <div className="section-shell border-t border-slate-300/30 dark:border-slate-700/35 pt-14">
         <div className="flex flex-wrap items-center justify-between gap-6 mb-10">
           <div className="max-w-2xl">
-            <p className="text-sm uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
-              Beyond the Work
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-3">
-              Photography as a Reset
-            </h2>
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-4">
+            <p className="eyebrow">Beyond engineering</p>
+            <h2 className="section-title mt-3">Photography as a design reset</h2>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-4">
               Outside of data engineering, I slow down with a camera. It keeps me curious, grounded, and detail-oriented.
             </p>
             <a
@@ -64,7 +57,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('left')}
               aria-label="Scroll photography left"
-              className="w-10 h-10 rounded-full border border-gray-200/40 dark:border-gray-700/40 text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               <ChevronLeft className="w-5 h-5 mx-auto" />
             </button>
@@ -72,7 +65,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('right')}
               aria-label="Scroll photography right"
-              className="w-10 h-10 rounded-full border border-gray-200/40 dark:border-gray-700/40 text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               <ChevronRight className="w-5 h-5 mx-auto" />
             </button>
@@ -86,7 +79,7 @@ const PhotographyCarousel = () => {
           {photographyProjects.map((photo) => (
             <motion.div
               key={photo.id}
-              className="min-w-[240px] md:min-w-[280px] lg:min-w-[320px] snap-start overflow-hidden rounded-2xl transition-transform duration-500"
+              className="min-w-[240px] md:min-w-[280px] lg:min-w-[320px] snap-start overflow-hidden rounded-2xl transition-transform duration-500 surface-card p-2"
               whileHover={{ y: -2 }}
             >
               <div className="relative aspect-[2/3] bg-transparent">

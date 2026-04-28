@@ -8,20 +8,20 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="relative z-20 py-16 px-4 sm:px-6 lg:px-8 mt-16"
+      className="relative z-20 py-16 px-4 sm:px-6 lg:px-8 mt-10"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="section-shell">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div
             className="mb-4 md:mb-0"
           >
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-slate-600 dark:text-slate-400">
               © {currentYear} Sagar Das. All rights reserved.
             </p>
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+            className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
           >
             <span>Built with</span>
             <motion.div
@@ -35,9 +35,8 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom Bar */}
-        <motion.div
-          className="border-t border-gray-300 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center"
-        >
+        <motion.div className="border-t border-slate-300/40 dark:border-slate-700/40 mt-8 pt-6 text-center text-xs text-slate-500 dark:text-slate-400">
+          Built for fast loading, clear storytelling, and production-grade credibility.
         </motion.div>
       </div>
     </motion.footer>

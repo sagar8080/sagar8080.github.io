@@ -1,57 +1,42 @@
 'use client'
 
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useMemo } from 'react'
-import { SiAmazon, SiGooglecloud, SiPython, SiApachespark, SiApachekafka, SiDocker, SiKubernetes, SiTerraform, SiGooglebigquery, SiAmazonredshift, SiApacheairflow, SiApache, SiDatabricks, SiDbt, SiTensorflow, SiPytorch, SiOpenai, SiGit, SiRust, SiScikitlearn, SiSnowflake, SiApacheflink, SiPresto, SiClickhouse, SiElasticsearch, SiMongodb, SiPostgresql, SiApachehadoop, SiApachehive, SiTableau, SiStreamlit, SiJupyter, SiPandas, SiNumpy, SiMysql, SiMongodb as SiNeo4j, SiLinux } from 'react-icons/si'
+import { BrainCircuit, Code2, Database, Radar } from 'lucide-react'
 
-// --- Data for the component ---
+type CapabilityDomain = {
+  title: string
+  subtitle: string
+  icon: typeof Code2
+  tools: string[]
+}
 
-// 1. Tools for the Infinite Carousel (replace placeholder with actual icons)
-const tools = [
-  // Programming & Frameworks
-  { name: 'Python', icon: <SiPython size={40} color="#3776AB" /> },
-  { name: 'SQL', icon: <SiPostgresql size={40} color="#336791" /> },
-  { name: 'Scala', icon: <SiApache size={40} color="#DC322F" /> },
-  { name: 'Bash', icon: <SiLinux size={40} color="#FCC624" /> },
-  { name: 'FastAPI', icon: <SiPython size={40} color="#009688" /> },
-  { name: 'LangChain', icon: <SiOpenai size={40} color="#10A37F" /> },
-  { name: 'DBT', icon: <SiDbt size={40} color="#FF694B" /> },
-  { name: 'Great Expectations', icon: <SiPython size={40} color="#F7931E" /> },
-  { name: 'Pytest', icon: <SiPython size={40} color="#0A9EDC" /> },
-  
-  // Data Engineering Tools
-  { name: 'Apache Spark', icon: <SiApachespark size={40} color="#E25A1C" /> },
-  { name: 'Apache Beam', icon: <SiApache size={40} color="#016BF8" /> },
-  { name: 'Kafka', icon: <SiApachekafka size={40} color="#FFFFFF" /> },
-  { name: 'Airflow', icon: <SiApacheairflow size={40} color="#017CEE" /> },
-  { name: 'Apache Iceberg', icon: <SiApache size={40} color="#E25A1C" /> },
-  { name: 'Airbyte', icon: <SiApache size={40} color="#5A67D8" /> },
-  { name: 'Terraform', icon: <SiTerraform size={40} color="#623CE4" /> },
-  { name: 'Docker', icon: <SiDocker size={40} color="#2496ED" /> },
-  { name: 'Deequ', icon: <SiApache size={40} color="#FF6B35" /> },
-  
-  // Databases & Storage
-  { name: 'Redshift', icon: <SiAmazonredshift size={40} color="#FF9900" /> },
-  { name: 'BigQuery', icon: <SiGooglebigquery size={40} color="#4285F4" /> },
-  { name: 'Postgres', icon: <SiPostgresql size={40} color="#4169E1" /> },
-  { name: 'MySQL', icon: <SiMysql size={40} color="#4479A1" /> },
-  { name: 'DynamoDB', icon: <SiAmazon size={40} color="#FF9900" /> },
-  { name: 'DuckDB', icon: <SiPostgresql size={40} color="#FFF000" /> },
-  { name: 'Neo4j', icon: <SiMongodb size={40} color="#008CC1" /> },
-  { name: 'Elasticsearch', icon: <SiElasticsearch size={40} color="#00A5D5" /> },
-  { name: 'FAISS', icon: <SiPython size={40} color="#FF6F00" /> },
-  
-  // GenAI Tools
-  { name: 'BERT', icon: <SiTensorflow size={40} color="#FF6F00" /> },
-  { name: 'LangChain', icon: <SiOpenai size={40} color="#10A37F" /> },
-  { name: 'AWS Bedrock', icon: <SiAmazon size={40} color="#FF9900" /> },
-  { name: 'RAG Systems', icon: <SiOpenai size={40} color="#412991" /> },
-  { name: 'Knowledge Graphs', icon: <SiMongodb size={40} color="#FF4500" /> },
-  { name: 'Transformers', icon: <SiPytorch size={40} color="#EE4C2C" /> },
-  { name: 'LLM APIs', icon: <SiOpenai size={40} color="#412991" /> }
-];
+const capabilityDomains: CapabilityDomain[] = [
+  {
+    title: 'Data Platforms',
+    subtitle: 'Streaming, warehousing, and lakehouse foundations',
+    icon: Database,
+    tools: ['BigQuery', 'Redshift', 'Postgres', 'Kafka', 'Spark', 'Airflow', 'Apache Iceberg']
+  },
+  {
+    title: 'AI Engineering',
+    subtitle: 'RAG workflows, retrieval systems, and model ops',
+    icon: BrainCircuit,
+    tools: ['LangChain', 'RAG', 'Vector Search', 'Elasticsearch', 'Prompt Engineering', 'Evaluation Pipelines']
+  },
+  {
+    title: 'Platform Reliability',
+    subtitle: 'Infrastructure, deployment, and observability',
+    icon: Radar,
+    tools: ['Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Data Observability', 'Security Controls']
+  }
+]
 
-// 2. Methods and Concepts organized into 4 blocks
+const coreStack = [
+  'Python', 'SQL', 'Rust', 'FastAPI', 'Spark', 'Airflow', 'Kafka', 'BigQuery',
+  'Postgres', 'Elasticsearch', 'Docker', 'Kubernetes', 'Terraform', 'LangChain', 'RAG'
+]
+
 const methodsGroups = [
   {
     title: "Core Engineering",
@@ -105,76 +90,113 @@ const methodsGroups = [
       'Metadata Management'
     ]
   }
-];
-
-
-// --- The Main Component ---
+]
 
 const Skills = () => {
-  const duplicatedTools = useMemo(() => [...tools, ...tools], []);
+  const [activeGroup, setActiveGroup] = useState(methodsGroups[0]?.title ?? '')
+  const selectedGroup = useMemo(
+    () => methodsGroups.find((group) => group.title === activeGroup) ?? methodsGroups[0],
+    [activeGroup]
+  )
 
   return (
-    <motion.section
-      id="skills"
-      className="py-16 md:py-20"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
-        >
-          Tools & Technologies
-        </motion.h2>
+    <motion.section id="skills" className="section-wrap">
+      <div className="section-shell">
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 text-xs font-mono text-indigo-700 dark:text-indigo-300 mb-3">
+            <Code2 className="w-3.5 h-3.5" />
+            <span>skills.matrix</span>
+          </div>
+          <p className="eyebrow">Tools and methods</p>
+          <h2 className="section-title mt-3">Technical depth across the stack</h2>
+          <p className="section-description mx-auto">
+            Practical toolkit for high-throughput data systems, robust platform engineering, and AI-enabled analytics.
+          </p>
+        </div>
       </div>
 
-      {/* Infinite Carousel for Tool Icons */}
-      <div className="w-full overflow-hidden relative mb-16 md:mb-20" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-        <motion.div
-          className="flex items-center rounded-lg p-4"
-          animate={{ x: ['0%', '-100%'] }}
-          transition={{ ease: 'linear', duration: 45, repeat: Infinity }}
-        >
-          {duplicatedTools.map((tool, index) => (
-            <div key={index} className="flex-shrink-0 mx-8 flex flex-col items-center justify-center h-28 w-40">
-              <div className="hover:scale-110 transition-all duration-300">
-                {tool.icon}
+      <div className="section-shell mb-12">
+        <motion.div className="surface-card p-5 md:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400 mb-3">
+            Core stack
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2.5">
+            {coreStack.map((tool, index) => (
+              <div key={tool} className="text-sm font-mono text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <span className="text-[10px] text-blue-500/90">{String(index + 1).padStart(2, '0')}</span>
+                <span className="truncate">{tool}</span>
               </div>
-              <span className="text-sm text-gray-900 dark:text-white mt-2 text-center">{tool.name}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </motion.div>
       </div>
 
-      {/* Methods & Concepts - 4 Block Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h3
-          className="text-3xl md:text-4xl font-semibold text-center mb-12 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent"
-        >
-          Methods & Concepts
-        </motion.h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {methodsGroups.map((group, groupIndex) => (
-            <motion.div
-              key={group.title}
-              className="bg-transparent border border-gray-200/30 dark:border-gray-700/30 rounded-xl p-6 backdrop-blur-sm"
-            >
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center">
-                {group.title}
-              </h4>
-              <div className="space-y-2">
-                {group.items.map((method, methodIndex) => (
-                  <motion.div
-                    key={method}
-                    className="px-3 py-2 rounded-lg text-sm font-medium cursor-pointer transition-all duration-300 border border-gray-300/30 dark:border-gray-600/30 hover:border-blue-400/50 bg-transparent hover:bg-blue-500/5 dark:hover:bg-blue-500/10"
-                  >
-                    <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
-                      {method}
+      <div className="section-shell">
+        <div className="grid lg:grid-cols-3 gap-4 mb-8">
+          {capabilityDomains.map((domain, index) => {
+            const Icon = domain.icon
+            return (
+              <motion.div
+                key={domain.title}
+                className="surface-card p-5"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.35, delay: index * 0.06 }}
+                whileHover={{ y: -3, scale: 1.01 }}
+              >
+                <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-300">
+                  <Icon className="w-4 h-4" />
+                </div>
+                <h3 className="mt-3 text-lg font-semibold text-slate-900 dark:text-slate-100">{domain.title}</h3>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{domain.subtitle}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {domain.tools.map((tool) => (
+                    <span key={tool} className="inline-flex items-center rounded-md border border-slate-300/50 dark:border-slate-700/50 bg-white/50 dark:bg-slate-900/45 px-2.5 py-1 text-[11px] font-medium text-slate-700 dark:text-slate-300">
+                      {tool}
                     </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  ))}
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        <div className="surface-card p-6">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {methodsGroups.map((group) => (
+              <button
+                key={group.title}
+                onClick={() => setActiveGroup(group.title)}
+                className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
+                  group.title === selectedGroup.title
+                    ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/30'
+                    : 'bg-slate-200/70 text-slate-700 hover:bg-slate-300/80 dark:bg-slate-800/70 dark:text-slate-200 dark:hover:bg-slate-700/80'
+                }`}
+              >
+                {group.title}
+              </button>
+            ))}
+          </div>
+
+          <motion.div
+            key={selectedGroup.title}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">{selectedGroup.title}</h4>
+            <div className="grid sm:grid-cols-2 gap-2.5">
+              {selectedGroup.items.map((method) => (
+                <div
+                  key={method}
+                  className="px-3 py-2 rounded-lg text-sm font-medium border border-slate-300/40 dark:border-slate-700/40 bg-white/35 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300"
+                >
+                  {method}
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

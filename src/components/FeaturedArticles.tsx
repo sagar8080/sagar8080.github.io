@@ -9,7 +9,18 @@ interface Article {
   link: string
   pubDate: string
   description: string
-  thumbnail?: string
+}
+
+interface RssItem {
+  title: string
+  link: string
+  pubDate: string
+  description: string
+}
+
+interface RssResponse {
+  status: string
+  items: RssItem[]
 }
 
 const FeaturedArticles = () => {
@@ -25,15 +36,14 @@ const FeaturedArticles = () => {
         const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
 
         const response = await fetch(proxyUrl)
-        const data = await response.json()
+        const data: RssResponse = await response.json()
 
         if (data.status === 'ok') {
-          const latestArticles = data.items.slice(0, 3).map((item: any) => ({
+          const latestArticles = data.items.slice(0, 3).map((item) => ({
             title: item.title,
             link: item.link,
             pubDate: item.pubDate,
-            description: item.description.replace(/<[^>]*>/g, '').substring(0, 150) + '...',
-            thumbnail: item.thumbnail || item.enclosure?.link
+            description: item.description.replace(/<[^>]*>/g, '').substring(0, 150) + '...'
           }))
           setArticles(latestArticles)
         } else {
@@ -81,19 +91,13 @@ const FeaturedArticles = () => {
   }
 
   return (
-    <motion.section
-      id="articles"
-      className="py-20 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent">
-            Featured Articles
-          </h2>
-          <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-            Insights and tutorials on data engineering, machine learning, and cloud technologies
+    <motion.section id="articles" className="section-wrap">
+      <div className="section-shell">
+        <motion.div className="text-center mb-14">
+          <p className="eyebrow">Writing</p>
+          <h2 className="section-title mt-3">Notes from real-world delivery</h2>
+          <p className="section-description mx-auto">
+            Practical lessons on data engineering, cloud architecture, and production AI workflows.
           </p>
         </motion.div>
 
@@ -105,34 +109,34 @@ const FeaturedArticles = () => {
             >
               <Loader2 className="w-8 h-8 text-blue-400" />
             </motion.div>
-            <span className="ml-3 text-gray-400">Loading articles...</span>
+            <span className="ml-3 text-slate-500 dark:text-slate-300">Loading articles...</span>
           </div>
         ) : error ? (
-          <div className="text-center py-20">
-            <BookOpen className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-            <p className="text-gray-400">{error}</p>
+          <div className="surface-card text-center py-20">
+            <BookOpen className="w-16 h-16 text-slate-500 dark:text-slate-300 mx-auto mb-4" />
+            <p className="text-slate-600 dark:text-slate-300">{error}</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articles.map((article) => (
               <motion.article
-                key={index}
-                className="group relative"
+                key={article.link}
+                className="group relative surface-card p-6"
               >
-                <div className="bg-gray-100/10 dark:bg-gray-900/30 backdrop-blur-lg p-6 rounded-xl h-full hover:scale-105 transition-all duration-300 border border-gray-300/50 dark:border-gray-700/50 hover:border-blue-500/30">
+                <div>
                   <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center text-sm text-slate-600 dark:text-slate-300">
                       <Calendar className="w-4 h-4 mr-2" />
                       {formatDate(article.pubDate)}
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-400 transition-colors" />
+                    <ExternalLink className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover:text-blue-400 transition-colors" />
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white group-hover:text-blue-300 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-blue-300 transition-colors line-clamp-2">
                     {article.title}
                   </h3>
 
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4 line-clamp-3">
                     {article.description}
                   </p>
 

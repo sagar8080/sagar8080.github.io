@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Mail, Linkedin, Github, BookOpen } from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 
 const Contact = () => {
   const contactLinks = [
@@ -18,13 +19,13 @@ const Contact = () => {
       text: 'sagardas.work@gmail.com'
     },
     {
-      icon: Linkedin,
+      icon: FaLinkedin,
       label: 'LinkedIn',
       href: 'https://linkedin.com/in/sagardas08',
       text: 'linkedin.com/in/sagardas08'
     },
     {
-      icon: Github,
+      icon: FaGithub,
       label: 'GitHub',
       href: 'https://github.com/sagar8080',
       text: 'github.com/sagar8080'
@@ -32,46 +33,32 @@ const Contact = () => {
   ]
 
   return (
-    <section
-      id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8 relative"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="py-16 px-8 md:px-16">
-        <motion.div
-          className="text-center bg-white/20 dark:bg-gray-900/20 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-white/10 dark:border-gray-700/20"
-        >
-          <h3 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-200 bg-clip-text text-transparent drop-shadow-lg">
-            Let&apos;s Talk About Your Data Needs
-          </h3>
-          <p className="text-lg md:text-xl mb-16 max-w-3xl mx-auto text-gray-800 dark:text-gray-200 drop-shadow-md">
-            Whether you&apos;re looking to build a data platform, optimize existing pipelines, or explore how AI/ML can enhance your data strategy, I&apos;d love to hear from you.
+    <section id="contact" className="section-wrap relative">
+      <div className="section-shell">
+        <motion.div className="text-center surface-card p-6 sm:p-8 md:p-12">
+          <p className="eyebrow">Contact</p>
+          <h3 className="section-title mt-3">Ready to scale your data infrastructure?</h3>
+          <p className="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
+            Available for consulting, full-time opportunities, and high-impact collaborations around data engineering, AI systems, and cloud modernization.
           </p>
+          <div className="inline-flex items-center gap-2 mt-6 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300">
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+            Currently available for new projects
+          </div>
         </motion.div>
-        </div>
 
-        <motion.div
-          className="mt-8 flex justify-center gap-6 flex-wrap"
-        >
-          {contactLinks.map((link, index) => (
+        <motion.div className="mt-7 md:mt-8 flex justify-center gap-3 sm:gap-4 flex-wrap">
+          {contactLinks.map((link) => (
             <motion.a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-600/50 text-gray-800 dark:text-gray-200 hover:bg-blue-50/90 dark:hover:bg-blue-900/60 hover:border-blue-400/60 dark:hover:border-blue-500/60 shadow-xl hover:shadow-2xl"
-              whileHover={{
-                scale: 1.05,
-                y: -2
-              }}
+              className="surface-card flex items-center gap-3 px-4 sm:px-6 py-3.5 sm:py-4 text-slate-800 dark:text-slate-200 hover:border-blue-400/60 transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                whileHover={{ rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <link.icon size={24} />
-              </motion.div>
+              <link.icon size={22} />
               <div className="text-left">
                 <div className="font-medium text-sm">{link.label}</div>
                 <div className="text-xs opacity-80">{link.text}</div>
@@ -80,10 +67,8 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          className="text-sm md:text-base justify-center text-center text-gray-800 dark:text-gray-200 mb-10 py-4 drop-shadow-md"
-        >
-          <p>Available for consulting, full-time opportunities, and collaborations</p>
+        <motion.div className="text-sm md:text-base text-center text-slate-700 dark:text-slate-300 mb-10 py-4">
+          <p>Prefer async-first collaboration with clear milestones and measurable outcomes.</p>
         </motion.div>
       </div>
     </section>

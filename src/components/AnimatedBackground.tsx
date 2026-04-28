@@ -52,7 +52,6 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
     let animationFrameId = 0
     let pointer = { x: 0, y: 0 }
     let tick = 0
-    let frameCount = 0
     let lastFrameTime = 0
     let isPaused = false
 
@@ -69,7 +68,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
 
     const createParticles = () => {
       const baseDensity = Math.floor((width * height) / 22000)
-      const density = prefersCoarsePointer.matches ? Math.min(70, Math.max(30, baseDensity)) : Math.min(110, Math.max(40, baseDensity))
+      const density = prefersCoarsePointer.matches ? Math.min(52, Math.max(22, baseDensity)) : Math.min(85, Math.max(30, baseDensity))
       particles = Array.from({ length: density }).map(() => {
         const depth = Math.random() * 0.8 + 0.2
         return {
@@ -84,7 +83,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
 
     const createNodes = () => {
       const baseCount = Math.floor((width * height) / 36000)
-      const count = prefersCoarsePointer.matches ? Math.min(42, Math.max(16, baseCount)) : Math.min(60, Math.max(20, baseCount))
+      const count = prefersCoarsePointer.matches ? Math.min(30, Math.max(12, baseCount)) : Math.min(48, Math.max(16, baseCount))
       nodes = Array.from({ length: count }).map(() => {
         const depth = Math.random() * 0.7 + 0.3
         return {
@@ -123,30 +122,9 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
       context.fillRect(0, 0, width, height)
     }
 
-    const drawTechTexture = () => {
-      const spacing = 64
-      context.save()
-      context.globalAlpha = 0.12
-      context.strokeStyle = isDark ? 'rgba(90, 220, 170, 0.35)' : 'rgba(60, 140, 200, 0.35)'
-      context.lineWidth = 1
-      for (let x = 0; x <= width; x += spacing) {
-        context.beginPath()
-        context.moveTo(x, 0)
-        context.lineTo(x, height)
-        context.stroke()
-      }
-      for (let y = 0; y <= height; y += spacing) {
-        context.beginPath()
-        context.moveTo(0, y)
-        context.lineTo(width, y)
-        context.stroke()
-      }
-      context.restore()
-    }
-
     const spawnSparks = () => {
       if (nodes.length === 0) return
-      if (Math.random() > (prefersCoarsePointer.matches ? 0.08 : 0.12)) return
+      if (Math.random() > (prefersCoarsePointer.matches ? 0.05 : 0.09)) return
       const origin = nodes[Math.floor(Math.random() * nodes.length)]
       const burst = Math.floor(Math.random() * 3) + 3
       for (let i = 0; i < burst; i += 1) {
@@ -235,17 +213,13 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         animationFrameId = window.requestAnimationFrame(render)
         return
       }
-      if (time - lastFrameTime < 32) {
+      if (time - lastFrameTime < 40) {
         animationFrameId = window.requestAnimationFrame(render)
         return
       }
       lastFrameTime = time
       tick += 2.1
-      frameCount += 1
       drawBackground()
-      if (frameCount % 2 === 0) {
-        drawTechTexture()
-      }
 
       drawConnections()
       drawNodes()
@@ -329,7 +303,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
   return (
     <div className="fixed inset-0 z-0">
       <canvas ref={canvasRef} className="w-full h-full" />
-      <div className={`absolute inset-0 ${isDark ? 'bg-black/65' : 'bg-white/40'}`} />
+      <div className={`absolute inset-0 ${isDark ? 'bg-black/58' : 'bg-white/28'}`} />
     </div>
   )
 }

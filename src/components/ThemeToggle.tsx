@@ -12,7 +12,7 @@ const ThemeToggle = ({ isDark, toggle }: ThemeToggleProps) => {
   return (
     <motion.button
       onClick={toggle}
-      className="fixed top-4 right-4 z-50 p-3 rounded-full glassmorphism"
+      className="fixed top-3 right-3 z-[60] p-2.5 rounded-full glassmorphism border border-slate-300/40 dark:border-slate-700/40"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
