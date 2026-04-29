@@ -9,38 +9,47 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        surface: {
-          light: '#e8eef4',
-          dark: '#050a12',
+        void: '#050505',
+        glow: '#1A0B2E',
+        vint: {
+          cyan: '#22d3ee',
+          pink: '#ec4899',
+          cream: '#F1E6C9',
+          mint: '#ABDADC',
         },
-        accent: {
-          primary: '#0891b2',
-          secondary: '#0284c7',
-          highlight: '#d97706',
-        },
+        phosphor: '#ABDADC',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        pixel: ['var(--font-pixel)', 'ui-monospace', 'monospace'],
+      },
+      boxShadow: {
+        'vint-cyan': '0 0 15px rgba(34, 211, 238, 0.5)',
+        'vint-cyan-lg': '0 0 24px rgba(34, 211, 238, 0.45)',
+        'vint-pink': '0 0 15px rgba(236, 72, 153, 0.5)',
+        'vint-pink-lg': '0 0 24px rgba(236, 72, 153, 0.45)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'bounce-subtle': 'bounceSubtle 2s infinite',
-        'pulse-slow': 'pulse 3s ease-in-out infinite',
+        glitch: 'glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
+        'marquee': 'marquee 40s linear infinite',
+        'name-shift': 'name-shift 7s ease-in-out infinite',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        glitch: {
+          '0%, 100%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 1px)' },
+          '40%': { transform: 'translate(2px, -1px)' },
+          '60%': { transform: 'translate(-1px, -1px)' },
+          '80%': { transform: 'translate(1px, 2px)' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
-        bounceSubtle: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+        'name-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         },
       },
     },
