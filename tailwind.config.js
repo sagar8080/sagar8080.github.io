@@ -10,18 +10,18 @@ module.exports = {
     extend: {
       colors: {
         surface: {
-          light: '#f8fafc',
-          dark: '#050b14',
+          light: '#e8ede9',
+          dark: '#030706',
         },
         accent: {
-          primary: '#3b82f6',
-          secondary: '#14b8a6',
-          highlight: '#8b5cf6',
+          primary: '#059669',
+          secondary: '#0d9488',
+          highlight: '#d97706',
         },
       },
       fontFamily: {
-        'mono': ['Fira Code', 'monospace'],
-        'sans': ['Google Sans', 'sans-serif'],
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

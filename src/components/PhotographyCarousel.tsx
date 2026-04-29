@@ -35,19 +35,19 @@ const PhotographyCarousel = () => {
 
   return (
     <section id="photography" className="section-wrap">
-      <div className="section-shell border-t border-slate-300/30 dark:border-slate-700/35 pt-14">
+      <div className="section-shell border-t border-emerald-500/10 dark:border-emerald-500/15 pt-14">
         <div className="flex flex-wrap items-center justify-between gap-6 mb-10">
           <div className="max-w-2xl">
             <p className="eyebrow">Beyond engineering</p>
             <h2 className="section-title mt-3">Photography as a design reset</h2>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-4">
-              Outside of data engineering, I slow down with a camera. It keeps me curious, grounded, and detail-oriented.
+            <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-300 mt-4">
+              Off the keyboard: framing light and motion — same obsession with detail, different medium.
             </p>
             <a
               href="https://www.instagram.com/zuiko_vision/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-300 mt-4 hover:text-blue-700 dark:hover:text-blue-200 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-emerald-700 dark:text-emerald-400 mt-4 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors"
             >
               Follow @zuiko_vision
             </a>
@@ -57,7 +57,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('left')}
               aria-label="Scroll photography left"
-              className="w-10 h-10 rounded-full border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               <ChevronLeft className="w-5 h-5 mx-auto" />
             </button>
@@ -65,7 +65,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('right')}
               aria-label="Scroll photography right"
-              className="w-10 h-10 rounded-full border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               <ChevronRight className="w-5 h-5 mx-auto" />
             </button>

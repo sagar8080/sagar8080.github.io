@@ -15,28 +15,28 @@ const Footer = () => {
           <motion.div
             className="mb-4 md:mb-0"
           >
-            <p className="text-sm text-slate-600 dark:text-slate-400">
-              © {currentYear} Sagar Das. All rights reserved.
+            <p className="text-sm font-mono text-zinc-500 dark:text-zinc-400">
+              © {currentYear} Sagar Das
             </p>
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
+            className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400"
           >
-            <span>Built with</span>
+            <span className="font-mono text-xs">stack:</span>
             <motion.div
-              whileHover={{ scale: 1.2, color: '#ef4444' }}
+              whileHover={{ scale: 1.15, color: '#34d399' }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <Heart size={16} fill="currentColor" />
+              <Heart size={16} fill="currentColor" className="text-emerald-500/80" />
             </motion.div>
-            <span>using Next.js & React</span>
+            <span className="font-mono text-xs">next.js · react · tailwind</span>
           </motion.div>
         </div>
 
         {/* Footer Bottom Bar */}
-        <motion.div className="border-t border-slate-300/40 dark:border-slate-700/40 mt-8 pt-6 text-center text-xs text-slate-500 dark:text-slate-400">
-          Built for fast loading, clear storytelling, and production-grade credibility.
+        <motion.div className="border-t border-emerald-500/10 dark:border-emerald-500/15 mt-8 pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-500">
+          // static export · keyboard-friendly · honors prefers-reduced-motion
         </motion.div>
       </div>
     </motion.footer>
