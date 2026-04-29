@@ -4,30 +4,30 @@
 
 @layer base {
   :root {
-    --surface-0: #e8ede9;
+    --surface-0: #e8eef4;
     --surface-1: rgba(255, 255, 255, 0.78);
     --surface-2: rgba(255, 255, 255, 0.94);
-    --text-primary: #0a0f0d;
-    --text-secondary: #1e2a24;
-    --text-tertiary: #4a5c54;
-    --border-subtle: rgba(16, 185, 129, 0.22);
-    --border-strong: rgba(5, 150, 105, 0.38);
-    --accent-primary: #059669;
-    --accent-secondary: #0d9488;
+    --text-primary: #0a0c12;
+    --text-secondary: #1e2433;
+    --text-tertiary: #4a5568;
+    --border-subtle: rgba(6, 182, 212, 0.2);
+    --border-strong: rgba(8, 145, 178, 0.38);
+    --accent-primary: #0891b2;
+    --accent-secondary: #0284c7;
     --accent-highlight: #d97706;
   }
 
   .dark {
-    --surface-0: #030706;
-    --surface-1: rgba(6, 26, 18, 0.58);
-    --surface-2: rgba(8, 32, 24, 0.9);
-    --text-primary: #e8f3ed;
-    --text-secondary: #b4c9be;
-    --text-tertiary: #6b8a7a;
-    --border-subtle: rgba(52, 211, 153, 0.2);
-    --border-strong: rgba(45, 212, 191, 0.38);
-    --accent-primary: #34d399;
-    --accent-secondary: #2dd4bf;
+    --surface-0: #050a12;
+    --surface-1: rgba(8, 20, 35, 0.58);
+    --surface-2: rgba(10, 26, 42, 0.9);
+    --text-primary: #e8f4fc;
+    --text-secondary: #b4c9dc;
+    --text-tertiary: #6b7c93;
+    --border-subtle: rgba(34, 211, 238, 0.18);
+    --border-strong: rgba(56, 189, 248, 0.35);
+    --accent-primary: #22d3ee;
+    --accent-secondary: #38bdf8;
     --accent-highlight: #fbbf24;
   }
 
@@ -70,16 +70,16 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgb(5 150 105 / 0.55);
+    background: rgb(8 145 178 / 0.55);
     border-radius: 4px;
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    background: rgb(52 211 153 / 0.35);
+    background: rgb(34 211 238 / 0.35);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(13 148 136 / 0.65);
+    background: rgb(2 132 199 / 0.65);
   }
 }
 
@@ -93,17 +93,17 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.26em] font-semibold text-emerald-800 dark:text-emerald-400;
+    @apply font-mono text-[11px] uppercase tracking-[0.26em] font-semibold text-sky-800 dark:text-cyan-400;
   }
 
   .eyebrow::before {
     content: '// ';
     margin-right: 0.35rem;
-    color: rgb(5 150 105 / 0.45);
+    color: rgb(8 145 178 / 0.5);
   }
 
   .dark .eyebrow::before {
-    color: rgb(52 211 153 / 0.4);
+    color: rgb(34 211 238 / 0.42);
   }
 
   .section-title {
@@ -115,30 +115,30 @@
   }
 
   .surface-card {
-    @apply rounded-xl border border-emerald-500/20 dark:border-emerald-400/25 bg-white/75 dark:bg-zinc-950/55 backdrop-blur-md transition-all duration-300 shadow-[0_0_0_1px_rgba(16,185,129,0.06)] dark:shadow-[0_0_40px_-12px_rgba(16,185,129,0.12)];
+    @apply rounded-xl border border-cyan-500/20 dark:border-cyan-400/25 bg-white/75 dark:bg-zinc-950/55 backdrop-blur-md transition-all duration-300 shadow-[0_0_0_1px_rgba(6,182,212,0.07)] dark:shadow-[0_0_40px_-12px_rgba(34,211,238,0.1)];
   }
 
   .pill-tag {
-    @apply inline-flex items-center rounded-md border border-emerald-500/25 bg-emerald-500/5 dark:bg-emerald-400/10 px-2.5 py-1 text-[11px] font-mono font-medium text-emerald-900 dark:text-emerald-300;
+    @apply inline-flex items-center rounded-md border border-cyan-500/25 bg-cyan-500/5 dark:bg-cyan-400/10 px-2.5 py-1 text-[11px] font-mono font-medium text-cyan-950 dark:text-cyan-300;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-emerald-600 to-teal-600 shadow-lg shadow-emerald-700/20 hover:from-emerald-500 hover:to-teal-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent dark:shadow-emerald-900/40;
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-sky-600 to-cyan-600 shadow-lg shadow-sky-700/25 hover:from-sky-500 hover:to-cyan-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent dark:shadow-cyan-950/35;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-zinc-800 dark:text-zinc-100 border border-emerald-500/25 dark:border-emerald-400/20 bg-white/80 dark:bg-zinc-950/50 backdrop-blur transition-all duration-300 hover:bg-white dark:hover:bg-zinc-900/80 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-zinc-800 dark:text-zinc-100 border border-cyan-500/25 dark:border-cyan-400/20 bg-white/80 dark:bg-zinc-950/50 backdrop-blur transition-all duration-300 hover:bg-white dark:hover:bg-zinc-900/80 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
   }
 
   .glassmorphism {
     background: var(--surface-1);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 10px 30px rgba(6, 20, 14, 0.12);
+    box-shadow: 0 10px 30px rgba(8, 20, 40, 0.1);
   }
 
   .dark .glassmorphism {
-    box-shadow: 0 12px 28px rgba(0, 8, 6, 0.55);
+    box-shadow: 0 12px 28px rgba(0, 12, 24, 0.55);
   }
 }
 

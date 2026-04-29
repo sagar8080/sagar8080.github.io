@@ -75,7 +75,7 @@ export default function Home() {
       </header>
 
       <div
-        className="fixed top-0 left-0 z-[70] h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-400 transition-all duration-200"
+        className="fixed top-0 left-0 z-[70] h-1 bg-gradient-to-r from-sky-500 via-cyan-500 to-amber-400 transition-all duration-200"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -93,8 +93,8 @@ export default function Home() {
                 }}
                 className={`h-2.5 rounded-full transition-all duration-200 ${
                   selected
-                    ? 'w-8 bg-emerald-500'
-                    : 'w-2.5 bg-zinc-400/45 hover:bg-emerald-500/60 dark:bg-zinc-600/50 dark:hover:bg-emerald-500/50'
+                    ? 'w-8 bg-cyan-500'
+                    : 'w-2.5 bg-zinc-400/45 hover:bg-cyan-500/60 dark:bg-zinc-600/50 dark:hover:bg-cyan-500/50'
                 }`}
                 aria-label={`Jump to ${section}`}
                 aria-current={selected ? 'page' : undefined}

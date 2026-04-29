@@ -35,7 +35,7 @@ const PhotographyCarousel = () => {
 
   return (
     <section id="photography" className="section-wrap">
-      <div className="section-shell border-t border-emerald-500/10 dark:border-emerald-500/15 pt-14">
+      <div className="section-shell border-t border-cyan-500/10 dark:border-cyan-500/15 pt-14">
         <div className="flex flex-wrap items-center justify-between gap-6 mb-10">
           <div className="max-w-2xl">
             <p className="eyebrow">Beyond engineering</p>
@@ -47,7 +47,7 @@ const PhotographyCarousel = () => {
               href="https://www.instagram.com/zuiko_vision/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-emerald-700 dark:text-emerald-400 mt-4 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-mono font-medium text-sky-700 dark:text-cyan-400 mt-4 hover:text-sky-600 dark:hover:text-cyan-300 transition-colors"
             >
               Follow @zuiko_vision
             </a>
@@ -57,7 +57,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('left')}
               aria-label="Scroll photography left"
-              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
             >
               <ChevronLeft className="w-5 h-5 mx-auto" />
             </button>
@@ -65,7 +65,7 @@ const PhotographyCarousel = () => {
               type="button"
               onClick={() => scrollCarousel('right')}
               aria-label="Scroll photography right"
-              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+              className="w-10 h-10 rounded-full border border-zinc-300/60 dark:border-zinc-600/50 text-zinc-700 dark:text-zinc-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
             >
               <ChevronRight className="w-5 h-5 mx-auto" />
             </button>

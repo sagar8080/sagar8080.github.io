@@ -41,8 +41,8 @@ const Contact = () => {
           <p className="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-zinc-700 dark:text-zinc-300">
             Open to consulting, full-time roles, and tight collaborations on data platforms and AI systems — async-first, with clear milestones and measurable exits.
           </p>
-          <div className="inline-flex items-center gap-2 mt-6 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+          <div className="inline-flex items-center gap-2 mt-6 rounded-full border border-cyan-400/35 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-800 dark:text-cyan-300">
+            <span className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
             Currently available for new projects
           </div>
         </motion.div>
@@ -54,7 +54,7 @@ const Contact = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="surface-card flex items-center gap-3 px-4 sm:px-6 py-3.5 sm:py-4 text-zinc-800 dark:text-zinc-200 hover:border-emerald-500/45 transition-all duration-300"
+              className="surface-card flex items-center gap-3 px-4 sm:px-6 py-3.5 sm:py-4 text-zinc-800 dark:text-zinc-200 hover:border-cyan-500/45 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

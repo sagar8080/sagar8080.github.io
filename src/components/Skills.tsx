@@ -103,7 +103,7 @@ const Skills = () => {
     <motion.section id="skills" className="section-wrap">
       <div className="section-shell">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-mono text-emerald-800 dark:text-emerald-300 mb-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-mono text-cyan-900 dark:text-cyan-300 mb-3">
             <Code2 className="w-3.5 h-3.5" />
             <span>skills.matrix</span>
           </div>
@@ -123,7 +123,7 @@ const Skills = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2.5">
             {coreStack.map((tool, index) => (
               <div key={tool} className="text-sm font-mono text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                <span className="text-[10px] text-emerald-600/90 dark:text-emerald-500/80">{String(index + 1).padStart(2, '0')}</span>
+                <span className="text-[10px] text-sky-600/90 dark:text-cyan-500/80">{String(index + 1).padStart(2, '0')}</span>
                 <span className="truncate">{tool}</span>
               </div>
             ))}
@@ -145,7 +145,7 @@ const Skills = () => {
                 transition={{ duration: 0.35, delay: index * 0.06 }}
                 whileHover={{ y: -3, scale: 1.01 }}
               >
-                <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-emerald-500/28 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">
+                <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-cyan-500/28 bg-cyan-500/10 text-sky-700 dark:text-cyan-400">
                   <Icon className="w-4 h-4" />
                 </div>
                 <h3 className="mt-3 text-lg font-semibold text-slate-900 dark:text-slate-100">{domain.title}</h3>
@@ -170,7 +170,7 @@ const Skills = () => {
                 onClick={() => setActiveGroup(group.title)}
                 className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
                   group.title === selectedGroup.title
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/25 dark:bg-emerald-500'
+                    ? 'bg-sky-600 text-white shadow-md shadow-sky-700/25 dark:bg-cyan-600'
                     : 'bg-zinc-200/80 text-zinc-700 hover:bg-zinc-300/80 dark:bg-zinc-800/80 dark:text-zinc-200 dark:hover:bg-zinc-700/80'
                 }`}
               >
