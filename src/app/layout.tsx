@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono, Press_Start_2P, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-sans',
+  variable: '--font-display',
 })
 
 const jetbrainsMono = JetBrains_Mono({
@@ -14,15 +14,23 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 })
 
+const pressStart = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-pixel',
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://sagar8080.github.io'),
-  title: 'Sagar Das | Data/ML Engineer',
-  description: 'Portfolio of Sagar Das - Data Engineer, ML Engineer, and AI Engineer specializing in cloud-native data pipelines and scalable solutions.',
-  keywords: 'Data Engineer, ML Engineer, AI Engineer, Python, AWS, GCP, Apache Spark, Kubernetes',
+  title: 'Sagar Das | Senior Software & Data Engineer',
+  description:
+    'Senior Software Engineer and Data Engineer — mission-critical data platforms, cloud architecture, and agentic AI systems.',
+  keywords: 'Data Engineer, Software Engineer, GCP, AWS, AI, RAG, Iceberg, Rust',
   authors: [{ name: 'Sagar Das' }],
   openGraph: {
-    title: 'Sagar Das | Data/ML Engineer',
-    description: 'Portfolio showcasing expertise in data engineering, MLOps, and Generative AI',
+    title: 'Sagar Das | Senior Software & Data Engineer',
+    description: 'Data platforms, enterprise cloud architecture, and AI systems.',
     type: 'website',
   },
 }
@@ -33,13 +41,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen font-sans antialiased bg-zinc-100 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${pressStart.variable} font-mono min-h-screen bg-void text-zinc-100 antialiased`}
       >
         {children}
       </body>
