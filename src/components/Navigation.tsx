@@ -44,7 +44,7 @@ const Navigation = ({ activeSection, sections }: NavigationProps) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full z-50 border-b border-emerald-500/10 dark:border-emerald-500/15 bg-white/65 dark:bg-zinc-950/50 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55 supports-[backdrop-filter]:dark:bg-zinc-950/45"
+      className="fixed w-full z-50 border-b border-cyan-500/10 dark:border-cyan-500/15 bg-white/65 dark:bg-zinc-950/50 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55 supports-[backdrop-filter]:dark:bg-zinc-950/45"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -65,14 +65,14 @@ const Navigation = ({ activeSection, sections }: NavigationProps) => {
                 className={`relative text-sm font-mono transition-colors duration-200 group ${
                   activeSection === item.id
                     ? 'text-zinc-900 dark:text-zinc-50'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-sky-700 dark:hover:text-cyan-400'
                 }`}
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {item.label}
                 <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-emerald-500"
+                  className="absolute -bottom-1 left-0 h-0.5 bg-cyan-500"
                   initial={false}
                   animate={{ width: activeSection === item.id ? '100%' : '0%' }}
                   transition={{ duration: 0.2 }}

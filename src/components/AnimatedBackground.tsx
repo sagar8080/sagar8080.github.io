@@ -108,15 +108,15 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         Math.max(width, height)
       )
       if (isDark) {
-        gradient.addColorStop(0, 'rgba(6, 42, 32, 0.42)')
-        gradient.addColorStop(0.45, 'rgba(3, 10, 8, 0.96)')
-        gradient.addColorStop(0.75, 'rgba(2, 8, 6, 0.99)')
-        gradient.addColorStop(1, 'rgba(1, 4, 3, 1)')
+        gradient.addColorStop(0, 'rgba(8, 40, 58, 0.45)')
+        gradient.addColorStop(0.45, 'rgba(4, 10, 22, 0.96)')
+        gradient.addColorStop(0.75, 'rgba(3, 8, 18, 0.99)')
+        gradient.addColorStop(1, 'rgba(2, 6, 14, 1)')
       } else {
-        gradient.addColorStop(0, 'rgba(220, 235, 228, 0.92)')
-        gradient.addColorStop(0.45, 'rgba(236, 244, 239, 0.96)')
-        gradient.addColorStop(0.75, 'rgba(244, 248, 246, 0.99)')
-        gradient.addColorStop(1, 'rgba(250, 252, 251, 1)')
+        gradient.addColorStop(0, 'rgba(214, 232, 245, 0.92)')
+        gradient.addColorStop(0.45, 'rgba(234, 242, 250, 0.96)')
+        gradient.addColorStop(0.75, 'rgba(242, 248, 252, 0.99)')
+        gradient.addColorStop(1, 'rgba(250, 252, 255, 1)')
       }
       context.fillStyle = gradient
       context.fillRect(0, 0, width, height)
@@ -148,8 +148,8 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         const progress = 1 - spark.life / spark.ttl
         const alpha = 0.95 * progress
         context.beginPath()
-        context.fillStyle = isDark ? `rgba(160, 255, 220, ${alpha})` : `rgba(90, 170, 230, ${alpha})`
-        context.shadowColor = isDark ? 'rgba(140, 255, 210, 0.85)' : 'rgba(90, 170, 230, 0.7)'
+        context.fillStyle = isDark ? `rgba(120, 220, 255, ${alpha})` : `rgba(90, 170, 230, ${alpha})`
+        context.shadowColor = isDark ? 'rgba(100, 210, 255, 0.85)' : 'rgba(90, 170, 230, 0.7)'
         context.shadowBlur = 14
         context.arc(spark.x, spark.y, 2, 0, Math.PI * 2)
         context.fill()
@@ -163,7 +163,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
     const drawConnections = () => {
       const maxDistance = Math.min(220, Math.max(140, width * 0.18))
       const maxConnections = 6
-      context.shadowColor = isDark ? 'rgba(90, 230, 180, 0.65)' : 'rgba(70, 150, 220, 0.55)'
+      context.shadowColor = isDark ? 'rgba(56, 189, 248, 0.6)' : 'rgba(70, 150, 220, 0.55)'
       context.shadowBlur = 22
       for (let i = 0; i < nodes.length; i += 1) {
         const node = nodes[i]
@@ -176,7 +176,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
           if (distance < maxDistance) {
             const wave = 0.6 + 0.4 * Math.sin(tick * 0.04 + (i + j) * 0.35)
             const alpha = (1 - distance / maxDistance) * 0.45 * ((node.z + other.z) / 2) * wave
-            context.strokeStyle = isDark ? `rgba(120, 235, 195, ${alpha})` : `rgba(80, 155, 220, ${alpha})`
+            context.strokeStyle = isDark ? `rgba(56, 189, 248, ${alpha})` : `rgba(80, 155, 220, ${alpha})`
             context.lineWidth = 1.6
             context.beginPath()
             context.moveTo(node.x, node.y)
@@ -200,8 +200,8 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         const radius = node.radius * (0.9 + pulse * 0.35)
 
         context.beginPath()
-        context.fillStyle = isDark ? `rgba(170, 245, 210, ${0.4 + node.z * 0.45})` : `rgba(90, 150, 220, ${0.3 + node.z * 0.35})`
-        context.shadowColor = isDark ? 'rgba(120, 240, 190, 0.75)' : 'rgba(90, 150, 220, 0.55)'
+        context.fillStyle = isDark ? `rgba(120, 210, 255, ${0.4 + node.z * 0.45})` : `rgba(90, 150, 220, ${0.3 + node.z * 0.35})`
+        context.shadowColor = isDark ? 'rgba(56, 189, 248, 0.75)' : 'rgba(90, 150, 220, 0.55)'
         context.shadowBlur = 22 * node.z
         context.arc(x, y, radius, 0, Math.PI * 2)
         context.fill()
@@ -233,8 +233,8 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         const y = (particle.y + parallaxY + height) % height
 
         context.beginPath()
-        context.fillStyle = isDark ? `rgba(135, 225, 200, ${0.35 + particle.z * 0.4})` : `rgba(80, 140, 210, ${0.3 + particle.z * 0.35})`
-        context.shadowColor = isDark ? 'rgba(110, 225, 185, 0.6)' : 'rgba(70, 130, 200, 0.45)'
+        context.fillStyle = isDark ? `rgba(100, 200, 245, ${0.35 + particle.z * 0.4})` : `rgba(80, 140, 210, ${0.3 + particle.z * 0.35})`
+        context.shadowColor = isDark ? 'rgba(34, 211, 238, 0.55)' : 'rgba(70, 130, 200, 0.45)'
         context.shadowBlur = 12 * particle.z
         context.arc(x, y, particle.radius, 0, Math.PI * 2)
         context.fill()

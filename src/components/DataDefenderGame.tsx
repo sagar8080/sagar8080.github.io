@@ -569,7 +569,7 @@ const DataDefenderGame = () => {
             <p className="text-gray-300 mb-4">Final Score: {score}</p>
             <button
               onClick={resetGame}
-              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-mono text-sm"
+              className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg transition-colors font-mono text-sm"
             >
               Play Again
             </button>
@@ -582,7 +582,7 @@ const DataDefenderGame = () => {
             className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-lg flex items-center justify-center"
           >
             <div className="text-center">
-              <Pause className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+              <Pause className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
               <p className="text-white">Use arrow keys to move, SPACEBAR to shoot!</p>
             </div>
           </motion.div>
@@ -592,7 +592,7 @@ const DataDefenderGame = () => {
       {/* HUD — single row, no extra panels */}
       <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 w-full max-w-[600px] text-sm text-slate-600 dark:text-slate-300">
         <span className="inline-flex items-center gap-1.5">
-          <Target className="w-4 h-4 text-emerald-500 shrink-0" />
+          <Target className="w-4 h-4 text-sky-500 shrink-0" />
           Score <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">{score}</span>
         </span>
         <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">·</span>
@@ -627,7 +627,7 @@ const DataDefenderGame = () => {
         {!gameRunning && !gameOver ? (
           <motion.button
             onClick={startGame}
-            className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+            className="flex items-center space-x-2 px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-lg transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -659,7 +659,7 @@ const DataDefenderGame = () => {
 
       {/* Scoring legend — matches page typography */}
       <p className="text-center text-xs text-slate-500 dark:text-slate-400 max-w-md px-2 leading-relaxed">
-        <span className="text-emerald-600 dark:text-emerald-400">📄 Data 10</span>
+        <span className="text-sky-600 dark:text-sky-400">📄 Data 10</span>
         <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span>
         <span className="text-amber-600 dark:text-amber-400">🐛 Bug 20</span>
         <span className="mx-1.5 text-slate-300 dark:text-slate-600">·</span>

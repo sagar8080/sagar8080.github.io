@@ -107,7 +107,7 @@ const FeaturedArticles = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             >
-              <Loader2 className="w-8 h-8 text-emerald-500" />
+              <Loader2 className="w-8 h-8 text-cyan-500" />
             </motion.div>
             <span className="ml-3 text-slate-500 dark:text-slate-300">Loading articles...</span>
           </div>
@@ -129,10 +129,10 @@ const FeaturedArticles = () => {
                       <Calendar className="w-4 h-4 mr-2" />
                       {formatDate(article.pubDate)}
                     </div>
-                    <ExternalLink className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-emerald-500 transition-colors" />
+                    <ExternalLink className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-cyan-500 transition-colors" />
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-100 group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
                     {article.title}
                   </h3>
 
@@ -144,7 +144,7 @@ const FeaturedArticles = () => {
                     href={article.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300 font-mono font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
+                    className="inline-flex items-center text-sky-600 hover:text-sky-500 dark:text-cyan-400 dark:hover:text-cyan-300 font-mono font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

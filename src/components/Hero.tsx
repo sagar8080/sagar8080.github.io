@@ -72,7 +72,7 @@ const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/8 via-transparent to-amber-500/10 dark:from-emerald-500/12 dark:to-teal-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-amber-500/10 dark:from-sky-500/15 dark:to-slate-950/40" />
       <div className="max-w-6xl mx-auto relative z-20 w-full">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 md:gap-10 lg:gap-16 items-center">
           <motion.div
@@ -89,7 +89,7 @@ const Hero = () => {
               Pipelines, analytics, and agentic workflows — instrumented end to end for teams that need speed without gambling on correctness.
             </p>
             <div className="surface-card p-4 md:p-5 inline-flex flex-wrap items-center gap-2.5 md:gap-3 text-sm md:text-base text-zinc-700 dark:text-zinc-200">
-              <span className="font-mono text-emerald-600 dark:text-emerald-400" aria-hidden>
+              <span className="font-mono text-cyan-600 dark:text-cyan-400" aria-hidden>
                 $
               </span>
               <span className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">signal</span>
@@ -109,7 +109,7 @@ const Hero = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-2 text-sm font-mono font-medium text-emerald-700 dark:text-emerald-400/90 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors"
+                className="inline-flex items-center px-2 text-sm font-mono font-medium text-sky-700 dark:text-cyan-400/90 hover:text-sky-600 dark:hover:text-cyan-300 transition-colors"
               >
                 resume.pdf
               </a>
@@ -123,7 +123,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.12 }}
           >
             <div className="w-full max-w-md flex flex-col items-center text-center gap-5 md:gap-6">
-              <div className="w-40 h-40 md:w-52 md:h-52 rounded-xl overflow-hidden border border-emerald-500/35 dark:border-emerald-400/25 shadow-lg shadow-emerald-900/15 dark:shadow-emerald-900/30 ring-1 ring-emerald-500/10">
+              <div className="w-40 h-40 md:w-52 md:h-52 rounded-xl overflow-hidden border border-cyan-500/35 dark:border-cyan-400/25 shadow-lg shadow-sky-900/15 dark:shadow-cyan-950/25 ring-1 ring-cyan-500/10">
                 <Image
                   src="profile_picture.png"
                   alt="Sagar Das"
@@ -137,7 +137,7 @@ const Hero = () => {
               <div className="h-28 flex flex-col items-center justify-center">
                 <motion.span
                   key={greetingIdx}
-                  className="inline-block min-h-[3.5rem] text-center text-5xl md:text-6xl font-bold font-mono leading-none text-emerald-600 dark:text-emerald-400"
+                  className="inline-block min-h-[3.5rem] text-center text-5xl md:text-6xl font-bold font-mono leading-none text-sky-600 dark:text-cyan-400"
                   initial={{ opacity: 0, y: 3 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
@@ -157,7 +157,7 @@ const Hero = () => {
       >
         <motion.button
           onClick={scrollToAbout}
-          className="text-zinc-400 dark:text-zinc-600 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors duration-300 p-2 rounded-full hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10"
+          className="text-zinc-400 dark:text-zinc-600 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 p-2 rounded-full hover:bg-cyan-500/5 dark:hover:bg-cyan-500/10"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           whileHover={{ scale: 1.1 }}

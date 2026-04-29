@@ -73,7 +73,7 @@ const Experience = () => {
     >
       <div className="section-shell">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-mono text-emerald-800 dark:text-emerald-300 mb-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-mono text-cyan-900 dark:text-cyan-300 mb-3">
             <Cpu className="w-3.5 h-3.5" />
             <span>experience.log</span>
           </div>
@@ -85,7 +85,7 @@ const Experience = () => {
         </div>
 
         <div className="relative space-y-6">
-          <div className="hidden md:block absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-emerald-500/45 via-teal-500/35 to-transparent" />
+          <div className="hidden md:block absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-cyan-500/45 via-sky-500/35 to-transparent" />
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -96,15 +96,15 @@ const Experience = () => {
               transition={{ duration: 0.35, delay: index * 0.06 }}
               whileHover={{ y: -3, scale: 1.01 }}
             >
-              <div className="hidden md:flex absolute left-3 top-7 h-5 w-5 items-center justify-center rounded-full border border-emerald-500/45 bg-zinc-50 dark:bg-zinc-950">
-                <div className="h-2 w-2 rounded-full bg-emerald-500" />
+              <div className="hidden md:flex absolute left-3 top-7 h-5 w-5 items-center justify-center rounded-full border border-cyan-500/45 bg-zinc-50 dark:bg-zinc-950">
+                <div className="h-2 w-2 rounded-full bg-cyan-500" />
               </div>
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500/65 via-teal-500/50 to-amber-500/40" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/60 via-sky-500/45 to-amber-500/40" />
 
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                    <BriefcaseBusiness className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    <BriefcaseBusiness className="w-5 h-5 text-sky-600 dark:text-cyan-400" />
                     {exp.company}
                   </h3>
                   <p className="text-base text-slate-700 dark:text-slate-300 mt-1">{exp.position}</p>
@@ -126,7 +126,7 @@ const Experience = () => {
               <ul className="mt-4 space-y-2">
                 {exp.achievements.map((achievement) => (
                   <li key={achievement} className="flex gap-3 text-slate-700 dark:text-slate-300 leading-relaxed">
-                    <span className="mt-1 text-emerald-600 dark:text-emerald-500 font-mono">{'>'}</span>
+                    <span className="mt-1 text-cyan-600 dark:text-cyan-500 font-mono">{'>'}</span>
                     <span>{achievement}</span>
                   </li>
                 ))}
@@ -134,7 +134,7 @@ const Experience = () => {
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {exp.technologies.map((tech) => (
-                  <span key={tech} className="inline-flex items-center rounded-md border border-emerald-500/28 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-mono font-medium text-emerald-800 dark:text-emerald-300">
+                  <span key={tech} className="inline-flex items-center rounded-md border border-cyan-500/28 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-mono font-medium text-cyan-900 dark:text-cyan-300">
                     {tech}
                   </span>
                 ))}

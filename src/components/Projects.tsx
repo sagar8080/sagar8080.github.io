@@ -116,7 +116,7 @@ const Projects = () => {
                 onClick={() => setActiveFilter(filter)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   filter === activeFilter
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/25 dark:bg-emerald-500'
+                    ? 'bg-sky-600 text-white shadow-md shadow-sky-700/25 dark:bg-cyan-600'
                     : 'bg-zinc-200/80 text-zinc-700 hover:bg-zinc-300/80 dark:bg-zinc-800/80 dark:text-zinc-200 dark:hover:bg-zinc-700/80'
                 }`}
               >
@@ -143,7 +143,7 @@ const Projects = () => {
               key={project.id}
               onClick={() => setActiveProject(project.id)}
               className={`surface-card overflow-hidden flex flex-col text-left transition-all duration-300 hover:-translate-y-1 ${
-                project.id === activeProject ? 'ring-2 ring-emerald-500/60 dark:ring-emerald-400/50' : ''
+                project.id === activeProject ? 'ring-2 ring-cyan-500/60 dark:ring-cyan-400/50' : ''
               }`}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.99 }}
@@ -159,7 +159,7 @@ const Projects = () => {
               </div>
 
               <div className="p-5 flex-1 flex flex-col">
-                <div className="inline-flex w-fit rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300 mb-3">
+                <div className="inline-flex w-fit rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300 mb-3">
                   {project.impact}
                 </div>
                 <h3 className="text-xl mb-3 font-semibold text-slate-900 dark:text-slate-100">
@@ -186,7 +186,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-sky-600 dark:hover:text-cyan-400"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -197,7 +197,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-sky-600 dark:hover:text-cyan-400"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >

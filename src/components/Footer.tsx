@@ -25,17 +25,17 @@ const Footer = () => {
           >
             <span className="font-mono text-xs">stack:</span>
             <motion.div
-              whileHover={{ scale: 1.15, color: '#34d399' }}
+              whileHover={{ scale: 1.15, color: '#22d3ee' }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <Heart size={16} fill="currentColor" className="text-emerald-500/80" />
+              <Heart size={16} fill="currentColor" className="text-cyan-500/80" />
             </motion.div>
             <span className="font-mono text-xs">next.js · react · tailwind</span>
           </motion.div>
         </div>
 
         {/* Footer Bottom Bar */}
-        <motion.div className="border-t border-emerald-500/10 dark:border-emerald-500/15 mt-8 pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-500">
+        <motion.div className="border-t border-cyan-500/10 dark:border-cyan-500/15 mt-8 pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-500">
           // static export · keyboard-friendly · honors prefers-reduced-motion
         </motion.div>
       </div>
