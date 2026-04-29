@@ -416,6 +416,17 @@ export const projectFilters: { id: ProjectCategory | 'ALL'; label: string }[] = 
   { id: 'PLATFORM', label: 'PLATFORM' },
 ]
 
+export type DownloadFile = {
+  url: string
+  filename: string
+  label: string
+}
+
+export type PlatformDownload = {
+  platform: 'macOS' | 'Linux' | 'Windows'
+  files: DownloadFile[]
+}
+
 export type FeaturedProject = {
   id: string
   status: string
@@ -424,20 +435,44 @@ export type FeaturedProject = {
   description: string
   technologies: string[]
   highlights: string[]
+  downloads: PlatformDownload[]
 }
 
 export const featuredProject: FeaturedProject = {
   id: 'pulseql',
-  status: 'COMING_SOON',
+  status: 'v1.0.0',
   title: 'PulseQL',
-  subtitle: 'AI-driven data exploration · upcoming',
+  subtitle: 'The data lifecycle, in one app.',
   description:
-    'An upcoming AI-driven data exploration tool: Rust core, React + TypeScript UI, with automated data profiling and query intelligence for faster, safer analytics loops.',
-  technologies: ['Rust', 'React', 'TypeScript', 'Tauri', 'DuckDB'],
+    'Ingestion, lakehouse, transforms, semantic layer, BI, and an AI copilot — collapsed into a single desktop binary. Built for the operator, not the platform team.',
+  technologies: ['Rust', 'Tauri', 'React', 'DataFusion', 'DuckDB', 'Iceberg'],
   highlights: [
-    'Automated profiling on connect — distributions, nulls, drift in seconds',
-    'Query intelligence layer translates intent into safe SQL with diff previews',
-    'Embeddable schema-aware copilot for analyst loops',
+    'Connect any source, land as Iceberg or Delta in your own object store',
+    'Ask in plain English — get a plan, SQL draft, and citable answer',
+    'Every agent mutation is reviewable — humans approve before anything runs',
+  ],
+  downloads: [
+    {
+      platform: 'macOS',
+      files: [
+        { label: '.dmg', filename: 'pulseDesktop_1.0.0_universal.dmg', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_universal.dmg' },
+      ],
+    },
+    {
+      platform: 'Windows',
+      files: [
+        { label: '.exe', filename: 'pulseDesktop_1.0.0_x64-setup.exe', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_x64-setup.exe' },
+        { label: '.msi', filename: 'pulseDesktop_1.0.0_x64_en-US.msi', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_x64_en-US.msi' },
+      ],
+    },
+    {
+      platform: 'Linux',
+      files: [
+        { label: '.deb', filename: 'pulseDesktop_1.0.0_amd64.deb', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_amd64.deb' },
+        { label: '.rpm', filename: 'pulseDesktop-1.0.0-1.x86_64.rpm', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop-1.0.0-1.x86_64.rpm' },
+        { label: '.AppImage', filename: 'pulseDesktop_1.0.0_amd64.AppImage', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_amd64.AppImage' },
+      ],
+    },
   ],
 }
 
