@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono, Press_Start_2P, Space_Grotesk } from 'next/font/google'
+import { JetBrains_Mono, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -12,13 +12,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-mono',
-})
-
-const pressStart = Press_Start_2P({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-pixel',
 })
 
 export const metadata: Metadata = {
@@ -47,7 +40,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${pressStart.variable} font-mono min-h-screen bg-void text-zinc-100 antialiased`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-mono min-h-screen bg-void text-zinc-100 antialiased`}
       >
         {children}
       </body>

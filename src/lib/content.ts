@@ -216,6 +216,8 @@ export const methodGroups: MethodGroup[] = [
   },
 ]
 
+export type Metric = { value: string; caption: string }
+
 export type ExperienceEntry = {
   id: string
   index: string
@@ -224,6 +226,7 @@ export type ExperienceEntry = {
   duration: string
   location: string
   summary: string
+  metrics?: Metric[]
   achievements: string[]
   technologies: string[]
 }
@@ -237,6 +240,10 @@ export const experience: ExperienceEntry[] = [
     duration: 'Oct 2025 – Present',
     location: 'Charlotte, NC',
     summary: 'Leading enterprise cloud modernization and event-driven data quality delivery.',
+    metrics: [
+      { value: 'GCP', caption: 'ground→cloud POC' },
+      { value: 'ICEBERG', caption: 'lakehouse curation' },
+    ],
     achievements: [
       'Leading a GCP migration proof-of-concept for enterprise Ground-to-Cloud strategy.',
       'Building Airflow + Dataflow quality pipelines triggered from SQL Server to GCS drops, curating trusted Iceberg lakehouse data.',
@@ -251,6 +258,11 @@ export const experience: ExperienceEntry[] = [
     duration: 'Sep 2023 – May 2025',
     location: 'College Park, MD',
     summary: 'Built high-throughput analytics and AI systems for academic operations and research.',
+    metrics: [
+      { value: '20M/day', caption: 'ELMS events → BQ' },
+      { value: '6h→45m', caption: '119-table CDC' },
+      { value: '5d→2d', caption: 'survey RAG review' },
+    ],
     achievements: [
       'Streamed 20M+ ELMS events/day into BigQuery for analytics across 230 programs.',
       'Optimized 119-table ingestion runtime from 6 hours to 45 minutes using CDC + validation.',
@@ -266,6 +278,11 @@ export const experience: ExperienceEntry[] = [
     duration: 'Jul 2021 – Jul 2023',
     location: 'Chennai, India',
     summary: 'Led delivery of a self-serve data fabric used by Fortune 500 clients.',
+    metrics: [
+      { value: '6', caption: 'enterprise clients' },
+      { value: '90%', caption: 'onboarding cycle cut' },
+      { value: '750ms', caption: 'API latency reduced' },
+    ],
     achievements: [
       'Built a multi-tenant data fabric across AWS and GCP for 6 enterprise clients.',
       'Reduced source onboarding cycle time by 90% with standardized ingestion and compliance controls.',
@@ -281,6 +298,11 @@ export const experience: ExperienceEntry[] = [
     duration: 'Jan 2019 – Nov 2019',
     location: 'Chandigarh, India',
     summary: 'Built the data engineering foundation for realtime analytics and MLOps workflows.',
+    metrics: [
+      { value: '10GB/day', caption: '45 IoT sites' },
+      { value: '15min', caption: 'forecast freshness' },
+      { value: '33%', caption: 'MLOps iteration ↑' },
+    ],
     achievements: [
       'Migrated Hadoop jobs to Databricks, processing 10GB/day telemetry from 45 IoT sites.',
       'Enabled incremental forecasting pipelines with 15-minute prediction freshness.',
@@ -406,7 +428,7 @@ export type FeaturedProject = {
 
 export const featuredProject: FeaturedProject = {
   id: 'pulseql',
-  status: 'IN_DEVELOPMENT',
+  status: 'COMING_SOON',
   title: 'PulseQL',
   subtitle: 'AI-driven data exploration · upcoming',
   description:
@@ -425,21 +447,21 @@ export type Photo = {
   meta: string
 }
 
-// EXIF-style metadata is illustrative — the photos are real, the camera/lens strings are styling.
+// EXIF-style metadata is illustrative — the photos are real, lens/aperture strings are styling.
 export const photos: Photo[] = [
-  { src: '/photography/1.jpeg', caption: 'Mumbai · 2024', meta: '35mm · f/1.8 · iso400' },
-  { src: '/photography/2.jpeg', caption: 'Goa · 2023', meta: '50mm · f/2.0 · iso200' },
-  { src: '/photography/3.jpeg', caption: 'Bengaluru · 2024', meta: '24mm · f/4.0 · iso800' },
-  { src: '/photography/4.jpeg', caption: 'Chennai · 2023', meta: '85mm · f/1.8 · iso100' },
-  { src: '/photography/5.jpeg', caption: 'Delhi · 2024', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/6.jpeg', caption: 'Kolkata · 2023', meta: '50mm · f/1.4 · iso200' },
-  { src: '/photography/7.jpeg', caption: 'Maryland · 2024', meta: '28mm · f/4.0 · iso100' },
-  { src: '/photography/8.jpeg', caption: 'DC · 2024', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/9.jpeg', caption: 'Charlotte · 2025', meta: '50mm · f/2.0 · iso200' },
-  { src: '/photography/10.jpeg', caption: 'Coastline · 2023', meta: '24mm · f/8.0 · iso100' },
-  { src: '/photography/11.jpeg', caption: 'Backlight · 2024', meta: '85mm · f/1.8 · iso800' },
-  { src: '/photography/12.jpeg', caption: 'Frame · 2024', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/13.jpeg', caption: 'Frame · 2024', meta: '50mm · f/1.8 · iso200' },
+  { src: '/photography/1.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/1.8 · iso400' },
+  { src: '/photography/2.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.0 · iso200' },
+  { src: '/photography/3.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/4.0 · iso800' },
+  { src: '/photography/4.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/1.8 · iso100' },
+  { src: '/photography/5.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
+  { src: '/photography/6.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.4 · iso200' },
+  { src: '/photography/7.jpeg', caption: 'Olympus EM 10', meta: '28mm · f/4.0 · iso100' },
+  { src: '/photography/8.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
+  { src: '/photography/9.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.0 · iso200' },
+  { src: '/photography/10.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/8.0 · iso100' },
+  { src: '/photography/11.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/1.8 · iso800' },
+  { src: '/photography/12.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
+  { src: '/photography/13.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.8 · iso200' },
 ]
 
 export type ContactLink = {

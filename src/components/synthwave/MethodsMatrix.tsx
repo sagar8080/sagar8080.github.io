@@ -10,17 +10,12 @@ export function MethodsMatrix() {
 
   return (
     <div className="relative">
-      <div className="mb-5 flex items-baseline justify-between">
-        <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-vint-cream/75">
-          // methods.matrix
-        </p>
-        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500">
-          {methodGroups.length} groups · {methodGroups.reduce((n, g) => n + g.items.length, 0)} entries
-        </span>
-      </div>
+      <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.28em] text-vint-cream/75">
+        // methods.matrix
+      </p>
 
-      <div className="rounded-sm border border-vint-pink/20 bg-black/40 p-5 md:p-6">
-        <div role="tablist" aria-label="Method groups" className="mb-5 flex flex-wrap gap-2">
+      <div className="rounded-sm border border-vint-pink/20 bg-black/40 p-4 md:p-5">
+        <div role="tablist" aria-label="Method groups" className="mb-4 flex flex-wrap gap-1.5">
           {methodGroups.map((g) => {
             const isActive = active === g.id
             return (
@@ -29,13 +24,13 @@ export function MethodsMatrix() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActive(g.id)}
-                className={`rounded-sm border px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] transition-all ${
+                className={`rounded-sm border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] transition-all ${
                   isActive
                     ? 'border-vint-pink bg-vint-pink/10 text-vint-cream shadow-[0_0_10px_rgba(236,72,153,0.25)]'
                     : 'border-zinc-700 text-zinc-500 hover:border-vint-pink/40 hover:text-zinc-300'
                 }`}
               >
-                [{g.title.toUpperCase()}]
+                {g.title}
               </button>
             )
           })}
@@ -45,22 +40,19 @@ export function MethodsMatrix() {
           key={current.id}
           initial="hidden"
           animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.025 } } }}
-          className="grid grid-cols-1 gap-2 sm:grid-cols-2"
+          variants={{ visible: { transition: { staggerChildren: 0.018 } } }}
+          className="flex flex-wrap gap-1.5"
         >
-          {current.items.map((item, i) => (
+          {current.items.map((item) => (
             <motion.li
               key={item}
               variants={{
-                hidden: { opacity: 0, y: 4 },
-                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { opacity: 1, scale: 1 },
               }}
-              className="flex items-center gap-3 rounded-sm border border-zinc-800 bg-black/30 px-3 py-2 font-mono text-sm text-zinc-300 transition-colors hover:border-vint-pink/40 hover:text-zinc-100"
+              className="rounded-sm border border-zinc-800 bg-black/30 px-2 py-1 font-mono text-[11px] text-zinc-300 transition-colors hover:border-vint-pink/40 hover:bg-vint-pink/5 hover:text-vint-cream"
             >
-              <span className="font-mono text-[10px] tabular-nums text-vint-cyan/80">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <span>{item}</span>
+              {item}
             </motion.li>
           ))}
         </motion.ul>
