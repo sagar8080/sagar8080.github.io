@@ -22,7 +22,6 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
-        pixel: ['var(--font-pixel)', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
         'vint-cyan': '0 0 15px rgba(34, 211, 238, 0.5)',

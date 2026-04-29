@@ -64,17 +64,18 @@ export function HeroTerminal() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: bootDone ? 0.05 : 1.6 }}
-          className="mt-3 leading-[1.15] tracking-normal"
+          whileHover={{ x: [0, -2, 2, -1, 1, 0], transition: { duration: 0.28 } }}
+          className="mt-3 font-display text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
           <span
-            className="font-pixel text-[1.4rem] sm:text-3xl md:text-4xl lg:text-5xl bg-clip-text text-transparent bg-[length:200%_auto] motion-safe:animate-name-shift"
+            className="bg-clip-text text-transparent bg-[length:200%_auto] motion-safe:animate-name-shift"
             style={{
               backgroundImage:
                 'linear-gradient(90deg,#22d3ee 0%,#F1E6C9 25%,#ec4899 50%,#F1E6C9 75%,#22d3ee 100%)',
               filter: 'drop-shadow(0 0 18px rgba(34,211,238,0.25))',
             }}
           >
-            {profile.name}
+            <ScrambleText target={profile.name} startAfter={bootDone ? 250 : 1850} />
           </span>
         </motion.h1>
 
@@ -183,4 +184,50 @@ function CtaSecondary({ href, label }: { href: string; label: string }) {
       [{label}]
     </a>
   )
+}
+
+const SCRAMBLE_CHARS = '▒▓█@#$%&*+=<>?/\\|0123456789'
+
+function ScrambleText({ target, startAfter = 0 }: { target: string; startAfter?: number }) {
+  const [display, setDisplay] = useState(() => target.replace(/\S/g, '·'))
+
+  useEffect(() => {
+    let intervalId: number | undefined
+    const startId = window.setTimeout(() => {
+      let frame = 0
+      const settleStart = 5 // frames each letter scrambles before locking
+      const totalFrames = target.length * 3 + settleStart + 2
+
+      const tick = () => {
+        let next = ''
+        for (let i = 0; i < target.length; i++) {
+          const ch = target[i]
+          if (ch === ' ') {
+            next += ' '
+            continue
+          }
+          const startFrame = i * 3
+          const endFrame = startFrame + settleStart
+          if (frame < startFrame) next += '·'
+          else if (frame >= endFrame) next += ch
+          else next += SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)]
+        }
+        setDisplay(next)
+        frame++
+        if (frame > totalFrames && intervalId !== undefined) {
+          window.clearInterval(intervalId)
+        }
+      }
+
+      tick()
+      intervalId = window.setInterval(tick, 38)
+    }, startAfter)
+
+    return () => {
+      window.clearTimeout(startId)
+      if (intervalId !== undefined) window.clearInterval(intervalId)
+    }
+  }, [target, startAfter])
+
+  return <>{display}</>
 }
