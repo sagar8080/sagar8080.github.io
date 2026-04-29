@@ -65,7 +65,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-transparent">
+    <div className="min-h-screen bg-zinc-100/90 dark:bg-transparent">
       <AnimatedBackground isDark={isDarkMode} />
       
       <header>
@@ -74,7 +74,10 @@ export default function Home() {
         <Hero />
       </header>
 
-      <div className="fixed top-0 left-0 z-[70] h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 transition-all duration-200" style={{ width: `${scrollProgress}%` }} />
+      <div
+        className="fixed top-0 left-0 z-[70] h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-400 transition-all duration-200"
+        style={{ width: `${scrollProgress}%` }}
+      />
 
       <nav className="hidden xl:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-3" aria-label="Section quick navigation">
         {sections
@@ -90,8 +93,8 @@ export default function Home() {
                 }}
                 className={`h-2.5 rounded-full transition-all duration-200 ${
                   selected
-                    ? 'w-8 bg-blue-500'
-                    : 'w-2.5 bg-slate-400/50 hover:bg-slate-500/70 dark:bg-slate-500/45 dark:hover:bg-slate-400/70'
+                    ? 'w-8 bg-emerald-500'
+                    : 'w-2.5 bg-zinc-400/45 hover:bg-emerald-500/60 dark:bg-zinc-600/50 dark:hover:bg-emerald-500/50'
                 }`}
                 aria-label={`Jump to ${section}`}
                 aria-current={selected ? 'page' : undefined}

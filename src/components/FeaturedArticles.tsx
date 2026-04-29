@@ -97,7 +97,7 @@ const FeaturedArticles = () => {
           <p className="eyebrow">Writing</p>
           <h2 className="section-title mt-3">Notes from real-world delivery</h2>
           <p className="section-description mx-auto">
-            Practical lessons on data engineering, cloud architecture, and production AI workflows.
+            Field notes: what broke in prod, what scaled, and what I would automate next time.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ const FeaturedArticles = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             >
-              <Loader2 className="w-8 h-8 text-blue-400" />
+              <Loader2 className="w-8 h-8 text-emerald-500" />
             </motion.div>
             <span className="ml-3 text-slate-500 dark:text-slate-300">Loading articles...</span>
           </div>
@@ -129,10 +129,10 @@ const FeaturedArticles = () => {
                       <Calendar className="w-4 h-4 mr-2" />
                       {formatDate(article.pubDate)}
                     </div>
-                    <ExternalLink className="w-5 h-5 text-slate-600 dark:text-slate-300 group-hover:text-blue-400 transition-colors" />
+                    <ExternalLink className="w-5 h-5 text-zinc-500 dark:text-zinc-400 group-hover:text-emerald-500 transition-colors" />
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-blue-300 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
                     {article.title}
                   </h3>
 
@@ -144,7 +144,7 @@ const FeaturedArticles = () => {
                     href={article.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
+                    className="inline-flex items-center text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 dark:hover:text-emerald-300 font-mono font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

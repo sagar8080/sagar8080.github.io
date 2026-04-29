@@ -37,9 +37,9 @@ const Contact = () => {
       <div className="section-shell">
         <motion.div className="text-center surface-card p-6 sm:p-8 md:p-12">
           <p className="eyebrow">Contact</p>
-          <h3 className="section-title mt-3">Ready to scale your data infrastructure?</h3>
-          <p className="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
-            Available for consulting, full-time opportunities, and high-impact collaborations around data engineering, AI systems, and cloud modernization.
+          <h3 className="section-title mt-3">Let&apos;s ship something defensible</h3>
+          <p className="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-zinc-700 dark:text-zinc-300">
+            Open to consulting, full-time roles, and tight collaborations on data platforms and AI systems — async-first, with clear milestones and measurable exits.
           </p>
           <div className="inline-flex items-center gap-2 mt-6 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300">
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
@@ -54,7 +54,7 @@ const Contact = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="surface-card flex items-center gap-3 px-4 sm:px-6 py-3.5 sm:py-4 text-slate-800 dark:text-slate-200 hover:border-blue-400/60 transition-all duration-300"
+              className="surface-card flex items-center gap-3 px-4 sm:px-6 py-3.5 sm:py-4 text-zinc-800 dark:text-zinc-200 hover:border-emerald-500/45 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -67,8 +67,8 @@ const Contact = () => {
           ))}
         </motion.div>
 
-        <motion.div className="text-sm md:text-base text-center text-slate-700 dark:text-slate-300 mb-10 py-4">
-          <p>Prefer async-first collaboration with clear milestones and measurable outcomes.</p>
+        <motion.div className="text-sm md:text-base text-center font-mono text-zinc-500 dark:text-zinc-400 mb-10 py-4">
+          <p># prefers-email · timezone: US/Eastern · will sign NDA</p>
         </motion.div>
       </div>
     </section>

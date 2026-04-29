@@ -60,8 +60,8 @@ const Education = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-blue-500/10 border border-blue-500/30 p-3">
-                  <GraduationCap className="w-5 h-5 text-blue-500" />
+                <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/28 p-3">
+                  <GraduationCap className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{edu.degree}</h3>
@@ -92,7 +92,7 @@ const Education = () => {
                 <ul className="space-y-2">
                   {edu.achievements.map((achievement) => (
                     <li key={achievement} className="flex gap-3 text-slate-700 dark:text-slate-300">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-blue-500" />
+                      <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
                       <span>{achievement}</span>
                     </li>
                   ))}

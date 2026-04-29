@@ -98,7 +98,7 @@ const Projects = () => {
           <p className="eyebrow">Featured work</p>
           <h2 className="section-title mt-3">Work that ships</h2>
           <p className="section-description mx-auto">
-            Selected projects across data engineering, ML, and platform reliability with measurable outcomes.
+            A public slice of builds — same patterns show up under NDA elsewhere: ingestion, quality gates, and shipping with receipts.
           </p>
         </div>
 
@@ -116,8 +116,8 @@ const Projects = () => {
                 onClick={() => setActiveFilter(filter)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   filter === activeFilter
-                    ? 'bg-blue-500 text-white shadow-md shadow-blue-500/25'
-                    : 'bg-slate-200/70 text-slate-700 hover:bg-slate-300/80 dark:bg-slate-800/70 dark:text-slate-200 dark:hover:bg-slate-700/80'
+                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-700/25 dark:bg-emerald-500'
+                    : 'bg-zinc-200/80 text-zinc-700 hover:bg-zinc-300/80 dark:bg-zinc-800/80 dark:text-zinc-200 dark:hover:bg-zinc-700/80'
                 }`}
               >
                 {filter}
@@ -143,7 +143,7 @@ const Projects = () => {
               key={project.id}
               onClick={() => setActiveProject(project.id)}
               className={`surface-card overflow-hidden flex flex-col text-left transition-all duration-300 hover:-translate-y-1 ${
-                project.id === activeProject ? 'ring-2 ring-blue-400/70' : ''
+                project.id === activeProject ? 'ring-2 ring-emerald-500/60 dark:ring-emerald-400/50' : ''
               }`}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.99 }}
@@ -186,7 +186,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-300"
+                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -197,7 +197,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-300"
+                    className="inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >

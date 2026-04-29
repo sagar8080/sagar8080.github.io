@@ -64,7 +64,7 @@ const About = () => {
               <ul className="space-y-3 text-slate-700 dark:text-slate-300">
                 {strengths.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+                    <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
                     <span>{item}</span>
                   </li>
                 ))}

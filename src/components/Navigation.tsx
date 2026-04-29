@@ -44,13 +44,13 @@ const Navigation = ({ activeSection, sections }: NavigationProps) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full z-50 border-b border-slate-300/40 dark:border-slate-700/40 bg-white/60 dark:bg-slate-950/45 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55 supports-[backdrop-filter]:dark:bg-slate-950/40"
+      className="fixed w-full z-50 border-b border-emerald-500/10 dark:border-emerald-500/15 bg-white/65 dark:bg-zinc-950/50 backdrop-blur-xl supports-[backdrop-filter]:bg-white/55 supports-[backdrop-filter]:dark:bg-zinc-950/45"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-sm font-semibold tracking-wide text-slate-800 dark:text-slate-100"
+            className="text-sm font-mono font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
           >
             Sagar Das
           </button>
@@ -62,17 +62,17 @@ const Navigation = ({ activeSection, sections }: NavigationProps) => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 aria-current={activeSection === item.id ? 'page' : undefined}
-                className={`relative text-sm transition-colors duration-200 group ${
+                className={`relative text-sm font-mono transition-colors duration-200 group ${
                   activeSection === item.id
-                    ? 'text-slate-900 dark:text-white'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                    ? 'text-zinc-900 dark:text-zinc-50'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400'
                 }`}
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {item.label}
                 <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-blue-500"
+                  className="absolute -bottom-1 left-0 h-0.5 bg-emerald-500"
                   initial={false}
                   animate={{ width: activeSection === item.id ? '100%' : '0%' }}
                   transition={{ duration: 0.2 }}

@@ -4,28 +4,31 @@
 
 @layer base {
   :root {
-    --surface-0: #f8fafc;
-    --surface-1: rgba(255, 255, 255, 0.75);
-    --surface-2: rgba(255, 255, 255, 0.9);
-    --text-primary: #0f172a;
-    --text-secondary: #334155;
-    --text-tertiary: #64748b;
-    --border-subtle: rgba(148, 163, 184, 0.28);
-    --border-strong: rgba(100, 116, 139, 0.4);
-    --accent-primary: #3b82f6;
-    --accent-secondary: #14b8a6;
-    --accent-highlight: #8b5cf6;
+    --surface-0: #e8ede9;
+    --surface-1: rgba(255, 255, 255, 0.78);
+    --surface-2: rgba(255, 255, 255, 0.94);
+    --text-primary: #0a0f0d;
+    --text-secondary: #1e2a24;
+    --text-tertiary: #4a5c54;
+    --border-subtle: rgba(16, 185, 129, 0.22);
+    --border-strong: rgba(5, 150, 105, 0.38);
+    --accent-primary: #059669;
+    --accent-secondary: #0d9488;
+    --accent-highlight: #d97706;
   }
 
   .dark {
-    --surface-0: #050b14;
-    --surface-1: rgba(15, 23, 42, 0.7);
-    --surface-2: rgba(15, 23, 42, 0.9);
-    --text-primary: #e2e8f0;
-    --text-secondary: #cbd5e1;
-    --text-tertiary: #94a3b8;
-    --border-subtle: rgba(100, 116, 139, 0.35);
-    --border-strong: rgba(148, 163, 184, 0.4);
+    --surface-0: #030706;
+    --surface-1: rgba(6, 26, 18, 0.58);
+    --surface-2: rgba(8, 32, 24, 0.9);
+    --text-primary: #e8f3ed;
+    --text-secondary: #b4c9be;
+    --text-tertiary: #6b8a7a;
+    --border-subtle: rgba(52, 211, 153, 0.2);
+    --border-strong: rgba(45, 212, 191, 0.38);
+    --accent-primary: #34d399;
+    --accent-secondary: #2dd4bf;
+    --accent-highlight: #fbbf24;
   }
 
   * {
@@ -43,7 +46,6 @@
   body {
     color: var(--text-primary);
     background: transparent;
-    font-family: 'Google Sans', sans-serif;
     line-height: 1.6;
     text-rendering: optimizeLegibility;
   }
@@ -59,7 +61,6 @@
     }
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -69,12 +70,16 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
+    background: rgb(5 150 105 / 0.55);
     border-radius: 4px;
   }
 
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgb(52 211 153 / 0.35);
+  }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-secondary);
+    background: rgb(13 148 136 / 0.65);
   }
 }
 
@@ -88,42 +93,52 @@
   }
 
   .eyebrow {
-    @apply text-xs uppercase tracking-[0.22em] font-semibold text-slate-500 dark:text-slate-400;
+    @apply font-mono text-[11px] uppercase tracking-[0.26em] font-semibold text-emerald-800 dark:text-emerald-400;
+  }
+
+  .eyebrow::before {
+    content: '// ';
+    margin-right: 0.35rem;
+    color: rgb(5 150 105 / 0.45);
+  }
+
+  .dark .eyebrow::before {
+    color: rgb(52 211 153 / 0.4);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100;
+    @apply text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight;
   }
 
   .section-description {
-    @apply mt-4 text-base md:text-lg text-slate-700 dark:text-slate-300 max-w-3xl;
+    @apply mt-4 text-base md:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl;
   }
 
   .surface-card {
-    @apply rounded-2xl border border-slate-300/40 dark:border-slate-600/45 bg-white/65 dark:bg-slate-900/40 backdrop-blur-lg transition-all duration-300;
+    @apply rounded-xl border border-emerald-500/20 dark:border-emerald-400/25 bg-white/75 dark:bg-zinc-950/55 backdrop-blur-md transition-all duration-300 shadow-[0_0_0_1px_rgba(16,185,129,0.06)] dark:shadow-[0_0_40px_-12px_rgba(16,185,129,0.12)];
   }
 
   .pill-tag {
-    @apply inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-700 dark:text-blue-300;
+    @apply inline-flex items-center rounded-md border border-emerald-500/25 bg-emerald-500/5 dark:bg-emerald-400/10 px-2.5 py-1 text-[11px] font-mono font-medium text-emerald-900 dark:text-emerald-300;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg shadow-blue-500/25 hover:from-blue-400 hover:to-indigo-400 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-emerald-600 to-teal-600 shadow-lg shadow-emerald-700/20 hover:from-emerald-500 hover:to-teal-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent dark:shadow-emerald-900/40;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-slate-800 dark:text-slate-100 border border-slate-300/60 dark:border-slate-600/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur transition-all duration-300 hover:bg-white/90 dark:hover:bg-slate-800/70 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-zinc-800 dark:text-zinc-100 border border-emerald-500/25 dark:border-emerald-400/20 bg-white/80 dark:bg-zinc-950/50 backdrop-blur transition-all duration-300 hover:bg-white dark:hover:bg-zinc-900/80 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
   }
 
   .glassmorphism {
     background: var(--surface-1);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-subtle);
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+    box-shadow: 0 10px 30px rgba(6, 20, 14, 0.12);
   }
 
   .dark .glassmorphism {
-    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.45);
+    box-shadow: 0 12px 28px rgba(0, 8, 6, 0.55);
   }
 }
 
@@ -133,7 +148,6 @@
   }
 }
 
-/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -149,4 +163,3 @@
   line-clamp: 3;
   overflow: hidden;
 }
-

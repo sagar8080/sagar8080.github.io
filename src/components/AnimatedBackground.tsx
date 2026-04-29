@@ -108,15 +108,15 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
         Math.max(width, height)
       )
       if (isDark) {
-        gradient.addColorStop(0, 'rgba(34, 76, 98, 0.5)')
-        gradient.addColorStop(0.45, 'rgba(12, 18, 28, 0.95)')
-        gradient.addColorStop(0.75, 'rgba(8, 12, 20, 0.98)')
-        gradient.addColorStop(1, 'rgba(5, 8, 14, 1)')
+        gradient.addColorStop(0, 'rgba(6, 42, 32, 0.42)')
+        gradient.addColorStop(0.45, 'rgba(3, 10, 8, 0.96)')
+        gradient.addColorStop(0.75, 'rgba(2, 8, 6, 0.99)')
+        gradient.addColorStop(1, 'rgba(1, 4, 3, 1)')
       } else {
-        gradient.addColorStop(0, 'rgba(210, 230, 245, 0.9)')
-        gradient.addColorStop(0.45, 'rgba(235, 243, 250, 0.95)')
-        gradient.addColorStop(0.75, 'rgba(245, 248, 252, 0.98)')
-        gradient.addColorStop(1, 'rgba(250, 252, 255, 1)')
+        gradient.addColorStop(0, 'rgba(220, 235, 228, 0.92)')
+        gradient.addColorStop(0.45, 'rgba(236, 244, 239, 0.96)')
+        gradient.addColorStop(0.75, 'rgba(244, 248, 246, 0.99)')
+        gradient.addColorStop(1, 'rgba(250, 252, 251, 1)')
       }
       context.fillStyle = gradient
       context.fillRect(0, 0, width, height)
@@ -303,7 +303,7 @@ const AnimatedBackground = ({ isDark = true }: AnimatedBackgroundProps) => {
   return (
     <div className="fixed inset-0 z-0">
       <canvas ref={canvasRef} className="w-full h-full" />
-      <div className={`absolute inset-0 ${isDark ? 'bg-black/58' : 'bg-white/28'}`} />
+      <div className={`absolute inset-0 ${isDark ? 'bg-black/52' : 'bg-white/22'}`} />
     </div>
   )
 }
