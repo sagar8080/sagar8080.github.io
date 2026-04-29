@@ -33,11 +33,6 @@ const Footer = () => {
             <span className="font-mono text-xs">next.js · react · tailwind</span>
           </motion.div>
         </div>
-
-        {/* Footer Bottom Bar */}
-        <motion.div className="border-t border-cyan-500/10 dark:border-cyan-500/15 mt-8 pt-6 text-center text-xs font-mono text-zinc-500 dark:text-zinc-500">
-          // static export · keyboard-friendly · honors prefers-reduced-motion
-        </motion.div>
       </div>
     </motion.footer>
   )

@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <motion.div className="mt-7 md:mt-8 flex justify-center gap-3 sm:gap-4 flex-wrap">
+        <motion.div className="mt-7 md:mt-8 mb-10 md:mb-12 flex justify-center gap-3 sm:gap-4 flex-wrap">
           {contactLinks.map((link) => (
             <motion.a
               key={link.label}
@@ -65,10 +65,6 @@ const Contact = () => {
               </div>
             </motion.a>
           ))}
-        </motion.div>
-
-        <motion.div className="text-sm md:text-base text-center font-mono text-zinc-500 dark:text-zinc-400 mb-10 py-4">
-          <p># prefers-email · timezone: US/Eastern · will sign NDA</p>
         </motion.div>
       </div>
     </section>
