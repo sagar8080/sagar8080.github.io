@@ -480,7 +480,7 @@ export const photos: Photo[] = [
 ]
 
 export type ContactLink = {
-  id: 'phone' | 'email' | 'linkedin' | 'github'
+  id: 'email' | 'linkedin' | 'github'
   label: string
   display: string
   href: string
@@ -488,13 +488,6 @@ export type ContactLink = {
 }
 
 export const contactLinks: ContactLink[] = [
-  {
-    id: 'phone',
-    label: 'PHONE',
-    display: '+1 (240) 495-9874',
-    href: 'tel:+12404959874',
-    command: 'dial',
-  },
   {
     id: 'email',
     label: 'EMAIL',
