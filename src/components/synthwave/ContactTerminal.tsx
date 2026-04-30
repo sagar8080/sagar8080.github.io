@@ -53,8 +53,8 @@ export function ContactTerminal() {
               >
                 <a
                   href={link.href}
-                  target={link.id === 'phone' || link.id === 'email' ? undefined : '_blank'}
-                  rel={link.id === 'phone' || link.id === 'email' ? undefined : 'noopener noreferrer'}
+                  target={link.id === 'email' ? undefined : '_blank'}
+                  rel={link.id === 'email' ? undefined : 'noopener noreferrer'}
                   className="group flex flex-wrap items-center gap-x-3 gap-y-1 rounded-sm px-2 py-2 font-mono text-sm transition-colors hover:bg-vint-cyan/5"
                 >
                   <span className="text-vint-cyan">$</span>
