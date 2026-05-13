@@ -2,181 +2,353 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Design tokens
-   ───────────────────────────────────────────────────────────────────────────── */
+/* ============================================================================
+   sagar-portfolio-design-system
+   Light editorial theme. Paper + ink + terracotta accent + sage / ochre supports.
+   ============================================================================ */
+
 :root {
-  --bg: #111114;
-  --fg: #fafafa;
-  --hairline: rgba(255, 255, 255, 0.045);
-  --hairline-strong: rgba(255, 255, 255, 0.075);
-  --hairline-accent: rgba(129, 140, 248, 0.18);
+  /* Paper (light backgrounds) */
+  --paper:   #faf7f2;
+  --paper-2: #f3efe7;
+  --paper-3: #ebe5d9;
 
-  /* Cool primary accent. Used for navigation, links, headers, structure. */
-  --accent: #818cf8;
-  --accent-soft: rgba(129, 140, 248, 0.10);
-  --accent-glow: rgba(129, 140, 248, 0.18);
+  /* Ink (text) */
+  --ink:   #1c1917;
+  --ink-2: #44403c;
+  --ink-3: #78716c;
+  --ink-4: #a8a29e;
 
-  /* Subtle vertical grid */
-  --grid-line: rgba(255, 255, 255, 0.035);
+  /* Hairlines */
+  --line:   #e5e0d6;
+  --line-2: #d4cdbe;
 
-  /* Cursor spotlight position (set per-card via JS). Defaults centered. */
-  --mx: 50%;
-  --my: 50%;
+  /* Terracotta (primary accent) */
+  --terracotta:   #b45a3c;
+  --terracotta-2: #8e4329;
+  --terracotta-3: #f4e6dd;
 
-  /* Reading progress */
-  --reading-progress: 0;
+  /* Sage (secondary accent) */
+  --sage:   #6b7a4e;
+  --sage-2: #4f5c39;
+  --sage-3: #e6e9d6;
+
+  /* Ochre (warm time-state) */
+  --ochre:   #b58a3a;
+  --ochre-2: #8a6724;
+  --ochre-3: #f0e3c8;
+
+  /* Ink-blue (rare; for variety) */
+  --ink-blue: #324a6c;
+
+  /* Compatibility shims so older variable names continue to resolve */
+  --bg:        var(--paper);
+  --fg:        var(--ink);
+  --hairline:         var(--line);
+  --hairline-strong:  var(--line-2);
+  --hairline-accent:  rgba(180, 90, 60, 0.30);
+  --accent:           var(--terracotta);
+  --accent-soft:      rgba(180, 90, 60, 0.10);
+  --accent-glow:      rgba(180, 90, 60, 0.16);
+  --warm:             var(--ochre);
+  --warm-soft:        rgba(181, 138, 58, 0.12);
+  --warm-glow:        rgba(181, 138, 58, 0.20);
+  --signal:           var(--sage);
+
+  /* Spacing scale (8px base) */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  /* Radii */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-pill: 9999px;
+
+  /* Tracking */
+  --tr-caps:  0.08em;
+  --tr-tight: -0.02em;
+
+  /* Motion */
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 380ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Fonts (filled by Next font variables in layout.tsx) */
+  --font-body: var(--font-sans), system-ui, sans-serif;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
+/* ============================================================================
    Base
-   ───────────────────────────────────────────────────────────────────────────── */
+   ============================================================================ */
 @layer base {
-  html,
-  body {
-    @apply antialiased selection:bg-accent/30 selection:text-white scroll-smooth;
-    background-color: var(--bg);
-    color: rgb(212 212 216);
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    @apply antialiased selection:bg-accent/15 selection:text-ink;
+    background-color: var(--paper);
+    color: var(--ink-2);
+    font-family: var(--font-sans), system-ui, sans-serif;
     font-feature-settings: 'ss01', 'cv11';
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: -3;
-    pointer-events: none;
-    background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
-    background-size: 96px 100%;
-    opacity: 0.6;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
 
   h1, h2, h3, h4 {
-    color: white;
+    color: var(--ink);
+    font-family: var(--font-display), system-ui, sans-serif;
   }
 
   :focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent-glow);
-    border-radius: 6px;
+    outline: 2px solid var(--terracotta);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
+
+  ::selection { background: rgba(180, 90, 60, 0.18); color: var(--ink); }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Film grain. A static SVG noise texture pinned to the viewport. Inline data
-   URI so no external request, ~1KB. Set very low opacity so it reads as
-   warmth, not grain.
-   ───────────────────────────────────────────────────────────────────────────── */
+/* Paper grain. Very subtle warmth on the body background. */
 .grain-overlay {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 1; /* above the atmosphere canvas (z 0), below content (z 10) */
   pointer-events: none;
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Surfaces. Single source of truth for cards, panels, and bento.
-   ───────────────────────────────────────────────────────────────────────────── */
+/* ============================================================================
+   Layout primitives
+   ============================================================================ */
 @layer components {
+
+  .section { padding: var(--sp-24) var(--sp-8); }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section--wide .section-inner { max-width: 1240px; }
+  .section-body { margin-top: var(--sp-10); }
+
+  /* Surfaces (kept for back-compat; they now read as paper cards). */
   .surface {
-    @apply relative overflow-hidden rounded-xl border border-hairline bg-surface-1 transition-all duration-300;
-    box-shadow: 0 18px 60px -44px rgba(0, 0, 0, 0.8);
+    @apply rounded-md border border-line bg-paper transition-colors;
   }
-  .surface::after,
-  .surface-raised::after,
-  .panel-product::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    background: radial-gradient(420px circle at 50% 0%, rgba(129, 140, 248, 0.10), transparent 64%);
-    opacity: 0;
-    transition: opacity 300ms ease;
-  }
-  .surface:hover {
-    border-color: var(--hairline-accent);
-    transform: translateY(-2px);
-    box-shadow:
-      0 18px 50px -30px rgba(129, 140, 248, 0.24),
-      0 12px 34px -26px rgba(0, 0, 0, 0.72);
-  }
-  .surface:hover::after,
-  .surface-raised:hover::after,
-  .panel-product:hover::after {
-    opacity: 1;
-  }
+  .surface:hover { @apply border-line-2; }
 
   .surface-raised {
-    @apply relative overflow-hidden rounded-xl border border-hairline bg-surface-2;
+    @apply rounded-md border border-line bg-paper;
     box-shadow:
-      0 8px 30px -12px rgba(0, 0, 0, 0.5);
-  }
-  .surface-raised,
-  .panel-product {
-    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
-  }
-  .surface-raised:hover,
-  .panel-product:hover {
-    border-color: var(--hairline-accent);
-    transform: translateY(-2px);
+      0 1px 0 0 rgba(28, 25, 23, 0.04),
+      0 6px 18px -10px rgba(28, 25, 23, 0.10);
   }
 
   .panel-product {
-    @apply relative overflow-hidden rounded-2xl border border-hairline bg-[#0c0c10];
+    @apply rounded-lg border border-line bg-paper-2;
     box-shadow:
-      0 30px 90px -40px rgba(129, 140, 248, 0.30),
-      0 12px 40px -16px rgba(0, 0, 0, 0.7);
-  }
-
-  .divide-hairline > * + * {
-    border-top: 1px solid var(--hairline);
-  }
-
-  .code-surface {
-    @apply rounded-lg border border-hairline bg-black/40 font-mono text-[12.5px] leading-[1.7] text-zinc-300;
-  }
-
-  .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-eyebrow text-zinc-500;
-  }
-
-  .chip {
-    @apply inline-flex items-center rounded-md border border-hairline bg-surface-1 px-2 py-0.5 font-mono text-[10.5px] text-zinc-300 transition-all duration-200;
-  }
-  .chip:hover {
-    border-color: var(--hairline-accent);
-    background-color: var(--accent-soft);
-    color: white;
+      0 1px 0 0 rgba(28, 25, 23, 0.04),
+      0 14px 40px -18px rgba(28, 25, 23, 0.18);
   }
 
   .glass-card {
-    @apply rounded-xl border border-hairline bg-surface-1 transition-colors hover:border-hairline-strong hover:bg-surface-2;
+    @apply rounded-md border border-line bg-paper transition-colors hover:border-line-2 hover:bg-paper-2;
   }
 
-  .hide-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  .divide-hairline > * + * {
+    border-top: 1px solid var(--line);
   }
 
-  /* Infinite marquee. Track holds two copies of the photo set so the loop is
-     seamless: when transform hits -50%, the second copy is visually at the
-     origin. */
+  .code-surface {
+    @apply rounded-md border border-line bg-paper-2 font-mono text-[12.5px] leading-[1.7] text-ink-2;
+  }
+
+  /* Eyebrow: caps mono caption, optional terracotta rule. */
+  .eyebrow {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-3);
+    letter-spacing: var(--tr-caps);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow-rule {
+    width: 28px;
+    height: 1px;
+    background: var(--terracotta);
+    display: inline-block;
+  }
+  /* Older eyebrow-bar that drew in via animation. Keep as alias for
+     terracotta rule so nothing breaks. */
+  .eyebrow-bar {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: var(--terracotta);
+    margin-right: 10px;
+    vertical-align: middle;
+    animation: eyebrow-draw 600ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  @keyframes eyebrow-draw {
+    from { width: 0; }
+    to   { width: 22px; }
+  }
+
+  /* Section header */
+  .section-header { max-width: 780px; }
+  .section-title {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(34px, 4.4vw, 48px);
+    font-weight: 600;
+    letter-spacing: var(--tr-tight);
+    line-height: 1.05;
+    margin: 0 0 var(--sp-3);
+    text-wrap: balance;
+  }
+  .section-lede {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.4;
+    color: var(--ink-2);
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-weight: 500;
+    border-radius: var(--r-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    transition: background var(--dur-base) var(--ease-standard),
+                border-color var(--dur-base) var(--ease-standard),
+                color var(--dur-base) var(--ease-standard),
+                transform var(--dur-base) var(--ease-standard);
+    white-space: nowrap;
+  }
+  .btn--md { font-size: 14px; padding: 10px 16px; }
+  .btn--sm { font-size: 13px; padding: 7px 12px; }
+  .btn--lg { font-size: 15px; padding: 13px 20px; }
+
+  .btn--primary {
+    background: var(--ink); color: var(--paper); border-color: var(--ink);
+  }
+  .btn--primary:hover { background: #000; border-color: #000; color: var(--paper); }
+
+  .btn--accent {
+    background: var(--terracotta); color: var(--paper); border-color: var(--terracotta);
+  }
+  .btn--accent:hover {
+    background: var(--terracotta-2); border-color: var(--terracotta-2); color: var(--paper);
+  }
+
+  .btn--ghost {
+    background: transparent; color: var(--ink); border-color: var(--line);
+  }
+  .btn--ghost:hover { background: var(--paper-2); border-color: var(--line-2); color: var(--ink); }
+
+  .btn--text {
+    background: transparent; color: var(--ink); border-color: transparent;
+    padding-left: 4px; padding-right: 4px;
+    text-decoration: underline;
+    text-decoration-color: var(--line-2);
+    text-underline-offset: 3px;
+  }
+  .btn--text:hover { color: var(--terracotta); text-decoration-color: var(--terracotta); }
+
+  /* Mono chips (inline tags) */
+  .chip {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-2);
+    white-space: nowrap;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+  }
+  .chip--sans  { font-family: var(--font-sans), system-ui, sans-serif; }
+  .chip--rust  { background: var(--terracotta-3); border-color: #DBC1AE; color: #6A3320; }
+  .chip--sage  { background: var(--sage-3); border-color: #C2CAA9; color: #3F4A24; }
+  .chip--ochre { background: var(--ochre-3); border-color: #DDC791; color: #6F4A0C; }
+  .chip--ink   { background: var(--paper-3); border-color: var(--line-2); color: var(--ink-2); }
+
+  /* Status pill (paper-based) */
+  .status,
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--ink-2);
+    padding: 3px 9px 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-pill);
+    background: var(--paper-2);
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--ink-3);
+    display: inline-block;
+  }
+  .status--sage  .status-dot { background: var(--sage); }
+  .status--ochre .status-dot { background: var(--ochre); }
+  .status--rust  .status-dot,
+  .status--terracotta .status-dot { background: var(--terracotta); }
+  .status--available .status-dot { background: var(--sage); box-shadow: 0 0 0 3px rgba(107,122,78,0.18); }
+
+  .pill-live    { color: var(--ink-2); }
+  .pill-live    .status-dot { background: var(--ochre); box-shadow: 0 0 0 3px rgba(181,138,58,0.18); }
+  .pill-shipped { color: var(--ink-2); }
+  .pill-shipped .status-dot { background: var(--sage); }
+  .pill-draft   { color: var(--ink-3); }
+  .pill-draft   .status-dot { background: var(--ink-4); }
+
+  /* Hide scrollbar (used by photo strip) */
+  .hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Marquee (photo strip) — kept from previous version */
   .marquee-mask {
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
   }
   .photo-strip-bleed {
     left: 50%;
+    width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
-    width: 100vw;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
   .marquee-track {
     display: flex;
@@ -194,68 +366,36 @@
     animation-play-state: paused;
   }
 
-  /* Grayscale-by-default photo frame with color on hover and a subtle lift. */
+  /* Photo frame: grayscale by default, color on hover, gentle lift. */
   .photo-frame {
-    @apply relative cursor-pointer overflow-hidden rounded-md border border-hairline bg-surface-1 transition-all duration-500;
+    @apply relative cursor-pointer overflow-hidden rounded-md border border-line bg-paper transition-all duration-500;
   }
   .photo-frame img {
-    filter: grayscale(1) contrast(1.05) brightness(0.92);
+    filter: grayscale(1) contrast(1.02);
     transition: filter 500ms ease, transform 700ms ease;
     will-change: filter, transform;
   }
-  .photo-frame:hover {
-    border-color: var(--hairline-strong);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 40px -18px rgba(0, 0, 0, 0.6);
-  }
-  .photo-frame:hover img {
-    filter: grayscale(0) contrast(1) brightness(1);
-    transform: scale(1.04);
-  }
+  .photo-frame:hover { border-color: var(--line-2); transform: translateY(-2px); }
+  .photo-frame:hover img { filter: grayscale(0); transform: scale(1.04); }
 
-  /* Lightbox. Fullscreen modal that opens when a photo is clicked. */
+  /* Lightbox (paper-tinted backdrop) */
   .lightbox-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 80;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(12px);
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(28, 25, 23, 0.80);
+    backdrop-filter: blur(10px);
     animation: lightbox-fade 220ms ease-out;
   }
-  @keyframes lightbox-fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+  @keyframes lightbox-fade { from { opacity: 0; } to { opacity: 1; } }
 
-  .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-eyebrow;
-  }
-  .pill-live {
-    border-color: var(--hairline-accent);
-    background-color: var(--accent-soft);
-    color: var(--accent);
-  }
-  .pill-shipped {
-    @apply border-hairline-strong bg-surface-2 text-zinc-300;
-  }
-  .pill-draft {
-    @apply border-hairline bg-surface-1 text-zinc-500;
-  }
-
-  /* Cursor-tracking spotlight. Add the .spotlight class to a relative element;
-     a soft accent glow follows the cursor on hover. JS sets --mx and --my. */
-  .spotlight {
-    position: relative;
-    isolation: isolate;
-  }
+  /* Spotlight (terracotta glow that follows the cursor) */
+  .spotlight { position: relative; isolation: isolate; }
   .spotlight::before {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     border-radius: inherit;
     background: radial-gradient(
-      260px circle at var(--mx) var(--my),
-      var(--accent-glow),
+      260px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(180, 90, 60, 0.10),
       transparent 60%
     );
     opacity: 0;
@@ -263,94 +403,49 @@
     pointer-events: none;
     z-index: 0;
   }
-  .spotlight:hover::before {
-    opacity: 1;
-  }
-  .spotlight > * {
-    position: relative;
-    z-index: 1;
-  }
+  .spotlight:hover::before { opacity: 1; }
+  .spotlight > * { position: relative; z-index: 1; }
 
-  .case-section {
-    @apply relative scroll-mt-28 space-y-5 border-l border-hairline pl-5 transition-colors duration-300;
-  }
-  .case-section::before {
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: 0.15rem;
-    height: 1.65rem;
-    width: 1px;
-    background: var(--accent);
-    box-shadow: 0 0 18px rgba(129, 140, 248, 0.26);
-    transform: scaleY(0.55);
-    transform-origin: top;
-    opacity: 0.55;
-    transition: transform 300ms ease, opacity 300ms ease;
-  }
-  .case-section:hover {
-    border-left-color: rgba(129, 140, 248, 0.24);
-  }
-  .case-section:hover::before {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-
-  .type-caret {
-    animation: caret-blink 920ms steps(1) infinite;
-  }
-  @keyframes caret-blink {
-    0%, 48% { opacity: 1; }
-    49%, 100% { opacity: 0; }
-  }
-
-  /* Magnetic button. Translate is set via JS on mousemove; CSS just smooths
-     the return to neutral. */
+  /* Magnetic — translate set by JS, smoothing handled here */
   .magnetic {
     transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
   }
 
-  /* Reading progress bar (writing posts). Width driven by --reading-progress
-     (set by a small client component on scroll). */
+  /* Reading progress bar (writing posts) */
   .reading-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed; top: 0; left: 0;
     height: 2px;
-    width: calc(var(--reading-progress) * 100%);
-    background: var(--accent);
+    width: calc(var(--reading-progress, 0) * 100%);
+    background: var(--terracotta);
     z-index: 60;
     pointer-events: none;
     transition: width 90ms linear;
   }
 
-  /* Drop cap. Applied to the first paragraph of a writing post. */
+  /* Drop cap on first paragraph of writing posts */
   .drop-cap > p:first-of-type::first-letter {
     float: left;
     font-family: var(--font-display), serif;
-    font-size: 5.2em;
+    font-size: 5em;
     line-height: 0.86;
     padding: 0.08em 0.12em 0 0;
     margin-right: 0.04em;
-    color: var(--accent);
+    color: var(--terracotta);
     font-weight: 700;
   }
 
-  /* Pull quote. Oversized italic line that breaks the column. */
+  /* Pull quote */
   .pullquote {
-    @apply my-10 border-l-2 border-accent/50 pl-6 font-display text-[24px] font-medium italic leading-snug text-zinc-100 md:text-[28px];
+    @apply my-10 border-l-2 border-accent pl-6 font-display text-[24px] font-medium italic leading-snug text-ink md:text-[28px];
   }
 
-  /* Sidenote. Small parenthetical aside. On wide screens, pushed into the
-     right margin; on narrower screens, inlined as a soft callout. */
+  /* Sidenote */
   .sidenote {
-    @apply my-4 border-l border-hairline-strong bg-surface-1 px-4 py-3 text-[13.5px] italic leading-snug text-zinc-400;
+    @apply my-4 border-l border-line-2 bg-paper-2 px-4 py-3 text-[13.5px] italic leading-snug text-ink-3;
   }
   @media (min-width: 1100px) {
-    .prose-host {
-      position: relative;
-    }
+    .prose-host { position: relative; }
     .sidenote {
       @apply m-0 border-l-0 bg-transparent p-0 text-[12.5px];
       position: absolute;
@@ -359,84 +454,225 @@
     }
   }
 
-  /* Stat. A large number used as a moment in the prose. */
   .stat-block {
-    @apply my-8 inline-flex flex-col gap-1 rounded-lg border border-hairline bg-surface-1 px-5 py-4;
+    @apply my-8 inline-flex flex-col gap-1 rounded-md border border-line bg-paper px-5 py-4;
   }
   .stat-value {
-    @apply font-display text-[34px] font-semibold tabular-nums leading-none tracking-normal text-white;
+    @apply font-display text-[34px] font-semibold tabular-nums leading-none tracking-tight text-ink;
   }
   .stat-label {
-    @apply font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500;
+    @apply font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3;
   }
 
-  /* Aside. A horizontal rule with a small glyph and an italic body. */
   .aside-block {
-    @apply my-9 grid grid-cols-[auto_1fr] items-baseline gap-4 border-y border-hairline py-5;
+    @apply my-9 grid grid-cols-[auto_1fr] items-baseline gap-4 border-y border-line py-5;
   }
-  .aside-glyph {
-    @apply font-mono text-accent;
-  }
-  .aside-body {
-    @apply font-display text-[16px] italic leading-snug text-zinc-300 md:text-[17px];
-  }
+  .aside-glyph { @apply font-mono text-accent; }
+  .aside-body  { @apply font-display text-[16px] italic leading-snug text-ink-2 md:text-[17px]; }
 
-  /* Chapter divider. A thin centered hairline with a small accent glyph used
-     between major sections. */
+  /* Chapter divider */
   .chapter-divider {
-    @apply my-8 flex items-center justify-center gap-4 text-zinc-700;
+    @apply my-8 flex items-center justify-center gap-4 text-ink-4;
   }
-  .chapter-divider::before,
-  .chapter-divider::after {
+  .chapter-divider::before, .chapter-divider::after {
     content: '';
     height: 1px;
     width: 56px;
-    background: var(--hairline);
+    background: var(--line);
   }
 
-  /* Section eyebrow accent line. A short bar that draws in from the left when
-     the page mounts. CSS-only; no JS hookup required. */
-  .eyebrow-bar {
-    display: inline-block;
-    height: 1px;
-    width: 0;
-    background: var(--accent);
-    margin-right: 10px;
-    vertical-align: middle;
-    animation: eyebrow-draw 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  /* Orbit visual (Technical Depth centerpiece). Each .orbit-ring element
+     rotates around the SVG center at its own period so the four planets
+     never sync. Reduced-motion stops the spin entirely; the SVG still
+     reads as a static diagram with labeled compass-point captions. */
+  @keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
-  @keyframes eyebrow-draw {
-    from { width: 0; }
-    to   { width: 22px; }
+  .orbit-svg { display: block; }
+  @media (prefers-reduced-motion: reduce) {
+    .orbit-svg .orbit-ring { animation: none !important; }
+  }
+
+  /* ── Ambient atmosphere ─────────────────────────────────────────────
+     Edge-anchored survey rings + Claude-style warm blobs. The rings
+     rotate at very long periods (4–5 minutes per revolution) so motion
+     stays subliminal; the blobs breathe via scale + opacity. */
+  @keyframes atmosphere-ring-rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .atmosphere-ring {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+  .atmosphere-ring--cw {
+    animation: atmosphere-ring-rotate 240s linear infinite;
+  }
+  .atmosphere-ring--ccw {
+    animation: atmosphere-ring-rotate 280s linear infinite reverse;
+  }
+
+  @keyframes atmosphere-breathe {
+    0%, 100% { transform: scale(1);    opacity: 0.65; }
+    50%      { transform: scale(1.08); opacity: 1;    }
+  }
+  .atmosphere-blob {
+    filter: blur(36px);
+    will-change: transform, opacity;
+  }
+  .atmosphere-blob--1 { animation: atmosphere-breathe 14s ease-in-out infinite; }
+  .atmosphere-blob--2 { animation: atmosphere-breathe 18s ease-in-out -4s infinite; }
+  .atmosphere-blob--3 { animation: atmosphere-breathe 16s ease-in-out -8s infinite; }
+  .atmosphere-blob--4 { animation: atmosphere-breathe 20s ease-in-out -12s infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atmosphere-ring,
+    .atmosphere-blob {
+      animation: none !important;
+    }
+  }
+
+  /* Hero dot grid (light editorial atmosphere). Use .hero-dotgrid on the
+     hero wrapper to fade a small subtle dot grid behind content. */
+  .hero-dotgrid { position: relative; overflow: hidden; }
+  .hero-dotgrid::before {
+    content: '';
+    position: absolute;
+    inset: auto -10% -10% -10%;
+    height: 60%;
+    background-image: radial-gradient(var(--line-2) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.5;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, transparent, black 40%, black 70%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%, black 70%, transparent);
+  }
+
+  /* Terracotta italic emphasis (hero headlines) */
+  .ink-italic {
+    color: var(--terracotta);
+    font-style: italic;
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Mermaid diagrams
-   ───────────────────────────────────────────────────────────────────────────── */
-.mermaid-rendered svg {
+/* ============================================================================
+   Mermaid (light theme). Small console-style sizing, and the
+   figure breaks out of the prose column so cylinders + multi-line labels
+   actually fit instead of clipping.
+   ============================================================================ */
+
+/* Figure container uses the wider writing column by default. On large screens
+   it can occupy a little more width without increasing diagram height by force.
+   Mobile keeps the diagram inside the viewport and relies on horizontal scroll
+   for oversized generated SVGs. */
+.mermaid-block {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
   max-width: 100%;
+}
+@media (min-width: 1180px) {
+  .mermaid-block {
+    width: min(1120px, calc(100vw - 48px));
+    max-width: none;
+    margin-left: 50%;
+    margin-right: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.mermaid-rendered {
+  min-width: 760px;
+  width: max-content;
+  max-width: none;
+}
+@media (min-width: 768px) {
+  .mermaid-rendered {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.mermaid-rendered svg {
+  width: 100%;
+  max-width: none;
   height: auto;
 }
+
 .mermaid-rendered .nodeLabel,
 .mermaid-rendered .edgeLabel,
 .mermaid-rendered .label,
-.mermaid-rendered text {
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 12.5px !important;
-  letter-spacing: 0.02em !important;
-}
-.mermaid-rendered .edgePath path,
-.mermaid-rendered .flowchart-link {
-  stroke-width: 1.25px !important;
-}
-.mermaid-rendered .cluster rect {
-  stroke-dasharray: 3 4 !important;
+.mermaid-rendered text,
+.mermaid-rendered foreignObject div,
+.mermaid-rendered foreignObject span,
+.mermaid-rendered foreignObject p {
+  font-family: Consolas, "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, monospace !important;
+  font-size: 9px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  text-anchor: middle !important;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
+/* Nodes themselves: slightly larger inner padding so labels never clip
+   against the shape edge. The cylinder shape in particular needs more
+   horizontal space because mermaid sizes it tightly. */
+.mermaid-rendered .node .label foreignObject,
+.mermaid-rendered .node foreignObject {
+  overflow: visible !important;
+}
+.mermaid-rendered .node .label > div,
+.mermaid-rendered .node .nodeLabel {
+  white-space: nowrap;
+  padding: 0 3px;
+}
+.mermaid-rendered foreignObject p {
+  margin: 0 !important;
+  max-width: none !important;
+  text-align: center !important;
+}
+
+/* Edge labels read against the connector lines. */
+.mermaid-rendered .edgeLabel {
+  background-color: var(--paper) !important;
+  padding: 1px 3px !important;
+  border-radius: 3px !important;
+  font-size: 8px !important;
+}
+
+.mermaid-rendered .edgePath path,
+.mermaid-rendered .flowchart-link {
+  stroke-width: 1.2px !important;
+}
+
+/* Cluster (subgraph) treatment. */
+.mermaid-rendered .cluster rect {
+  stroke-dasharray: 3 4 !important;
+  fill: rgba(28, 25, 23, 0.015) !important;
+}
+.mermaid-rendered .cluster .cluster-label,
+.mermaid-rendered .cluster .label {
+  font-weight: 600 !important;
+  font-size: 8.5px !important;
+  fill: var(--ink) !important;
+  color: var(--ink) !important;
+}
+.mermaid-rendered .cluster .cluster-label foreignObject,
+.mermaid-rendered .cluster .label foreignObject {
+  overflow: visible !important;
+}
+
+/* Arrow tips visible against ink. */
+.mermaid-rendered marker path,
+.mermaid-rendered defs marker path {
+  fill: var(--ink-2) !important;
+  stroke: var(--ink-2) !important;
+}
+
+/* ============================================================================
    Reduced motion
-   ───────────────────────────────────────────────────────────────────────────── */
+   ============================================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -20,10 +20,10 @@ The first path is the only one that fails. The second is the only one that works
 
 ```mermaid
 flowchart LR
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef bad fill:#0c0c10,stroke:#7f1d1d,color:#fca5a5
-  classDef ok fill:#0c0c10,stroke:#34d399,color:#a7f3d0
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef bad fill:#fce8e0,stroke:#b45a3c,color:#6A3320
+  classDef ok fill:#e6e9d6,stroke:#6b7a4e,color:#3F4A24
 
   subgraph V["A. Voluntary check"]
     direction LR
@@ -73,10 +73,10 @@ The right shape is two layers in sequence. Static rules fire first. Fast, free, 
 
 ```mermaid
 flowchart TB
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef ok fill:#0c0c10,stroke:#34d399,color:#a7f3d0
-  classDef warm fill:#0c0c10,stroke:#fbbf24,color:#fde68a
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef ok fill:#e6e9d6,stroke:#6b7a4e,color:#3F4A24
+  classDef warm fill:#f0e3c8,stroke:#b58a3a,color:#6F4A0C
 
   A[action attempted]:::plain --> S{static rules<br/>fast · free · auditable}:::accent
   S -->|matches obvious case| D1[allow / warn / block / review]:::ok

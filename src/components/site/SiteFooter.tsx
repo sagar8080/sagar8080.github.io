@@ -1,115 +1,64 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-hairline">
-      <div className="mx-auto max-w-editorial px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:items-start">
-          {/* Identity */}
-          <div className="space-y-3">
-            <p className="font-display text-[15px] font-semibold tracking-normal text-white">
-              Sagar Das
-            </p>
-            <p className="max-w-sm text-[13px] leading-[1.7] text-zinc-500">
-              Data &amp; AI Engineer building infrastructure for trusted AI workflows.
-              Currently shipping{' '}
-              <Link href="/products/pulseql" className="text-zinc-300 hover:text-white">
-                PulseQL
-              </Link>{' '}
-              and{' '}
-              <Link href="/projects/relay" className="text-zinc-300 hover:text-white">
-                Relay
-              </Link>
-              .
-            </p>
-            <p className="flex items-center gap-2 pt-1 font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
-              <span className="relative inline-flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-              </span>
-              Open to consulting &amp; full-time
-            </p>
-          </div>
-
-          {/* Sitemap */}
-          <FooterCol
-            label="Site"
-            items={[
-              { label: 'Home', href: '/' },
-              { label: 'Projects', href: '/projects' },
-              { label: 'Writing', href: '/writing' },
-              { label: 'Resume', href: '/resume' },
-              { label: 'Contact', href: '/contact' },
-            ]}
-          />
-
-          <FooterCol
-            label="Products"
-            items={[
-              { label: 'PulseQL', href: '/products/pulseql' },
-              { label: 'Relay (case study)', href: '/projects/relay' },
-              { label: 'Atrium', href: '/projects/atrium' },
-            ]}
-          />
-
-          <FooterCol
-            label="Elsewhere"
-            items={[
-              { label: 'GitHub', href: 'https://github.com/sagar8080', external: true },
-              { label: 'LinkedIn', href: 'https://linkedin.com/in/sagardas08', external: true },
-              { label: 'Email', href: 'mailto:sagardas.work@gmail.com' },
-            ]}
-          />
+    <footer className="mt-12 border-t border-line bg-paper">
+      <div className="mx-auto flex max-w-[1240px] flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
+        <div className="space-y-1">
+          <p className="inline-flex items-baseline gap-[2px] font-display text-[17px] font-semibold leading-none tracking-tight text-ink">
+            Sagar Das
+            <span
+              aria-hidden
+              className="mb-[3px] ml-[2px] h-[5px] w-[5px] self-end rounded-full bg-terracotta"
+            />
+          </p>
+          <p className="text-[12.5px] text-ink-3">Data &amp; AI Engineer</p>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6">
-          <p className="font-mono text-[11px] tracking-wide text-zinc-600">
-            © {new Date().getFullYear()} Sagar Das · built with care
-          </p>
-          <p className="font-mono text-[11px] tracking-wide text-zinc-600">
-            v2 · editorial-tech
-          </p>
-        </div>
+        <nav
+          aria-label="Footer"
+          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-ink-2"
+        >
+          <FooterLink href="/projects">Projects</FooterLink>
+          <FooterLink href="/writing">Writing</FooterLink>
+          <FooterLink href="/resume">Resume</FooterLink>
+          <FooterLink href="/contact">Contact</FooterLink>
+          <FooterLink href="https://github.com/sagar8080" external>
+            GitHub
+          </FooterLink>
+        </nav>
+
+        <p className="font-mono text-[11px] tracking-wide text-ink-4">
+          © {new Date().getFullYear()}
+        </p>
       </div>
     </footer>
   )
 }
 
-function FooterCol({
-  label,
-  items,
+function FooterLink({
+  href,
+  external,
+  children,
 }: {
-  label: string
-  items: { label: string; href: string; external?: boolean }[]
+  href: string
+  external?: boolean
+  children: ReactNode
 }) {
+  const className = "transition-colors hover:text-terracotta"
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {children} ↗
+      </a>
+    )
+  }
+
   return (
-    <div className="space-y-3">
-      <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
-        {label}
-      </p>
-      <ul className="space-y-2">
-        {items.map((it) => (
-          <li key={it.href}>
-            {it.external ? (
-              <a
-                href={it.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] text-zinc-400 transition-colors hover:text-white"
-              >
-                {it.label} ↗
-              </a>
-            ) : (
-              <Link
-                href={it.href}
-                className="text-[13px] text-zinc-400 transition-colors hover:text-white"
-              >
-                {it.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Link href={href} className={className}>
+      {children}
+    </Link>
   )
 }

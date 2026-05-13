@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
@@ -113,23 +113,6 @@ function Hero() {
           <GhostButton href="https://github.com/sagar8080" external>
             GitHub
           </GhostButton>
-        </div>
-
-        <div className="grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-xl border border-hairline bg-hairline">
-          {[
-            ['900+', 'legacy modules modernized'],
-            ['20M+', 'daily events streamed'],
-            ['35+', 'financial datasets onboarded'],
-          ].map(([value, label]) => (
-            <div key={label} className="bg-background/80 px-4 py-3">
-              <p className="font-display text-[24px] font-semibold leading-none text-white">
-                {value}
-              </p>
-              <p className="mt-1.5 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-                {label}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
 
@@ -353,7 +336,7 @@ function SystemVisual({ id }: { id: string }) {
         : 'Safer AI workflows'
 
   return (
-    <div className="mb-5 overflow-hidden rounded-xl border border-hairline bg-black/25 p-4">
+    <div className="mb-5 overflow-hidden rounded-xl border border-hairline bg-paper-3 p-4">
       <div className="flex items-center justify-between gap-3">
         <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
           {id}.project
@@ -442,6 +425,7 @@ const depthGroups = [
   {
     label: 'Data engineering',
     icon: Database,
+    color: 'var(--terracotta)',
     focus: 'Batch, streaming, quality, and lakehouse work for enterprise data teams.',
     proof: 'Pipelines, semantic layers, and modernization systems at production scale.',
     items: [
@@ -458,6 +442,7 @@ const depthGroups = [
   {
     label: 'ML & AI systems',
     icon: BrainCircuit,
+    color: 'var(--sage)',
     focus: 'Model workflows, feature systems, deployment paths, and evaluation loops.',
     proof: 'Built across applied ML, MLOps, and AI-assisted review workflows.',
     items: [
@@ -474,6 +459,7 @@ const depthGroups = [
   {
     label: 'Generative AI',
     icon: GitBranch,
+    color: 'var(--ochre)',
     focus: 'Grounded LLM applications that keep context, evidence, and review visible.',
     proof: 'RAG systems, knowledge interfaces, and agentic AI infrastructure.',
     items: [
@@ -490,6 +476,7 @@ const depthGroups = [
   {
     label: 'Cloud & DevOps',
     icon: Activity,
+    color: 'var(--ink-blue)',
     focus: 'Cloud delivery, infrastructure automation, observability, and platform hygiene.',
     proof: 'AWS, GCP, containers, CI/CD, and production monitoring workflows.',
     items: [
@@ -514,46 +501,33 @@ function TechnicalDepth() {
         lede="Data platforms, ML systems, generative AI infrastructure, and cloud delivery. The common thread is making data and AI workflows reliable enough for enterprise use."
       />
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {depthGroups.map((g, index) => {
+      <StackGraph groups={depthGroups} />
+
+      {/* Color legend identifying each orbital ring. Lives below the
+          centerpiece so the graph reads as a single living surface. */}
+      <div className="mx-auto mt-10 grid max-w-3xl gap-x-8 gap-y-4 sm:grid-cols-2 md:mt-14 md:grid-cols-4">
+        {depthGroups.map((g) => {
           const Icon = g.icon
           return (
-            <Spotlight key={g.label} className="surface group min-h-[320px] p-6 md:p-7">
-              <div className="flex items-start justify-between gap-5">
-                <div className="flex min-w-0 items-center gap-3">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-accent/25 bg-accent/10 text-accent transition-colors group-hover:border-accent/45 group-hover:bg-accent/15">
-                    <Icon size={18} aria-hidden />
-                  </span>
-                  <div className="min-w-0">
-                    <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-accent">
-                      {g.label}
-                    </p>
-                    <p className="mt-1 text-[13px] leading-[1.55] text-zinc-500">
-                      {g.focus}
-                    </p>
-                  </div>
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-700">
-                  0{index + 1}
-                </span>
+            <div key={g.label} className="flex items-start gap-2.5">
+              <span
+                className="mt-[5px] grid h-3 w-3 shrink-0 place-items-center rounded-full"
+                style={{ backgroundColor: g.color }}
+                aria-hidden
+              />
+              <div className="min-w-0">
+                <p
+                  className="flex items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-eyebrow"
+                  style={{ color: g.color }}
+                >
+                  <Icon size={11} aria-hidden />
+                  {g.label}
+                </p>
+                <p className="mt-1 text-[12px] leading-snug text-ink-3">
+                  {g.focus}
+                </p>
               </div>
-
-              <div className="my-6 h-px bg-gradient-to-r from-accent/45 via-hairline-strong to-transparent" />
-
-              <ul className="flex flex-wrap gap-2">
-                {g.items.map((item) => (
-                  <li key={item}>
-                    <span className="chip border-hairline-strong bg-black/20 text-zinc-300">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-6 border-t border-hairline pt-4 text-[12.5px] leading-[1.65] text-zinc-500">
-                {g.proof}
-              </p>
-            </Spotlight>
+            </div>
           )
         })}
       </div>
@@ -561,7 +535,149 @@ function TechnicalDepth() {
   )
 }
 
+// The tech stack as a living orbital graph. Each of the four practice areas
+// occupies its own ring around a "stack" sun; every individual tool on that
+// ring is a labeled planet. Rings rotate at staggered slow periods (and
+// alternate direction) so the visual never quite syncs. We update each
+// chip's left/top via requestAnimationFrame so the labels always stay
+// upright (no counter-rotation gymnastics needed). Reduced-motion users
+// see the planets at their initial positions and the loop never starts.
+function StackGraph({ groups }: { groups: typeof depthGroups }) {
+  const chipRefs = useRef<(HTMLSpanElement | null)[]>([])
+
+  useEffect(() => {
+    const reducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const start = performance.now()
+    let rafId = 0
+
+    const tick = (now: number) => {
+      const t = (now - start) / 1000
+      let chipIdx = 0
+
+      groups.forEach((group, ringIndex) => {
+        const period = 90 + ringIndex * 25 // seconds for one full revolution
+        const direction = ringIndex % 2 === 1 ? -1 : 1
+        const r = 16 + ringIndex * 10 // % of container width from center
+        const phase = reducedMotion
+          ? 0
+          : ((t / period) * 2 * Math.PI * direction)
+
+        group.items.forEach((_, i) => {
+          const angle =
+            phase +
+            (i * 2 * Math.PI) / group.items.length -
+            Math.PI / 2 // start the first node at 12 o'clock
+          const x = 50 + r * Math.cos(angle)
+          const y = 50 + r * Math.sin(angle)
+          const el = chipRefs.current[chipIdx]
+          if (el) {
+            el.style.left = `${x}%`
+            el.style.top = `${y}%`
+          }
+          chipIdx += 1
+        })
+      })
+
+      if (!reducedMotion) {
+        rafId = requestAnimationFrame(tick)
+      }
+    }
+
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
+  }, [groups])
+
+  let renderedChipIdx = 0
+
+  return (
+    <div className="relative mx-auto mt-10 aspect-square w-full max-w-[680px] md:mt-14">
+      {/* Ring guides + sun */}
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        {groups.map((_, i) => {
+          const r = 16 + i * 10
+          return (
+            <circle
+              key={`guide-${i}`}
+              cx="50"
+              cy="50"
+              r={r}
+              fill="none"
+              stroke="var(--line)"
+              strokeWidth="0.15"
+              strokeDasharray="0.4 0.9"
+              vectorEffect="non-scaling-stroke"
+            />
+          )
+        })}
+        {/* Sun: outer halo → inner halo → core */}
+        <circle
+          cx="50"
+          cy="50"
+          r="6.5"
+          fill="none"
+          stroke="var(--terracotta)"
+          strokeOpacity="0.10"
+          strokeWidth="0.15"
+          vectorEffect="non-scaling-stroke"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r="4.2"
+          fill="none"
+          stroke="var(--terracotta)"
+          strokeOpacity="0.22"
+          strokeWidth="0.2"
+          vectorEffect="non-scaling-stroke"
+        />
+        <circle cx="50" cy="50" r="2.5" fill="var(--terracotta)" />
+      </svg>
+
+      {/* Center caption sits just under the sun */}
+      <p className="pointer-events-none absolute left-1/2 top-[55.5%] -translate-x-1/2 font-mono text-[9px] uppercase tracking-eyebrow text-ink-3">
+        stack
+      </p>
+
+      {/* Tool planets. Each chip's left/top is driven by the rAF loop
+          above so the text always stays upright while it orbits. */}
+      {groups.map((group) =>
+        group.items.map((tool) => {
+          const idx = renderedChipIdx++
+          return (
+            <span
+              key={`${group.label}-${tool}`}
+              ref={(el) => {
+                chipRefs.current[idx] = el
+              }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border bg-paper px-2 py-[3px] font-mono text-[9.5px] tracking-wide text-ink shadow-sm transition-transform duration-200 ease-out hover:z-10 hover:scale-110 hover:shadow"
+              style={{
+                borderColor: group.color,
+                top: '50%',
+                left: '50%',
+                willChange: 'top, left',
+              }}
+            >
+              {tool}
+            </span>
+          )
+        })
+      )}
+    </div>
+  )
+}
+
 // ─── Professional background ───────────────────────────────────────────────
+//
+// Minimal-text take. Four roles, in order, with just the year, title, company,
+// and location. The shape of the path matters more than the prose around it.
 
 function ProfessionalBackground() {
   return (
@@ -569,58 +685,35 @@ function ProfessionalBackground() {
       <SectionHeader
         eyebrow="Professional background"
         title="Where the patterns came from."
-        lede="Four-plus years across enterprise data platforms, AI systems, cloud modernization, data quality, streaming pipelines, and self-serve analytics infrastructure."
+        lede="Four roles across enterprise data, AI systems, and cloud modernization."
       />
 
-      <ol className="overflow-hidden rounded-xl border border-hairline">
+      <ol className="mx-auto max-w-3xl divide-y divide-line border-y border-line">
         {experience.map((exp, i) => (
           <li
             key={exp.id}
-            className={`grid gap-4 bg-surface-1 px-5 py-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:px-6 ${
-              i < experience.length - 1 ? 'border-b border-hairline' : ''
-            }`}
+            className="grid items-baseline gap-3 py-5 sm:grid-cols-[88px_1fr_auto] sm:gap-6 md:py-6"
           >
-            <p className="font-mono text-[11px] uppercase tracking-eyebrow text-zinc-500">
-              {exp.duration.split('–')[0].trim()}
-              <span className="text-zinc-700"> →</span>{' '}
-              {exp.duration.split('–')[1]?.trim() || 'now'}
+            <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3">
+              <span className="text-terracotta">0{i + 1}</span>
+              <span className="ml-2 text-ink-4">
+                {exp.duration.split('–')[0].trim().split(' ').pop()}
+              </span>
             </p>
             <div className="min-w-0">
-              <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-baseline">
-                <div>
-                  <p className="text-[15px] font-medium text-white">{exp.position}</p>
-                  <p className="mt-0.5 text-[13px] text-zinc-400">{exp.company}</p>
-                </div>
-                <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600 md:text-right">
-                  {exp.location}
-                </p>
-              </div>
-              <p className="mt-3 max-w-3xl text-[13.5px] leading-[1.65] text-zinc-400">
-                {exp.summary}
+              <p className="font-display text-[16px] font-medium tracking-tight text-ink md:text-[17px]">
+                {exp.position}
               </p>
-              {exp.metrics && (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {exp.metrics.map((metric) => (
-                    <span
-                      key={`${exp.id}-${metric.value}-${metric.caption}`}
-                      className="rounded-md border border-hairline bg-black/20 px-2.5 py-1.5"
-                    >
-                      <span className="font-mono text-[11px] text-zinc-200">
-                        {metric.value}
-                      </span>
-                      <span className="ml-2 text-[12px] text-zinc-500">
-                        {metric.caption}
-                      </span>
-                    </span>
-                  ))}
-                </div>
-              )}
+              <p className="mt-0.5 text-[13px] text-ink-2">{exp.company}</p>
             </div>
+            <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-4 sm:text-right">
+              {exp.location}
+            </p>
           </li>
         ))}
       </ol>
 
-      <div>
+      <div className="mt-8">
         <TextLink href="/resume" accent>
           Full résumé
         </TextLink>

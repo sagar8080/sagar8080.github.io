@@ -28,8 +28,8 @@ The two common choices and the third one nobody talks about:
 
 ```mermaid
 flowchart TB
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
 
   R["incoming row<br/>key = some value"]:::plain
 
@@ -91,8 +91,8 @@ The client has a key. It needs to know which node to talk to. Three approaches:
 
 ```mermaid
 flowchart LR
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
 
   C[client]:::plain
 
@@ -106,7 +106,7 @@ flowchart LR
     CC[client maps<br/>key → node]:::plain --> CN[correct node]:::accent
   end
   subgraph M["metadata"]
-    Z[(ZooKeeper /<br/>etcd / consul)]:::accent
+    Z[("ZooKeeper / etcd / consul")]:::accent
   end
 
   C --> AC

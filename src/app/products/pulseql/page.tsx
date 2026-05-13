@@ -145,7 +145,7 @@ function LaunchPanel() {
   return (
     <ProductPanel chrome="pulseql · governed workspace · v1.0" className="w-full max-w-[620px] lg:justify-self-end">
       <div className="grid gap-px bg-hairline">
-        <div className="bg-[#0c0c10] p-6">
+        <div className="bg-paper-2 p-6">
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500">
@@ -167,7 +167,7 @@ function LaunchPanel() {
               ['03', 'Refine the output', 'iterate before sharing'],
               ['04', 'Promote what is useful', 'turn work into a reusable artifact'],
             ].map(([step, title, body]) => (
-              <div key={step} className="grid grid-cols-[32px_1fr] gap-3 rounded-lg border border-hairline bg-black/25 p-3">
+              <div key={step} className="grid grid-cols-[32px_1fr] gap-3 rounded-lg border border-hairline bg-paper-3 p-3">
                 <span className="grid h-8 w-8 place-items-center rounded-md border border-hairline-strong bg-surface-2 font-mono text-[10px] text-accent">
                   {step}
                 </span>
@@ -186,7 +186,7 @@ function LaunchPanel() {
             ['platforms', '03'],
             ['scope', 'focused'],
           ].map(([label, value]) => (
-            <div key={label} className="bg-[#0c0c10] px-4 py-3">
+            <div key={label} className="bg-paper-2 px-4 py-3">
               <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
                 {label}
               </p>
@@ -214,7 +214,7 @@ function Demo() {
       <ProductPanel chrome="pulseql · sales workspace · main">
         <div className="grid gap-px bg-hairline md:grid-cols-2">
           {/* Left: the ask + review path */}
-          <div className="space-y-6 bg-[#0c0c10] p-7 md:p-8">
+          <div className="space-y-6 bg-paper-2 p-7 md:p-8">
             <div>
               <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
                 ask
@@ -254,12 +254,12 @@ function Demo() {
           </div>
 
           {/* Right: reviewed output */}
-          <div className="space-y-6 bg-[#0c0c10] p-7 md:p-8">
+          <div className="space-y-6 bg-paper-2 p-7 md:p-8">
             <div>
               <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
                 reviewed output
               </p>
-              <div className="mt-2.5 rounded-md border border-hairline bg-black/40 p-4">
+              <div className="mt-2.5 rounded-md border border-hairline bg-paper-3 p-4">
                 <p className="text-[14px] leading-[1.7] text-zinc-300">
                   PulseQL keeps the proposed work, assumptions, and review state
                   visible before a result becomes something the team depends on.
@@ -299,7 +299,7 @@ function Demo() {
           {['Ask', 'Review', 'Refine', 'Approve', 'Share'].map((step, i) => (
             <div
               key={step}
-              className="flex items-center justify-center gap-2 bg-[#0c0c10] px-3 py-3 font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-400"
+              className="flex items-center justify-center gap-2 bg-paper-2 px-3 py-3 font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-400"
             >
               <span className={i === 0 ? 'text-accent' : 'text-zinc-600'}>
                 {String(i + 1).padStart(2, '0')}
@@ -427,7 +427,7 @@ function FinalCTA() {
 
           <div className="grid gap-3">
             {featuredProject.downloads.map((platform) => (
-              <div key={platform.platform} className="rounded-xl border border-hairline bg-black/25 p-4">
+              <div key={platform.platform} className="rounded-xl border border-hairline bg-paper-3 p-4">
                 <div className="flex items-center justify-between gap-3">
                   <p className="font-display text-[17px] font-semibold text-white">
                     {platform.platform}

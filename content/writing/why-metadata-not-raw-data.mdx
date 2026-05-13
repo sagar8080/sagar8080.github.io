@@ -26,9 +26,9 @@ All of that is *metadata*. It's structured. It's small. It can be retrieved, val
 
 ```mermaid
 flowchart LR
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef cold fill:#0c0c10,stroke:#27272a,color:#71717a
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef cold fill:#ebe5d9,stroke:#a8a29e,color:#78716c
 
   Q[question]:::plain
   subgraph M["metadata surface (small, structured, leaves the perimeter cleanly)"]
@@ -58,9 +58,9 @@ Three failure modes show up, in order of severity:
 
 ```mermaid
 flowchart TB
-  classDef bad fill:#0c0c10,stroke:#7f1d1d,color:#fca5a5
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
+  classDef bad fill:#fce8e0,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
 
   R[raw rows reach the model]:::plain
   R --> F1[hallucinated structure<br/>invented columns, wrong joins]:::bad

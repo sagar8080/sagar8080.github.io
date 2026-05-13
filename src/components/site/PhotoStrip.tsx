@@ -64,12 +64,12 @@ export default function PhotoStrip() {
                     priority={i < 2}
                   />
                   {/* Frame number. Soft mono label in the top-left */}
-                  <span className="absolute left-2.5 top-2.5 z-10 rounded bg-black/55 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-zinc-300 backdrop-blur">
+                  <span className="absolute left-2.5 top-2.5 z-10 rounded bg-black/55 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-paper backdrop-blur">
                     {String(realIdx + 1).padStart(2, '0')} /{' '}
                     {String(photos.length).padStart(2, '0')}
                   </span>
                   {/* Pop-out affordance. Visible only on hover */}
-                  <span className="absolute right-2.5 top-2.5 z-10 grid h-6 w-6 place-items-center rounded bg-black/55 font-mono text-[11px] text-zinc-300 opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
+                  <span className="absolute right-2.5 top-2.5 z-10 grid h-6 w-6 place-items-center rounded bg-black/55 font-mono text-[11px] text-paper opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
                     ⤢
                   </span>
                 </button>
