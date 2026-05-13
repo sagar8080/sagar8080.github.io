@@ -12,8 +12,8 @@ export default async function WritingIndex() {
     <div className="mx-auto max-w-3xl px-6 pb-24 pt-12 md:pt-16 space-y-14">
       <PageHeader
         eyebrow="Writing"
-        title="Notes on metadata, retrieval, and AI infrastructure."
-        lede="Short technical notes on the decisions behind the systems I build. Drafts are public roadmap. Email me to get a heads-up when they ship. Older work lives in the archive."
+        title="Notes on data and AI infrastructure."
+        lede="Short technical notes on the decisions behind the systems I build."
       />
 
       {published.length > 0 && (

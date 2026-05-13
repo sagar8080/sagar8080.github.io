@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Surfaces — a single, near-black background. No warm gradient.
-        background: '#0a0a0b',
+        // Surfaces — a single very dark grey background. No warm gradient.
+        background: '#111114',
         surface: {
           1: 'rgba(255,255,255,0.02)',
           2: 'rgba(255,255,255,0.04)',
