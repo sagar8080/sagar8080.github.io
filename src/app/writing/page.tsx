@@ -9,7 +9,11 @@ export default async function WritingIndex() {
   const archive = posts.filter((p) => p.status === 'archive')
 
   return (
-    <div className="mx-auto max-w-3xl px-6 pb-24 pt-12 md:pt-16 space-y-14">
+    <div className="mx-auto max-w-3xl px-4 pb-24 pt-10 sm:px-6 md:pt-14 space-y-10">
+      {/* Card-style reading surface. Wraps the page intro and all three
+          listing sections so the atmosphere stays in the gutters even on
+          mobile. The Notify CTA below sits outside as a separate panel. */}
+      <div className="document-card px-5 py-9 sm:px-10 sm:py-12 md:px-14 md:py-14 space-y-12">
       <PageHeader
         eyebrow="Writing"
         title="Notes on data and AI infrastructure."
@@ -139,6 +143,8 @@ export default async function WritingIndex() {
           </ul>
         </Section>
       )}
+
+      </div>
 
       <div className="surface p-6 md:p-7">
         <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
