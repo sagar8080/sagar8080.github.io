@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
@@ -15,9 +15,11 @@ import {
 } from 'lucide-react'
 import { experience, greetings, telemetry } from '@/lib/content'
 import {
+  Eyebrow,
   Section,
   SectionHeader,
   PrimaryButton,
+  PullQuote,
   SecondaryButton,
   GhostButton,
   Tag,
@@ -44,10 +46,19 @@ export default function HomeClient({ recentPosts }: { recentPosts: HomePostPrevi
       <Hero />
       <Reveal><ProofBand /></Reveal>
       <Reveal><FeaturedSystems /></Reveal>
-      <ChapterDivider glyph="asterisk" />
+      <Reveal>
+        <PullQuote caption="The thread connecting them">
+          Ground what it can. Refuse what it cannot. Run within bounds the team
+          can defend.
+        </PullQuote>
+      </Reveal>
       <Reveal><EngineeringOperatingSystem /></Reveal>
       <Reveal><TechnicalDepth /></Reveal>
-      <ChapterDivider />
+      <Reveal>
+        <PullQuote caption="Why I keep coming back to this">
+          The work is data infrastructure before it is AI.
+        </PullQuote>
+      </Reveal>
       <Reveal><ProfessionalBackground /></Reveal>
       <Reveal><PhotoStrip /></Reveal>
       <ChapterDivider glyph="dot" />
@@ -93,17 +104,15 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-[820px] font-display text-[43px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[64px] 2xl:text-[68px]"
         >
-          <span>I build data platforms and AI infrastructure </span>
-          <span className="text-ink-3">
-            for trusted enterprise workflows.
-          </span>
+          <span>I build the data platforms </span>
+          <span className="text-ink-3">that AI actually runs on.</span>
         </motion.h1>
 
-        <p className="max-w-2xl text-[16px] leading-[1.75] text-zinc-300 md:text-[18px]">
-          Data engineer with 4+ years turning legacy systems, batch pipelines,
-          and fragmented enterprise data into reliable products. I now focus on
-          Rust and TypeScript systems that make AI agents useful inside real
-          workflows.
+        <p className="max-w-2xl text-[16px] leading-[1.75] text-ink-2 md:text-[18px]">
+          The hard part isn&apos;t the model — it&apos;s making the data
+          underneath defensible. Four years on enterprise modernization,
+          analytics platforms, and now Rust and TypeScript systems for AI
+          workflows that hold up under audit.
         </p>
 
         <div className="flex flex-wrap items-center gap-2.5 pt-1">
@@ -249,9 +258,9 @@ function FeaturedSystems() {
   return (
     <Section id="case-studies">
       <SectionHeader
-        eyebrow="Featured systems"
+        eyebrow="01 / The work"
         title="Three projects, one thesis."
-        lede="AI is most useful when it answers questions it can ground, refuses the ones it cannot, and runs inside boundaries the team can defend. Each project below is a different angle on that idea."
+        lede="Each one is a different angle on the same question: how do you make AI useful inside a real organization without breaking the things underneath?"
       />
 
       <div className="grid gap-4 md:grid-cols-3">
@@ -383,39 +392,54 @@ const operatingPrinciples: {
 ]
 
 function EngineeringOperatingSystem() {
+  // Asymmetric layout: sticky eyebrow + title on the left rail, the three
+  // principles flow as full-width content rows on the right. Breaks the
+  // "header on top, grid below" rhythm with a magazine-style spread.
   return (
-    <Section>
-      <SectionHeader
-        eyebrow="Engineering operating system"
-        title="The work is data infrastructure before it is AI."
-        lede="Across enterprise modernization, analytics platforms, and AI systems, the same primitives keep showing up: metadata, contracts, lineage, execution traces, governance, and measurable reliability."
-      />
+    <section className="grid gap-12 md:grid-cols-[minmax(280px,340px)_1fr] md:gap-16 lg:gap-20">
+      <div className="md:sticky md:top-28 md:self-start">
+        <Eyebrow label="02 / What I believe" accentColor="var(--sage)" />
+        <h2 className="mt-4 section-title">Three principles, repeated.</h2>
+        <p className="mt-5 section-lede">
+          That shorthand above sits on top of these three. Whether the system
+          is a modernization, an analytics platform, or an AI workflow, the
+          same primitives keep showing up.
+        </p>
+      </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <ol className="space-y-5">
         {operatingPrinciples.map((item, index) => {
           const Icon = item.icon
           return (
-            <Spotlight key={item.title} className="surface relative overflow-hidden p-6">
-              <div className="flex items-start justify-between gap-4">
-                <div className="grid h-11 w-11 place-items-center rounded-lg border border-hairline-strong bg-surface-2 text-accent">
-                  <Icon size={19} />
+            <li key={item.title}>
+              <Spotlight className="surface relative overflow-hidden p-6 md:p-8">
+                <div className="grid gap-5 sm:grid-cols-[auto_1fr] sm:gap-7">
+                  <div className="flex items-start justify-between gap-4 sm:flex-col sm:items-start sm:justify-start">
+                    <div className="grid h-12 w-12 place-items-center rounded-lg border border-line bg-paper-2 text-terracotta">
+                      <Icon size={20} />
+                    </div>
+                    <span className="font-mono text-[11px] uppercase tracking-eyebrow text-ink-4">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-[22px] font-semibold leading-tight text-terracotta md:text-[24px]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-[14.5px] leading-[1.7] text-ink-2 md:text-[15px]">
+                      {item.body}
+                    </p>
+                    <p className="mt-5 border-t border-line pt-4 text-[13px] leading-[1.65] text-ink-3">
+                      {item.proof}
+                    </p>
+                  </div>
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-700">
-                  0{index + 1}
-                </span>
-              </div>
-              <h3 className="mt-5 font-display text-[20px] font-semibold text-terracotta">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-[14px] leading-[1.7] text-zinc-400">{item.body}</p>
-              <p className="mt-5 border-t border-hairline pt-4 text-[13px] leading-[1.6] text-zinc-500">
-                {item.proof}
-              </p>
-            </Spotlight>
+              </Spotlight>
+            </li>
           )
         })}
-      </div>
-    </Section>
+      </ol>
+    </section>
   )
 }
 
@@ -493,186 +517,88 @@ const depthGroups = [
 ]
 
 function TechnicalDepth() {
+  // Mirror of the Engineering OS layout — sticky title on the right rail,
+  // 2×2 stack grid on the left. Alternating side per section gives the
+  // page an editorial zig-zag rather than a single repeating column.
   return (
-    <Section>
-      <SectionHeader
-        eyebrow="Technical depth"
-        title="The stack I work across."
-        lede="Data platforms, ML systems, generative AI infrastructure, and cloud delivery. The common thread is making these workflows reliable enough for enterprise use."
-      />
-
-      <StackGraph groups={depthGroups} />
-
-      {/* Color legend identifying each orbital ring. Lives below the
-          centerpiece so the graph reads as a single living surface. */}
-      <div className="mx-auto mt-10 grid max-w-4xl gap-x-8 gap-y-4 sm:grid-cols-2 md:mt-14 md:grid-cols-4">
-        {depthGroups.map((g) => {
+    <section className="grid gap-12 md:grid-cols-[1fr_minmax(280px,340px)] md:gap-16 lg:gap-20">
+      <div className="md:order-first">
+        <div className="grid gap-4 sm:grid-cols-2">
+        {depthGroups.map((g, i) => {
           const Icon = g.icon
           return (
-            <div key={g.label} className="flex items-start gap-2.5">
-              <span
-                className="mt-[5px] grid h-3 w-3 shrink-0 place-items-center rounded-full"
-                style={{ backgroundColor: g.color }}
-                aria-hidden
-              />
-              <div className="min-w-0">
-                <p
-                  className="flex items-center gap-1.5 font-mono text-[10.5px] uppercase tracking-eyebrow"
-                  style={{ color: g.color }}
-                >
-                  <Icon size={11} aria-hidden />
-                  {g.label}
-                </p>
-                <p className="mt-1 text-[12px] leading-snug text-ink-3">
-                  {g.focus}
-                </p>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </Section>
-  )
-}
-
-// The tech stack as a living orbital graph. Each of the four practice areas
-// occupies its own ring around a "stack" sun; every individual tool on that
-// ring is a labeled planet. Rings rotate at staggered slow periods (and
-// alternate direction) so the visual never quite syncs. We update each
-// chip's left/top via requestAnimationFrame so the labels always stay
-// upright (no counter-rotation gymnastics needed). Reduced-motion users
-// see the planets at their initial positions and the loop never starts.
-function StackGraph({ groups }: { groups: typeof depthGroups }) {
-  const chipRefs = useRef<(HTMLSpanElement | null)[]>([])
-
-  useEffect(() => {
-    const reducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    const start = performance.now()
-    let rafId = 0
-
-    const tick = (now: number) => {
-      const t = (now - start) / 1000
-      let chipIdx = 0
-
-      groups.forEach((group, ringIndex) => {
-        const period = 90 + ringIndex * 25 // seconds for one full revolution
-        const direction = ringIndex % 2 === 1 ? -1 : 1
-        const r = 16 + ringIndex * 10 // % of container width from center
-        const phase = reducedMotion
-          ? 0
-          : ((t / period) * 2 * Math.PI * direction)
-
-        group.items.forEach((_, i) => {
-          const angle =
-            phase +
-            (i * 2 * Math.PI) / group.items.length -
-            Math.PI / 2 // start the first node at 12 o'clock
-          const x = 50 + r * Math.cos(angle)
-          const y = 50 + r * Math.sin(angle)
-          const el = chipRefs.current[chipIdx]
-          if (el) {
-            el.style.left = `${x}%`
-            el.style.top = `${y}%`
-          }
-          chipIdx += 1
-        })
-      })
-
-      if (!reducedMotion) {
-        rafId = requestAnimationFrame(tick)
-      }
-    }
-
-    rafId = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(rafId)
-  }, [groups])
-
-  let renderedChipIdx = 0
-
-  return (
-    <div className="relative mx-auto mt-10 aspect-square w-full max-w-[680px] md:mt-14">
-      {/* Ring guides + sun */}
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        aria-hidden
-      >
-        {groups.map((_, i) => {
-          const r = 16 + i * 10
-          return (
-            <circle
-              key={`guide-${i}`}
-              cx="50"
-              cy="50"
-              r={r}
-              fill="none"
-              stroke="var(--line)"
-              strokeWidth="0.15"
-              strokeDasharray="0.4 0.9"
-              vectorEffect="non-scaling-stroke"
-            />
-          )
-        })}
-        {/* Sun: outer halo → inner halo → core */}
-        <circle
-          cx="50"
-          cy="50"
-          r="6.5"
-          fill="none"
-          stroke="var(--terracotta)"
-          strokeOpacity="0.10"
-          strokeWidth="0.15"
-          vectorEffect="non-scaling-stroke"
-        />
-        <circle
-          cx="50"
-          cy="50"
-          r="4.2"
-          fill="none"
-          stroke="var(--terracotta)"
-          strokeOpacity="0.22"
-          strokeWidth="0.2"
-          vectorEffect="non-scaling-stroke"
-        />
-        <circle cx="50" cy="50" r="2.5" fill="var(--terracotta)" />
-      </svg>
-
-      {/* Center caption sits just under the sun */}
-      <p className="pointer-events-none absolute left-1/2 top-[55.5%] -translate-x-1/2 font-mono text-[9px] uppercase tracking-eyebrow text-ink-3">
-        stack
-      </p>
-
-      {/* Tool planets. Each chip's left/top is driven by the rAF loop
-          above so the text always stays upright while it orbits. */}
-      {groups.map((group) =>
-        group.items.map((tool) => {
-          const idx = renderedChipIdx++
-          return (
-            <span
-              key={`${group.label}-${tool}`}
-              ref={(el) => {
-                chipRefs.current[idx] = el
-              }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border bg-paper px-2 py-[3px] font-mono text-[9.5px] tracking-wide text-ink shadow-sm transition-transform duration-200 ease-out hover:z-10 hover:scale-110 hover:shadow"
-              style={{
-                borderColor: group.color,
-                top: '50%',
-                left: '50%',
-                willChange: 'top, left',
-              }}
+            <Spotlight
+              key={g.label}
+              className="surface group flex flex-col p-6 md:p-7"
             >
-              {tool}
-            </span>
+              {/* Color rail keyed to the category so the four cards stay
+                  visually distinct without leaning on background color. */}
+              <div
+                aria-hidden
+                className="mb-5 h-px w-12"
+                style={{ backgroundColor: g.color }}
+              />
+
+              <div className="flex items-start justify-between gap-5">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border bg-paper-2"
+                    style={{ borderColor: g.color, color: g.color }}
+                  >
+                    <Icon size={18} aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p
+                      className="font-mono text-[10.5px] uppercase tracking-eyebrow"
+                      style={{ color: g.color }}
+                    >
+                      {g.label}
+                    </p>
+                    <p className="mt-1 text-[13px] leading-[1.55] text-ink-3">
+                      {g.focus}
+                    </p>
+                  </div>
+                </div>
+                <span className="font-mono text-[10px] uppercase tracking-eyebrow text-ink-4">
+                  0{i + 1}
+                </span>
+              </div>
+
+              <div className="my-6 h-px bg-line" />
+
+              <ul className="flex flex-wrap gap-2">
+                {g.items.map((item) => (
+                  <li key={item}>
+                    <span className="chip border-line bg-paper-2 text-ink-2">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-6 border-t border-line pt-4 text-[12.5px] leading-[1.65] text-ink-3">
+                {g.proof}
+              </p>
+            </Spotlight>
           )
-        })
-      )}
-    </div>
+        })}
+        </div>
+      </div>
+
+      <div className="md:sticky md:top-28 md:self-start md:order-last md:text-right">
+        <div className="md:inline-flex md:flex-col md:items-end">
+          <Eyebrow label="03 / The stack" accentColor="var(--ochre)" />
+          <h2 className="mt-4 section-title md:text-right">Where those principles meet keys on a keyboard.</h2>
+          <p className="mt-5 section-lede md:text-right">
+            Four layers — data, ML, generative AI, cloud. The tools differ;
+            the test is the same: does this workflow hold up under audit?
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }
+
 
 // ─── Professional background ───────────────────────────────────────────────
 //
@@ -683,9 +609,9 @@ function ProfessionalBackground() {
   return (
     <Section>
       <SectionHeader
-        eyebrow="Professional background"
+        eyebrow="04 / The path"
         title="Where the patterns came from."
-        lede="Four roles across enterprise data, AI systems, and cloud modernization."
+        lede="Four roles teaching the same lesson in different ways — that the infrastructure decisions outlast the systems they live inside."
       />
 
       <ol className="mx-auto max-w-4xl divide-y divide-line border-y border-line">
@@ -729,9 +655,9 @@ function Writing({ posts }: { posts: HomePostPreview[] }) {
   return (
     <Section>
       <SectionHeader
-        eyebrow="Writing"
-        title="Notes on the decisions behind the systems."
-        lede="Short technical notes. Published when there's something specific to say, not on a schedule."
+        eyebrow="05 / Notes"
+        title="Where I think out loud about this."
+        lede="Short technical notes published when there&apos;s something specific to say. The decisions behind the systems, in writing."
       />
 
       <ul className="divide-y divide-hairline border-y border-hairline">

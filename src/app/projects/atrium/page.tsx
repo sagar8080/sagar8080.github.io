@@ -5,48 +5,48 @@ const data: CaseStudyData = {
   title: 'Atrium. Grounded answers from your own documents, with permissions kept honest.',
   status: 'In development',
   oneLine:
-    'A knowledge product for teams that need answers from company documents with citations, permission-aware experiences, and honest refusal when the corpus is not enough.',
+    'A knowledge product that gives teams grounded answers from their own documents — with citations, access boundaries, and honest refusal when the source material won\'t support an answer.',
   tags: ['Enterprise Knowledge', 'Citations', 'Access-Aware AI'],
 
   problem:
-    'Enterprises sit on documents scattered across many tools. Search returns noise, and generic AI chatbots can sound confident even when the source material does not support the answer. Atrium is focused on making company knowledge easier to ask about without pretending uncertainty is solved by nicer phrasing.',
+    'Every enterprise has the same problem in a different costume: critical decisions live inside scattered documents, and the tools meant to find them either hallucinate confidently or return the same keyword soup in a friendlier wrapper. Atrium starts from the opposite premise — that an answer the team can\'t verify is worse than no answer at all.',
 
   constraints: [
-    'Respect customer access boundaries.',
-    'Time to first answer in minutes, not weeks.',
-    'Show citations users can inspect.',
-    'Say so when the available material does not support an answer.',
+    'Citations had to be inspectable, not decorative — a click should land on the actual source paragraph.',
+    'Permission boundaries had to be respected at the answer layer, not just the search index. If you can\'t see a doc, the answer can\'t silently use it.',
+    'When the available material doesn\'t support an answer, the product had to say so plainly. Refusal had to be a feature.',
+    'The first useful answer had to land in minutes, not after a six-month rollout.',
   ],
 
   overview: [
-    'Atrium is presented publicly as an enterprise knowledge experience: connect content, ask questions, inspect citations, and avoid unsupported answers.',
-    'The public summary stays focused on the user-facing problem, product promise, and design-partner fit.',
+    'A knowledge product that lets teams connect the documents they already have — wherever those live — and ask questions of them with citations attached and access boundaries respected. When there isn\'t enough material to ground an answer, Atrium says so instead of guessing.',
+    'It\'s shaped for the teams that can\'t accept a confident-sounding wrong answer: legal, finance, security, customer success, and the small group of leaders who depend on those teams to be right.',
   ],
 
   decisions: [
     {
-      decision: 'Refusal as a feature, not a fallback',
+      decision: 'Refusal is a feature, not a fallback',
       why:
-        'The product should be more useful when it is honest about uncertainty. Unsupported answers damage trust faster than slower answers.',
+        'A confident wrong answer destroys more trust than ten "I don\'t know"s. Refusal is the design choice that makes the product credible when it does answer — and the choice that most generic AI search tools won\'t make.',
     },
     {
-      decision: 'Permissions must be part of the experience',
+      decision: 'Permissions are part of the experience',
       why:
-        'Enterprise knowledge products have to respect who is allowed to see what. That cannot be reduced to a prompt or a footnote.',
+        'Enterprise knowledge products that punt on access boundaries get pulled out by security in week three. Atrium treats access as a first-class input to every answer, not a bolt-on filter applied after.',
     },
     {
-      decision: 'Citations are non-negotiable',
+      decision: 'Every answer points to its evidence',
       why:
-        'Users should be able to inspect why an answer exists. The product is oriented around verifiable answers, not just fluent responses.',
+        'Verifiability is the only durable form of trust in AI search. Atrium is built so users can land on the exact passage that supports any claim — which is also the only honest way to evaluate the product.',
     },
   ],
 
   outcome: [
-    'In active development with the public story limited to the user-facing problem, product promise, and design-partner fit.',
+    'In active development with design-partner conversations underway. The shape is settled around three properties — grounded, refused, and permission-aware — that, taken together, separate it from generic AI search.',
   ],
 
   current:
-    'Active development. Open to design-partner conversations with teams whose document corpus and access boundaries do not fit generic AI search tools.',
+    'Active development. Open to design-partner conversations with teams whose document corpus and access boundaries don\'t fit generic AI search tools.',
 
   links: [
     {

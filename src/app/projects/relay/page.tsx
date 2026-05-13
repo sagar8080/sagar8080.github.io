@@ -6,48 +6,48 @@ const data: CaseStudyData = {
     'Relay. Shared context and load-bearing safety for AI-assisted engineering teams.',
   status: 'In development',
   oneLine:
-    'A coordination product for AI-assisted engineering teams that need shared context, clearer verification, and safer workflows across tools.',
+    'A coordination layer for engineering teams whose work is now half-AI — shared context, visible verification, and review patterns that survive the velocity.',
   tags: ['AI Engineering', 'Team Context', 'Workflow Safety'],
 
   problem:
-    'As teams adopt multiple AI coding tools, the bottleneck shifts from generation to coordination. Decisions get scattered, verification becomes hard to audit, and teams need stronger ways to understand what happened before they trust the next change.',
+    'Every engineering team I\'ve watched adopt AI coding tools hits the same wall around month three. The bottleneck stops being how fast you can generate code and starts being how fast you can verify what was generated, by whom, and with what context. Decisions evaporate into side channels. Reviews lose teeth. Relay is the bet that the next interesting product surface in AI engineering isn\'t a better autocomplete — it\'s the coordination layer underneath the autocompletes.',
 
   constraints: [
-    'Help humans and agents share context without adding busywork.',
-    'Make verification easier to inspect.',
-    'Respect sensitive engineering context.',
-    'Keep the product useful across different tools and workflows.',
+    'Help humans and agents share working context without forcing either to write status updates.',
+    'Make verification something you can point at, not something you have to vouch for.',
+    'Respect the fact that engineering context is sensitive — code, decisions, and people\'s reasoning don\'t leak.',
+    'Sit alongside whatever AI coding tools the team already uses, not replace them.',
   ],
 
   overview: [
-    'Relay is presented publicly as a team workflow product for AI-assisted engineering: shared context, clearer proof of work, and safer collaboration across coding tools.',
-    'The public summary stays focused on the user-facing problem and team workflow value while the product is being developed.',
+    'A coordination product for teams whose engineering work is now half-AI: shared context that travels with the work, verification someone other than the author can inspect, and review patterns that don\'t collapse the moment the team starts moving fast.',
+    'It\'s aimed at the teams that have already crossed the "AI is making us productive" line and are looking for the second-order question — how do we keep the work defensible as it speeds up?',
   ],
 
   decisions: [
     {
-      decision: 'Verification should be visible',
+      decision: 'Verification has to be visible',
       why:
-        'Teams need to distinguish actual proof from plausible claims. Relay is shaped around making that distinction easier in AI-assisted engineering work.',
+        'AI-assisted engineering generates a lot of plausible-looking work. Teams need to distinguish actual proof from plausible claims at a glance — not by re-running everything themselves. Visibility of verification is the load-bearing UX bet.',
     },
     {
-      decision: 'Context should follow the work',
+      decision: 'Context follows the work, not the tool',
       why:
-        'The more tools a team uses, the easier it is for important decisions to vanish into side channels. The product direction is to keep context available where decisions are made.',
+        'The more tools a team uses, the easier it is for important decisions to vanish into side channels. Relay\'s job is to keep relevant context attached to the change as it moves between tools, agents, and humans.',
     },
     {
-      decision: 'Safety should not depend on vibes',
+      decision: 'Safety is a product property, not a vibe',
       why:
-        'AI-assisted engineering workflows need explicit review and coordination patterns. The public summary stays focused on workflow value while the product evolves.',
+        'Vibes-based safety doesn\'t survive a real incident. Relay encodes review and coordination patterns explicitly, so a team\'s safety posture isn\'t whatever the loudest engineer felt comfortable with that week.',
     },
   ],
 
   outcome: [
-    'In active development with the summary focused on team workflow value and the problem Relay is meant to solve.',
+    'In active development with focused conversations open with teams running multi-tool AI engineering workflows. The product is shaped around three properties — shared context, visible verification, explicit review — whose absence is what teams eventually write a postmortem about.',
   ],
 
   current:
-    'Active development. Open to early conversations with teams running multi-tool AI coding workflows where context, verification, and review quality are becoming bottlenecks.',
+    'Active development. Open to early conversations with teams whose AI-assisted engineering velocity is starting to outpace their ability to verify, review, and coordinate.',
 
   links: [
     {

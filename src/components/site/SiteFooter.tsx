@@ -29,7 +29,14 @@ export default function SiteFooter() {
           </FooterLink>
         </nav>
 
-        <p className="font-mono text-[11px] tracking-wide text-ink-4">
+        {/* The year is intentionally always-current at view time. For static
+            export the build-time HTML and the client render can disagree
+            (different year, different timezone), so suppress the React
+            hydration warning on this single element. */}
+        <p
+          className="font-mono text-[11px] tracking-wide text-ink-4"
+          suppressHydrationWarning
+        >
           © {new Date().getFullYear()}
         </p>
       </div>

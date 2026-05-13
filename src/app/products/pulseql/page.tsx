@@ -6,6 +6,7 @@ import {
   Section,
   SectionHeader,
   PrimaryButton,
+  PullQuote,
   SecondaryButton,
   GhostButton,
   StatusPill,
@@ -74,7 +75,12 @@ export default function PulseQLProductPage() {
     <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16 space-y-24 md:space-y-32">
       <Hero />
       <Demo />
-      <CorePromise />
+      {/* The thesis lands here, after the demo has shown what the
+          workflow looks like in motion. Acts as the bridge between "see
+          how it works" and "what it can do for you". */}
+      <PullQuote caption="The product's whole reason for being">
+        AI-assisted data work should be reviewable before teams rely on it.
+      </PullQuote>
       <Capabilities />
       <UseCases />
       <FinalCTA />
@@ -94,25 +100,26 @@ function Hero() {
     >
       <div className="max-w-[760px] space-y-8">
         <div className="flex flex-wrap items-center gap-2">
-          <StatusPill kind="live">PulseQL · v1.0 stable</StatusPill>
+          <StatusPill kind="in-development">PulseQL · v1.1 — releasing soon</StatusPill>
           <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
             macOS · windows · linux
           </span>
         </div>
 
         <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[68px] xl:text-[72px]">
-          A governed data workspace{' '}
-          <span className="text-ink-3">for reviewable AI workflows.</span>
+          AI for data work,{' '}
+          <span className="text-ink-3">with the work still visible.</span>
         </h1>
 
-        <p className="max-w-[680px] text-[16px] leading-[1.75] text-zinc-400 md:text-[17px]">
-          PulseQL helps teams move from questions to reviewable data work
-          without turning AI into an opaque black box. The product story stays
-          focused on what teams can do: ask, review, refine, and share.
+        <p className="max-w-[680px] text-[16px] leading-[1.75] text-ink-2 md:text-[17px]">
+          Most analytics AI either operates as an opaque black box or gets
+          banned outright. Both leave teams with work they can&apos;t defend.
+          PulseQL keeps every step inspectable so the team can review,
+          refine, and approve before anything ships.
         </p>
 
         <div className="flex flex-wrap items-center gap-2.5 pt-1">
-          <PrimaryButton href="#download">Download v1.0</PrimaryButton>
+          <PrimaryButton href="#download">Notify me at launch</PrimaryButton>
           <SecondaryButton href="#demo">View demo</SecondaryButton>
           <GhostButton href="#use-cases">Use cases</GhostButton>
         </div>
@@ -143,7 +150,7 @@ function Hero() {
 
 function LaunchPanel() {
   return (
-    <ProductPanel chrome="pulseql · governed workspace · v1.0" className="w-full max-w-[620px] lg:justify-self-end">
+    <ProductPanel chrome="pulseql · governed workspace · v1.1 preview" className="w-full max-w-[620px] lg:justify-self-end">
       <div className="grid gap-px bg-hairline">
         <div className="bg-paper-2 p-6">
           <div className="flex items-center justify-between gap-4">
@@ -182,7 +189,7 @@ function LaunchPanel() {
 
         <div className="grid grid-cols-3 gap-px bg-hairline">
           {[
-            ['status', 'v1.0'],
+            ['status', 'v1.1 soon'],
             ['platforms', '03'],
             ['scope', 'focused'],
           ].map(([label, value]) => (
@@ -206,9 +213,9 @@ function Demo() {
   return (
     <Section id="demo">
       <SectionHeader
-        eyebrow="Product demo"
+        eyebrow="01 / The walkthrough"
         title="One question, end to end."
-        lede="A question becomes a reviewed data artifact. The demo stays at the workflow level: ask, review, refine, share."
+        lede="What &ldquo;keeping every step inspectable&rdquo; looks like in practice. A question goes in; a reviewed, approved artifact comes out — with the path between them visible the whole way."
       />
 
       <ProductPanel chrome="pulseql · sales workspace · main">
@@ -313,39 +320,16 @@ function Demo() {
   )
 }
 
-// ─── Core promise ──────────────────────────────────────────────────────────
-
-function CorePromise() {
-  return (
-    <Section>
-      <Eyebrow label="Core promise" />
-
-      <div className="surface relative overflow-hidden p-8 md:p-12">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -top-px left-12 right-12 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"
-        />
-        <p className="font-display text-[28px] font-semibold leading-[1.25] tracking-normal text-white md:text-[36px]">
-          AI-assisted data work should be reviewable before teams rely on it.
-        </p>
-        <p className="mt-6 max-w-2xl text-[14.5px] leading-[1.75] text-zinc-400 md:text-[15.5px]">
-          PulseQL is designed around controlled workflows, clear review states,
-          and practical governance for teams that need serious data work to stay
-          inspectable.
-        </p>
-      </div>
-    </Section>
-  )
-}
-
 // ─── Capabilities (bento) ──────────────────────────────────────────────────
 
 function Capabilities() {
   return (
     <Section>
       <SectionHeader
-        eyebrow="Capabilities"
-        title="What you can do with PulseQL."
+        eyebrow="02 / What it does"
+        title="Six capabilities, one loop."
+        lede="Every feature ladders up to that promise. Together they form the same workflow on repeat: ask, review, refine, approve, share."
+        accentColor="var(--sage)"
       />
 
       <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -373,8 +357,10 @@ function UseCases() {
   return (
     <Section id="use-cases">
       <SectionHeader
-        eyebrow="Use cases"
+        eyebrow="03 / Where it fits"
         title="Where it earns its keep."
+        lede="Four team contexts where the reviewable workflow pays for itself — places where invisible automation isn&apos;t an option and banning AI isn&apos;t either."
+        accentColor="var(--ochre)"
       />
 
       <div className="grid gap-3 md:grid-cols-2">
@@ -398,9 +384,9 @@ function UseCases() {
 function FinalCTA() {
   return (
     <Section id="download">
-      <Eyebrow label="Download" />
+      <Eyebrow label="04 / Try it" />
 
-      <div className="surface-raised relative overflow-hidden p-8 md:p-12">
+      <div className="surface-raised relative mt-6 overflow-hidden p-8 md:p-12">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(180,90,60,0.10),transparent_60%)]"
@@ -409,44 +395,52 @@ function FinalCTA() {
         <div className="relative grid gap-10 md:grid-cols-[1.05fr_1.15fr] md:items-start">
           <div className="space-y-5">
             <h2 className="font-display text-[28px] font-semibold leading-tight tracking-normal text-terracotta md:text-[36px]">
-              Download PulseQL v1.0.
+              PulseQL v1.1 — releasing soon.
             </h2>
-            <p className="max-w-xl text-[14.5px] leading-[1.75] text-zinc-400 md:text-[15.5px]">
-              Install the desktop application for your platform, or read the
-              case study for the product direction and user-facing workflow.
+            <p className="max-w-xl text-[14.5px] leading-[1.75] text-ink-2 md:text-[15.5px]">
+              Builds for macOS, Windows, and Linux are in late-stage testing.
+              Drop a note and you&apos;ll be the first to know when downloads
+              go live — or read the case study for how the workflow was
+              designed in the meantime.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <PrimaryButton href={featuredProject.downloads[0].files[0].url} external>
-                Download macOS
+              <PrimaryButton
+                href="mailto:sagardas.work@gmail.com?subject=PulseQL%20v1.1%20launch%20notify"
+                external
+              >
+                Notify me at launch
               </PrimaryButton>
               <GhostButton href="/projects/pulseql">Read case study</GhostButton>
               <GhostButton href="mailto:sagardas.work@gmail.com">Request walkthrough</GhostButton>
             </div>
           </div>
 
+          {/* Platform cards now signal what's coming rather than offering
+              live download links to v1.0 builds. They keep the visual
+              promise of cross-platform coverage without shipping people
+              to soon-to-be-obsolete files. */}
           <div className="grid gap-3">
             {featuredProject.downloads.map((platform) => (
-              <div key={platform.platform} className="rounded-xl border border-hairline bg-paper-3 p-4">
+              <div
+                key={platform.platform}
+                className="rounded-xl border border-line bg-paper-3 p-4"
+              >
                 <div className="flex items-center justify-between gap-3">
-                  <p className="font-display text-[17px] font-semibold text-white">
+                  <p className="font-display text-[17px] font-semibold text-ink">
                     {platform.platform}
                   </p>
-                  <span className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-                    {platform.files.length} format{platform.files.length > 1 ? 's' : ''}
+                  <span className="font-mono text-[10px] uppercase tracking-eyebrow text-ochre-2">
+                    releasing soon
                   </span>
                 </div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {platform.files.map((file) => (
-                    <a
-                      key={file.filename}
-                      href={file.url}
-                      className="rounded-md border border-hairline bg-surface-1 px-2.5 py-1.5 font-mono text-[11px] text-zinc-300 transition-colors hover:border-accent/40 hover:text-white"
-                    >
-                      {file.label}
-                    </a>
-                  ))}
-                </div>
+                <p className="mt-2 text-[12.5px] leading-[1.6] text-ink-3">
+                  v1.1 builds will ship as{' '}
+                  <span className="font-mono text-ink-2">
+                    {platform.files.map((f) => f.label).join(' · ')}
+                  </span>
+                  .
+                </p>
               </div>
             ))}
           </div>
