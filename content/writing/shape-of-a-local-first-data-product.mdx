@@ -28,24 +28,24 @@ The honest answer for a local-first product is one embedded multi-model store th
 
 ```mermaid
 flowchart TB
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef cost fill:#0c0c10,stroke:#7f1d1d,color:#fca5a5
-  classDef win fill:#0c0c10,stroke:#34d399,color:#a7f3d0
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef cost fill:#fce8e0,stroke:#b45a3c,color:#6A3320
+  classDef win fill:#e6e9d6,stroke:#6b7a4e,color:#3F4A24
 
   subgraph A["Polyglot persistence"]
     direction LR
-    A1[(document<br/>catalog)]:::plain
-    A2[(graph<br/>lineage)]:::plain
-    A3[(KV<br/>memory)]:::plain
-    A4[(SQL<br/>policy)]:::plain
-    AA[4 processes · 3 query languages<br/>4 backup stories · joins are orchestration]:::cost
+    A1[("document catalog")]:::plain
+    A2[("graph lineage")]:::plain
+    A3[("KV memory")]:::plain
+    A4[("SQL policy")]:::plain
+    AA["4 processes · 3 query languages · 4 backups · joins are orchestration"]:::cost
   end
 
   subgraph B["Single multi-model embedded"]
     direction LR
-    B1[(documents · graph<br/>KV · indexes)]:::accent
-    BB[1 process · 1 query language<br/>1 backup file · joins at decision time]:::win
+    B1[("documents · graph · KV · indexes")]:::accent
+    BB["1 process · 1 query language · 1 backup file · joins at decision time"]:::win
   end
 ```
 
@@ -59,9 +59,9 @@ For a local-first product the answer flips. An in-process columnar engine over o
 
 ```mermaid
 flowchart LR
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
-  classDef cold fill:#0c0c10,stroke:#27272a,color:#71717a
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
+  classDef cold fill:#ebe5d9,stroke:#a8a29e,color:#78716c
 
   subgraph H["Hosted shape"]
     direction LR

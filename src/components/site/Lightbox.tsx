@@ -53,7 +53,7 @@ export default function Lightbox({
           e.stopPropagation()
           onClose()
         }}
-        className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-md border border-hairline-strong bg-surface-2 text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+        className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
         aria-label="Close"
       >
         ✕
@@ -84,7 +84,7 @@ export default function Lightbox({
         className="z-10 max-w-2xl space-y-1 text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <p className="font-mono text-[12px] uppercase tracking-eyebrow text-zinc-300">
+        <p className="font-mono text-[12px] uppercase tracking-eyebrow text-paper">
           {photo.caption}
         </p>
         <p className="font-mono text-[11px] tracking-wide text-zinc-500">
@@ -100,7 +100,7 @@ export default function Lightbox({
             e.stopPropagation()
             onPrev()
           }}
-          className="ml-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-surface-2 text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+          className="ml-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
           aria-label="Previous photo"
         >
           ←
@@ -113,7 +113,7 @@ export default function Lightbox({
             e.stopPropagation()
             onNext()
           }}
-          className="mr-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-surface-2 text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+          className="mr-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
           aria-label="Next photo"
         >
           →

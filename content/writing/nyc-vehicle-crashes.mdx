@@ -35,8 +35,8 @@ Six GCP services, glued together by shell scripts and `crontab` rather than a wo
 
 ```mermaid
 flowchart LR
-  classDef accent fill:#1a1a2e,stroke:#818cf8,color:#fafafa
-  classDef plain fill:#0c0c10,stroke:#3f3f46,color:#e4e4e7
+  classDef accent fill:#f4e6dd,stroke:#b45a3c,color:#6A3320
+  classDef plain fill:#f3efe7,stroke:#d4cdbe,color:#1c1917
 
   subgraph Sources
     A1[NYC Open Data APIs]:::plain
@@ -51,7 +51,7 @@ flowchart LR
 
   subgraph Storage
     GCS[Cloud Storage<br/>landing/&lt;source&gt;/&lt;date&gt;]:::plain
-    DC[(Data Catalog<br/>offsets + lineage)]:::accent
+    DC[("Data Catalog · offsets + lineage")]:::accent
   end
 
   subgraph Process["Batch transform"]

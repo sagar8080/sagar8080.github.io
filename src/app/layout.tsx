@@ -3,6 +3,7 @@ import { Manrope, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import SiteNav from '@/components/site/SiteNav'
 import SiteFooter from '@/components/site/SiteFooter'
+import AtmosphereBackground from '@/components/site/AtmosphereBackground'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -39,10 +40,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} font-sans bg-background text-zinc-300 min-h-screen flex flex-col antialiased`}
+        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased`}
       >
+        {/* Edge-anchored survey rings + Claude-style warm blobs that
+            breathe in the corners. The middle of the viewport is left
+            clean so content reads on plain paper. z-index 0 so it sits
+            above body's bg-paper, below the grain (z 1) and content (z 10). */}
+        <AtmosphereBackground />
+        {/* Quiet paper grain on top of the atmosphere. */}
         <div className="grain-overlay" aria-hidden />
         <SiteNav />
         <main className="relative z-10 flex-1">{children}</main>

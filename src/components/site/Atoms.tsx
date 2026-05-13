@@ -1,15 +1,20 @@
 // Shared design atoms for the portfolio + product pages.
 // All visual primitives live here so spacing, type, and color stay consistent
 // across the editorial portfolio and the product-led PulseQL page.
+//
+// This file is wired to the light editorial design system (paper + ink +
+// terracotta). All references to text-white / bg-white / text-zinc-* in
+// downstream components resolve to the new palette via the Tailwind token
+// remap in tailwind.config.js, but anything Atoms ships uses ink/paper
+// directly to keep the design system clean.
 
 import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import type { ReactNode, HTMLAttributes } from 'react'
 
 // ─── Eyebrow ───────────────────────────────────────────────────────────────
-// A small mono caption above section titles. Optional trailing rule, used to
-// anchor sections without making them feel heavy. Now leads with a small
-// accent bar that draws in on mount (CSS-only, see .eyebrow-bar).
+// A small caps caption above section titles. Leads with the terracotta
+// `eyebrow-rule` (CSS draws it in on mount, see globals.css).
 export function Eyebrow({
   label,
   withRule = true,
@@ -22,27 +27,21 @@ export function Eyebrow({
   if (align === 'center') {
     return (
       <div className="flex items-center justify-center gap-3">
-        {withRule && <div className="h-px w-12 bg-hairline" />}
+        {withRule && <div className="h-px w-12 bg-line" />}
         <p className="eyebrow">{label}</p>
-        {withRule && <div className="h-px w-12 bg-hairline" />}
+        {withRule && <div className="h-px w-12 bg-line" />}
       </div>
     )
   }
   return (
-    <div className="flex items-center gap-4">
-      <p className="eyebrow">
-        <span className="eyebrow-bar" aria-hidden />
-        {label}
-      </p>
-      {withRule && (
-        <div className="h-px flex-1 bg-gradient-to-r from-hairline to-transparent" />
-      )}
-    </div>
+    <p className="eyebrow">
+      <span className="eyebrow-rule" aria-hidden />
+      {label}
+    </p>
   )
 }
 
 // ─── SectionHeader ─────────────────────────────────────────────────────────
-// Standard section opener: eyebrow + title + optional lede.
 export function SectionHeader({
   eyebrow,
   title,
@@ -55,20 +54,13 @@ export function SectionHeader({
   return (
     <div className="space-y-4">
       <Eyebrow label={eyebrow} />
-      <h2 className="font-display text-display-sm font-semibold text-white md:text-display-md">
-        {title}
-      </h2>
-      {lede && (
-        <p className="max-w-2xl text-[15px] leading-[1.7] text-zinc-400 md:text-[16px]">
-          {lede}
-        </p>
-      )}
+      <h2 className="section-title">{title}</h2>
+      {lede && <p className="section-lede">{lede}</p>}
     </div>
   )
 }
 
 // ─── PageHeader ────────────────────────────────────────────────────────────
-// Same shape as SectionHeader, but rendered as <h1> for top-of-page headers.
 export function PageHeader({
   eyebrow,
   title,
@@ -80,15 +72,11 @@ export function PageHeader({
 }) {
   return (
     <header className="space-y-5">
-      <p className="eyebrow">{eyebrow}</p>
-      <h1 className="font-display text-display-md font-semibold text-white sm:text-[44px] lg:text-display-lg">
+      <Eyebrow label={eyebrow} />
+      <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-ink sm:text-[44px] lg:text-display-lg">
         {title}
       </h1>
-      {lede && (
-        <p className="max-w-2xl text-[15px] leading-[1.7] text-zinc-400 md:text-[16px]">
-          {lede}
-        </p>
-      )}
+      {lede && <p className="section-lede">{lede}</p>}
     </header>
   )
 }
@@ -100,6 +88,9 @@ export function Tag({ children }: { children: ReactNode }) {
 
 // ─── StatusPill ────────────────────────────────────────────────────────────
 //
+// Three variants. `live` and `in-development` use the warm ochre dot; `shipped`
+// uses sage; `draft` is muted ink. The dot itself is shipped via .status-dot
+// in globals.css; here we just pick the variant class.
 type StatusKind = 'live' | 'shipped' | 'draft' | 'in-development'
 export function StatusPill({ kind, children }: { kind: StatusKind; children?: ReactNode }) {
   const cls =
@@ -117,21 +108,19 @@ export function StatusPill({ kind, children }: { kind: StatusKind; children?: Re
         : kind === 'in-development'
           ? 'In development'
           : 'Draft')
-  const isWarm = kind === 'live' || kind === 'in-development'
   return (
     <span className={`pill ${cls}`}>
-      {isWarm && (
-        <span className="relative inline-flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/40" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-        </span>
-      )}
+      <span className="status-dot" aria-hidden />
       {label}
     </span>
   )
 }
 
 // ─── Buttons ───────────────────────────────────────────────────────────────
+//
+// Three variants from the design system: ink-on-paper primary, terracotta
+// accent, paper ghost. Plus a low-key TextLink and a small GhostButton with
+// arrow affordance.
 type ButtonProps = {
   href: string
   children: ReactNode
@@ -139,11 +128,25 @@ type ButtonProps = {
   className?: string
 }
 
-const baseBtn =
-  'group inline-flex h-11 items-center gap-2 rounded-lg px-5 text-[13px] font-medium transition-all'
+const baseBtn = 'btn btn--md'
 
 export function PrimaryButton({ href, children, external, className = '' }: ButtonProps) {
-  const cls = `${baseBtn} bg-white text-black hover:bg-zinc-200 ${className}`
+  const cls = `group ${baseBtn} btn--primary ${className}`
+  return external ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      {children}
+      <Arrow />
+    </a>
+  ) : (
+    <Link href={href} className={cls}>
+      {children}
+      <Arrow />
+    </Link>
+  )
+}
+
+export function AccentButton({ href, children, external, className = '' }: ButtonProps) {
+  const cls = `group ${baseBtn} btn--accent ${className}`
   return external ? (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       {children}
@@ -158,7 +161,7 @@ export function PrimaryButton({ href, children, external, className = '' }: Butt
 }
 
 export function SecondaryButton({ href, children, external, className = '' }: ButtonProps) {
-  const cls = `${baseBtn} border border-hairline bg-surface-1 text-zinc-200 hover:border-hairline-strong hover:bg-surface-2 hover:text-white ${className}`
+  const cls = `group ${baseBtn} btn--ghost ${className}`
   return external ? (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       {children}
@@ -171,7 +174,7 @@ export function SecondaryButton({ href, children, external, className = '' }: Bu
 }
 
 export function GhostButton({ href, children, external, className = '' }: ButtonProps) {
-  const cls = `inline-flex h-11 items-center gap-2 px-2 text-[13px] font-medium text-zinc-400 transition-colors hover:text-white ${className}`
+  const cls = `inline-flex h-11 items-center gap-2 px-2 text-[13px] font-medium text-ink-2 transition-colors hover:text-terracotta ${className}`
   return external ? (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       {children}
@@ -208,8 +211,10 @@ export function TextLink({
   external?: boolean
   accent?: boolean
 }) {
-  const cls = `inline-flex items-center gap-1.5 text-[13px] font-medium transition-colors ${
-    accent ? 'text-accent hover:text-white' : 'text-zinc-300 hover:text-white'
+  const cls = `inline-flex items-center gap-1.5 text-[13.5px] font-medium underline underline-offset-[3px] transition-colors ${
+    accent
+      ? 'text-terracotta decoration-terracotta hover:text-terracotta-2'
+      : 'text-ink decoration-line-2 hover:text-terracotta hover:decoration-terracotta'
   }`
   return external ? (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
@@ -225,7 +230,6 @@ export function TextLink({
 }
 
 // ─── Section wrapper ───────────────────────────────────────────────────────
-// Establishes vertical rhythm. Use everywhere instead of ad-hoc spacing.
 export function Section({
   id,
   children,
@@ -243,8 +247,6 @@ export function Section({
 }
 
 // ─── BentoCard ─────────────────────────────────────────────────────────────
-// A card primitive used in feature grids. `span` controls how many columns it
-// occupies on the lg breakpoint (defaults to 1 of 3).
 export function BentoCard({
   index,
   title,
@@ -263,15 +265,15 @@ export function BentoCard({
   return (
     <div className={`surface flex flex-col p-6 ${colSpan}`}>
       {index && (
-        <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-accent">
+        <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-terracotta">
           {index}
         </span>
       )}
-      <h3 className="mt-3 font-display text-[18px] font-semibold text-white md:text-[20px]">
+      <h3 className="mt-3 font-display text-[18px] font-semibold text-ink md:text-[20px]">
         {title}
       </h3>
       {body && (
-        <p className="mt-2.5 text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]">
+        <p className="mt-2.5 text-[13.5px] leading-[1.7] text-ink-2 md:text-[14.5px]">
           {body}
         </p>
       )}
@@ -281,8 +283,8 @@ export function BentoCard({
 }
 
 // ─── ProductPanel ──────────────────────────────────────────────────────────
-// Polished panel for product UI mockups. Includes a discreet window-chrome bar
-// so the inner content reads as an app surface, not a card.
+//
+// Light app-surface panel with a discreet window-chrome bar.
 export function ProductPanel({
   chrome = 'pulseql · workspace',
   children,
@@ -300,11 +302,11 @@ export function ProductPanel({
         accent ? 'panel-product' : 'surface-raised'
       } ${className}`}
     >
-      <div className="flex items-center gap-2 border-b border-hairline bg-black/30 px-5 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-        <span className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
-        <span className="ml-3 font-mono text-[11px] tracking-wide text-zinc-600">
+      <div className="flex items-center gap-2 border-b border-line bg-paper-3 px-5 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-line-2" />
+        <span className="h-2.5 w-2.5 rounded-full bg-line-2" />
+        <span className="h-2.5 w-2.5 rounded-full bg-line-2" />
+        <span className="ml-3 font-mono text-[11px] tracking-wide text-ink-3">
           {chrome}
         </span>
       </div>
@@ -324,19 +326,18 @@ export function CodeBlock({
   return (
     <div className="code-surface overflow-hidden">
       {language && (
-        <div className="border-b border-hairline px-4 py-2 font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
+        <div className="border-b border-line px-4 py-2 font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3">
           {language}
         </div>
       )}
-      <pre className="overflow-x-auto px-4 py-4 text-[12.5px] leading-[1.75]">{children}</pre>
+      <pre className="overflow-x-auto px-4 py-4 text-[12.5px] leading-[1.75] text-ink-2">
+        {children}
+      </pre>
     </div>
   )
 }
 
 // ─── DiagramFlow ───────────────────────────────────────────────────────────
-// Thin-line architecture flow. Renders horizontal on md+ and vertical on
-// mobile. Pass an array of stages; each becomes a labelled node connected by
-// hairline edges.
 export type FlowStage = {
   label: string
   body?: string
@@ -354,21 +355,19 @@ export function DiagramFlow({ stages }: { stages: FlowStage[] }) {
               <span
                 className={`flex h-6 w-6 items-center justify-center rounded-full border font-mono text-[10px] ${
                   s.accent
-                    ? 'border-accent/40 bg-accent/10 text-accent'
-                    : 'border-hairline-strong bg-surface-2 text-zinc-400'
+                    ? 'border-terracotta bg-terracotta-3 text-terracotta-2'
+                    : 'border-line-2 bg-paper-2 text-ink-2'
                 }`}
               >
                 {i + 1}
               </span>
               {i < stages.length - 1 && (
-                <span aria-hidden className="my-1 w-px flex-1 bg-hairline" />
+                <span aria-hidden className="my-1 w-px flex-1 bg-line" />
               )}
             </div>
             <div className="flex-1 pb-6">
-              <p className="text-[14px] font-medium text-white">{s.label}</p>
-              {s.body && (
-                <p className="mt-0.5 text-[12.5px] text-zinc-500">{s.body}</p>
-              )}
+              <p className="text-[14px] font-medium text-ink">{s.label}</p>
+              {s.body && <p className="mt-0.5 text-[12.5px] text-ink-3">{s.body}</p>}
             </div>
           </li>
         ))}
@@ -381,18 +380,18 @@ export function DiagramFlow({ stages }: { stages: FlowStage[] }) {
             <div key={s.label} className="flex flex-1 items-stretch">
               <div className="flex w-full flex-col gap-2">
                 <div
-                  className={`rounded-lg border px-4 py-3 ${
+                  className={`rounded-md border px-4 py-3 ${
                     s.accent
-                      ? 'border-accent/40 bg-accent/[0.06]'
-                      : 'border-hairline bg-surface-2'
+                      ? 'border-terracotta bg-terracotta-3'
+                      : 'border-line bg-paper-2'
                   }`}
                 >
-                  <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500">
+                  <p className="font-mono text-[10px] uppercase tracking-eyebrow text-ink-3">
                     {String(i + 1).padStart(2, '0')}
                   </p>
-                  <p className="mt-1.5 text-[13px] font-medium text-white">{s.label}</p>
+                  <p className="mt-1.5 text-[13px] font-medium text-ink">{s.label}</p>
                   {s.body && (
-                    <p className="mt-1 text-[11.5px] leading-[1.55] text-zinc-500">
+                    <p className="mt-1 text-[11.5px] leading-[1.55] text-ink-3">
                       {s.body}
                     </p>
                   )}
@@ -403,7 +402,7 @@ export function DiagramFlow({ stages }: { stages: FlowStage[] }) {
                   aria-hidden
                   className="flex w-6 shrink-0 items-center justify-center"
                 >
-                  <span className="font-mono text-[12px] text-zinc-700">→</span>
+                  <span className="font-mono text-[12px] text-line-2">→</span>
                 </div>
               )}
             </div>
@@ -418,9 +417,5 @@ export function DiagramFlow({ stages }: { stages: FlowStage[] }) {
 export function HairlineDivider({
   className = '',
 }: HTMLAttributes<HTMLDivElement> & { className?: string }) {
-  return <div className={`h-px w-full bg-hairline ${className}`} />
+  return <div className={`h-px w-full bg-line ${className}`} />
 }
-
-// ─── Glass card alias (back-compat with existing pages) ────────────────────
-// Some legacy consumers reference `.glass-card` classNames; keep them mapped
-// to `.surface` so older markup keeps rendering correctly during the rebuild.

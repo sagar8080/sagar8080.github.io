@@ -47,7 +47,7 @@ export default async function PostPage({
   const statusLabel = isDraft ? 'Draft' : isArchive ? 'Archive' : 'Published'
 
   return (
-    <article className="mx-auto max-w-[820px] px-6 pb-24 pt-12 md:pt-16">
+    <article className="mx-auto max-w-[980px] px-6 pb-24 pt-12 md:pt-16">
       <ReadingProgress />
       <SectionMarkers />
       <Link
@@ -126,7 +126,7 @@ export default async function PostPage({
         </aside>
       )}
 
-      <div className="prose-host drop-cap prose prose-invert prose-zinc mt-12 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-white prose-h2:mt-14 prose-h2:text-[26px] md:prose-h2:text-[30px] prose-h3:text-[19px] prose-p:text-[16px] md:prose-p:text-[17px] prose-p:leading-[1.78] prose-p:text-zinc-300 prose-a:text-accent prose-a:underline prose-a:decoration-accent/30 prose-a:underline-offset-4 hover:prose-a:text-white hover:prose-a:decoration-accent prose-strong:text-white prose-strong:font-semibold prose-li:text-[15px] md:prose-li:text-[16px] prose-li:text-zinc-300 prose-li:leading-[1.75] prose-code:rounded prose-code:border prose-code:border-hairline prose-code:bg-surface-2 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[13px] prose-code:font-mono prose-code:text-zinc-200 prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-lg prose-pre:border prose-pre:border-hairline prose-pre:bg-black/40 prose-blockquote:border-l-accent prose-blockquote:not-italic prose-blockquote:text-zinc-200 prose-hr:border-hairline">
+      <div className="prose-host drop-cap prose mt-12 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-ink prose-h2:mt-14 prose-h2:text-[26px] md:prose-h2:text-[30px] prose-h3:text-[19px] prose-p:text-[16px] md:prose-p:text-[17px] prose-p:leading-[1.78] prose-p:text-ink-2 prose-a:text-terracotta prose-a:underline prose-a:decoration-terracotta/40 prose-a:underline-offset-[3px] hover:prose-a:text-terracotta-2 hover:prose-a:decoration-terracotta prose-strong:text-ink prose-strong:font-semibold prose-li:text-[15px] md:prose-li:text-[16px] prose-li:text-ink-2 prose-li:leading-[1.75] prose-code:rounded prose-code:border prose-code:border-line prose-code:bg-paper-2 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[13px] prose-code:font-mono prose-code:text-ink prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-md prose-pre:border prose-pre:border-line prose-pre:bg-paper-2 prose-pre:text-ink prose-blockquote:border-l-terracotta prose-blockquote:not-italic prose-blockquote:text-ink prose-hr:border-line">
         <MDXRemote
           source={post.content}
           components={mdxComponents}
