@@ -7,7 +7,7 @@ export default function NotFound() {
         <span className="eyebrow-rule" aria-hidden />
         404 · not found
       </p>
-      <h1 className="font-display text-display-md font-semibold tracking-tight text-ink sm:text-display-lg">
+      <h1 className="font-display text-display-md font-semibold tracking-tight text-terracotta sm:text-display-lg">
         Page not found.
       </h1>
       <p className="text-[15px] leading-[1.7] text-ink-2 md:text-[16px]">

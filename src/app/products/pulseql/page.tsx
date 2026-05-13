@@ -71,7 +71,7 @@ const useCases = [
 
 export default function PulseQLProductPage() {
   return (
-    <div className="mx-auto max-w-[82rem] px-6 pb-24 pt-12 md:pt-16 space-y-24 md:space-y-32">
+    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16 space-y-24 md:space-y-32">
       <Hero />
       <Demo />
       <CorePromise />
@@ -100,9 +100,9 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[58px] lg:text-[68px] xl:text-[72px]">
+        <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[68px] xl:text-[72px]">
           A governed data workspace{' '}
-          <span className="text-zinc-400">for reviewable AI workflows.</span>
+          <span className="text-ink-3">for reviewable AI workflows.</span>
         </h1>
 
         <p className="max-w-[680px] text-[16px] leading-[1.75] text-zinc-400 md:text-[17px]">
@@ -354,7 +354,7 @@ function Capabilities() {
             <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-accent">
               {String(i + 1).padStart(2, '0')}
             </span>
-            <h3 className="mt-3 font-display text-[18px] font-semibold text-white md:text-[19px]">
+            <h3 className="mt-3 font-display text-[18px] font-semibold text-terracotta md:text-[19px]">
               {f.title}
             </h3>
             <p className="mt-2.5 text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14px]">
@@ -380,7 +380,7 @@ function UseCases() {
       <div className="grid gap-3 md:grid-cols-2">
         {useCases.map((u) => (
           <div key={u.title} className="surface p-6 md:p-7">
-            <h3 className="font-display text-[17px] font-semibold text-white md:text-[19px]">
+            <h3 className="font-display text-[17px] font-semibold text-terracotta md:text-[19px]">
               {u.title}
             </h3>
             <p className="mt-2.5 text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]">
@@ -403,12 +403,12 @@ function FinalCTA() {
       <div className="surface-raised relative overflow-hidden p-8 md:p-12">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(129,140,248,0.18),transparent_55%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(180,90,60,0.10),transparent_60%)]"
         />
 
         <div className="relative grid gap-10 md:grid-cols-[1.05fr_1.15fr] md:items-start">
           <div className="space-y-5">
-            <h2 className="font-display text-[28px] font-semibold leading-tight tracking-normal text-white md:text-[36px]">
+            <h2 className="font-display text-[28px] font-semibold leading-tight tracking-normal text-terracotta md:text-[36px]">
               Download PulseQL v1.0.
             </h2>
             <p className="max-w-xl text-[14.5px] leading-[1.75] text-zinc-400 md:text-[15.5px]">

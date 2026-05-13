@@ -113,8 +113,8 @@ module.exports = {
         eyebrow: '0.08em',
       },
       maxWidth: {
-        editorial: '1080px',
-        prose: '720px',
+        editorial: '1240px',
+        prose: '820px',
       },
       boxShadow: {
         panel:

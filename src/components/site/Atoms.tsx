@@ -73,7 +73,7 @@ export function PageHeader({
   return (
     <header className="space-y-5">
       <Eyebrow label={eyebrow} />
-      <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-ink sm:text-[44px] lg:text-display-lg">
+      <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg">
         {title}
       </h1>
       {lede && <p className="section-lede">{lede}</p>}

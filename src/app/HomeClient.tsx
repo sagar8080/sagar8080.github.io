@@ -40,7 +40,7 @@ export type HomePostPreview = {
 
 export default function HomeClient({ recentPosts }: { recentPosts: HomePostPreview[] }) {
   return (
-    <div className="mx-auto max-w-[82rem] px-6 pb-24 pt-10 md:pt-14 space-y-24 md:space-y-32">
+    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-10 md:pt-14 space-y-24 md:space-y-32">
       <Hero />
       <Reveal><ProofBand /></Reveal>
       <Reveal><FeaturedSystems /></Reveal>
@@ -91,10 +91,10 @@ function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-[820px] font-display text-[43px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[58px] lg:text-[64px] 2xl:text-[68px]"
+          className="max-w-[820px] font-display text-[43px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[64px] 2xl:text-[68px]"
         >
           <span>I build data platforms and AI infrastructure </span>
-          <span className="text-zinc-400">
+          <span className="text-ink-3">
             for trusted enterprise workflows.
           </span>
         </motion.h1>
@@ -269,7 +269,7 @@ function SystemCard({ system }: { system: System }) {
       <SystemVisual id={system.id} />
 
       <div className="flex items-center justify-between gap-3">
-        <h3 className="font-display text-[19px] font-semibold text-white md:text-[21px]">
+        <h3 className="font-display text-[19px] font-semibold text-terracotta md:text-[21px]">
           {system.title}
         </h3>
         <StatusPill kind={system.status} />
@@ -404,7 +404,7 @@ function EngineeringOperatingSystem() {
                   0{index + 1}
                 </span>
               </div>
-              <h3 className="mt-5 font-display text-[20px] font-semibold text-white">
+              <h3 className="mt-5 font-display text-[20px] font-semibold text-terracotta">
                 {item.title}
               </h3>
               <p className="mt-3 text-[14px] leading-[1.7] text-zinc-400">{item.body}</p>
@@ -498,14 +498,14 @@ function TechnicalDepth() {
       <SectionHeader
         eyebrow="Technical depth"
         title="The stack I work across."
-        lede="Data platforms, ML systems, generative AI infrastructure, and cloud delivery. The common thread is making data and AI workflows reliable enough for enterprise use."
+        lede="Data platforms, ML systems, generative AI infrastructure, and cloud delivery. The common thread is making these workflows reliable enough for enterprise use."
       />
 
       <StackGraph groups={depthGroups} />
 
       {/* Color legend identifying each orbital ring. Lives below the
           centerpiece so the graph reads as a single living surface. */}
-      <div className="mx-auto mt-10 grid max-w-3xl gap-x-8 gap-y-4 sm:grid-cols-2 md:mt-14 md:grid-cols-4">
+      <div className="mx-auto mt-10 grid max-w-4xl gap-x-8 gap-y-4 sm:grid-cols-2 md:mt-14 md:grid-cols-4">
         {depthGroups.map((g) => {
           const Icon = g.icon
           return (
@@ -688,7 +688,7 @@ function ProfessionalBackground() {
         lede="Four roles across enterprise data, AI systems, and cloud modernization."
       />
 
-      <ol className="mx-auto max-w-3xl divide-y divide-line border-y border-line">
+      <ol className="mx-auto max-w-4xl divide-y divide-line border-y border-line">
         {experience.map((exp, i) => (
           <li
             key={exp.id}

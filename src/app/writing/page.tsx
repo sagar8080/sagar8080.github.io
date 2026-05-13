@@ -9,15 +9,16 @@ export default async function WritingIndex() {
   const archive = posts.filter((p) => p.status === 'archive')
 
   return (
-    <div className="mx-auto max-w-3xl px-4 pb-24 pt-10 sm:px-6 md:pt-14 space-y-10">
+    <div className="mx-auto max-w-[90rem] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
+      <div className="mx-auto max-w-4xl space-y-10">
       {/* Card-style reading surface. Wraps the page intro and all three
           listing sections so the atmosphere stays in the gutters even on
           mobile. The Notify CTA below sits outside as a separate panel. */}
       <div className="document-card px-5 py-9 sm:px-10 sm:py-12 md:px-14 md:py-14 space-y-12">
       <PageHeader
         eyebrow="Writing"
-        title="Notes on data and AI infrastructure."
-        lede="Short technical notes on the decisions behind the systems I build."
+        title="Notes on the systems I build."
+        lede="Short technical notes on the decisions behind the work — written when there's something specific to say."
       />
 
       {published.length > 0 && (
@@ -36,7 +37,7 @@ export default async function WritingIndex() {
                   className="group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6"
                 >
                   <div className="space-y-2">
-                    <h2 className="font-display text-[18px] font-semibold text-white transition-colors group-hover:text-accent md:text-[20px]">
+                    <h2 className="font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]">
                       {p.title}
                     </h2>
                     <p className="text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]">
@@ -87,7 +88,7 @@ export default async function WritingIndex() {
                   className="group grid items-baseline gap-2 py-5 sm:grid-cols-[1fr_auto] sm:gap-6"
                 >
                   <div className="space-y-1.5">
-                    <h2 className="font-display text-[15.5px] font-medium text-zinc-200 transition-colors group-hover:text-white md:text-[16px]">
+                    <h2 className="font-display text-[15.5px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[16px]">
                       {p.title}
                     </h2>
                     <p className="text-[12.5px] leading-[1.65] text-zinc-500">
@@ -124,7 +125,7 @@ export default async function WritingIndex() {
                   className="surface group flex h-full flex-col gap-2 p-5"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-[15px] font-medium text-zinc-200 transition-colors group-hover:text-white md:text-[15.5px]">
+                    <h3 className="font-display text-[15px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[15.5px]">
                       {p.title}
                     </h3>
                     <span className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
@@ -161,6 +162,7 @@ export default async function WritingIndex() {
           and I&apos;ll add you to a small list. No newsletter. Just a one-line note
           when a post ships.
         </p>
+      </div>
       </div>
     </div>
   )

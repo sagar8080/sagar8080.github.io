@@ -1,26 +1,21 @@
 import { PageHeader, Eyebrow, Section } from '@/components/site/Atoms'
 import { contactLinks } from '@/lib/content'
 
-const fits = [
-  'Data platform builds. Ingestion, lakehouse, semantics, governance',
-  'Agentic AI workflows. Retrieval, eval gates, agent memory, contracts',
-  'Migration work. Legacy data stacks to GCP / AWS / Iceberg',
-  'Reviews and architecture audits. Short engagements, written deliverables',
-]
-
-const notForMe = [
-  'Generic prompt engineering or "AI strategy" decks',
-  'AI products that need to read raw production data to be useful',
-  'Full-stack consumer app builds without a data or AI core',
+const helpfulAreas = [
+  'Data platform builds — ingestion, lakehouse, semantics, governance',
+  'Agentic AI workflows — retrieval, evaluation, agent memory, contracts',
+  'Migration work — moving legacy data stacks toward GCP, AWS, or Iceberg',
+  'Reviews and architecture conversations — short engagements with written notes',
 ]
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 pb-24 pt-12 md:pt-16 space-y-14">
+    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
+      <div className="mx-auto max-w-4xl space-y-14">
       <PageHeader
         eyebrow="Contact"
-        title="Open to consulting, full-time roles, and collaborations on data and AI infrastructure."
-        lede="Async-first, with clear milestones and measurable exits. Best reached over email. I aim to reply within a working day."
+        title="Always happy to hear from you."
+        lede="Consulting, full-time roles, collaborations, or just a friendly chat about a problem you're thinking through. Email tends to be the easiest way to start; I try to reply within a working day."
       />
 
       <Section>
@@ -50,9 +45,9 @@ export default function ContactPage() {
       </Section>
 
       <Section>
-        <Eyebrow label="What I'm best suited for" />
+        <Eyebrow label="Where I can usually help" />
         <ul className="space-y-2.5">
-          {fits.map((item) => (
+          {helpfulAreas.map((item) => (
             <li
               key={item}
               className="flex gap-3 text-[14.5px] leading-[1.7] text-zinc-300 md:text-[15px]"
@@ -65,24 +60,11 @@ export default function ContactPage() {
             </li>
           ))}
         </ul>
-      </Section>
-
-      <Section>
-        <Eyebrow label="Probably not me" />
-        <ul className="space-y-2.5">
-          {notForMe.map((item) => (
-            <li
-              key={item}
-              className="flex gap-3 text-[14px] leading-[1.7] text-zinc-500"
-            >
-              <span
-                aria-hidden
-                className="mt-2.5 inline-block h-1 w-1 shrink-0 rounded-full bg-zinc-700"
-              />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="mt-5 text-[13.5px] leading-[1.7] text-zinc-500 md:text-[14px]">
+          Open to other directions too. If your problem doesn&apos;t quite fit the list
+          above, please still reach out — worst case I can probably point you toward
+          someone better suited.
+        </p>
       </Section>
 
       <div className="surface relative overflow-hidden p-7 md:p-9">
@@ -91,10 +73,11 @@ export default function ContactPage() {
           className="pointer-events-none absolute -top-px left-12 right-12 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"
         />
         <p className="font-display text-[18px] leading-[1.5] text-zinc-200 md:text-[20px]">
-          The best emails describe a specific problem, what you&apos;ve already tried,
-          and what &ldquo;done&rdquo; looks like. I&apos;ll come back with whether I think
-          I&apos;m the right person for it. Even if the answer is no.
+          A couple of lines about what you&apos;re working on and what would be helpful
+          is plenty to start. We can take it from there at whatever pace works for
+          you.
         </p>
+      </div>
       </div>
     </div>
   )
