@@ -19,23 +19,32 @@ export function Eyebrow({
   label,
   withRule = true,
   align = 'left',
+  accentColor,
 }: {
   label: string
   withRule?: boolean
   align?: 'left' | 'center'
+  // CSS color value (e.g. 'var(--sage)') to override the default terracotta
+  // rule + label tint. Used to vary section accents across the page so the
+  // UI isn't dominated by a single hue.
+  accentColor?: string
 }) {
   if (align === 'center') {
     return (
       <div className="flex items-center justify-center gap-3">
         {withRule && <div className="h-px w-12 bg-line" />}
-        <p className="eyebrow">{label}</p>
+        <p className="eyebrow" style={accentColor ? { color: accentColor } : undefined}>{label}</p>
         {withRule && <div className="h-px w-12 bg-line" />}
       </div>
     )
   }
   return (
-    <p className="eyebrow">
-      <span className="eyebrow-rule" aria-hidden />
+    <p className="eyebrow" style={accentColor ? { color: accentColor } : undefined}>
+      <span
+        className="eyebrow-rule"
+        aria-hidden
+        style={accentColor ? { background: accentColor } : undefined}
+      />
       {label}
     </p>
   )
@@ -46,17 +55,53 @@ export function SectionHeader({
   eyebrow,
   title,
   lede,
+  accentColor,
 }: {
   eyebrow: string
   title: ReactNode
   lede?: ReactNode
+  // Optional CSS color value for the eyebrow rule + label tint. Lets a
+  // section opt out of the default terracotta accent so the page can
+  // breathe across the full palette.
+  accentColor?: string
 }) {
   return (
     <div className="space-y-4">
-      <Eyebrow label={eyebrow} />
+      <Eyebrow label={eyebrow} accentColor={accentColor} />
       <h2 className="section-title">{title}</h2>
       {lede && <p className="section-lede">{lede}</p>}
     </div>
+  )
+}
+
+// ─── PullQuote ─────────────────────────────────────────────────────────────
+// A magazine-style display quote panel. Used between major sections to
+// break the "header + grid of cards" rhythm and give the page a moment of
+// pause. The quote sits at 48–72px depending on viewport with a thin
+// terracotta rule above and a small mono caption below — closer to a
+// printed-page pull-quote than a UI label.
+export function PullQuote({
+  children,
+  caption,
+}: {
+  children: ReactNode
+  caption?: string
+}) {
+  return (
+    <figure className="my-20 md:my-28">
+      <div className="mx-auto max-w-4xl px-2 text-center">
+        <span aria-hidden className="mx-auto mb-8 block h-px w-16 bg-terracotta/60" />
+        <blockquote className="font-display text-[26px] font-medium leading-[1.2] tracking-tight text-terracotta text-balance sm:text-[34px] md:text-[42px] lg:text-[48px]">
+          {children}
+        </blockquote>
+        {caption && (
+          <figcaption className="mt-8 inline-flex items-center gap-3 font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3">
+            <span aria-hidden className="h-px w-6 bg-line-2" />
+            {caption}
+          </figcaption>
+        )}
+      </div>
+    </figure>
   )
 }
 

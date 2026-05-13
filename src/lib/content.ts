@@ -495,7 +495,7 @@ export type FeaturedProject = {
 
 export const featuredProject: FeaturedProject = {
   id: 'pulseql',
-  status: 'v1.0.0',
+  status: 'v1.1 — releasing soon',
   title: 'PulseQL',
   subtitle: 'The data lifecycle, in one app.',
   description:
@@ -598,7 +598,3 @@ export const contactCopy = {
   body: 'Open to consulting, full-time roles, and tight collaborations on data platforms and AI systems. Async-first, with clear milestones and measurable exits.',
 }
 
-export const footerCopy = {
-  copyright: `© ${new Date().getFullYear()} Sagar Das`,
-  deps: 'next · react · typescript · tailwind · framer-motion',
-}
