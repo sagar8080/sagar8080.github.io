@@ -75,7 +75,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
   }, [])
 
   return (
-    <article className="mx-auto max-w-editorial px-6 pb-24 pt-12 md:pt-16">
+    <article className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
+      <div className="mx-auto max-w-editorial">
       <Link
         href="/projects"
         className="inline-flex items-center gap-2 text-[13px] text-zinc-500 transition-colors hover:text-white"
@@ -84,12 +85,12 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       </Link>
 
       {/* Header */}
-      <header className="mt-10 max-w-3xl space-y-5">
+      <header className="mt-10 max-w-4xl space-y-5">
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{data.eyebrow}</p>
           <StatusPill kind={statusKind(data.status)}>{data.status}</StatusPill>
         </div>
-        <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-white sm:text-[44px] lg:text-display-lg">
+        <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg">
           {data.title}
         </h1>
         <p className="text-[16px] leading-[1.7] text-zinc-400 md:text-[17px]">
@@ -229,6 +230,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             </ul>
           </Section>
         </div>
+      </div>
       </div>
     </article>
   )

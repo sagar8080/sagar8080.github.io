@@ -8,79 +8,33 @@ import {
 import { education, experience, profile } from '@/lib/content'
 import Spotlight from '@/components/site/Spotlight'
 
-const resumeSnapshot = [
-  { label: 'Experience', value: '4+ years' },
-  { label: 'Focus', value: 'Data platforms · AI systems' },
-  { label: 'Current', value: 'Enterprise modernization' },
-]
-
-const focusAreas = [
-  'Data platforms',
-  'Streaming pipelines',
-  'Cloud modernization',
-  'ML systems',
-  'RAG workflows',
-  'Governed AI',
-]
-
 export default function ResumePage() {
   return (
-    <div className="mx-auto max-w-[82rem] px-6 pb-24 pt-12 md:pt-16 space-y-16 md:space-y-20">
-      <header className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(380px,0.62fr)] lg:items-end xl:gap-16">
-        <div className="max-w-[760px] space-y-6">
-          <p className="eyebrow">
-            <span className="eyebrow-bar" aria-hidden />
-            Résumé
-          </p>
-          <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[58px] lg:text-[68px]">
-            {profile.role}
-          </h1>
-          <p className="max-w-[680px] text-[16px] leading-[1.75] text-zinc-400 md:text-[17px]">
-            {profile.tagline}
-          </p>
-          <p className="max-w-[720px] text-[14px] leading-[1.7] text-zinc-500 md:text-[14.5px]">
-            {profile.subhead}
-          </p>
+    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
+      <div className="mx-auto max-w-[58rem] space-y-16 md:space-y-20">
+      <header className="max-w-[760px] space-y-6">
+        <p className="eyebrow">
+          <span className="eyebrow-bar" aria-hidden />
+          Résumé
+        </p>
+        <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[68px]">
+          {profile.role}
+        </h1>
+        <p className="max-w-[680px] text-[16px] leading-[1.75] text-zinc-400 md:text-[17px]">
+          {profile.tagline}
+        </p>
+        <p className="max-w-[720px] text-[14px] leading-[1.7] text-zinc-500 md:text-[14.5px]">
+          {profile.subhead}
+        </p>
 
-          <div className="flex flex-wrap items-center gap-3 pt-1">
-            <PrimaryButton href={profile.resumeUrl} external>
-              Download PDF
-            </PrimaryButton>
-            <SecondaryButton href="https://linkedin.com/in/sagardas08" external>
-              LinkedIn
-            </SecondaryButton>
-            <SecondaryButton href="mailto:sagardas.work@gmail.com">Email</SecondaryButton>
-          </div>
-        </div>
-
-        <div className="space-y-6 lg:pb-1">
-          <div>
-            <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-accent">
-              Snapshot
-            </p>
-            <p className="mt-3 font-display text-[24px] font-semibold leading-tight text-white">
-              Enterprise data systems, now focused on trusted AI workflows.
-            </p>
-          </div>
-
-          <dl className="grid gap-3">
-            {resumeSnapshot.map((item) => (
-              <div key={item.label} className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                <dt className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-                  {item.label}
-                </dt>
-                <dd className="text-[13px] text-zinc-300">{item.value}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <ul className="mt-5 flex flex-wrap gap-1.5">
-            {focusAreas.map((area) => (
-              <li key={area}>
-                <Tag>{area}</Tag>
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-wrap items-center gap-3 pt-1">
+          <PrimaryButton href={profile.resumeUrl} external>
+            Download PDF
+          </PrimaryButton>
+          <SecondaryButton href="https://linkedin.com/in/sagardas08" external>
+            LinkedIn
+          </SecondaryButton>
+          <SecondaryButton href="mailto:sagardas.work@gmail.com">Email</SecondaryButton>
         </div>
       </header>
 
@@ -94,7 +48,7 @@ export default function ResumePage() {
         </a>
       </nav>
 
-      <div className="max-w-[58rem] space-y-16">
+      <div className="space-y-16">
         <Section id="experience">
             <Eyebrow label="Experience" />
             <ol className="space-y-4">
@@ -108,7 +62,7 @@ export default function ResumePage() {
                             {exp.index}
                           </span>
                           <div className="min-w-0">
-                            <h2 className="font-display text-[20px] font-semibold text-white md:text-[22px]">
+                            <h2 className="font-display text-[20px] font-semibold text-terracotta md:text-[22px]">
                               {exp.position}
                             </h2>
                             <p className="mt-0.5 text-[14px] text-zinc-400">{exp.company}</p>
@@ -177,7 +131,7 @@ export default function ResumePage() {
                 <Spotlight className="h-full rounded-2xl p-6 transition-colors duration-300 hover:bg-white/[0.025] md:p-7">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h2 className="font-display text-[18px] font-semibold text-white md:text-[20px]">
+                      <h2 className="font-display text-[18px] font-semibold text-terracotta md:text-[20px]">
                         {ed.degree}
                       </h2>
                       {ed.focus && (
@@ -211,6 +165,7 @@ export default function ResumePage() {
             ))}
           </ol>
         </Section>
+      </div>
       </div>
     </div>
   )

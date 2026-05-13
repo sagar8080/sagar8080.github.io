@@ -82,6 +82,10 @@ export default function Mermaid({ chart }: { chart: string }) {
             rankSpacing: 56,
             useMaxWidth: true,
             htmlLabels: true,
+            // Wrap long node labels at ~160px so they stay inside the
+            // shape; the matching CSS in globals.css applies the actual
+            // word-wrap to the rendered foreignObject text.
+            wrappingWidth: 160,
           },
           sequence: {
             useMaxWidth: true,
@@ -99,6 +103,19 @@ export default function Mermaid({ chart }: { chart: string }) {
               text-align: center !important;
               text-anchor: middle !important;
             }
+            /* Wrap long labels inside their node shape rather than letting
+               them spill horizontally. The 160px ceiling matches the
+               wrappingWidth set in the flowchart config above. */
+            .node .label > div,
+            .node .nodeLabel,
+            foreignObject p {
+              max-width: 160px !important;
+              white-space: normal !important;
+              overflow-wrap: break-word !important;
+              word-break: normal !important;
+              hyphens: auto;
+            }
+            .node foreignObject { overflow: visible !important; }
             .node rect, .node polygon, .node circle, .node ellipse {
               stroke-width: 1.25px;
             }

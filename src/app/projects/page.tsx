@@ -54,7 +54,8 @@ const others = otherProjects.filter((p) => !featuredIds.has(p.id))
 
 export default function ProjectsIndexPage() {
   return (
-    <div className="mx-auto max-w-editorial px-6 pb-24 pt-12 md:pt-16 space-y-20">
+    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
+      <div className="mx-auto max-w-editorial space-y-20">
       <PageHeader
         eyebrow="Projects"
         title="Case studies & other work."
@@ -74,7 +75,7 @@ export default function ProjectsIndexPage() {
                 <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
                   <div>
                     <div className="flex flex-wrap items-center gap-3">
-                      <h2 className="font-display text-[22px] font-semibold text-white transition-colors group-hover:text-white md:text-[26px]">
+                      <h2 className="font-display text-[22px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[26px]">
                         {p.title}
                       </h2>
                       <StatusPill kind={p.status}>{p.statusLabel}</StatusPill>
@@ -137,7 +138,7 @@ export default function ProjectsIndexPage() {
                 className="flex h-full flex-col gap-3 p-6"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 className="font-display text-[16px] font-semibold text-white md:text-[17px]">
+                  <h3 className="font-display text-[16px] font-semibold text-terracotta md:text-[17px]">
                     {p.title}
                   </h3>
                   <span className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
@@ -165,6 +166,7 @@ export default function ProjectsIndexPage() {
           ))}
         </ul>
       </Section>
+      </div>
     </div>
   )
 }

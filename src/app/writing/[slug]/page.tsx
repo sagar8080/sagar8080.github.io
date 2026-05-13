@@ -47,9 +47,10 @@ export default async function PostPage({
   const statusLabel = isDraft ? 'Draft' : isArchive ? 'Archive' : 'Published'
 
   return (
-    <article className="mx-auto max-w-[980px] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
+    <article className="mx-auto max-w-[90rem] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
       <ReadingProgress />
       <SectionMarkers />
+      <div className="mx-auto max-w-[1180px]">
       <Link
         href="/writing"
         className="inline-flex items-center gap-2 px-2 text-[13px] text-ink-3 transition-colors hover:text-terracotta"
@@ -71,7 +72,7 @@ export default async function PostPage({
             </span>
           )}
         </div>
-        <h1 className="font-display text-display-md font-semibold leading-[1.08] tracking-tight text-white sm:text-[44px] lg:text-display-lg">
+        <h1 className="font-display text-display-md font-semibold leading-[1.08] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg">
           {post.title}
         </h1>
         <p className="text-[16px] leading-[1.7] text-zinc-400 md:text-[17px]">
@@ -130,7 +131,7 @@ export default async function PostPage({
         </aside>
       )}
 
-      <div className="prose-host drop-cap prose mt-12 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-ink prose-h2:mt-14 prose-h2:text-[26px] md:prose-h2:text-[30px] prose-h3:text-[19px] prose-p:text-[16px] md:prose-p:text-[17px] prose-p:leading-[1.78] prose-p:text-ink-2 prose-a:text-terracotta prose-a:underline prose-a:decoration-terracotta/40 prose-a:underline-offset-[3px] hover:prose-a:text-terracotta-2 hover:prose-a:decoration-terracotta prose-strong:text-ink prose-strong:font-semibold prose-li:text-[15px] md:prose-li:text-[16px] prose-li:text-ink-2 prose-li:leading-[1.75] prose-code:rounded prose-code:border prose-code:border-line prose-code:bg-paper-2 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[13px] prose-code:font-mono prose-code:text-ink prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-md prose-pre:border prose-pre:border-line prose-pre:bg-paper-2 prose-pre:text-ink prose-blockquote:border-l-terracotta prose-blockquote:not-italic prose-blockquote:text-ink prose-hr:border-line">
+      <div className="prose-host drop-cap prose mt-12 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-terracotta prose-h2:mt-14 prose-h2:text-[26px] md:prose-h2:text-[30px] prose-h3:text-[19px] prose-p:text-[16px] md:prose-p:text-[17px] prose-p:leading-[1.78] prose-p:text-ink-2 prose-a:text-terracotta prose-a:underline prose-a:decoration-terracotta/40 prose-a:underline-offset-[3px] hover:prose-a:text-terracotta-2 hover:prose-a:decoration-terracotta prose-strong:text-ink prose-strong:font-semibold prose-li:text-[15px] md:prose-li:text-[16px] prose-li:text-ink-2 prose-li:leading-[1.75] prose-code:rounded prose-code:border prose-code:border-line prose-code:bg-paper-2 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[13px] prose-code:font-mono prose-code:text-ink prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-md prose-pre:border prose-pre:border-line prose-pre:bg-paper-2 prose-pre:text-ink prose-blockquote:border-l-terracotta prose-blockquote:not-italic prose-blockquote:text-ink prose-hr:border-line">
         <MDXRemote
           source={post.content}
           components={mdxComponents}
@@ -176,6 +177,7 @@ export default async function PostPage({
           </div>
         </nav>
       )}
+      </div>
       </div>
     </article>
   )
