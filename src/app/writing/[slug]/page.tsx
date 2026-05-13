@@ -47,17 +47,21 @@ export default async function PostPage({
   const statusLabel = isDraft ? 'Draft' : isArchive ? 'Archive' : 'Published'
 
   return (
-    <article className="mx-auto max-w-[980px] px-6 pb-24 pt-12 md:pt-16">
+    <article className="mx-auto max-w-[980px] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
       <ReadingProgress />
       <SectionMarkers />
       <Link
         href="/writing"
-        className="inline-flex items-center gap-2 text-[13px] text-zinc-500 transition-colors hover:text-white"
+        className="inline-flex items-center gap-2 px-2 text-[13px] text-ink-3 transition-colors hover:text-terracotta"
       >
         ← All writing
       </Link>
 
-      <header className="mt-10 space-y-5">
+      {/* Card-style reading surface. Contains everything from the header
+          through the prev/next nav so the atmosphere can't bleed through
+          on mobile, where there's no gutter to push it aside. */}
+      <div className="document-card mt-6 px-5 py-9 sm:mt-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+      <header className="space-y-5">
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{formatDate(post.date)}</p>
           <StatusPill kind={statusKind}>{statusLabel}</StatusPill>
@@ -85,7 +89,7 @@ export default async function PostPage({
       </header>
 
       {post.mediumUrl && (
-        <aside className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-hairline bg-surface-1 px-5 py-4">
+        <aside className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-paper-2 px-5 py-4">
           <div>
             <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
               Originally on Medium
@@ -106,7 +110,7 @@ export default async function PostPage({
       )}
 
       {isDraft && (
-        <aside className="mt-8 rounded-xl border border-hairline bg-surface-1 p-5 md:p-6">
+        <aside className="mt-8 rounded-xl border border-line bg-paper-2 p-5 md:p-6">
           <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
             Status · Draft
           </p>
@@ -139,7 +143,7 @@ export default async function PostPage({
       </div>
 
       {(prev || next) && (
-        <nav className="mt-16 space-y-4 border-t border-hairline pt-8">
+        <nav className="mt-16 space-y-4 border-t border-line pt-8">
           <Eyebrow label="More writing" />
           <div className="grid gap-3 sm:grid-cols-2">
             {prev ? (
@@ -172,6 +176,7 @@ export default async function PostPage({
           </div>
         </nav>
       )}
+      </div>
     </article>
   )
 }
