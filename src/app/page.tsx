@@ -1,36 +1,24 @@
-'use client'
+import HomeClient, { type HomePostPreview } from './HomeClient'
+import { getAllPosts } from '@/lib/writing'
 
-import { SynthNav } from '@/components/synthwave/SynthNav'
-import { HudFrame } from '@/components/synthwave/HudFrame'
-import { HeroTerminal } from '@/components/synthwave/HeroTerminal'
-import { TelemetryStrip } from '@/components/synthwave/TelemetryStrip'
-import { CapabilitiesGrid } from '@/components/synthwave/CapabilitiesGrid'
-import { StackSection } from '@/components/synthwave/StackSection'
-import { ExperienceLog } from '@/components/synthwave/ExperienceLog'
-import { ProjectsGrid } from '@/components/synthwave/ProjectsGrid'
-import { FeaturedProject } from '@/components/synthwave/FeaturedProject'
-import { PhotographyAnalog } from '@/components/synthwave/PhotographyAnalog'
-import { ContactTerminal } from '@/components/synthwave/ContactTerminal'
-import { FooterTerminal } from '@/components/synthwave/FooterTerminal'
+const HOME_POSTS_LIMIT = 4
 
-export default function Home() {
-  return (
-    <div className="relative min-h-screen pb-7 synth-bg">
-      <div className="crt-overlay" aria-hidden />
-      <SynthNav />
-      <HudFrame />
-      <main className="relative z-10">
-        <HeroTerminal />
-        <TelemetryStrip />
-        <CapabilitiesGrid />
-        <StackSection />
-        <ExperienceLog />
-        <ProjectsGrid />
-        <FeaturedProject />
-        <PhotographyAnalog />
-        <ContactTerminal />
-      </main>
-      <FooterTerminal />
-    </div>
-  )
+export default async function HomePage() {
+  const all = await getAllPosts()
+  // Home only surfaces published + draft notes. Archive entries live behind
+  // the /writing index and link out to Medium.
+  const recentPosts: HomePostPreview[] = all
+    .filter((p): p is typeof p & { status: 'draft' | 'published' } =>
+      p.status === 'published' || p.status === 'draft'
+    )
+    .slice(0, HOME_POSTS_LIMIT)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      date: p.date,
+      status: p.status,
+      excerpt: p.excerpt,
+    }))
+
+  return <HomeClient recentPosts={recentPosts} />
 }

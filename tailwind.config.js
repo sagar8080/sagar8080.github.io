@@ -1,57 +1,68 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        void: '#050505',
-        glow: '#1A0B2E',
-        vint: {
-          cyan: '#22d3ee',
-          pink: '#ec4899',
-          cream: '#F1E6C9',
-          mint: '#ABDADC',
+        // Surfaces — a single, near-black background. No warm gradient.
+        background: '#0a0a0b',
+        surface: {
+          1: 'rgba(255,255,255,0.02)',
+          2: 'rgba(255,255,255,0.04)',
+          3: 'rgba(255,255,255,0.06)',
         },
-        phosphor: '#ABDADC',
+        // Borders are exposed as utility colors for consistency.
+        hairline: {
+          DEFAULT: 'rgba(255,255,255,0.045)',
+          strong: 'rgba(255,255,255,0.075)',
+          accent: 'rgba(129,140,248,0.18)',
+        },
+        // Refined editorial accent — indigo-400 family. Single accent, used sparingly.
+        accent: {
+          DEFAULT: '#818cf8',
+          soft: 'rgba(129,140,248,0.10)',
+          glow: 'rgba(129,140,248,0.20)',
+          ring: 'rgba(129,140,248,0.35)',
+        },
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        sans: ['var(--font-sans)', 'sans-serif'],
+      },
+      fontSize: {
+        // Editorial scale. Tighter line-heights at large sizes, generous at small.
+        'display-xl': ['72px', { lineHeight: '1.02', letterSpacing: '0' }],
+        'display-lg': ['56px', { lineHeight: '1.05', letterSpacing: '0' }],
+        'display-md': ['40px', { lineHeight: '1.08', letterSpacing: '0' }],
+        'display-sm': ['28px', { lineHeight: '1.12', letterSpacing: '0' }],
+        eyebrow: ['11px', { lineHeight: '1', letterSpacing: '0.18em' }],
+      },
+      letterSpacing: {
+        eyebrow: '0.22em',
+      },
+      maxWidth: {
+        editorial: '68rem', // 1088px — site container
+        prose: '44rem',
       },
       boxShadow: {
-        'vint-cyan': '0 0 15px rgba(34, 211, 238, 0.5)',
-        'vint-cyan-lg': '0 0 24px rgba(34, 211, 238, 0.45)',
-        'vint-pink': '0 0 15px rgba(236, 72, 153, 0.5)',
-        'vint-pink-lg': '0 0 24px rgba(236, 72, 153, 0.45)',
-      },
-      animation: {
-        glitch: 'glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
-        'marquee': 'marquee 40s linear infinite',
-        'name-shift': 'name-shift 7s ease-in-out infinite',
+        // Subtle elevation for product panels — never a glow on cards.
+        panel:
+          '0 1px 0 0 rgba(255,255,255,0.04) inset, 0 30px 80px -30px rgba(0,0,0,0.6), 0 8px 24px -12px rgba(0,0,0,0.5)',
+        'panel-accent':
+          '0 1px 0 0 rgba(255,255,255,0.04) inset, 0 30px 100px -25px rgba(129,140,248,0.18), 0 8px 24px -12px rgba(0,0,0,0.5)',
       },
       keyframes: {
-        glitch: {
-          '0%, 100%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 1px)' },
-          '40%': { transform: 'translate(2px, -1px)' },
-          '60%': { transform: 'translate(-1px, -1px)' },
-          '80%': { transform: 'translate(1px, 2px)' },
+        'pulse-soft': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.45' },
         },
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'name-shift': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
+      },
+      animation: {
+        'pulse-soft': 'pulse-soft 2.4s ease-in-out infinite',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

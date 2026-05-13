@@ -19,10 +19,11 @@ export const profile: Profile = {
   name: 'Sagar Das',
   handle: '~/sagar',
   role: 'Data & AI Engineer',
-  eyebrow: 'data · ml · inference',
-  tagline: 'I turn messy data into systems you can bet on.',
+  eyebrow: 'data platforms · ai engineering · trusted workflows',
+  tagline:
+    'I build scalable data platforms and AI infrastructure for trusted enterprise workflows.',
   subhead:
-    'Pipelines, analytics, and agentic workflows — instrumented end to end for teams that need speed without gambling on correctness.',
+    'Python, SQL, Spark, Beam, Kafka, Airflow, Iceberg, BigQuery, Rust, TypeScript, RAG, vector search, and agentic AI systems.',
   resumeUrl: '/resume.pdf',
   status: {
     label: 'ACCEPTING_NEW_PROJECTS',
@@ -36,42 +37,59 @@ export const heroHighlights = [
   'Failure modes handled before scale',
 ] as const
 
-export type Greeting = { greeting: string; language: string }
+export type Greeting = {
+  greeting: string // romanized form for accessibility
+  native?: string // native script (when different from the romanization)
+  language: string
+}
 
+// Forty greetings. Used by the homepage hero cycler. Where the script differs
+// from the romanization, both are stored so the cycler can show the native
+// form prominently and the romanization as the small label.
 export const greetings: Greeting[] = [
   { greeting: 'Hello', language: 'English' },
   { greeting: 'Hola', language: 'Spanish' },
   { greeting: 'Bonjour', language: 'French' },
   { greeting: 'Hallo', language: 'German' },
   { greeting: 'Ciao', language: 'Italian' },
-  { greeting: 'Ola', language: 'Portuguese' },
-  { greeting: 'Privet', language: 'Russian' },
-  { greeting: 'Konnichiwa', language: 'Japanese' },
-  { greeting: 'Ni hao', language: 'Mandarin' },
-  { greeting: 'Annyeonghaseyo', language: 'Korean' },
-  { greeting: 'Marhaba', language: 'Arabic' },
-  { greeting: 'Namaste', language: 'Hindi' },
-  { greeting: 'Namaskar', language: 'Odia' },
+  { greeting: 'Olá', language: 'Portuguese' },
+  { greeting: 'Privet', native: 'Привет', language: 'Russian' },
+  { greeting: 'Konnichiwa', native: 'こんにちは', language: 'Japanese' },
+  { greeting: 'Nǐ hǎo', native: '你好', language: 'Mandarin' },
+  { greeting: 'Annyeonghaseyo', native: '안녕하세요', language: 'Korean' },
+  { greeting: 'Marhaba', native: 'مرحبا', language: 'Arabic' },
+  { greeting: 'Namaste', native: 'नमस्ते', language: 'Hindi' },
+  { greeting: 'Namaskar', native: 'ନମସ୍କାର', language: 'Odia' },
+  { greeting: 'Vanakkam', native: 'வணக்கம்', language: 'Tamil' },
+  { greeting: 'Nomoshkar', native: 'নমস্কার', language: 'Bengali' },
+  { greeting: 'Sat Sri Akal', native: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ', language: 'Punjabi' },
+  { greeting: 'Namaste', native: 'નમસ્તે', language: 'Gujarati' },
+  { greeting: 'Swagat', native: 'ಸ್ವಾಗತ', language: 'Kannada' },
+  { greeting: 'Swagatam', native: 'స్వాగతం', language: 'Telugu' },
   { greeting: 'Hej', language: 'Swedish' },
   { greeting: 'Hei', language: 'Norwegian' },
-  { greeting: 'Merhaba', language: 'Turkish' },
-  { greeting: 'Yassas', language: 'Greek' },
-  { greeting: 'Salam', language: 'Persian' },
-  { greeting: 'Shalom', language: 'Hebrew' },
-  { greeting: 'Jambo', language: 'Swahili' },
-  { greeting: 'Aloha', language: 'Hawaiian' },
-  { greeting: 'Sawasdee', language: 'Thai' },
-  { greeting: 'Xin chao', language: 'Vietnamese' },
-  { greeting: 'Kamusta', language: 'Filipino' },
-  { greeting: 'Halo', language: 'Indonesian' },
-  { greeting: 'Bula', language: 'Fijian' },
-  { greeting: 'Szia', language: 'Hungarian' },
-  { greeting: 'Dzien dobry', language: 'Polish' },
+  { greeting: 'Moi', language: 'Finnish' },
+  { greeting: 'Halló', language: 'Icelandic' },
   { greeting: 'God dag', language: 'Danish' },
-  { greeting: 'Salaam', language: 'Urdu' },
+  { greeting: 'Dzień dobry', language: 'Polish' },
+  { greeting: 'Szia', language: 'Hungarian' },
+  { greeting: 'Ahoj', language: 'Czech' },
+  { greeting: 'Zdravo', language: 'Croatian' },
+  { greeting: 'Zdravey', native: 'Здравей', language: 'Bulgarian' },
+  { greeting: 'Yassas', native: 'Γεια σας', language: 'Greek' },
+  { greeting: 'Merhaba', language: 'Turkish' },
+  { greeting: 'Salam', native: 'سلام', language: 'Persian' },
+  { greeting: 'Shalom', native: 'שלום', language: 'Hebrew' },
+  { greeting: 'Jambo', language: 'Swahili' },
+  { greeting: 'Sawubona', language: 'Zulu' },
+  { greeting: 'Sawasdee', native: 'สวัสดี', language: 'Thai' },
+  { greeting: 'Xin chào', language: 'Vietnamese' },
+  { greeting: 'Halo', language: 'Indonesian' },
+  { greeting: 'Kamusta', language: 'Filipino' },
+  { greeting: 'Aloha', language: 'Hawaiian' },
 ]
 
-// Top-line metrics for the telemetry strip — pulled from real role achievements.
+// Top-line metrics for the telemetry strip. Pulled from real role achievements.
 export type Telemetry = {
   label: string
   value: string
@@ -80,9 +98,9 @@ export type Telemetry = {
 }
 
 export const telemetry: Telemetry[] = [
-  { label: 'PEAK_THROUGHPUT', value: '20', unit: 'M/day', caption: 'ELMS events → BigQuery' },
-  { label: 'LATENCY_REDUCED', value: '750', unit: 'ms', caption: 'platform API p50' },
-  { label: 'ONBOARDING_CUT', value: '90', unit: '%', caption: 'source intake cycle' },
+  { label: 'LEGACY_MODERNIZATION', value: '900+', unit: '', caption: 'Java modules → Spark + Beam' },
+  { label: 'STREAMING_SCALE', value: '20', unit: 'M/day', caption: 'events into BigQuery' },
+  { label: 'DATASETS_ONBOARDED', value: '35+', unit: '', caption: 'financial datasets → lakehouse' },
   { label: 'INGEST_RUNTIME', value: '6h→45m', unit: '', caption: '119-table CDC + validation' },
 ]
 
@@ -136,7 +154,7 @@ export const capabilityDomains: CapabilityDomain[] = [
   },
 ]
 
-// Core stack — rendered as a numbered 01–15 mono list.
+// Core stack. Rendered as a numbered 01–15 mono list.
 export const coreStack: string[] = [
   'Python',
   'SQL',
@@ -239,16 +257,18 @@ export const experience: ExperienceEntry[] = [
     position: 'Data Engineer',
     duration: 'Oct 2025 – Present',
     location: 'Charlotte, NC',
-    summary: 'Leading enterprise cloud modernization and event-driven data quality delivery.',
+    summary: 'Leading GenAI-assisted modernization, lakehouse architecture, and event-driven ingestion for regulated financial data.',
     metrics: [
-      { value: 'GCP', caption: 'ground→cloud POC' },
-      { value: 'ICEBERG', caption: 'lakehouse curation' },
+      { value: '900+', caption: 'Java modules migrated' },
+      { value: '35+', caption: 'financial datasets' },
+      { value: '20+ yrs', caption: 'reporting context' },
     ],
     achievements: [
-      'Leading a GCP migration proof-of-concept for enterprise Ground-to-Cloud strategy.',
-      'Building Airflow + Dataflow quality pipelines triggered from SQL Server to GCS drops, curating trusted Iceberg lakehouse data.',
+      'Led a GenAI-assisted modernization initiative using GitHub Copilot to migrate 900+ legacy Java modules into Spark and Apache Beam pipelines in roughly 7 months versus a 2+ year manual rewrite estimate.',
+      'Architected an Apache Iceberg + BigQuery lakehouse for an on-prem-to-GCP migration POC, onboarding 35+ financial datasets with SAR/CSAR compliance considerations.',
+      'Built event-driven ingestion on GCS, Airflow, and Dataflow with schema enforcement, DQ checks, curated lakehouse outputs, and a BigQuery semantic layer over 20+ years of financial data.',
     ],
-    technologies: ['GCP', 'Airflow', 'Dataflow', 'Pub/Sub', 'Apache Iceberg'],
+    technologies: ['GCP', 'GitHub Copilot', 'Apache Beam', 'Spark', 'Airflow', 'Dataflow', 'BigQuery', 'Apache Iceberg'],
   },
   {
     id: 'umd-data-specialist',
@@ -264,9 +284,9 @@ export const experience: ExperienceEntry[] = [
       { value: '5d→2d', caption: 'survey RAG review' },
     ],
     achievements: [
-      'Streamed 20M+ ELMS events/day into BigQuery for analytics across 230 programs.',
-      'Optimized 119-table ingestion runtime from 6 hours to 45 minutes using CDC + validation.',
-      'Built RAG tooling for 100K+ survey responses, reducing review timelines from 5 to 2 days.',
+      'Engineered a Pub/Sub + Dataflow streaming pipeline ingesting 20M+ daily ELMS events into BigQuery for real-time Superset dashboards tracking 15 KPIs across 230 academic programs.',
+      'Overhauled 119 Redshift ingestion workflows in Python, SQL, and AWS with CDC and validation, cutting runtime from 6 hours to 45 minutes.',
+      'Prepared an LLM-powered RAG POC over 100K+ open-ended survey responses using Python, LangChain, and Elasticsearch, reducing qualitative review effort by 60%.',
     ],
     technologies: ['BigQuery', 'Pub/Sub', 'Dataflow', 'LangChain', 'Elasticsearch', 'Python'],
   },
@@ -274,21 +294,22 @@ export const experience: ExperienceEntry[] = [
     id: 'tiger-analytics',
     index: '02',
     company: 'Tiger Analytics',
-    position: 'Senior Software Engineer — Data Platform',
+    position: 'Senior Software Engineer. Data Platform',
     duration: 'Jul 2021 – Jul 2023',
     location: 'Chennai, India',
     summary: 'Led delivery of a self-serve data fabric used by Fortune 500 clients.',
     metrics: [
       { value: '6', caption: 'enterprise clients' },
-      { value: '90%', caption: 'onboarding cycle cut' },
-      { value: '750ms', caption: 'API latency reduced' },
+      { value: '75%', caption: 'onboarding time cut' },
+      { value: '85+', caption: 'analysts + ML engineers' },
     ],
     achievements: [
-      'Built a multi-tenant data fabric across AWS and GCP for 6 enterprise clients.',
-      'Reduced source onboarding cycle time by 90% with standardized ingestion and compliance controls.',
-      'Improved platform API performance with a 750ms median latency reduction.',
+      'Led a 7-engineer team building a self-serve AWS data platform that enabled data mesh adoption across 6 enterprise clients.',
+      'Designed an Apache Iceberg lakehouse on S3 with Glue Catalog, schema evolution, ACID transactions, and time-travel queries for reproducible ML training datasets and historical analytics.',
+      'Developed Airbyte/Airflow batch and streaming ingestion with CDC, encryption, Macie PII detection, and a Spark + Deequ DQ framework with 30+ rules, reducing onboarding time by 75% and blocking 85% of bad data before downstream ML.',
+      'Shipped FastAPI microservices on Kubernetes exposing ELT orchestration as self-serve REST APIs for 85+ analysts and ML engineers.',
     ],
-    technologies: ['AWS', 'Spark', 'Airflow', 'FastAPI', 'Kubernetes', 'DataHub'],
+    technologies: ['AWS', 'Spark', 'Airflow', 'Airbyte', 'FastAPI', 'Kubernetes', 'Apache Iceberg', 'Deequ'],
   },
   {
     id: 'xenonstack',
@@ -304,11 +325,45 @@ export const experience: ExperienceEntry[] = [
       { value: '33%', caption: 'MLOps iteration ↑' },
     ],
     achievements: [
-      'Migrated Hadoop jobs to Databricks, processing 10GB/day telemetry from 45 IoT sites.',
+      'Delivered Spark + Kafka pipelines processing 10GB/day of IoT telemetry from 45 geo-distributed sites into a medallion Delta Lake.',
       'Enabled incremental forecasting pipelines with 15-minute prediction freshness.',
       'Improved ML iteration speed by 33% through MLflow integration.',
     ],
     technologies: ['Databricks', 'Spark', 'Kafka', 'Delta Lake', 'MLflow'],
+  },
+]
+
+// ── Education ───────────────────────────────────────────────────────────────
+// Placeholders. Edit degree names, institutions, and dates to match your record.
+
+export type EducationEntry = {
+  id: string
+  institution: string
+  degree: string
+  focus?: string
+  location: string
+  duration: string
+  highlights?: string[]
+}
+
+export const education: EducationEntry[] = [
+  {
+    id: 'umd-ms',
+    institution: 'University of Maryland. College Park',
+    degree: 'Master of Information Management',
+    location: 'College Park, MD',
+    duration: 'Aug 2023 – May 2025',
+    highlights: [
+      'Graduate assistantship as Data Specialist. Built analytics + AI systems across 230 academic programs.',
+      'Coursework: distributed systems, retrieval, applied ML, data governance.',
+    ],
+  },
+  {
+    id: 'undergrad',
+    institution: 'Panjab University, Chandigarh',
+    degree: 'B.E. Information Technology',
+    location: 'India',
+    duration: '2015 – 2019',
   },
 ]
 
@@ -444,12 +499,12 @@ export const featuredProject: FeaturedProject = {
   title: 'PulseQL',
   subtitle: 'The data lifecycle, in one app.',
   description:
-    'Ingestion, lakehouse, transforms, semantic layer, BI, and an AI copilot — collapsed into a single desktop binary. Built for the operator, not the platform team.',
-  technologies: ['Rust', 'Tauri', 'React', 'DataFusion', 'DuckDB', 'Iceberg'],
+    'A governed data workspace for teams that want AI-assisted analysis with review, privacy, and operational trust.',
+  technologies: ['Desktop app', 'Governed AI', 'Reviewable workflows'],
   highlights: [
-    'Connect any source, land as Iceberg or Delta in your own object store',
-    'Ask in plain English — get a plan, SQL draft, and citable answer',
-    'Every agent mutation is reviewable — humans approve before anything runs',
+    'Ask questions in plain English and keep the work reviewable',
+    'Promote useful outputs into reusable team artifacts',
+    'Keep public details focused on workflow and product value',
   ],
   downloads: [
     {
@@ -482,7 +537,7 @@ export type Photo = {
   meta: string
 }
 
-// EXIF-style metadata is illustrative — the photos are real, lens/aperture strings are styling.
+// EXIF-style metadata is illustrative. The photos are real, lens/aperture strings are styling.
 export const photos: Photo[] = [
   { src: '/photography/1.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/1.8 · iso400' },
   { src: '/photography/2.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.0 · iso200' },
@@ -533,7 +588,7 @@ export const contactLinks: ContactLink[] = [
 
 export const contactCopy = {
   title: "LET'S SHIP SOMETHING DEFENSIBLE",
-  body: 'Open to consulting, full-time roles, and tight collaborations on data platforms and AI systems — async-first, with clear milestones and measurable exits.',
+  body: 'Open to consulting, full-time roles, and tight collaborations on data platforms and AI systems. Async-first, with clear milestones and measurable exits.',
 }
 
 export const footerCopy = {
