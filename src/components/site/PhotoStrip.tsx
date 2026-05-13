@@ -41,7 +41,7 @@ export default function PhotoStrip() {
 
       {/* Strip */}
       <div
-        className="marquee-mask -mx-6 px-6"
+        className="marquee-mask photo-strip-bleed"
         data-paused={openIdx !== null ? 'true' : 'false'}
       >
         <ul className="marquee-track">

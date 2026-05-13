@@ -552,6 +552,13 @@ export const photos: Photo[] = [
   { src: '/photography/11.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/1.8 · iso800' },
   { src: '/photography/12.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
   { src: '/photography/13.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.8 · iso200' },
+  { src: '/photography/14.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/4.0 · iso400' },
+  { src: '/photography/15.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/1.8 · iso200' },
+  { src: '/photography/16.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.8 · iso800' },
+  { src: '/photography/17.jpeg', caption: 'Olympus EM 10', meta: '28mm · f/4.0 · iso100' },
+  { src: '/photography/18.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/2.0 · iso400' },
+  { src: '/photography/19.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso200' },
+  { src: '/photography/20.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.8 · iso400' },
 ]
 
 export type ContactLink = {

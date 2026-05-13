@@ -100,10 +100,10 @@ function Hero() {
         </motion.h1>
 
         <p className="max-w-2xl text-[16px] leading-[1.75] text-zinc-300 md:text-[18px]">
-          Data Engineer with 4+ years building scalable data platforms,
-          pipelines, and modernization systems across enterprise environments.
-          Now focused on AI engineering: Rust and TypeScript infrastructure for
-          grounding agentic AI in trusted enterprise context.
+          Data engineer with 4+ years turning legacy systems, batch pipelines,
+          and fragmented enterprise data into reliable products. I now focus on
+          Rust and TypeScript systems that make AI agents useful inside real
+          workflows.
         </p>
 
         <div className="flex flex-wrap items-center gap-2.5 pt-1">

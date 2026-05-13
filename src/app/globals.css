@@ -6,7 +6,7 @@
    Design tokens
    ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --bg: #0a0a0b;
+  --bg: #111114;
   --fg: #fafafa;
   --hairline: rgba(255, 255, 255, 0.045);
   --hairline-strong: rgba(255, 255, 255, 0.075);
@@ -171,8 +171,12 @@
   .marquee-mask {
     position: relative;
     overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+  }
+  .photo-strip-bleed {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
   }
   .marquee-track {
     display: flex;
