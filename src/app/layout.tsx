@@ -1,48 +1,54 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono, Space_Grotesk } from 'next/font/google'
+import { Manrope, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import SiteNav from '@/components/site/SiteNav'
+import SiteFooter from '@/components/site/SiteFooter'
 
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+  weight: ['300', '400', '500', '600', '700', '800'],
+})
+const manropeDisplay = Manrope({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-display',
+  weight: ['500', '600', '700', '800'],
 })
-
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-mono',
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sagar8080.github.io'),
-  title: 'Sagar Das | Senior Software & Data Engineer',
+  title: 'Sagar Das · Data & AI Engineer',
   description:
-    'Senior Software Engineer and Data Engineer — mission-critical data platforms, cloud architecture, and agentic AI systems.',
-  keywords: 'Data Engineer, Software Engineer, GCP, AWS, AI, RAG, Iceberg, Rust',
+    'Data & AI Engineer building scalable data platforms, modernization systems, and Rust + TypeScript infrastructure for trusted agentic AI workflows.',
+  keywords:
+    'Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, PulseQL',
   authors: [{ name: 'Sagar Das' }],
   openGraph: {
-    title: 'Sagar Das | Senior Software & Data Engineer',
-    description: 'Data platforms, enterprise cloud architecture, and AI systems.',
+    title: 'Sagar Das · Data & AI Engineer',
+    description:
+      'Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure.',
     type: 'website',
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+    <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-mono min-h-screen bg-void text-zinc-100 antialiased`}
+        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} font-sans bg-background text-zinc-300 min-h-screen flex flex-col antialiased`}
       >
-        {children}
+        <div className="grain-overlay" aria-hidden />
+        <SiteNav />
+        <main className="relative z-10 flex-1">{children}</main>
+        <div className="relative z-10">
+          <SiteFooter />
+        </div>
       </body>
     </html>
   )

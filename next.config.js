@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // GitHub User Pages (`username.github.io` repo) publishes `out/` at the site root — not under `/repo-name`.
+  // GitHub User Pages (`username.github.io` repo) publishes `out/` at the site root, not under `/repo-name`.
   // A non-empty basePath breaks JS/CSS URLs (404) on https://sagar8080.github.io/ and custom domains.
   basePath: '',
   assetPrefix: '',
