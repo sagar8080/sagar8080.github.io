@@ -11,29 +11,6 @@
 // breathe on the blobs — so prefers-reduced-motion (handled in globals.css)
 // turns the whole atmosphere off without any JS branching.
 
-// ─── Contour path generation ──────────────────────────────────────────
-// Build a closed organic ring in a 100×100 viewBox. Layered sine waves
-// at incommensurate frequencies make the contour wobble irregularly
-// around its base radius without ever exactly repeating.
-function contourRing(baseR: number, variation: number, seed: number) {
-  const points = 96
-  const parts: string[] = []
-  for (let i = 0; i <= points; i++) {
-    const a = (i / points) * Math.PI * 2
-    const r =
-      baseR +
-      Math.sin(a * 3 + seed * 1.10) * variation * 0.50 +
-      Math.sin(a * 5 + seed * 1.73) * variation * 0.30 +
-      Math.sin(a * 8 + seed * 2.31) * variation * 0.20 +
-      Math.sin(a * 13 + seed * 3.07) * variation * 0.12
-    const x = 50 + r * Math.cos(a)
-    const y = 50 + r * Math.sin(a)
-    parts.push(`${i === 0 ? 'M' : 'L'} ${x.toFixed(2)} ${y.toFixed(2)}`)
-  }
-  parts.push('Z')
-  return parts.join(' ')
-}
-
 // Open hand-drawn-looking curve from (x1,y1) to (x2,y2) with sinuous
 // wobble that fades to zero at both ends. Used for stray surveyor
 // scribbles in the corners.
@@ -68,21 +45,30 @@ function handDrawn(
   return parts.join(' ')
 }
 
-// Pre-generate the ring sets so the paths are stable across renders.
-const LEFT_RINGS = [
-  { d: contourRing(30, 2.4, 1.3), opacity: 0.32 },
-  { d: contourRing(38, 2.8, 4.1), opacity: 0.26 },
-  { d: contourRing(46, 3.0, 6.9), opacity: 0.20 },
-  { d: contourRing(54, 3.2, 9.5), opacity: 0.14 },
-  { d: contourRing(62, 3.4, 12.7), opacity: 0.10 },
+// Concentric ring sets — clean perfect circles centered at (50, 50) of
+// the SVG viewBox. The SVG itself is translated 78% past the viewport
+// edge, so only the outer arcs of these rings lean into the gutter,
+// reading as a rippling-out-from-the-side gradient of rings rather
+// than the abstract lobed shapes that came before.
+type RingSpec = { r: number; opacity: number }
+const LEFT_RINGS: RingSpec[] = [
+  { r: 30, opacity: 0.42 },
+  { r: 37, opacity: 0.36 },
+  { r: 44, opacity: 0.30 },
+  { r: 51, opacity: 0.24 },
+  { r: 58, opacity: 0.18 },
+  { r: 65, opacity: 0.13 },
+  { r: 72, opacity: 0.08 },
 ]
 
-const RIGHT_RINGS = [
-  { d: contourRing(30, 2.6, 21.3), opacity: 0.28 },
-  { d: contourRing(38, 2.6, 24.1), opacity: 0.23 },
-  { d: contourRing(46, 2.9, 26.9), opacity: 0.18 },
-  { d: contourRing(54, 3.1, 29.5), opacity: 0.13 },
-  { d: contourRing(62, 3.4, 32.7), opacity: 0.09 },
+const RIGHT_RINGS: RingSpec[] = [
+  { r: 30, opacity: 0.36 },
+  { r: 37, opacity: 0.31 },
+  { r: 44, opacity: 0.26 },
+  { r: 51, opacity: 0.21 },
+  { r: 58, opacity: 0.16 },
+  { r: 65, opacity: 0.11 },
+  { r: 72, opacity: 0.07 },
 ]
 
 // Stray hand-drawn scribbles. (x1,y1)→(x2,y2) in 100×100 user units.
@@ -117,15 +103,15 @@ export default function AtmosphereBackground() {
       >
         <g className="atmosphere-ring atmosphere-ring--cw">
           {LEFT_RINGS.map((ring, i) => (
-            <path
+            <circle
               key={`l-${i}`}
-              d={ring.d}
+              cx="50"
+              cy="50"
+              r={ring.r}
               fill="none"
               stroke="rgba(180, 90, 60, 1)"
               strokeOpacity={ring.opacity}
-              strokeWidth="0.28"
-              strokeLinejoin="round"
-              strokeLinecap="round"
+              strokeWidth="0.22"
             />
           ))}
         </g>
@@ -145,15 +131,15 @@ export default function AtmosphereBackground() {
       >
         <g className="atmosphere-ring atmosphere-ring--ccw">
           {RIGHT_RINGS.map((ring, i) => (
-            <path
+            <circle
               key={`r-${i}`}
-              d={ring.d}
+              cx="50"
+              cy="50"
+              r={ring.r}
               fill="none"
               stroke="rgba(107, 122, 78, 1)"
               strokeOpacity={ring.opacity}
-              strokeWidth="0.28"
-              strokeLinejoin="round"
-              strokeLinecap="round"
+              strokeWidth="0.22"
             />
           ))}
         </g>

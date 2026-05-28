@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased`}
       >
-        {/* Edge-anchored survey rings + Claude-style warm blobs that
+        {/* Edge-anchored concentric rings + Claude-style warm blobs that
             breathe in the corners. The middle of the viewport is left
             clean so content reads on plain paper. z-index 0 so it sits
             above body's bg-paper, below the grain (z 1) and content (z 10). */}
