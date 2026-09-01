@@ -251,11 +251,27 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    id: 'wells-fargo-capgemini',
+    id: 'quantiphi',
     index: '00',
+    company: 'Quantiphi',
+    position: 'Senior Data Engineer',
+    duration: 'Aug 2026 – Present',
+    location: 'Marlborough, MA',
+    summary: 'Building scalable batch and streaming data platforms for analytics and AI, with a focus on healthcare data interoperability.',
+    achievements: [
+      'Designing and building scalable ETL/ELT pipelines and batch plus real-time processing systems, tuned for performance, scalability, and cost efficiency across large structured and semi-structured datasets.',
+      'Building and maintaining data integration workflows across heterogeneous source systems, with quality, integrity, and reliability controls spanning the full data lifecycle.',
+      'Designing data models that support downstream analytics and AI use cases, translating stakeholder requirements into technical design.',
+      'Supporting healthcare data ingestion and transformation against interoperability standards, with CI/CD, testing, and pipeline monitoring built into delivery.',
+    ],
+    technologies: [],
+  },
+  {
+    id: 'wells-fargo-capgemini',
+    index: '01',
     company: 'Wells Fargo · via Capgemini America Inc.',
     position: 'Data Engineer',
-    duration: 'Oct 2025 – Present',
+    duration: 'Oct 2025 – Aug 2026',
     location: 'Charlotte, NC',
     summary: 'Leading GenAI-assisted modernization, lakehouse architecture, and event-driven ingestion for regulated financial data.',
     metrics: [
@@ -272,7 +288,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: 'umd-data-specialist',
-    index: '01',
+    index: '02',
     company: 'University of Maryland',
     position: 'Data Specialist',
     duration: 'Sep 2023 – May 2025',
@@ -292,7 +308,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: 'tiger-analytics',
-    index: '02',
+    index: '03',
     company: 'Tiger Analytics',
     position: 'Senior Software Engineer. Data Platform',
     duration: 'Jul 2021 – Jul 2023',
