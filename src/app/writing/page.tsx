@@ -9,15 +9,12 @@ export default async function WritingIndex() {
   const archive = posts.filter((p) => p.status === 'archive')
 
   return (
-    <div className="mx-auto max-w-[90rem] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
-      <div className="mx-auto max-w-4xl space-y-10">
-      {/* Card-style reading surface. Wraps the page intro and all three
-          listing sections so the atmosphere stays in the gutters even on
-          mobile. The Notify CTA below sits outside as a separate panel. */}
-      <div className="document-card px-5 py-9 sm:px-10 sm:py-12 md:px-14 md:py-14 space-y-12">
+    <div className="theme-page theme-writing">
+      <div className="theme-content space-y-16">
+      <div className="writing-content space-y-16">
       <PageHeader
         eyebrow="Writing"
-        title="Notes on the systems I build."
+        title={<>Notes on the<br /><em>systems I build.</em></>}
         lede="Short technical notes on the decisions behind the work, written when there's something specific to say."
       />
 
@@ -147,7 +144,7 @@ export default async function WritingIndex() {
 
       </div>
 
-      <div className="surface p-6 md:p-7">
+      <div className="surface writing-notify p-6 md:p-9">
         <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
           Notify
         </p>

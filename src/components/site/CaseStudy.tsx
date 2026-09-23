@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Tag, Eyebrow, StatusPill, TextLink } from '@/components/site/Atoms'
-import Spotlight from '@/components/site/Spotlight'
 
 export type CaseStudySection = {
   heading: string
@@ -75,8 +74,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
   }, [])
 
   return (
-    <article className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
-      <div className="mx-auto max-w-editorial">
+    <article className="theme-page theme-case-study">
+      <div className="theme-content">
       <Link
         href="/projects"
         className="inline-flex items-center gap-2 text-[13px] text-zinc-500 transition-colors hover:text-white"
@@ -91,7 +90,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           <StatusPill kind={statusKind(data.status)}>{data.status}</StatusPill>
         </div>
         <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg">
-          {data.title}
+          <span className="case-project-name">{data.title.split('. ')[0]}.</span>{' '}
+          <em>{data.title.split('. ').slice(1).join('. ')}</em>
         </h1>
         <p className="text-[16px] leading-[1.7] text-zinc-400 md:text-[17px]">
           {data.oneLine}
@@ -186,7 +186,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             <ul className="space-y-3">
               {data.decisions.map((d, i) => (
                 <li key={d.decision}>
-                  <Spotlight className="surface p-6 md:p-7">
+                  <div className="surface case-decision p-6 md:p-7">
                     <div className="flex items-baseline gap-3">
                       <span className="font-mono text-[10.5px] tabular-nums text-accent">
                         {String(i + 1).padStart(2, '0')}
@@ -198,7 +198,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                     <p className="mt-2.5 text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]">
                       {d.why}
                     </p>
-                  </Spotlight>
+                  </div>
                 </li>
               ))}
             </ul>

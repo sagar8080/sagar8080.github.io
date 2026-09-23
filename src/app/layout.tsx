@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, JetBrains_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
+import './secondary-theme.css'
 import SiteNav from '@/components/site/SiteNav'
 import SiteFooter from '@/components/site/SiteFooter'
 import AtmosphereBackground from '@/components/site/AtmosphereBackground'

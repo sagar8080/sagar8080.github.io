@@ -72,7 +72,7 @@ const useCases = [
 
 export default function PulseQLProductPage() {
   return (
-    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16 space-y-24 md:space-y-32">
+    <div className="theme-page theme-pulseql space-y-24 md:space-y-32">
       <Hero />
       <Demo />
       {/* The thesis lands here, after the demo has shown what the
@@ -96,7 +96,7 @@ function Hero() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="relative grid min-h-[calc(100vh-7rem)] items-center gap-12 pb-8 lg:grid-cols-[minmax(0,1fr)_minmax(460px,0.82fr)] xl:grid-cols-[minmax(0,1fr)_minmax(520px,0.82fr)] xl:gap-16"
+      className="product-hero relative grid items-center gap-12 pb-8"
     >
       <div className="max-w-[760px] space-y-8">
         <div className="flex flex-wrap items-center gap-2">
@@ -108,7 +108,7 @@ function Hero() {
 
         <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[68px] xl:text-[72px]">
           AI for data work,{' '}
-          <span className="text-ink-3">with the work still visible.</span>
+          <em>with the work still visible.</em>
         </h1>
 
         <p className="max-w-[680px] text-[16px] leading-[1.75] text-ink-2 md:text-[17px]">
@@ -150,7 +150,7 @@ function Hero() {
 
 function LaunchPanel() {
   return (
-    <ProductPanel chrome="pulseql · governed workspace · v1.1 preview" className="w-full max-w-[620px] lg:justify-self-end">
+    <ProductPanel chrome="pulseql · governed workspace · v1.1 preview" className="launch-panel w-full">
       <div className="grid gap-px bg-hairline">
         <div className="bg-paper-2 p-6">
           <div className="flex items-center justify-between gap-4">
@@ -214,7 +214,7 @@ function Demo() {
     <Section id="demo">
       <SectionHeader
         eyebrow="01 / The walkthrough"
-        title="One question, end to end."
+        title={<>One question, <em>end to end.</em></>}
         lede="What &ldquo;keeping every step inspectable&rdquo; looks like in practice. A question goes in; a reviewed, approved artifact comes out, with the path between them visible the whole way."
       />
 
@@ -302,7 +302,7 @@ function Demo() {
         </div>
 
         {/* Flow strip */}
-        <div className="grid grid-cols-5 gap-px border-t border-hairline bg-hairline">
+        <div className="product-flow grid grid-cols-5 gap-px border-t border-hairline bg-hairline">
           {['Ask', 'Review', 'Refine', 'Approve', 'Share'].map((step, i) => (
             <div
               key={step}
@@ -327,7 +327,7 @@ function Capabilities() {
     <Section>
       <SectionHeader
         eyebrow="02 / What it does"
-        title="Six capabilities, one loop."
+        title={<>Six capabilities, <em>one loop.</em></>}
         lede="Every feature ladders up to that promise. Together they form the same workflow on repeat: ask, review, refine, approve, share."
         accentColor="var(--sage)"
       />
@@ -358,7 +358,7 @@ function UseCases() {
     <Section id="use-cases">
       <SectionHeader
         eyebrow="03 / Where it fits"
-        title="Where it earns its keep."
+        title={<>Where it <em>earns its keep.</em></>}
         lede="Four team contexts where the reviewable workflow pays for itself: places where invisible automation isn&apos;t an option and banning AI isn&apos;t either."
         accentColor="var(--ochre)"
       />
@@ -386,7 +386,7 @@ function FinalCTA() {
     <Section id="download">
       <Eyebrow label="04 / Try it" />
 
-      <div className="surface-raised relative mt-6 overflow-hidden p-8 md:p-12">
+      <div className="product-cta surface-raised relative mt-6 overflow-hidden p-8 md:p-12">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(180,90,60,0.10),transparent_60%)]"

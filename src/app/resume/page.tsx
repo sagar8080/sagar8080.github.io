@@ -6,19 +6,18 @@ import {
   SecondaryButton,
 } from '@/components/site/Atoms'
 import { education, experience, profile } from '@/lib/content'
-import Spotlight from '@/components/site/Spotlight'
 
 export default function ResumePage() {
   return (
-    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
-      <div className="mx-auto max-w-[58rem] space-y-16 md:space-y-20">
+    <div className="theme-page theme-resume">
+      <div className="theme-content space-y-16 md:space-y-20">
       <header className="max-w-[760px] space-y-6">
         <p className="eyebrow">
           <span className="eyebrow-bar" aria-hidden />
           Résumé
         </p>
         <h1 className="font-display text-[44px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[68px]">
-          {profile.role}
+          Data &amp; <em>AI Engineer</em>
         </h1>
         <p className="max-w-[680px] text-[16px] leading-[1.75] text-zinc-400 md:text-[17px]">
           {profile.tagline}
@@ -54,7 +53,7 @@ export default function ResumePage() {
             <ol className="space-y-4">
               {experience.map((exp) => (
                 <li key={exp.id}>
-                  <Spotlight className="rounded-2xl p-6 transition-colors duration-300 hover:bg-white/[0.025] md:p-7">
+                  <div className="resume-experience">
                     <div className="grid gap-5 xl:grid-cols-[1fr_auto] xl:items-start">
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-3">
@@ -81,7 +80,7 @@ export default function ResumePage() {
                     </p>
 
                     {exp.metrics && exp.metrics.length > 0 && (
-                      <ul className="mt-5 grid gap-5 sm:grid-cols-3">
+                      <ul className="resume-metrics mt-6 grid gap-5 sm:grid-cols-3">
                         {exp.metrics.map((m, i) => (
                           <li key={m.value + i} className="px-0 py-1">
                             <div className="font-display text-[18px] font-semibold tabular-nums text-white">
@@ -117,7 +116,7 @@ export default function ResumePage() {
                         </li>
                       ))}
                     </ul>
-                  </Spotlight>
+                  </div>
                 </li>
               ))}
             </ol>
@@ -128,7 +127,7 @@ export default function ResumePage() {
           <ol className="grid gap-4 md:grid-cols-2">
             {education.map((ed) => (
               <li key={ed.id}>
-                <Spotlight className="h-full rounded-2xl p-6 transition-colors duration-300 hover:bg-white/[0.025] md:p-7">
+                <div className="resume-education h-full p-6 md:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h2 className="font-display text-[18px] font-semibold text-terracotta md:text-[20px]">
@@ -160,7 +159,7 @@ export default function ResumePage() {
                       ))}
                     </ul>
                   )}
-                </Spotlight>
+                </div>
               </li>
             ))}
           </ol>

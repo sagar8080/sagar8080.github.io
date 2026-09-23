@@ -47,10 +47,10 @@ export default async function PostPage({
   const statusLabel = isDraft ? 'Draft' : isArchive ? 'Archive' : 'Published'
 
   return (
-    <article className="mx-auto max-w-[90rem] px-4 pb-24 pt-10 sm:px-6 md:pt-14">
+    <article className="theme-page theme-article">
       <ReadingProgress />
       <SectionMarkers />
-      <div className="mx-auto max-w-[1180px]">
+      <div className="article-content">
       <Link
         href="/writing"
         className="inline-flex items-center gap-2 px-2 text-[13px] text-ink-3 transition-colors hover:text-terracotta"
@@ -58,10 +58,7 @@ export default async function PostPage({
         ← All writing
       </Link>
 
-      {/* Card-style reading surface. Contains everything from the header
-          through the prev/next nav so the atmosphere can't bleed through
-          on mobile, where there's no gutter to push it aside. */}
-      <div className="document-card mt-6 px-5 py-9 sm:mt-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
+      <div className="article-body mt-10">
       <header className="space-y-5">
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{formatDate(post.date)}</p>

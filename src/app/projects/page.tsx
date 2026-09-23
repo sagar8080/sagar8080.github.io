@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { PageHeader, Eyebrow, Tag, StatusPill, Section } from '@/components/site/Atoms'
-import Spotlight from '@/components/site/Spotlight'
 import { projects as otherProjects } from '@/lib/content'
 
 type FeaturedProject = {
@@ -54,24 +53,25 @@ const others = otherProjects.filter((p) => !featuredIds.has(p.id))
 
 export default function ProjectsIndexPage() {
   return (
-    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
-      <div className="mx-auto max-w-editorial space-y-20">
+    <div className="theme-page theme-work">
+      <div className="theme-content space-y-20">
       <PageHeader
-        eyebrow="Projects"
-        title="Case studies & other work."
+        eyebrow="Work"
+        title={<>Case studies &amp;<br /><em>other work.</em></>}
         lede="Headline systems get a public product summary: problem, requirements, product choices, and outcome. The summaries stay product-level by design."
       />
 
       <Section>
         <Eyebrow label="Case studies" />
-        <ul className="space-y-3">
-          {featured.map((p) => (
+        <ul className="work-featured">
+          {featured.map((p, index) => (
             <li key={p.slug}>
-              <Spotlight className="surface group overflow-hidden">
+              <div className={`work-project work-project-${p.slug} group`}>
               <Link
                 href={`/projects/${p.slug}`}
-                className="block p-7 md:p-8"
+                className="work-project-link"
               >
+                <span className="work-project-number" aria-hidden>{String(index + 1).padStart(2, '0')}</span>
                 <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
                   <div>
                     <div className="flex flex-wrap items-center gap-3">
@@ -114,7 +114,7 @@ export default function ProjectsIndexPage() {
                   </div>
                 </div>
               </Link>
-              </Spotlight>
+              </div>
             </li>
           ))}
         </ul>
@@ -130,7 +130,7 @@ export default function ProjectsIndexPage() {
         <ul className="grid gap-3 sm:grid-cols-2">
           {others.map((p) => (
             <li key={p.id}>
-              <Spotlight className="surface group h-full overflow-hidden">
+              <div className="surface work-other group h-full overflow-hidden">
               <a
                 href={p.github}
                 target="_blank"
@@ -161,7 +161,7 @@ export default function ProjectsIndexPage() {
                   </span>
                 </div>
               </a>
-              </Spotlight>
+              </div>
             </li>
           ))}
         </ul>
