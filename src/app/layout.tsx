@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Manrope, JetBrains_Mono } from 'next/font/google'
+import { Manrope, JetBrains_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
 import SiteNav from '@/components/site/SiteNav'
 import SiteFooter from '@/components/site/SiteFooter'
@@ -17,6 +17,13 @@ const manropeDisplay = Manrope({
   variable: '--font-display',
   weight: ['500', '600', '700', '800'],
 })
+const editorial = Newsreader({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-editorial',
+  style: ['normal', 'italic'],
+})
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
@@ -38,11 +45,15 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased`}
+        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} ${editorial.variable} font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased`}
       >
         {/* Edge-anchored concentric rings + Claude-style warm blobs that
             breathe in the corners. The middle of the viewport is left
@@ -52,7 +63,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Quiet paper grain on top of the atmosphere. */}
         <div className="grain-overlay" aria-hidden />
         <SiteNav />
-        <main className="relative z-10 flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="relative z-10 flex-1">
+          {children}
+        </main>
         <div className="relative z-10">
           <SiteFooter />
         </div>

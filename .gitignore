@@ -36,3 +36,7 @@ next-env.d.ts
 
 # editor / agent caches
 /.claude/
+
+# Local browser checks
+/.playwright-cli/
+/output/playwright/

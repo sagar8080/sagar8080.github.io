@@ -20,7 +20,7 @@ const featured: FeaturedProject[] = [
     slug: 'pulseql',
     title: 'PulseQL',
     status: 'live',
-    statusLabel: 'v1.1 — releasing soon',
+    statusLabel: 'v1.1 · releasing soon',
     oneLine:
       'Governed analytics workspace for teams that want AI-assisted data work with review, privacy, and operational trust.',
     tags: ['Data Workspace', 'Governed AI', 'Reviewable Workflows'],

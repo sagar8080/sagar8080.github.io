@@ -9,7 +9,12 @@ import Lightbox from '@/components/site/Lightbox'
 // Infinite auto-scrolling marquee. Photos are grayscale by default and pop
 // to color on hover. Click any photo to open the lightbox. Hover anywhere on
 // the strip pauses the scroll. Lightbox open also pauses.
-export default function PhotoStrip() {
+export default function PhotoStrip({
+  showHeader = true,
+}: {
+  showHeader?: boolean
+}) {
+  const [paused, setPaused] = useState(false)
   const [openIdx, setOpenIdx] = useState<number | null>(null)
 
   // Render the photos twice. The CSS animation translates the track by -50%,
@@ -23,34 +28,57 @@ export default function PhotoStrip() {
     setOpenIdx(null)
   }
   function prev() {
-    setOpenIdx((i) => (i === null ? null : (i - 1 + photos.length) % photos.length))
+    setOpenIdx((i) =>
+      i === null ? null : (i - 1 + photos.length) % photos.length,
+    )
   }
   function next() {
     setOpenIdx((i) => (i === null ? null : (i + 1) % photos.length))
   }
 
   return (
-    <section className="space-y-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <SectionHeader
-          eyebrow="Offline"
-          title="Field notes. Analog photography."
-          lede="Shot on an Olympus EM-10 between trips and walks. A quieter counterweight to the systems work: composition, patience, and noticing what the frame leaves out."
-        />
+    <section
+      className="photo-carousel space-y-8"
+      aria-label="Photography carousel"
+    >
+      {showHeader && (
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <SectionHeader
+            eyebrow="Offline"
+            title="Field notes. Analog photography."
+            lede="Shot on an Olympus EM-10 between trips and walks. A quieter counterweight to the systems work: composition, patience, and noticing what the frame leaves out."
+          />
+        </div>
+      )}
+
+      <div className="carousel-controls">
+        <span>20 frames · An ongoing collection</span>
+        <button
+          type="button"
+          onClick={() => setPaused(!paused)}
+          aria-pressed={paused}
+        >
+          {paused ? 'Resume motion' : 'Pause motion'}
+          <span aria-hidden>{paused ? ' ▷' : ' Ⅱ'}</span>
+        </button>
       </div>
 
       {/* Strip */}
       <div
         className="marquee-mask photo-strip-bleed"
-        data-paused={openIdx !== null ? 'true' : 'false'}
+        data-paused={openIdx !== null || paused ? 'true' : 'false'}
       >
         <ul className="marquee-track">
           {doubled.map((p, i) => {
             const realIdx = i % photos.length
             return (
-              <li key={`${p.src}-${i}`}>
+              <li
+                key={`${p.src}-${i}`}
+                aria-hidden={i >= photos.length ? true : undefined}
+              >
                 <button
                   type="button"
+                  tabIndex={i >= photos.length ? -1 : 0}
                   onClick={() => open(realIdx)}
                   className="photo-frame group relative block aspect-[4/5] w-[260px] sm:w-[300px]"
                   aria-label={`Open photo ${realIdx + 1}: ${p.caption}`}

@@ -1,34 +1,12 @@
 'use client'
 
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import {
-  Activity,
-  Boxes,
-  BrainCircuit,
-  Database,
-  GitBranch,
-  ShieldCheck,
-  Workflow,
-  type LucideIcon,
-} from 'lucide-react'
-import { experience, greetings, telemetry } from '@/lib/content'
-import {
-  Eyebrow,
-  Section,
-  SectionHeader,
-  PrimaryButton,
-  PullQuote,
-  SecondaryButton,
-  GhostButton,
-  Tag,
-  StatusPill,
-  TextLink,
-} from '@/components/site/Atoms'
+import { useEffect, useRef } from 'react'
+import { ArrowUpRight, ArrowDown, ArrowRight } from 'lucide-react'
+import { experience, telemetry } from '@/lib/content'
 import PhotoStrip from '@/components/site/PhotoStrip'
-import Spotlight from '@/components/site/Spotlight'
-import ChapterDivider from '@/components/site/ChapterDivider'
+import GreetingCycle from '@/components/site/GreetingCycle'
+import './portfolio.css'
 
 export type HomePostPreview = {
   slug: string
@@ -38,662 +16,389 @@ export type HomePostPreview = {
   excerpt: string
 }
 
-// ─── Page ──────────────────────────────────────────────────────────────────
-
-export default function HomeClient({ recentPosts }: { recentPosts: HomePostPreview[] }) {
-  return (
-    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-10 md:pt-14 space-y-24 md:space-y-32">
-      <Hero />
-      <Reveal><ProofBand /></Reveal>
-      <Reveal><FeaturedSystems /></Reveal>
-      <Reveal>
-        <PullQuote caption="The thread connecting them">
-          Ground what it can. Refuse what it cannot. Run within bounds the team
-          can defend.
-        </PullQuote>
-      </Reveal>
-      <Reveal><EngineeringOperatingSystem /></Reveal>
-      <Reveal><TechnicalDepth /></Reveal>
-      <Reveal>
-        <PullQuote caption="Why I keep coming back to this">
-          The work is data infrastructure before it is AI.
-        </PullQuote>
-      </Reveal>
-      <Reveal><ProfessionalBackground /></Reveal>
-      <Reveal><PhotoStrip /></Reveal>
-      <ChapterDivider glyph="dot" />
-      <Reveal><Writing posts={recentPosts} /></Reveal>
-    </div>
-  )
-}
-
-function Reveal({ children }: { children: ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.16 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-// ─── Hero ──────────────────────────────────────────────────────────────────
-
-function Hero() {
-  return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="relative grid min-h-[calc(100vh-7rem)] items-center gap-12 pb-8 xl:grid-cols-[minmax(0,1.45fr)_minmax(420px,0.85fr)]"
-    >
-      <div className="space-y-7">
-        <div className="flex flex-wrap items-center gap-2">
-          <StatusPill kind="live">Data & AI Engineer</StatusPill>
-          <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
-            rust · typescript · trusted ai workflows
-          </span>
-        </div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-[820px] font-display text-[43px] font-semibold leading-[1.04] tracking-normal text-terracotta sm:text-[58px] lg:text-[64px] 2xl:text-[68px]"
-        >
-          <span>I build the data platforms </span>
-          <span className="text-ink-3">that AI actually runs on.</span>
-        </motion.h1>
-
-        <p className="max-w-2xl text-[16px] leading-[1.75] text-ink-2 md:text-[18px]">
-          The hard part isn&apos;t the model — it&apos;s making the data
-          underneath defensible. Four years on enterprise modernization,
-          analytics platforms, and now Rust and TypeScript systems for AI
-          workflows that hold up under audit.
-        </p>
-
-        <div className="flex flex-wrap items-center gap-2.5 pt-1">
-          <PrimaryButton href="/products/pulseql">Explore PulseQL</PrimaryButton>
-          <SecondaryButton href="/projects">View systems</SecondaryButton>
-          <SecondaryButton href="/resume">Résumé</SecondaryButton>
-          <GhostButton href="https://github.com/sagar8080" external>
-            GitHub
-          </GhostButton>
-        </div>
-      </div>
-
-      <div className="relative">
-        <GreetingComposer />
-      </div>
-    </motion.section>
-  )
-}
-
-function GreetingComposer() {
-  const [index, setIndex] = useState(0)
-  const [typed, setTyped] = useState('')
-  const greeting = greetings[index]
-  const display = useMemo(() => greeting.native ?? greeting.greeting, [greeting])
-
-  useEffect(() => {
-    const cycle = window.setInterval(() => {
-      setIndex((current) => (current + 1) % greetings.length)
-    }, 2000)
-    return () => window.clearInterval(cycle)
-  }, [])
-
-  useEffect(() => {
-    setTyped('')
-    let next = 0
-    const typing = window.setInterval(() => {
-      next += 1
-      setTyped(display.slice(0, next))
-      if (next >= display.length) window.clearInterval(typing)
-    }, Math.max(32, Math.min(70, 760 / Math.max(display.length, 1))))
-    return () => window.clearInterval(typing)
-  }, [display])
-
-  return (
-    <div className="relative flex min-h-[440px] items-center justify-center overflow-hidden xl:min-h-[560px]">
-      <div
-        aria-hidden
-        className="absolute h-48 w-48 rounded-full bg-accent/[0.055] blur-3xl"
-      />
-
-      <div className="relative min-h-[150px] text-center">
-        <span
-          aria-live="polite"
-          className="font-display text-[64px] font-semibold leading-none text-accent sm:text-[86px] xl:text-[104px]"
-        >
-          {typed}
-        </span>
-        <span aria-hidden className="type-caret ml-1 inline-block h-[0.78em] w-px translate-y-2 bg-accent" />
-        <motion.span
-          key={`language-${greeting.language}`}
-          aria-hidden
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="mt-5 block font-mono text-[11px] uppercase tracking-[0.34em] text-zinc-600"
-        >
-          {greeting.language}
-        </motion.span>
-      </div>
-    </div>
-  )
-}
-
-function ProofBand() {
-  return (
-    <section aria-label="Selected proof" className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline shadow-panel sm:grid-cols-2 lg:grid-cols-4">
-      {telemetry.map((item) => (
-        <div key={item.label} className="bg-background/88 p-5">
-          <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-            {item.label}
-          </p>
-          <p className="mt-3 font-display text-[30px] font-semibold leading-none text-white">
-            {item.value}
-            {item.unit && (
-              <span className="ml-1 text-[15px] font-medium text-zinc-500">
-                {item.unit}
-              </span>
-            )}
-          </p>
-          <p className="mt-2 text-[13px] leading-snug text-zinc-500">{item.caption}</p>
-        </div>
-      ))}
-    </section>
-  )
-}
-
-// ─── Featured systems. Equal columns, less in-your-face ──────────────────
-
-type System = {
-  id: string
-  title: string
-  problem: string
-  tags: string[]
-  caseStudy: string
-  product?: string
-  external?: { label: string; href: string }
-  status: 'live' | 'shipped' | 'in-development'
-}
-
-const systems: System[] = [
+const projects = [
   {
     id: 'pulseql',
+    number: '01',
     title: 'PulseQL',
-    problem:
-      'A governed data workspace for teams that want AI-assisted analysis without losing control of review, privacy, or operational trust.',
-    tags: ['Data Workspace', 'Governed AI', 'Desktop Product'],
-    caseStudy: '/projects/pulseql',
-    product: '/products/pulseql',
-    status: 'live',
+    category: 'DATA WORKSPACE / RUST + TYPESCRIPT',
+    description: 'Powerful analysis. Thoughtful guardrails.',
+    detail: 'A governed desktop workspace for AI-assisted data analysis.',
+    status: 'Explore the product',
+    href: '/products/pulseql',
   },
   {
     id: 'atrium',
+    number: '02',
     title: 'Atrium',
-    problem:
-      'A knowledge product for teams that need answers from company documents with clear citations, honest refusal, and permission-aware user experience.',
-    tags: ['Knowledge Search', 'Citations', 'Enterprise Access'],
-    caseStudy: '/projects/atrium',
-    status: 'in-development',
+    category: 'ENTERPRISE KNOWLEDGE / RAG',
+    description: 'Answers with something to stand on.',
+    detail: 'Company knowledge, grounded in citations and access boundaries.',
+    status: 'In development',
+    href: '/projects/atrium',
   },
   {
     id: 'relay',
+    number: '03',
     title: 'Relay',
-    problem:
-      'A coordination layer for AI-assisted engineering teams that need shared context, stronger review signals, and safer workflows across tools.',
-    tags: ['Engineering Context', 'Team Workflows', 'AI Safety'],
-    caseStudy: '/projects/relay',
-    external: { label: 'GitHub', href: 'https://github.com/sagar8080' },
-    status: 'in-development',
+    category: 'AI WORKFLOWS / ENGINEERING TOOLS',
+    description: 'Shared context. Better decisions.',
+    detail: 'A coordination layer for teams building with AI.',
+    status: 'In development',
+    href: '/projects/relay',
   },
 ]
 
-function FeaturedSystems() {
+function ProjectArt({ id }: { id: string }) {
+  if (id === 'pulseql')
+    return (
+      <div className="project-art art-pulse" aria-hidden="true">
+        <div className="art-corner">P/01 / THE DATA WORKSPACE</div>
+        <div className="pulse-window">
+          <div className="window-top">
+            <span className="window-mark">p.</span>
+            <span>PulseQL</span>
+            <span className="window-dots">•••</span>
+          </div>
+          <div className="window-body">
+            <div className="window-sidebar">
+              <span>WORKSPACE</span>
+              <b>◈ Overview</b>
+              <span>▤ Sources</span>
+              <span>⌘ Workpad</span>
+              <span>↗ Activity</span>
+              <i>LOCAL FIRST</i>
+            </div>
+            <div className="window-main">
+              <span className="mini-label">YOUR DATA, IN CONTEXT</span>
+              <strong>
+                Good questions.
+                <br />
+                Grounded answers.
+              </strong>
+              <div className="query-line">
+                Ask something of your data <ArrowUpRight size={13} />
+              </div>
+              <div className="mini-chart">
+                {[24, 40, 32, 58, 48, 69, 62, 85, 76, 96, 88, 115].map(
+                  (h, i) => (
+                    <i key={i} style={{ height: h }} />
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+        <span className="art-footnote">
+          Interface study · governed analytics
+        </span>
+      </div>
+    )
+  if (id === 'atrium')
+    return (
+      <div className="project-art art-atrium" aria-hidden="true">
+        <span className="art-corner">A/02 / KNOWLEDGE, CONNECTED</span>
+        <div className="atrium-form">
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+            <i key={i} style={{ inset: `${i * 16}px ${i * 19}px 0` }} />
+          ))}
+          <span>a</span>
+        </div>
+        <span className="art-footnote">From information to understanding.</span>
+      </div>
+    )
   return (
-    <Section id="case-studies">
-      <SectionHeader
-        eyebrow="01 / The work"
-        title="Three projects, one thesis."
-        lede="Each one is a different angle on the same question: how do you make AI useful inside a real organization without breaking the things underneath?"
-      />
-
-      <div className="grid gap-4 md:grid-cols-3">
-        {systems.map((s) => (
-          <SystemCard key={s.id} system={s} />
-        ))}
+    <div className="project-art art-relay" aria-hidden="true">
+      <span className="art-corner">R/03 / CONTEXT IN MOTION</span>
+      <div className="relay-form">
+        <i />
+        <i />
+        <i />
+        <span className="relay-node node-one" />
+        <span className="relay-node node-two" />
+        <span className="relay-node node-three" />
       </div>
-    </Section>
-  )
-}
-
-function SystemCard({ system }: { system: System }) {
-  return (
-    <Spotlight as="article" className="surface group relative flex min-h-[430px] flex-col overflow-hidden p-5">
-      <SystemVisual id={system.id} />
-
-      <div className="flex items-center justify-between gap-3">
-        <h3 className="font-display text-[19px] font-semibold text-terracotta md:text-[21px]">
-          {system.title}
-        </h3>
-        <StatusPill kind={system.status} />
-      </div>
-
-      <p className="mt-3 flex-1 text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14px]">
-        {system.problem}
-      </p>
-
-      <ul className="mt-5 flex flex-wrap gap-1.5">
-        {system.tags.map((t) => (
-          <li key={t}>
-            <Tag>{t}</Tag>
-          </li>
-        ))}
-      </ul>
-
-      <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-hairline pt-4 text-[13px]">
-        <Link
-          href={system.caseStudy}
-          className="font-medium text-zinc-200 transition-colors hover:text-white"
-        >
-          Case study →
-        </Link>
-        {system.product && (
-          <>
-            <span className="text-zinc-700" aria-hidden>
-              ·
-            </span>
-            <Link
-              href={system.product}
-              className="font-medium text-accent transition-colors hover:text-white"
-            >
-              Product page →
-            </Link>
-          </>
-        )}
-        {system.external && (
-          <>
-            <span className="text-zinc-700" aria-hidden>
-              ·
-            </span>
-            <a
-              href={system.external.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-zinc-400 transition-colors hover:text-white"
-            >
-              {system.external.label} ↗
-            </a>
-          </>
-        )}
-      </div>
-    </Spotlight>
-  )
-}
-
-function SystemVisual({ id }: { id: string }) {
-  const focus =
-    id === 'pulseql'
-      ? 'Governed analytics'
-      : id === 'atrium'
-        ? 'Enterprise knowledge'
-        : 'Safer AI workflows'
-
-  return (
-    <div className="mb-5 overflow-hidden rounded-xl border border-hairline bg-paper-3 p-4">
-      <div className="flex items-center justify-between gap-3">
-        <p className="font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-          {id}.project
-        </p>
-        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-      </div>
-      <div className="mt-5 min-h-24">
-        <p className="font-display text-[22px] font-semibold leading-tight text-white">
-          {focus}
-        </p>
-        <div className="mt-5 h-px w-full bg-gradient-to-r from-accent/50 via-hairline-strong to-transparent" />
-        <p className="mt-4 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-          product summary · public view
-        </p>
-      </div>
+      <span className="art-footnote">One shared thread. Every tool.</span>
     </div>
   )
 }
 
-const operatingPrinciples: {
-  icon: LucideIcon
-  title: string
-  body: string
-  proof: string
-}[] = [
-  {
-    icon: Boxes,
-    title: 'Build the data foundation first',
-    body: 'Reliable AI starts with governed data systems: ingestion, schema enforcement, data quality, lakehouse tables, semantic definitions, and lineage.',
-    proof: 'Iceberg + BigQuery lakehouse work across 35+ financial datasets and 20+ years of reporting context.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Ground AI in enterprise context',
-    body: 'LLM systems need retrieval evidence, metric contracts, access boundaries, audit trails, and explicit execution paths before they can be trusted.',
-    proof: 'RAG work over 100K+ survey responses reduced qualitative review effort by 60%.',
-  },
-  {
-    icon: Workflow,
-    title: 'Modernize with measurable exits',
-    body: 'Large rewrites need migration systems, not one-off scripts: repeatable transformations, validation gates, and clear ownership for every generated artifact.',
-    proof: 'GenAI-assisted modernization moved 900+ Java modules toward Spark and Apache Beam in roughly seven months.',
-  },
-]
-
-function EngineeringOperatingSystem() {
-  // Asymmetric layout: sticky eyebrow + title on the left rail, the three
-  // principles flow as full-width content rows on the right. Breaks the
-  // "header on top, grid below" rhythm with a magazine-style spread.
+export default function HomeClient({
+  recentPosts,
+}: {
+  recentPosts: HomePostPreview[]
+}) {
+  const pageRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const root = pageRef.current
+    if (!root) return
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (media.matches) return
+    const sections = root.querySelectorAll(
+      '.editorial-heading, .project-entry, .about-spread, .impact-strip, .experience-section, .note-row, .contact-spread',
+    )
+    sections.forEach((section) => section.setAttribute('data-reveal', ''))
+    root.classList.add('motion-ready')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.08 },
+    )
+    sections.forEach((section) => observer.observe(section))
+    return () => {
+      observer.disconnect()
+      root.classList.remove('motion-ready')
+    }
+  }, [])
   return (
-    <section className="grid gap-12 md:grid-cols-[minmax(280px,340px)_1fr] md:gap-16 lg:gap-20">
-      <div className="md:sticky md:top-28 md:self-start">
-        <Eyebrow label="02 / What I believe" accentColor="var(--sage)" />
-        <h2 className="mt-4 section-title">Three principles, repeated.</h2>
-        <p className="mt-5 section-lede">
-          That shorthand above sits on top of these three. Whether the system
-          is a modernization, an analytics platform, or an AI workflow, the
-          same primitives keep showing up.
-        </p>
-      </div>
-
-      <ol className="space-y-5">
-        {operatingPrinciples.map((item, index) => {
-          const Icon = item.icon
-          return (
-            <li key={item.title}>
-              <Spotlight className="surface relative overflow-hidden p-6 md:p-8">
-                <div className="grid gap-5 sm:grid-cols-[auto_1fr] sm:gap-7">
-                  <div className="flex items-start justify-between gap-4 sm:flex-col sm:items-start sm:justify-start">
-                    <div className="grid h-12 w-12 place-items-center rounded-lg border border-line bg-paper-2 text-terracotta">
-                      <Icon size={20} />
-                    </div>
-                    <span className="font-mono text-[11px] uppercase tracking-eyebrow text-ink-4">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-display text-[22px] font-semibold leading-tight text-terracotta md:text-[24px]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-[14.5px] leading-[1.7] text-ink-2 md:text-[15px]">
-                      {item.body}
-                    </p>
-                    <p className="mt-5 border-t border-line pt-4 text-[13px] leading-[1.65] text-ink-3">
-                      {item.proof}
-                    </p>
-                  </div>
-                </div>
-              </Spotlight>
-            </li>
-          )
-        })}
-      </ol>
-    </section>
-  )
-}
-
-// ─── Technical depth ───────────────────────────────────────────────────────
-
-const depthGroups = [
-  {
-    label: 'Data engineering',
-    icon: Database,
-    color: 'var(--terracotta)',
-    focus: 'Batch, streaming, quality, and lakehouse work for enterprise data teams.',
-    proof: 'Pipelines, semantic layers, and modernization systems at production scale.',
-    items: [
-      'Python',
-      'SQL',
-      'Apache Spark',
-      'Apache Beam',
-      'Kafka',
-      'Airflow',
-      'Deequ',
-      'Iceberg',
-    ],
-  },
-  {
-    label: 'ML & AI systems',
-    icon: BrainCircuit,
-    color: 'var(--sage)',
-    focus: 'Model workflows, feature systems, deployment paths, and evaluation loops.',
-    proof: 'Built across applied ML, MLOps, and AI-assisted review workflows.',
-    items: [
-      'TensorFlow',
-      'PyTorch',
-      'Scikit-learn',
-      'MLflow',
-      'Vertex AI',
-      'SageMaker',
-      'Feature stores',
-      'Model deployment',
-    ],
-  },
-  {
-    label: 'Generative AI',
-    icon: GitBranch,
-    color: 'var(--ochre)',
-    focus: 'Grounded LLM applications that keep context, evidence, and review visible.',
-    proof: 'RAG systems, knowledge interfaces, and agentic AI infrastructure.',
-    items: [
-      'LangChain',
-      'RAG pipelines',
-      'Vector databases',
-      'Knowledge graphs',
-      'LLM applications',
-      'Agentic AI',
-      'Rust',
-      'TypeScript',
-    ],
-  },
-  {
-    label: 'Cloud & DevOps',
-    icon: Activity,
-    color: 'var(--ink-blue)',
-    focus: 'Cloud delivery, infrastructure automation, observability, and platform hygiene.',
-    proof: 'AWS, GCP, containers, CI/CD, and production monitoring workflows.',
-    items: [
-      'AWS',
-      'GCP',
-      'Terraform',
-      'Shell scripting',
-      'Docker',
-      'Jenkins',
-      'Kubernetes',
-      'Grafana',
-    ],
-  },
-]
-
-function TechnicalDepth() {
-  // Mirror of the Engineering OS layout — sticky title on the right rail,
-  // 2×2 stack grid on the left. Alternating side per section gives the
-  // page an editorial zig-zag rather than a single repeating column.
-  return (
-    <section className="grid gap-12 md:grid-cols-[1fr_minmax(280px,340px)] md:gap-16 lg:gap-20">
-      <div className="md:order-first">
-        <div className="grid gap-4 sm:grid-cols-2">
-        {depthGroups.map((g, i) => {
-          const Icon = g.icon
-          return (
-            <Spotlight
-              key={g.label}
-              className="surface group flex flex-col p-6 md:p-7"
-            >
-              {/* Color rail keyed to the category so the four cards stay
-                  visually distinct without leaning on background color. */}
-              <div
-                aria-hidden
-                className="mb-5 h-px w-12"
-                style={{ backgroundColor: g.color }}
-              />
-
-              <div className="flex items-start justify-between gap-5">
-                <div className="flex min-w-0 items-center gap-3">
-                  <span
-                    className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border bg-paper-2"
-                    style={{ borderColor: g.color, color: g.color }}
-                  >
-                    <Icon size={18} aria-hidden />
-                  </span>
-                  <div className="min-w-0">
-                    <p
-                      className="font-mono text-[10.5px] uppercase tracking-eyebrow"
-                      style={{ color: g.color }}
-                    >
-                      {g.label}
-                    </p>
-                    <p className="mt-1 text-[13px] leading-[1.55] text-ink-3">
-                      {g.focus}
-                    </p>
-                  </div>
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-eyebrow text-ink-4">
-                  0{i + 1}
-                </span>
-              </div>
-
-              <div className="my-6 h-px bg-line" />
-
-              <ul className="flex flex-wrap gap-2">
-                {g.items.map((item) => (
-                  <li key={item}>
-                    <span className="chip border-line bg-paper-2 text-ink-2">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-6 border-t border-line pt-4 text-[12.5px] leading-[1.65] text-ink-3">
-                {g.proof}
-              </p>
-            </Spotlight>
-          )
-        })}
+    <div className="portfolio" ref={pageRef}>
+      <section className="portfolio-hero" aria-labelledby="hero-title">
+        <div className="hero-topline">
+          <span>
+            <i /> DATA & AI ENGINEER
+          </span>
+          <span>SELECTED PROJECTS & ENGINEERING NOTES</span>
         </div>
+        <div className="hero-composition">
+          <div className="hero-type">
+            <p className="hero-intro">Hi, I’m Sagar.</p>
+            <h1 id="hero-title">
+              <span className="hero-title-line">I build the data systems</span>
+              <em>powering AI</em>
+            </h1>
+            <p className="hero-description">
+              I turn fragmented enterprise data into reliable platforms, then build
+              AI applications on top of them, from ingestion and processing to
+              retrieval, evaluation, and production deployment.
+            </p>
+            <a
+              className="round-link"
+              href="#selected-work"
+              aria-label="Explore selected work"
+            >
+              <span className="circle-arrow">
+                <ArrowDown size={19} />
+              </span>
+              See the work
+            </a>
+          </div>
+          <div className="hero-greeting">
+            <GreetingCycle />
+          </div>
+        </div>
+        <div className="hero-bottom">
+          <span>PYTHON / SQL / SPARK / BIGQUERY / RUST / TYPESCRIPT</span>
+          <span>
+            20M events/day · 900+ modules modernized{' '}
+            <span className="tiny-star">✳</span>
+          </span>
+        </div>
+      </section>
+
+      <section
+        className="selected-work"
+        id="selected-work"
+        aria-labelledby="work-title"
+      >
+        <div className="editorial-heading">
+          <div>
+            <span className="folio-label">01 / SELECTED WORK</span>
+            <h2 id="work-title">
+              Projects & <em>case studies.</em>
+            </h2>
+          </div>
+          <Link className="underlined-link" href="/projects">
+            All projects <ArrowUpRight size={17} />
+          </Link>
+        </div>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article
+              className={`project-entry project-${project.id}`}
+              key={project.id}
+            >
+              <Link
+                href={project.href}
+                className="project-art-link"
+                aria-label={`Explore ${project.title}`}
+              >
+                <ProjectArt id={project.id} />
+                <span className="project-open">
+                  <ArrowUpRight size={22} />
+                </span>
+              </Link>
+              <div className="project-meta">
+                <span>{project.category}</span>
+                <span>{project.number}</span>
+              </div>
+              <div className="project-title">
+                <h3>
+                  <Link href={project.href}>{project.title}</Link>
+                </h3>
+                <span>{project.status}</span>
+              </div>
+              <p className="project-description">{project.description}</p>
+              <p className="project-detail">{project.detail}</p>
+              <Link
+                className="case-study-link"
+                href={`/projects/${project.id}`}
+              >
+                Read case study <ArrowUpRight size={14} />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="about-spread" aria-labelledby="about-title">
+        <div>
+          <span className="folio-label">02 / THE APPROACH</span>
+          <div className="about-symbol" aria-hidden="true">
+            ✳
+          </div>
+        </div>
+        <div>
+          <h2 id="about-title">
+            The best systems make
+            <br />
+            the complex feel <em>clear.</em>
+          </h2>
+          <div className="about-copy">
+            <p>
+              My work lives where data engineering meets product thinking. From
+              enterprise lakehouses to local AI tools, I care about what happens
+              beneath the interface and how it feels to use what’s above it.
+            </p>
+            <p>
+              Build the foundation. Keep the evidence visible. Make failure
+              recoverable. These are the details that turn an interesting
+              prototype into something people can rely on.
+            </p>
+          </div>
+          <Link className="underlined-link" href="/resume">
+            More about my background <ArrowUpRight size={17} />
+          </Link>
+        </div>
+      </section>
+
+      <div className="impact-strip" aria-label="Selected career outcomes">
+        {telemetry.map((item) => (
+          <div key={item.label}>
+            <strong>
+              {item.value}
+              <small>{item.unit}</small>
+            </strong>
+            <span>{item.caption}</span>
+          </div>
+        ))}
       </div>
 
-      <div className="md:sticky md:top-28 md:self-start md:order-last md:text-right">
-        <div className="md:inline-flex md:flex-col md:items-end">
-          <Eyebrow label="03 / The stack" accentColor="var(--ochre)" />
-          <h2 className="mt-4 section-title md:text-right">Where those principles meet keys on a keyboard.</h2>
-          <p className="mt-5 section-lede md:text-right">
-            Four layers — data, ML, generative AI, cloud. The tools differ;
-            the test is the same: does this workflow hold up under audit?
+      <section
+        className="experience-section"
+        aria-labelledby="experience-title"
+      >
+        <div>
+          <span className="folio-label">03 / ALONG THE WAY</span>
+          <h2 id="experience-title">
+            Good work.
+            <br />
+            <em>Good company.</em>
+          </h2>
+          <Link className="underlined-link" href="/resume">
+            Full résumé <ArrowUpRight size={17} />
+          </Link>
+        </div>
+        <div className="experience-list">
+          {experience.map((job) => (
+            <div className="experience-row" key={job.id}>
+              <span>{job.duration}</span>
+              <h3>{job.company}</h3>
+              <p>{job.position}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="photo-section" aria-labelledby="photo-title">
+        <div className="editorial-heading">
+          <div>
+            <span className="folio-label">04 / AWAY FROM THE SCREEN</span>
+            <h2 id="photo-title">
+              A different kind of <em>focus.</em>
+            </h2>
+          </div>
+          <p>
+            Wandering, noticing, making photographs.
+            <br />A few frames from life in between.
           </p>
         </div>
-      </div>
-    </section>
-  )
-}
+        <PhotoStrip showHeader={false} />
+      </section>
 
-
-// ─── Professional background ───────────────────────────────────────────────
-//
-// Minimal-text take. Four roles, in order, with just the year, title, company,
-// and location. The shape of the path matters more than the prose around it.
-
-function ProfessionalBackground() {
-  return (
-    <Section>
-      <SectionHeader
-        eyebrow="04 / The path"
-        title="Where the patterns came from."
-        lede="Four roles teaching the same lesson in different ways — that the infrastructure decisions outlast the systems they live inside."
-      />
-
-      <ol className="mx-auto max-w-4xl divide-y divide-line border-y border-line">
-        {experience.map((exp, i) => (
-          <li
-            key={exp.id}
-            className="grid items-baseline gap-3 py-5 sm:grid-cols-[88px_1fr_auto] sm:gap-6 md:py-6"
-          >
-            <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3">
-              <span className="text-terracotta">0{i + 1}</span>
-              <span className="ml-2 text-ink-4">
-                {exp.duration.split('–')[0].trim().split(' ').pop()}
-              </span>
-            </p>
-            <div className="min-w-0">
-              <p className="font-display text-[16px] font-medium tracking-tight text-ink md:text-[17px]">
-                {exp.position}
-              </p>
-              <p className="mt-0.5 text-[13px] text-ink-2">{exp.company}</p>
+      {recentPosts.length > 0 && (
+        <section className="notes-section" aria-labelledby="notes-title">
+          <div className="editorial-heading">
+            <div>
+              <span className="folio-label">05 / FIELD NOTES</span>
+              <h2 id="notes-title">
+                Thinking <em>out loud.</em>
+              </h2>
             </div>
-            <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-4 sm:text-right">
-              {exp.location}
-            </p>
-          </li>
-        ))}
-      </ol>
-
-      <div className="mt-8">
-        <TextLink href="/resume" accent>
-          Full résumé
-        </TextLink>
-      </div>
-    </Section>
-  )
-}
-
-// ─── Writing ───────────────────────────────────────────────────────────────
-
-function Writing({ posts }: { posts: HomePostPreview[] }) {
-  if (posts.length === 0) return null
-  return (
-    <Section>
-      <SectionHeader
-        eyebrow="05 / Notes"
-        title="Where I think out loud about this."
-        lede="Short technical notes published when there&apos;s something specific to say. The decisions behind the systems, in writing."
-      />
-
-      <ul className="divide-y divide-hairline border-y border-hairline">
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link
-              href={`/writing/${post.slug}`}
-              className="group grid items-baseline gap-3 py-5 sm:grid-cols-[1fr_auto] sm:gap-6"
-            >
-              <div className="space-y-1.5">
-                <p className="text-[15px] font-medium text-zinc-200 transition-colors group-hover:text-white">
-                  {post.title}
-                </p>
-                <p className="line-clamp-1 text-[13px] text-zinc-500">{post.excerpt}</p>
-              </div>
-              <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
-                {post.status === 'published' ? 'Published' : 'Draft'} ·{' '}
-                {formatHomeDate(post.date)}
-              </span>
+            <Link className="underlined-link" href="/writing">
+              All writing <ArrowUpRight size={17} />
             </Link>
-          </li>
-        ))}
-      </ul>
+          </div>
+          <div>
+            {recentPosts.slice(0, 3).map((post) => (
+              <Link
+                className="note-row"
+                href={`/writing/${post.slug}`}
+                key={post.slug}
+              >
+                <span>
+                  {post.status === 'draft'
+                    ? 'IN PROGRESS'
+                    : new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        year: 'numeric',
+                        timeZone: 'UTC',
+                      })}
+                </span>
+                <h3>{post.title}</h3>
+                <ArrowUpRight size={22} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
-      <div>
-        <TextLink href="/writing" accent>
-          All notes
-        </TextLink>
-      </div>
-    </Section>
+      <section className="contact-spread">
+        <span className="folio-label">HAVE SOMETHING IN MIND?</span>
+        <Link href="/contact">
+          Let’s make
+          <br />
+          <em>it matter.</em>
+          <span className="contact-arrow">
+            <ArrowUpRight />
+          </span>
+        </Link>
+        <div>
+          <p>Interesting problems. Thoughtful people. Good conversations.</p>
+          <a
+            href="https://github.com/sagar8080"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find me on GitHub <ArrowRight size={16} />
+          </a>
+        </div>
+      </section>
+    </div>
   )
-}
-
-function formatHomeDate(iso: string): string {
-  if (!iso) return ''
-  const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return iso
-  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 }

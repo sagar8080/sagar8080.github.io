@@ -2,10 +2,10 @@ import { PageHeader, Eyebrow, Section } from '@/components/site/Atoms'
 import { contactLinks } from '@/lib/content'
 
 const helpfulAreas = [
-  'Data platform builds — ingestion, lakehouse, semantics, governance',
-  'Agentic AI workflows — retrieval, evaluation, agent memory, contracts',
-  'Migration work — moving legacy data stacks toward GCP, AWS, or Iceberg',
-  'Reviews and architecture conversations — short engagements with written notes',
+  'Data platform builds: ingestion, lakehouse, semantics, governance',
+  'Agentic AI workflows: retrieval, evaluation, agent memory, contracts',
+  'Migration work: moving legacy data stacks toward GCP, AWS, or Iceberg',
+  'Reviews and architecture conversations: short engagements with written notes',
 ]
 
 export default function ContactPage() {
@@ -62,7 +62,7 @@ export default function ContactPage() {
         </ul>
         <p className="mt-5 text-[13.5px] leading-[1.7] text-zinc-500 md:text-[14px]">
           Open to other directions too. If your problem doesn&apos;t quite fit the list
-          above, please still reach out — worst case I can probably point you toward
+          above, please still reach out. At worst, I can probably point you toward
           someone better suited.
         </p>
       </Section>

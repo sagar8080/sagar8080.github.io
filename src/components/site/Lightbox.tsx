@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import type { Photo } from '@/lib/content'
 
 // Modal that opens when a photo is clicked from the strip. Shows the full
@@ -22,6 +22,17 @@ export default function Lightbox({
   onPrev: () => void
   onNext: () => void
 }) {
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    const dialog = dialogRef.current
+    const trigger = document.activeElement as HTMLElement | null
+    dialog?.showModal()
+    return () => {
+      dialog?.close()
+      trigger?.focus({ preventScroll: true })
+    }
+  }, [])
+
   useEffect(() => {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -39,7 +50,12 @@ export default function Lightbox({
   }, [onClose, onPrev, onNext])
 
   return (
-    <div
+    <dialog
+      ref={dialogRef}
+      onCancel={(event) => {
+        event.preventDefault()
+        onClose()
+      }}
       className="lightbox-backdrop flex flex-col items-center justify-center gap-6 p-6 md:p-12"
       role="dialog"
       aria-modal="true"
@@ -93,7 +109,7 @@ export default function Lightbox({
       </div>
 
       {/* Prev / next */}
-      <div className="absolute inset-y-0 left-0 hidden items-center md:flex">
+      <div className="absolute bottom-4 left-0 flex items-center md:inset-y-0">
         <button
           type="button"
           onClick={(e) => {
@@ -106,7 +122,7 @@ export default function Lightbox({
           ←
         </button>
       </div>
-      <div className="absolute inset-y-0 right-0 hidden items-center md:flex">
+      <div className="absolute bottom-4 right-0 flex items-center md:inset-y-0">
         <button
           type="button"
           onClick={(e) => {
@@ -121,9 +137,9 @@ export default function Lightbox({
       </div>
 
       {/* Hint */}
-      <p className="absolute bottom-5 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
+      <p className="absolute bottom-5 hidden md:block font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
         ESC to close · ← → to navigate
       </p>
-    </div>
+    </dialog>
   )
 }

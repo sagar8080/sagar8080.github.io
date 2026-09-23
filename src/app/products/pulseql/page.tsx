@@ -100,7 +100,7 @@ function Hero() {
     >
       <div className="max-w-[760px] space-y-8">
         <div className="flex flex-wrap items-center gap-2">
-          <StatusPill kind="in-development">PulseQL · v1.1 — releasing soon</StatusPill>
+          <StatusPill kind="in-development">PulseQL · v1.1 · releasing soon</StatusPill>
           <span className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-600">
             macOS · windows · linux
           </span>
@@ -215,7 +215,7 @@ function Demo() {
       <SectionHeader
         eyebrow="01 / The walkthrough"
         title="One question, end to end."
-        lede="What &ldquo;keeping every step inspectable&rdquo; looks like in practice. A question goes in; a reviewed, approved artifact comes out — with the path between them visible the whole way."
+        lede="What &ldquo;keeping every step inspectable&rdquo; looks like in practice. A question goes in; a reviewed, approved artifact comes out, with the path between them visible the whole way."
       />
 
       <ProductPanel chrome="pulseql · sales workspace · main">
@@ -359,7 +359,7 @@ function UseCases() {
       <SectionHeader
         eyebrow="03 / Where it fits"
         title="Where it earns its keep."
-        lede="Four team contexts where the reviewable workflow pays for itself — places where invisible automation isn&apos;t an option and banning AI isn&apos;t either."
+        lede="Four team contexts where the reviewable workflow pays for itself: places where invisible automation isn&apos;t an option and banning AI isn&apos;t either."
         accentColor="var(--ochre)"
       />
 
@@ -395,12 +395,12 @@ function FinalCTA() {
         <div className="relative grid gap-10 md:grid-cols-[1.05fr_1.15fr] md:items-start">
           <div className="space-y-5">
             <h2 className="font-display text-[28px] font-semibold leading-tight tracking-normal text-terracotta md:text-[36px]">
-              PulseQL v1.1 — releasing soon.
+              PulseQL v1.1 · releasing soon.
             </h2>
             <p className="max-w-xl text-[14.5px] leading-[1.75] text-ink-2 md:text-[15.5px]">
               Builds for macOS, Windows, and Linux are in late-stage testing.
               Drop a note and you&apos;ll be the first to know when downloads
-              go live — or read the case study for how the workflow was
+              go live, or read the case study for how the workflow was
               designed in the meantime.
             </p>
 

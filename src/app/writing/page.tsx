@@ -18,7 +18,7 @@ export default async function WritingIndex() {
       <PageHeader
         eyebrow="Writing"
         title="Notes on the systems I build."
-        lede="Short technical notes on the decisions behind the work — written when there's something specific to say."
+        lede="Short technical notes on the decisions behind the work, written when there's something specific to say."
       />
 
       {published.length > 0 && (

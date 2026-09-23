@@ -696,3 +696,21 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Shared editorial navigation. */
+.folio-nav { position: sticky; top: 0; z-index: 50; background: var(--paper); }
+.folio-nav-home { background: #f7f7eff2; backdrop-filter: blur(14px); }
+.folio-nav-inner { max-width: 1440px; margin: auto; padding: 0 64px; min-height: 96px; display: flex; align-items: center; gap: 45px; }
+.folio-nav-inner::after { content: ''; position: absolute; bottom: 0; left: max(64px, calc((100% - 1312px) / 2)); right: max(64px, calc((100% - 1312px) / 2)); height: 1px; background: #d9dbcf; }
+.folio-wordmark { font-size: 27px; font-weight: 700; letter-spacing: -1.5px; color: #292b25; white-space: nowrap; }
+.folio-wordmark span { color: #d54825; font-size: 13px; vertical-align: top; margin-left: 5px; line-height: 2; }
+.nav-caption { font-family: var(--font-mono), monospace; font-size: 8px; line-height: 1.6; letter-spacing: .05em; color: #686b5f; }
+.folio-nav-links { margin-left: auto; display: flex; align-items: center; gap: 30px; font-size: 12px; }
+.folio-nav-links a { padding-block: 9px; }.folio-nav-links a:hover, .folio-nav-links a[aria-current='page'] { color: #d54825; }
+.folio-nav-links .nav-contact { display: flex; gap: 20px; align-items: center; padding: 11px 17px; border: 1px solid #babdaf; border-radius: 30px; }
+.nav-toggle { display: none; }.skip-link { position: absolute; top: -100px; left: 20px; padding: 12px 20px; background: #292b25; color: #fff; z-index: 100; }.skip-link:focus { top: 10px; }
+@media (max-width: 1100px) { .folio-nav-inner { padding-inline: 36px; gap: 25px; }.folio-nav-inner::after { left: 36px; right: 36px; }.folio-nav-links { gap: 20px; }.nav-caption { display: none; } }
+@media (max-width: 760px) { .folio-nav-inner { padding-inline: 24px; min-height: 76px; }.folio-nav-inner::after { left: 24px; right: 24px; }.folio-wordmark { font-size: 24px; }.nav-toggle { margin-left: auto; display: grid; place-items: center; width: 44px; height: 44px; }.folio-nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; background: #f7f7ef; border-bottom: 1px solid #d9dbcf; padding: 20px 24px 28px; margin: 0; align-items: stretch; gap: 5px; flex-direction: column; font-size: 16px; }.folio-nav-links.is-open { display: flex; }.folio-nav-links a { padding: 12px; }.folio-nav-links .nav-contact { margin-top: 10px; justify-content: space-between; } }
+
+dialog.lightbox-backdrop { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; }
+dialog.lightbox-backdrop::backdrop { background: transparent; }

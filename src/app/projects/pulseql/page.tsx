@@ -9,17 +9,17 @@ const data: CaseStudyData = {
   tags: ['Data Workspace', 'Governed AI', 'Reviewable Workflows'],
 
   problem:
-    'Most analytics teams I\'ve worked with end up in one of two corners. They ban AI from production data work because it can\'t survive a review, or they let it operate invisibly and inherit work nobody can defend. Both are losing positions for the same reason — the work isn\'t inspectable. PulseQL is the bet that the uncomfortable middle, using AI but keeping every step visible, is the version teams will actually trust.',
+    'Most analytics teams I\'ve worked with end up in one of two corners. They ban AI from production data work because it can\'t survive a review, or they let it operate invisibly and inherit work nobody can defend. Both are losing positions for the same reason: the work isn\'t inspectable. PulseQL is the bet that the uncomfortable middle, using AI but keeping every step visible, is the version teams will actually trust.',
 
   constraints: [
-    'Feel like an analyst\'s tool, not an admin console — engineers and analysts had to be able to use it without help from a platform team.',
+    'Feel like an analyst\'s tool, not an admin console. Engineers and analysts had to be able to use it without help from a platform team.',
     'Treat review as how the work moves, not as a bolt-on approval step at the end.',
     'Make privacy and governance default behavior, not opt-in configuration.',
-    'Make every output defensible — the kind of work an analyst could put in front of a finance lead or a compliance review without flinching.',
+    'Make every output defensible, the kind of work an analyst could put in front of a finance lead or a compliance review without flinching.',
   ],
 
   overview: [
-    'A focused desktop workspace where teams can ask data questions, watch AI-assisted work get drafted in front of them, and decide what they\'re willing to ship. The whole loop — ask, review, refine, approve, share — happens in one place instead of spreading across notebooks, dashboards, and chat threads.',
+    'A focused desktop workspace where teams can ask data questions, watch AI-assisted work get drafted in front of them, and decide what they\'re willing to ship. The whole loop (ask, review, refine, approve, share) happens in one place instead of spreading across notebooks, dashboards, and chat threads.',
     'The promise is plain: faster iteration on the easy questions, stronger evidence on the hard ones, and nothing leaving the workspace that the team can\'t stand behind.',
   ],
 
@@ -42,7 +42,7 @@ const data: CaseStudyData = {
   ],
 
   outcome: [
-    'v1.1 currently in late-stage testing across macOS, Windows, and Linux — releasing soon. Early users are the kind I wanted: small data teams that care about being able to defend the work they ship.',
+    'v1.1 currently in late-stage testing across macOS, Windows, and Linux, with release coming soon. Early users are the kind I wanted: small data teams that care about being able to defend the work they ship.',
   ],
 
   current:

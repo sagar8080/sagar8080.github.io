@@ -491,7 +491,7 @@ export type FeaturedProject = {
 
 export const featuredProject: FeaturedProject = {
   id: 'pulseql',
-  status: 'v1.1 — releasing soon',
+  status: 'v1.1 · releasing soon',
   title: 'PulseQL',
   subtitle: 'The data lifecycle, in one app.',
   description:
