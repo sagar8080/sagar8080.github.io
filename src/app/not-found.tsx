@@ -19,7 +19,8 @@ export default function NotFound() {
         {[
           { href: '/', label: 'Home' },
           { href: '/projects', label: 'Projects' },
-          { href: '/products/pulseql', label: 'PulseQL', accent: true },
+          { href: '/products/kivi', label: 'Kivi', accent: true },
+          { href: '/products/buntini', label: 'Buntini' },
           { href: '/writing', label: 'Writing' },
           { href: '/contact', label: 'Contact' },
         ].map((it) => (

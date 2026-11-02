@@ -238,13 +238,13 @@ body:has(.portfolio) > .grain-overlay {
   font-size: 9px;
   letter-spacing: 0;
 }
-.art-pulse {
+.art-kivi {
   background: #dee3ce;
   display: flex;
   align-items: center;
   perspective: 1200px;
 }
-.art-pulse::before {
+.art-kivi::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -253,7 +253,7 @@ body:has(.portfolio) > .grain-overlay {
     linear-gradient(90deg, #7c896013 1px, transparent 1px);
   background-size: 44px 44px;
 }
-.pulse-window {
+.kivi-window {
   width: 112%;
   margin-left: 34px;
   flex-shrink: 0;
@@ -682,7 +682,7 @@ body:has(.portfolio) > .grain-overlay {
   .project-entry:first-child .project-art {
     height: 650px;
   }
-  .pulse-window {
+  .kivi-window {
     margin-left: 20px;
     width: 125%;
   }
@@ -756,7 +756,7 @@ body:has(.portfolio) > .grain-overlay {
   .project-art {
     height: 290px;
   }
-  .pulse-window {
+  .kivi-window {
     width: 98%;
     margin-left: 30px;
   }
@@ -1048,18 +1048,18 @@ body:has(.portfolio),
 .project-art {
   border-radius: 2px;
 }
-.art-pulse {
+.art-kivi {
   background: #dce2c9;
 }
-.art-pulse::before {
+.art-kivi::before {
   opacity: 0.3;
 }
-.pulse-window {
+.kivi-window {
   box-shadow: -18px 28px 50px #45543729;
   border-color: #b8c2a0;
   transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.project-art-link:hover .pulse-window {
+.project-art-link:hover .kivi-window {
   transform: rotate(-4deg) translateY(-8px);
 }
 .window-mark {
@@ -1282,7 +1282,7 @@ body:has(.portfolio) footer {
     filter: none;
     transform: none;
   }
-  .project-art-link:hover .pulse-window {
+  .project-art-link:hover .kivi-window {
     transform: rotate(-7deg);
   }
   .project-art-link:hover .atrium-form {
@@ -1640,4 +1640,22 @@ body:has(.portfolio) .folio-nav-inner::after {
 }
 @media (max-width: 760px) {
   .portfolio h1 .hero-title-line { font-size: clamp(25px, 7.5vw, 50px); }
+}
+
+/* Four selected projects: Kivi and Buntini lead the first row. */
+.project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.project-entry:first-child { grid-row: auto; }
+.project-grid .project-art, .project-grid .project-entry:first-child .project-art { height: 340px; }
+.art-buntini { display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 65%, #f9e3c7, #e6ddeb 70%); color: #7c658d; }
+.bun-home-cat { width: 270px; height: 270px; margin-top: 35px; transition: transform .5s ease; }
+.project-art-link:hover .bun-home-cat { transform: translateY(-7px) rotate(-3deg); }
+.bun-home-spark { position: absolute; top: 95px; right: 17%; font-size: 35px; color: #a28db1; }
+.bun-home-bubble { position: absolute; top: 55px; left: 20%; padding: 12px 16px; border: 1px solid #d7c7df; border-radius: 10px 10px 10px 1px; background: #fffaf2; font-size: 10px; transform: rotate(-3deg); }
+@media (max-width: 760px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-grid .project-art, .project-grid .project-entry:first-child .project-art { height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bun-home-cat { transition: none; }
+  .project-art-link:hover .bun-home-cat { transform: none; }
 }

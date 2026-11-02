@@ -1,0 +1,3 @@
+/* Static previews use the same character artwork as the app, without its alternate faces. */
+.buntini-character { display: block; width: 100%; height: 100%; }
+.buntini-character :is(.cat-zzz, .cat-eyes-closed, .cat-eyes-happy, .cat-eyes-squeeze, .cat-yawn, .cat-frown, .cat-wink, .pet-speaking-mouth) { display: none; }

@@ -16,15 +16,24 @@ type FeaturedProject = {
 // Headline systems. Each has a full case-study page.
 const featured: FeaturedProject[] = [
   {
-    slug: 'pulseql',
-    title: 'PulseQL',
-    status: 'live',
-    statusLabel: 'v1.1 · releasing soon',
+    slug: 'kivi',
+    title: 'Kivi',
+    status: 'in-development',
+    statusLabel: 'In development · macOS first',
     oneLine:
-      'Governed analytics workspace for teams that want AI-assisted data work with review, privacy, and operational trust.',
-    tags: ['Data Workspace', 'Governed AI', 'Reviewable Workflows'],
-    productHref: '/products/pulseql',
-    githubHref: 'https://github.com/sagar8080/pulseQL-releases',
+      'A local-first workbench for delegated data, AI, and ML work, built around persistent objectives, bounded execution, and evidence.',
+    tags: ['Data, AI & ML', 'Delegated Work', 'Local-first'],
+    productHref: '/products/kivi',
+  },
+  {
+    slug: 'buntini',
+    title: 'Buntini',
+    status: 'shipped',
+    statusLabel: 'Available for macOS',
+    oneLine: 'A private desktop companion for your Mac. A customizable cat, everyday assistance, and the AI you choose.',
+    tags: ['macOS', 'Personal AI', 'Local-first'],
+    productHref: '/products/buntini',
+    githubHref: 'https://github.com/sagar8080/buntini',
   },
   {
     slug: 'atrium',

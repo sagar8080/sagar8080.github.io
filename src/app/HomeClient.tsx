@@ -6,6 +6,7 @@ import { ArrowUpRight, ArrowDown, ArrowRight } from 'lucide-react'
 import { experience, telemetry } from '@/lib/content'
 import PhotoStrip from '@/components/site/PhotoStrip'
 import GreetingCycle from '@/components/site/GreetingCycle'
+import BuntiniCat from '@/components/buntini/Cat'
 import './portfolio.css'
 
 export type HomePostPreview = {
@@ -18,18 +19,28 @@ export type HomePostPreview = {
 
 const projects = [
   {
-    id: 'pulseql',
+    id: 'kivi',
     number: '01',
-    title: 'PulseQL',
-    category: 'DATA WORKSPACE / RUST + TYPESCRIPT',
-    description: 'Powerful analysis. Thoughtful guardrails.',
-    detail: 'A governed desktop workspace for AI-assisted data analysis.',
+    title: 'Kivi',
+    category: 'DATA, AI & ML / RUST + TYPESCRIPT',
+    description: 'Delegate the work. Keep the evidence.',
+    detail: 'A local-first workbench for delegated data, AI, and ML work.',
     status: 'Explore the product',
-    href: '/products/pulseql',
+    href: '/products/kivi',
+  },
+  {
+    id: 'buntini',
+    number: '02',
+    title: 'Buntini',
+    category: 'DESKTOP COMPANION / MACOS + AI',
+    description: 'A little company. A little superpower.',
+    detail: 'A private desktop cat for your Mac, powered by the AI you choose.',
+    status: 'Available for macOS',
+    href: '/products/buntini',
   },
   {
     id: 'atrium',
-    number: '02',
+    number: '03',
     title: 'Atrium',
     category: 'ENTERPRISE KNOWLEDGE / RAG',
     description: 'Answers with something to stand on.',
@@ -39,7 +50,7 @@ const projects = [
   },
   {
     id: 'relay',
-    number: '03',
+    number: '04',
     title: 'Relay',
     category: 'AI WORKFLOWS / ENGINEERING TOOLS',
     description: 'Shared context. Better decisions.',
@@ -50,34 +61,34 @@ const projects = [
 ]
 
 function ProjectArt({ id }: { id: string }) {
-  if (id === 'pulseql')
+  if (id === 'kivi')
     return (
-      <div className="project-art art-pulse" aria-hidden="true">
-        <div className="art-corner">P/01 / THE DATA WORKSPACE</div>
-        <div className="pulse-window">
+      <div className="project-art art-kivi" aria-hidden="true">
+        <div className="art-corner">K/01 / THE DATA WORKBENCH</div>
+        <div className="kivi-window">
           <div className="window-top">
-            <span className="window-mark">p.</span>
-            <span>PulseQL</span>
+            <span className="window-mark">k.</span>
+            <span>Kivi</span>
             <span className="window-dots">•••</span>
           </div>
           <div className="window-body">
             <div className="window-sidebar">
               <span>WORKSPACE</span>
-              <b>◈ Overview</b>
-              <span>▤ Sources</span>
-              <span>⌘ Workpad</span>
-              <span>↗ Activity</span>
+              <b>◈ Objectives</b>
+              <span>▤ Data</span>
+              <span>⌘ Engineering</span>
+              <span>↗ Runs</span>
               <i>LOCAL FIRST</i>
             </div>
             <div className="window-main">
-              <span className="mini-label">YOUR DATA, IN CONTEXT</span>
+              <span className="mini-label">YOUR OBJECTIVE, IN CONTEXT</span>
               <strong>
-                Good questions.
+                Clear objectives.
                 <br />
-                Grounded answers.
+                Checked outcomes.
               </strong>
               <div className="query-line">
-                Ask something of your data <ArrowUpRight size={13} />
+                Describe the work to delegate <ArrowUpRight size={13} />
               </div>
               <div className="mini-chart">
                 {[24, 40, 32, 58, 48, 69, 62, 85, 76, 96, 88, 115].map(
@@ -90,14 +101,24 @@ function ProjectArt({ id }: { id: string }) {
           </div>
         </div>
         <span className="art-footnote">
-          Interface study · governed analytics
+          Workflow concept · delegated data work
         </span>
+      </div>
+    )
+  if (id === 'buntini')
+    return (
+      <div className="project-art art-buntini" aria-hidden="true">
+        <span className="art-corner">B/02 / YOUR DESKTOP, A LITTLE HAPPIER</span>
+        <span className="bun-home-spark">✳</span>
+        <span className="bun-home-bubble">A little help? A little company?</span>
+        <div className="bun-home-cat"><BuntiniCat id="homebuntini" alive={false} look={{ coat: 'white', eyes: 'green', accessory: 'bow', motion: 'calm', accent: '#8c79ab' }} /></div>
+        <span className="art-footnote">Small cat. Thoughtful boundaries.</span>
       </div>
     )
   if (id === 'atrium')
     return (
       <div className="project-art art-atrium" aria-hidden="true">
-        <span className="art-corner">A/02 / KNOWLEDGE, CONNECTED</span>
+        <span className="art-corner">A/03 / KNOWLEDGE, CONNECTED</span>
         <div className="atrium-form">
           {[0, 1, 2, 3, 4, 5, 6].map((i) => (
             <i key={i} style={{ inset: `${i * 16}px ${i * 19}px 0` }} />
@@ -109,7 +130,7 @@ function ProjectArt({ id }: { id: string }) {
     )
   return (
     <div className="project-art art-relay" aria-hidden="true">
-      <span className="art-corner">R/03 / CONTEXT IN MOTION</span>
+      <span className="art-corner">R/04 / CONTEXT IN MOTION</span>
       <div className="relay-form">
         <i />
         <i />

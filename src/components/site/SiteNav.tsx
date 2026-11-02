@@ -7,7 +7,8 @@ import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const NAV = [
   { href: '/projects', label: 'Work' },
-  { href: '/products/pulseql', label: 'PulseQL' },
+  { href: '/products/kivi', label: 'Kivi' },
+  { href: '/products/buntini', label: 'Buntini' },
   { href: '/writing', label: 'Writing' },
   { href: '/resume', label: 'Résumé' },
 ]

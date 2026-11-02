@@ -467,17 +467,6 @@ export const projectFilters: { id: ProjectCategory | 'ALL'; label: string }[] = 
   { id: 'PLATFORM', label: 'PLATFORM' },
 ]
 
-export type DownloadFile = {
-  url: string
-  filename: string
-  label: string
-}
-
-export type PlatformDownload = {
-  platform: 'macOS' | 'Linux' | 'Windows'
-  files: DownloadFile[]
-}
-
 export type FeaturedProject = {
   id: string
   status: string
@@ -486,44 +475,20 @@ export type FeaturedProject = {
   description: string
   technologies: string[]
   highlights: string[]
-  downloads: PlatformDownload[]
 }
 
 export const featuredProject: FeaturedProject = {
-  id: 'pulseql',
-  status: 'v1.1 · releasing soon',
-  title: 'PulseQL',
-  subtitle: 'The data lifecycle, in one app.',
+  id: 'kivi',
+  status: 'In development · macOS first',
+  title: 'Kivi',
+  subtitle: 'Delegate the work. Keep the evidence.',
   description:
-    'A governed data workspace for teams that want AI-assisted analysis with review, privacy, and operational trust.',
-  technologies: ['Desktop app', 'Governed AI', 'Reviewable workflows'],
+    'A local-first workbench for delegated data, AI, and ML work, designed to carry objectives through investigation, execution, verification, and recovery.',
+  technologies: ['Rust', 'TypeScript', 'Local-first'],
   highlights: [
-    'Ask questions in plain English and keep the work reviewable',
-    'Promote useful outputs into reusable team artifacts',
-    'Keep public details focused on workflow and product value',
-  ],
-  downloads: [
-    {
-      platform: 'macOS',
-      files: [
-        { label: '.dmg', filename: 'pulseDesktop_1.0.0_universal.dmg', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_universal.dmg' },
-      ],
-    },
-    {
-      platform: 'Windows',
-      files: [
-        { label: '.exe', filename: 'pulseDesktop_1.0.0_x64-setup.exe', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_x64-setup.exe' },
-        { label: '.msi', filename: 'pulseDesktop_1.0.0_x64_en-US.msi', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_x64_en-US.msi' },
-      ],
-    },
-    {
-      platform: 'Linux',
-      files: [
-        { label: '.deb', filename: 'pulseDesktop_1.0.0_amd64.deb', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_amd64.deb' },
-        { label: '.rpm', filename: 'pulseDesktop-1.0.0-1.x86_64.rpm', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop-1.0.0-1.x86_64.rpm' },
-        { label: '.AppImage', filename: 'pulseDesktop_1.0.0_amd64.AppImage', url: 'https://pub-08fea510099447418d6efca50e163284.r2.dev/pulseql-release/v1.0.0/pulseDesktop_1.0.0_amd64.AppImage' },
-      ],
-    },
+    'Keep objectives, approvals, and evidence connected across sessions',
+    'Bound delegated work with explicit permissions and budgets',
+    'Verify outcomes before treating the work as complete',
   ],
 }
 

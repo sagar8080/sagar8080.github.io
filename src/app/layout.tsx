@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     'Data & AI Engineer building scalable data platforms, modernization systems, and Rust + TypeScript infrastructure for trusted agentic AI workflows.',
   keywords:
-    'Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, PulseQL',
+    'Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, Kivi, Buntini',
   authors: [{ name: 'Sagar Das' }],
   openGraph: {
     title: 'Sagar Das · Data & AI Engineer',

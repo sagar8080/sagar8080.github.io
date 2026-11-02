@@ -1,6 +1,6 @@
 // Shared design atoms for the portfolio + product pages.
 // All visual primitives live here so spacing, type, and color stay consistent
-// across the editorial portfolio and the product-led PulseQL page.
+// across the editorial portfolio and the product-led Kivi page.
 //
 // This file is wired to the light editorial design system (paper + ink +
 // terracotta). All references to text-white / bg-white / text-zinc-* in
@@ -331,7 +331,7 @@ export function BentoCard({
 //
 // Light app-surface panel with a discreet window-chrome bar.
 export function ProductPanel({
-  chrome = 'pulseql · workspace',
+  chrome = 'kivi · workspace',
   children,
   accent = true,
   className = '',
