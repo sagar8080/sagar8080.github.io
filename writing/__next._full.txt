@@ -1,39 +1,1408 @@
 1:"$Sreact.fragment"
-2:I[51098,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
-3:I[66149,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
-4:I[39756,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
-5:I[37457,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
-6:I[22016,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],""]
-b:I[68027,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default",1]
-:HL["/_next/static/chunks/0i9mr6nlvlb_a.css","style"]
+2:I[51098,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
+3:I[66149,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
+4:I[39756,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
+5:I[37457,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default"]
+6:I[22016,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js","/_next/static/chunks/0v-8m8nx7u4wr.js"],""]
+b:I[68027,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"default",1]
+:HL["/_next/static/chunks/03kdqgvuf44jq.css","style"]
 :HL["/_next/static/media/5f402bd2d8eef81a-s.p.16whm0euli40m.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/9433d1a810498265-s.p.0h26ys03~gfbk.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a343f882a40d2cc9-s.p.07.o8jnvxu78u.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"P":null,"c":["","writing",""],"q":"","i":false,"f":[[["",{"children":["writing",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0i9mr6nlvlb_a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/06a9z_ijbhkes.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0n4z.7yu76je-.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"scroll-smooth","children":["$","body",null,{"className":"manrope_104eca11-module__6PYvkq__variable manrope_9fe9f6e8-module__N8DoJG__variable jetbrains_mono_d5591ac2-module__D88TVW__variable newsreader_92f436be-module__BT-uOq__variable font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased","children":[["$","$L2",null,{}],["$","div",null,{"className":"grain-overlay","aria-hidden":true}],["$","$L3",null,{}],["$","main",null,{"id":"main-content","tabIndex":-1,"className":"relative z-10 flex-1","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"mx-auto flex min-h-[60vh] max-w-2xl flex-col items-start justify-center gap-6 px-6 py-24","children":[["$","p",null,{"className":"eyebrow","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true}],"404 · not found"]}],["$","h1",null,{"className":"font-display text-display-md font-semibold tracking-tight text-terracotta sm:text-display-lg","children":"Page not found."}],["$","p",null,{"className":"text-[15px] leading-[1.7] text-ink-2 md:text-[16px]","children":"The page you're looking for either doesn't exist, has moved, or was never on this site to begin with. Try one of the routes below."}],["$","ul",null,{"className":"flex flex-wrap gap-2 pt-2","children":[["$","li","/",{"children":["$","$L6",null,{"href":"/","className":"btn btn--md btn--ghost","children":["Home"," →"]}]}],["$","li","/projects",{"children":["$","$L6",null,{"href":"/projects","className":"btn btn--md btn--ghost","children":["Projects"," →"]}]}],["$","li","/products/kivi",{"children":["$","$L6",null,{"href":"/products/kivi","className":"btn btn--md btn--accent","children":["Kivi"," →"]}]}],["$","li","/products/buntini",{"children":["$","$L6",null,{"href":"/products/buntini","className":"btn btn--md btn--ghost","children":["Buntini"," →"]}]}],["$","li","/writing",{"children":["$","$L6",null,{"href":"/writing","className":"btn btn--md btn--ghost","children":["Writing"," →"]}]}],["$","li","/contact",{"children":["$","$L6",null,{"href":"/contact","className":"btn btn--md btn--ghost","children":["Contact"," →"]}]}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","div",null,{"className":"relative z-10","children":["$","footer",null,{"className":"mt-12 border-t border-line bg-paper","children":["$","div",null,{"className":"mx-auto flex max-w-[1240px] flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between","children":[["$","div",null,{"className":"space-y-1","children":[["$","p",null,{"className":"inline-flex items-baseline gap-[2px] font-display text-[17px] font-semibold leading-none tracking-tight text-ink","children":["Sagar Das",["$","span",null,{"aria-hidden":true,"className":"mb-[3px] ml-[2px] h-[5px] w-[5px] self-end rounded-full bg-terracotta"}]]}],["$","p",null,{"className":"text-[12.5px] text-ink-3","children":"Data & AI Engineer"}]]}],["$","nav",null,{"aria-label":"Footer","className":"flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-ink-2","children":[["$","$L6",null,{"href":"/projects","className":"transition-colors hover:text-terracotta","children":"Projects"}],["$","$L6",null,{"href":"/writing","className":"transition-colors hover:text-terracotta","children":"Writing"}],["$","$L6",null,{"href":"/resume","className":"transition-colors hover:text-terracotta","children":"Resume"}],["$","$L6",null,{"href":"/contact","className":"transition-colors hover:text-terracotta","children":"Contact"}],["$","a",null,{"href":"https://github.com/sagar8080","target":"_blank","rel":"noopener noreferrer","className":"transition-colors hover:text-terracotta","children":["GitHub"," ↗"]}]]}],["$","p",null,{"className":"font-mono text-[11px] tracking-wide text-ink-4","suppressHydrationWarning":true,"children":["© ",2026]}]]}]}]}]]}]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"QErJnPuKhMzGeujOhIoUd"}
-e:I[97367,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"OutletBoundary"]
+0:{"P":null,"c":["","writing",""],"q":"","i":false,"f":[[["",{"children":["writing",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/03kdqgvuf44jq.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/08u15am15yjr4.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0n4z.7yu76je-.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"scroll-smooth","children":["$","body",null,{"className":"manrope_104eca11-module__6PYvkq__variable manrope_9fe9f6e8-module__N8DoJG__variable jetbrains_mono_d5591ac2-module__D88TVW__variable newsreader_92f436be-module__BT-uOq__variable font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased","children":[["$","$L2",null,{}],["$","div",null,{"className":"grain-overlay","aria-hidden":true}],["$","$L3",null,{}],["$","main",null,{"id":"main-content","tabIndex":-1,"className":"relative z-10 flex-1","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"mx-auto flex min-h-[60vh] max-w-2xl flex-col items-start justify-center gap-6 px-6 py-24","children":[["$","p",null,{"className":"eyebrow","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true}],"404 · not found"]}],["$","h1",null,{"className":"font-display text-display-md font-semibold tracking-tight text-terracotta sm:text-display-lg","children":"Page not found."}],["$","p",null,{"className":"text-[15px] leading-[1.7] text-ink-2 md:text-[16px]","children":"The page you're looking for either doesn't exist, has moved, or was never on this site to begin with. Try one of the routes below."}],["$","ul",null,{"className":"flex flex-wrap gap-2 pt-2","children":[["$","li","/",{"children":["$","$L6",null,{"href":"/","className":"btn btn--md btn--ghost","children":["Home"," →"]}]}],["$","li","/projects",{"children":["$","$L6",null,{"href":"/projects","className":"btn btn--md btn--ghost","children":["Projects"," →"]}]}],["$","li","/products/kivi",{"children":["$","$L6",null,{"href":"/products/kivi","className":"btn btn--md btn--accent","children":["Kivi"," →"]}]}],["$","li","/products/buntini",{"children":["$","$L6",null,{"href":"/products/buntini","className":"btn btn--md btn--ghost","children":["Buntini"," →"]}]}],["$","li","/writing",{"children":["$","$L6",null,{"href":"/writing","className":"btn btn--md btn--ghost","children":["Writing"," →"]}]}],["$","li","/contact",{"children":["$","$L6",null,{"href":"/contact","className":"btn btn--md btn--ghost","children":["Contact"," →"]}]}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","div",null,{"className":"relative z-10","children":["$","footer",null,{"className":"mt-12 border-t border-line bg-paper","children":["$","div",null,{"className":"mx-auto flex max-w-[1240px] flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between","children":[["$","div",null,{"className":"space-y-1","children":[["$","p",null,{"className":"inline-flex items-baseline gap-[2px] font-display text-[17px] font-semibold leading-none tracking-tight text-ink","children":["Sagar Das",["$","span",null,{"aria-hidden":true,"className":"mb-[3px] ml-[2px] h-[5px] w-[5px] self-end rounded-full bg-terracotta"}]]}],["$","p",null,{"className":"text-[12.5px] text-ink-3","children":"Data & AI Engineer"}]]}],["$","nav",null,{"aria-label":"Footer","className":"flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-ink-2","children":[["$","$L6",null,{"href":"/projects","className":"transition-colors hover:text-terracotta","children":"Projects"}],["$","$L6",null,{"href":"/writing","className":"transition-colors hover:text-terracotta","children":"Writing"}],["$","$L6",null,{"href":"/resume","className":"transition-colors hover:text-terracotta","children":"Resume"}],["$","$L6",null,{"href":"/contact","className":"transition-colors hover:text-terracotta","children":"Contact"}],["$","a",null,{"href":"https://github.com/sagar8080","target":"_blank","rel":"noopener noreferrer","className":"transition-colors hover:text-terracotta","children":["GitHub"," ↗"]}]]}],["$","p",null,{"className":"font-mono text-[11px] tracking-wide text-ink-4","suppressHydrationWarning":true,"children":["© ",2026]}]]}]}]}]]}]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"XicO29GQu6Yf8iFjT_eXF"}
+e:I[97367,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"OutletBoundary"]
 f:"$Sreact.suspense"
-12:I[97367,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"ViewportBoundary"]
-14:I[97367,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"MetadataBoundary"]
+12:I[97367,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"ViewportBoundary"]
+14:I[97367,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"MetadataBoundary"]
 7:["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
-8:["$","$1","c",{"children":["$Ld",null,["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}]
+8:["$","$1","c",{"children":["$Ld",[["$","script","script-0",{"src":"/_next/static/chunks/0v-8m8nx7u4wr.js","async":true,"nonce":"$undefined"}]],["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}]
 11:[]
 9:"$W11"
 a:["$","$1","h",{"children":[null,["$","$L12",null,{"children":"$L13"}],["$","div",null,{"hidden":true,"children":["$","$L14",null,{"children":["$","$f",null,{"name":"Next.Metadata","children":"$L15"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
-c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0i9mr6nlvlb_a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/03kdqgvuf44jq.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
 13:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-16:I[27201,["/_next/static/chunks/06a9z_ijbhkes.js","/_next/static/chunks/0n4z.7yu76je-.js"],"IconMark"]
+16:I[27201,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js"],"IconMark"]
 10:null
-15:[["$","title","0",{"children":"Sagar Das · Data & AI Engineer"}],["$","meta","1",{"name":"description","content":"Data & AI Engineer building scalable data platforms, modernization systems, and Rust + TypeScript infrastructure for trusted agentic AI workflows."}],["$","meta","2",{"name":"author","content":"Sagar Das"}],["$","meta","3",{"name":"keywords","content":"Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, Kivi, Buntini"}],["$","meta","4",{"property":"og:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","5",{"property":"og:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","9",{"name":"twitter:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","link","10",{"rel":"icon","href":"/icon.svg?icon.03ipqvl54a455.svg","sizes":"any","type":"image/svg+xml"}],["$","$L16","11",{}]]
-d:["$","div",null,{"className":"theme-page theme-writing","children":["$","div",null,{"className":"theme-content space-y-16","children":[["$","div",null,{"className":"writing-content space-y-16","children":[["$","header",null,{"className":"space-y-5","children":[["$","p",null,{"className":"eyebrow","style":"$undefined","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true,"style":"$undefined"}],"Writing"]}],["$","h1",null,{"className":"font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg","children":["Notes on the",["$","br",null,{}],["$","em",null,{"children":"systems I build."}]]}],["$","p",null,{"className":"section-lede","children":"Short technical notes on the decisions behind the work, written when there's something specific to say."}]]}],["$","section",null,{"id":"$undefined","className":"space-y-8 ","children":[["$","p",null,{"className":"eyebrow","style":"$undefined","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true,"style":"$undefined"}],"Published"]}],["$","ul",null,{"children":[["$","li","shape-of-a-local-first-data-product",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/shape-of-a-local-first-data-product","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"The shape of a local-first data product"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Two storage decisions sit at the heart of any local-first analytics tool. Get them right and you ship as a single application the user can trust on their own machine. Get them wrong and you've reinvented a hosted service somebody has to operate."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","local-first",{"children":["$","span",null,{"className":"chip","children":"local-first"}]}],["$","li","architecture",{"children":["$","span",null,{"className":"chip","children":"architecture"}]}],["$","li","data-products",{"children":["$","span",null,{"className":"chip","children":"data-products"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Nov 2025"}]]}]}],["$","li","refusal-is-the-feature",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/refusal-is-the-feature","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"Refusal is the feature grounded RAG actually needs"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Trying to make the model better at admitting uncertainty is a losing game. Refusing in the orchestration layer. When the retrieval signal is too weak to support an answer. Is a winning one. Plus the companion move that matters at least as much."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","rag",{"children":["$","span",null,{"className":"chip","children":"rag"}]}],["$","li","retrieval",{"children":["$","span",null,{"className":"chip","children":"retrieval"}]}],["$","li","product",{"children":["$","span",null,{"className":"chip","children":"product"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"May 2026"}]]}]}],["$","li","why-metadata-not-raw-data",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/why-metadata-not-raw-data","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":["$L17","$L18"]}]}],"$L19","$L1a","$L1b","$L1c","$L1d","$L1e"]}]]}],false,"$L1f"]}],"$L20"]}]}]
-17:["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"Why AI should reason over metadata, not raw data"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Schemas, contracts, lineage, and policies carry the structure an LLM needs to be useful inside a regulated environment. The bytes don't. And shouldn't leave the perimeter."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","metadata",{"children":["$","span",null,{"className":"chip","children":"metadata"}]}],["$","li","governance",{"children":["$","span",null,{"className":"chip","children":"governance"}]}],["$","li","architecture",{"children":["$","span",null,{"className":"chip","children":"architecture"}]}]]}]]}]]}]
-18:["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Mar 2026"}]
-19:["$","li","local-first-semantic-layers",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/local-first-semantic-layers","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"The case for local-first semantic layers"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"When the operator is the user, a single binary on their laptop beats a hosted control plane more often than the industry admits. Iceberg + DuckDB on hardware you already own does more than expected. And the trade-offs aren't where you'd guess."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","semantic-layer",{"children":["$","span",null,{"className":"chip","children":"semantic-layer"}]}],["$","li","local-first",{"children":["$","span",null,{"className":"chip","children":"local-first"}]}],["$","li","architecture",{"children":["$","span",null,{"className":"chip","children":"architecture"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Jan 2026"}]]}]}]
-1a:["$","li","agent-memory-as-infrastructure",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/agent-memory-as-infrastructure","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"Agent memory as infrastructure, not chat history"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Treating agent memory as persistent infrastructure. With typed writes, provenance, retrieval policy, and decay. Changes what agents can do across sessions and tools. Chat history is a symptom, not a system."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","agent-memory",{"children":["$","span",null,{"className":"chip","children":"agent-memory"}]}],["$","li","infrastructure",{"children":["$","span",null,{"className":"chip","children":"infrastructure"}]}],["$","li","relay",{"children":["$","span",null,{"className":"chip","children":"relay"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Feb 2026"}]]}]}]
-1b:["$","li","database-partitioning",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/database-partitioning","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"A working note on database partitioning"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Partitioning strategies, secondary index trade-offs, rebalancing, and service discovery. The four decisions you actually have to make when a single node stops being enough. Plus what Discord learned moving trillions of messages from Cassandra to ScyllaDB."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":[["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"orig. on Medium"}],["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","databases",{"children":["$","span",null,{"className":"chip","children":"databases"}]}],["$","li","distributed-systems",{"children":["$","span",null,{"className":"chip","children":"distributed-systems"}]}],["$","li","partitioning",{"children":["$","span",null,{"className":"chip","children":"partitioning"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Dec 2025"}]]}]}]
-1c:["$","li","nyc-vehicle-crashes",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/nyc-vehicle-crashes","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"Analyzing NYC vehicle crashes. A cloud-native data engineering build"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"A GCP build that pulls NYC's open crash, taxi, traffic, and weather feeds into a single analytical surface. Notes on why we picked Compute Engine + Dataproc over Composer + Dataflow, where the batching limits actually bit, and what would change in v2."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":[["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"orig. on Medium"}],["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","data-engineering",{"children":["$","span",null,{"className":"chip","children":"data-engineering"}]}],["$","li","gcp",{"children":["$","span",null,{"className":"chip","children":"gcp"}]}],["$","li","dataproc",{"children":["$","span",null,{"className":"chip","children":"dataproc"}]}],["$","li","bigquery",{"children":["$","span",null,{"className":"chip","children":"bigquery"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"Apr 2026"}]]}]}]
-1d:["$","li","mcp-proxy-as-enforcement-primitive",{"className":"border-b border-hairline","children":["$","$L6",null,{"href":"/writing/mcp-proxy-as-enforcement-primitive","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"The MCP proxy is the enforcement primitive"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Voluntary safety checks don't survive contact with a real agent. If you want a policy layer that actually stops destructive tools, it has to be in the request path. And once it is, you also get the team's shared context for free."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","mcp",{"children":["$","span",null,{"className":"chip","children":"mcp"}]}],["$","li","agent-infrastructure",{"children":["$","span",null,{"className":"chip","children":"agent-infrastructure"}]}],["$","li","policy",{"children":["$","span",null,{"className":"chip","children":"policy"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"May 2026"}]]}]}]
-1e:["$","li","trust-is-the-next-decades-problem",{"className":"","children":["$","$L6",null,{"href":"/writing/trust-is-the-next-decades-problem","className":"group grid items-baseline gap-2 py-6 sm:grid-cols-[1fr_auto] sm:gap-6","children":[["$","div",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"font-display text-[18px] font-semibold text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[20px]","children":"Trust is the next decade's problem"}],["$","p",null,{"className":"text-[13.5px] leading-[1.7] text-zinc-400 md:text-[14.5px]","children":"Intelligence is rapidly becoming abundant. Trust is becoming scarce. The interesting products of the next ten years won't be about generating better output. They'll be about figuring out which output to rely on."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","ul",null,{"className":"flex flex-wrap gap-1.5","children":[["$","li","trust",{"children":["$","span",null,{"className":"chip","children":"trust"}]}],["$","li","provenance",{"children":["$","span",null,{"className":"chip","children":"provenance"}]}],["$","li","ai-infrastructure",{"children":["$","span",null,{"className":"chip","children":"ai-infrastructure"}]}],["$","li","product",{"children":["$","span",null,{"className":"chip","children":"product"}]}]]}]]}]]}],["$","span",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500 sm:text-right","children":"May 2026"}]]}]}]
-1f:["$","section",null,{"id":"$undefined","className":"space-y-8 ","children":[["$","p",null,{"className":"eyebrow","style":"$undefined","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true,"style":"$undefined"}],"Archive"]}],["$","p",null,{"className":"max-w-2xl text-[13.5px] leading-[1.7] text-zinc-500","children":"Earlier writing on Medium. Kept for context but not the work I'd point to first. Each links out to the original."}],["$","ul",null,{"className":"grid gap-3 sm:grid-cols-2","children":[["$","li","introduction-to-linux",{"children":["$","a",null,{"href":"https://medium.com/@sgx08/introduction-to-linux-329a9ca18782","target":"_blank","rel":"noopener noreferrer","className":"surface group flex h-full flex-col gap-2 p-5","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-2","children":[["$","h3",null,{"className":"font-display text-[15px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[15.5px]","children":"Introduction to Linux"}],["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"Jul 2020"}]]}],["$","p",null,{"className":"text-[12.5px] leading-[1.65] text-zinc-500","children":"A starter cheatsheet for working in a shell. Terminal controls, file management, permissions, process inspection, services, and the small set of commands you&apos;ll reach for daily. Written for someone moving from a GUI-only OS."}],["$","span",null,{"className":"mt-auto pt-1 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500 transition-colors group-hover:text-accent","children":"Read on Medium ↗"}]]}]}],["$","li","the-data-engineering-guide",{"children":["$","a",null,{"href":"https://medium.com/@sgx08/the-data-engineering-guide-8da1f500acc6","target":"_blank","rel":"noopener noreferrer","className":"surface group flex h-full flex-col gap-2 p-5","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-2","children":[["$","h3",null,{"className":"font-display text-[15px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[15.5px]","children":"The data engineering guide"}],["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"Jul 2020"}]]}],["$","p",null,{"className":"text-[12.5px] leading-[1.65] text-zinc-500","children":"A learning roadmap I wish I&apos;d had when I started. Programming &amp; data structures, SQL and database internals, big-data systems, data stores, and the DevOps surface area you can&apos;t avoid. Five years later most of it still holds."}],["$","span",null,{"className":"mt-auto pt-1 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500 transition-colors group-hover:text-accent","children":"Read on Medium ↗"}]]}]}],["$","li","the-web-architecture",{"children":["$","a",null,{"href":"https://medium.com/@sgx08/the-web-architecture-77d1c19a309a","target":"_blank","rel":"noopener noreferrer","className":"surface group flex h-full flex-col gap-2 p-5","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-2","children":[["$","h3",null,{"className":"font-display text-[15px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[15.5px]","children":"The web architecture"}],["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"Jul 2020"}]]}],["$","p",null,{"className":"text-[12.5px] leading-[1.65] text-zinc-500","children":"A walkthrough of three-tier web architecture, request lifecycle, and the trade-offs between single-server, multi-server, and serverless deployments. Notes from when I was learning to design backend systems."}],["$","span",null,{"className":"mt-auto pt-1 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500 transition-colors group-hover:text-accent","children":"Read on Medium ↗"}]]}]}],"$L21"]}]]}]
-20:["$","div",null,{"className":"surface writing-notify p-6 md:p-9","children":[["$","p",null,{"className":"font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500","children":"Notify"}],["$","p",null,{"className":"mt-2 text-[14px] leading-[1.7] text-zinc-300 md:text-[15px]","children":["To get a heads-up when drafts publish,"," ",["$","a",null,{"href":"mailto:sagardas.work@gmail.com?subject=Writing%20updates","className":"text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-white hover:decoration-accent","children":"email me"}]," ","and I'll add you to a small list. No newsletter. Just a one-line note when a post ships."]}]]}]
-21:["$","li","version-control-git",{"children":["$","a",null,{"href":"https://medium.com/@sgx08/version-control-git-6c05f5c93a5a","target":"_blank","rel":"noopener noreferrer","className":"surface group flex h-full flex-col gap-2 p-5","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-2","children":[["$","h3",null,{"className":"font-display text-[15px] font-medium text-terracotta transition-colors group-hover:text-terracotta-2 md:text-[15.5px]","children":"Version control. Git"}],["$","span",null,{"className":"font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600","children":"Jul 2020"}]]}],["$","p",null,{"className":"text-[12.5px] leading-[1.65] text-zinc-500","children":"A practical walk through local, centralized, and distributed VCS, then a working command reference for Git. Branching, stashing, the commit object model. Written for someone learning the tool from first principles."}],["$","span",null,{"className":"mt-auto pt-1 font-mono text-[10px] uppercase tracking-eyebrow text-zinc-500 transition-colors group-hover:text-accent","children":"Read on Medium ↗"}]]}]}]
+15:[["$","title","0",{"children":"Writing · Sagar Das"}],["$","meta","1",{"name":"description","content":"Notes on AI, agentic systems, and architecture. Search the archive or explore it by year and month."}],["$","meta","2",{"name":"author","content":"Sagar Das"}],["$","meta","3",{"name":"keywords","content":"Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, Kivi, Buntini"}],["$","meta","4",{"property":"og:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","5",{"property":"og:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","9",{"name":"twitter:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","link","10",{"rel":"icon","href":"/icon.svg?icon.03ipqvl54a455.svg","sizes":"any","type":"image/svg+xml"}],["$","$L16","11",{}]]
+17:I[17411,["/_next/static/chunks/08u15am15yjr4.js","/_next/static/chunks/0n4z.7yu76je-.js","/_next/static/chunks/0v-8m8nx7u4wr.js"],"default"]
+18:T1356,I think the useful shift in AI products is from generating an answer to carrying responsibility for a bounded piece of work.
+
+That changes the interface problem. An answer can live in a message. Work has inputs, permissions, intermediate effects, unresolved decisions, and a result that may outlive the conversation.
+
+A longer context window can help the model reason about that work. It does not establish its authoritative state. The product needs an explicit agreement about the outcome, what may be done to reach it, and what will count as completion.
+
+That agreement is the work contract. My bet is that it becomes a more important product surface as people delegate longer tasks.
+
+## The contract underneath the conversation
+
+A useful work contract contains several kinds of information:
+
+- **Outcome.** What the user wants produced or changed.
+- **Constraints.** Requirements the result and process must preserve.
+- **Authority.** Resources, operations, and decisions available to the agent.
+- **Allowance.** Time, spending, and execution bounds.
+- **Evidence.** How completed effects and claims will be established.
+- **Remaining work.** Obligations, approvals, and uncertainty that prevent completion.
+
+A conversational interface can help create and revise that agreement. It should not be the only place where the agreement exists.
+
+
+
+The model can change its approach while the system preserves the agreed boundaries. A revised goal or materially different effect can require a revised contract rather than silently inheriting old permission.
+
+## Artifacts and evidence need different places
+
+One symptom in the workspace was the same answer appearing in as many as four regions: the center document, recent-answer strip, right-hand card, and right-hand prose. The regions were all views of a shared conversation, so each reproduced the same output.
+
+The redesign assigned ownership. The center held the active artifact. The rail held evidence about that artifact. The library held prior outputs. Some deeper per-producer run isolation remained deferred; presentation changes could not supply missing execution identity.
+
+That is a broader interface lesson. Decide what a surface produces or explains before adding another panel.
+
+
+
+The diagram is an interface model, not a shipped-feature claim. The useful property is that different views agree on the same work instead of inventing their own version of it.
+
+## Human attention should follow unresolved decisions
+
+An agent that asks for approval repeatedly can consume more attention than it saves. An agent that hides changed assumptions can consume authority the person did not grant.
+
+The contract gives the system a way to distinguish those cases. An unchanged approved detail remains settled. A different revision or expanded scope becomes a meaningful decision. An unknown write needs reconciliation rather than another generic Continue button.
+
+This is why I expect a single autonomy slider to be insufficient for serious work. Data access, external effects, spending, and interruption are independent choices. Different tasks need different combinations.
+
+The interface can summarize those choices without making the user operate a policy engine. It still needs an execution model precise enough to honor the summary.
+
+## Longer task horizons do not remove the infrastructure
+
+METR's [task-completion time-horizon work](https://metr.org/time-horizons/) estimates success at specified reliability levels on tasks measured by human completion time. The software-focused suite is not a direct measure of uninterrupted safe operation by a personal assistant.
+
+Benchmark progress can justify attempting more ambitious tasks. It does not establish whether a product preserves approvals after restart, reconciles external effects, or continues executing while a desktop process is quit.
+
+Those are separate promises with separate evidence. Better models can reduce interpretation and planning failures while leaving the product responsible for authority, continuity, and delivery.
+
+## The durable product boundary
+
+The user's work should retain a coherent identity through model changes. Completed effects should remain completed. A spending limit should not reset. Source restrictions should not disappear when context becomes history. A useful artifact should remain inspectable after the original conversation is no longer relevant.
+
+This is where I would put the durable boundary: the product owns the contract and the work record; models supply reasoning within it.
+
+The cost is more state and more explicit recovery than a chat wrapper requires. The gain is a system the person can return to and understand: what happened, what remains, what needs a decision, and what evidence supports the result.
+
+That is the direction I am interested in building toward. Intelligence makes more work possible. A dependable work contract makes that possibility something a person can delegate.
+19:T13e1,The usual multi-agent diagram divides reasoning into roles: planner, researcher, executor, reviewer. Each role sounds sensible. The diagram says little about the state they share.
+
+Which revision is accepted? Who owns an approval? Can the reviewer authorize a fix? Which worker may write a file? Does each child inherit the entire budget? Who establishes that the task is complete?
+
+Those questions belong to the execution model. Adding agents before answering them distributes uncertainty across more conversations.
+
+A useful division is separate reasoning contexts over one authoritative account of the work.
+
+## A role is a composition of capabilities
+
+The workspace's kernel decision defined roles through instructions, tools, policies, capabilities, and expected artifact targets. Planning, execution selection, authority, context controls, and persistence belonged to the common substrate.
+
+The motivation was concrete. Runtime profile had been used for both reasoning configuration and compute destination, and different entry points could resolve execution independently. Another specialist backend would have added another path through that ambiguity.
+
+The accepted design had an initial implementation; it was not evidence that every legacy path had already converged. It established the direction in which new roles had to fit.
+
+
+
+The roles can see different evidence and produce different outputs. They should not invent independent meanings of approved, executed, or complete.
+
+## Define the return contract before spawning
+
+A summary, a code revision, a test result, and a review finding need different merge rules.
+
+A code contribution needs a base revision and an allowed write scope. A test result needs to identify the artifact it exercised. A research contribution needs inspectable evidence. A reviewer finding identifies a problem; it does not grant permission to perform the fix.
+
+The parent needs a criterion for accepting each contribution. Without it, the merge becomes another generation step comparing several confident accounts of progress.
+
+Anthropic's [agent-pattern discussion](https://www.anthropic.com/research/building-effective-agents) includes parallelization and orchestrator-worker arrangements. The relevant question is whether a particular task has a division whose results can be combined under a clear contract. A role list alone does not establish that division.
+
+This is also where the overhead becomes visible. More contexts mean more initialization, communication, evidence selection, and reconciliation before the system changes anything useful.
+
+## Delegated authority should narrow
+
+The reviewer inspecting a file does not automatically need the executor's mutation rights. A worker investigating a dependency does not need authority to deploy the final artifact.
+
+The assignment should identify the resources, operations, context, and budget it permits. Dispatch should enforce those bounds. A prompt that calls a worker read-only is not sufficient if its tool path can still write.
+
+
+
+This is a design requirement, not a claim that every project version already enforced a complete delegated capability system. The important architectural property is that creating another worker cannot create more authority than the task possesses.
+
+The same rule applies to budgets. A child receives an allocation from shared capacity, not a fresh copy of the parent's whole allowance.
+
+## Disagreement needs a resolution policy
+
+Two workers can produce incompatible conclusions. Another round is useful if it supplies new evidence, tests a disputed assumption, or asks the person for a decision the system cannot make.
+
+Repeated review without a new information source can become an expensive cycle. A repair limit and a durable unresolved finding are more honest than indefinite coordination.
+
+The shared task record should retain which contribution was accepted, the revision it refers to, and which obligations remain. That is what lets a later model explain the outcome without reconstructing it from several transcripts.
+
+A new reasoning context can improve independence. It does not remove the need for an authoritative state transition when a suggestion becomes an accepted change.
+
+## When another agent is worth it
+
+Separate contexts can be useful for independent investigations, bounded parallel work, or reviews where inheriting the writer's entire reasoning would be undesirable. They are less attractive when workers repeatedly wait on one another or mutate the same state without clear ownership.
+
+The tradeoff is task-specific: improved reasoning or latency against the cost of coordination and context duplication. It should be measured at the level of the completed task.
+
+The user should see one coherent account of the requested outcome, the contributions, the decisions, and the result. They should not have to reconcile the agents' organizational chart themselves.
+
+A multi-agent system becomes dependable when specialized reasoning fits inside a shared execution model. The number of participants is downstream of that decision.
+1a:T1427,A personal assistant sits between ambiguous language and exact systems.
+
+The request can be casual. The reminder still has a specific due time. The note still has a literal title and body. The calendar event still has an identity, a date, and an offset. The destination app does not execute the general feeling of what the user meant.
+
+That makes a useful assistant a combination of language interpretation and constrained execution. The model can translate intent into a proposal. The surrounding system has to preserve the details that stop being negotiable once the intent is clear.
+
+## The boundary becomes visible in ordinary work
+
+One controlled companion probe selected Calendar correctly and then proposed a reminder at 12:30 instead of the required 08:30, omitting the source event's identity. No app effect was dispatched.
+
+The selected tool was right. The derived arguments were wrong.
+
+That distinction is easy to miss in a tool-selection benchmark and difficult to ignore in a reminder. It also explains why adding more integrations is not sufficient progress. Each integration needs a contract for how its observations become the next action's inputs.
+
+For a supported event-preparation request, the chain includes source scope, event selection, time arithmetic, approval, and write verification. All of them participate in correctness.
+
+## Keep exact operations exact
+
+Once the selected event and lead time are established, subtracting a duration is a deterministic operation. A second model turn does not need to rediscover the arithmetic.
+
+A meeting at `10:00+02:00` with a thirty-minute lead produces `09:30+02:00`. Retaining the offset and source identity matters as much as computing thirty minutes. The value is not an unqualified 09:30 in whichever time zone a later component assumes.
+
+
+
+The calculation above is illustrative. The architecture property is that the derived value retains its inputs and meaning through approval and execution.
+
+The same principle applies to literal content. A quoted note body should not absorb a following reminder clause. An exact requested title should not be rewritten to sound more natural. These are data-preservation rules at the edge of language understanding.
+
+## Narrow deterministic routes need honest limits
+
+The companion supports a specific first-event preparation form: an explicit date and one supported minute or hour lead time. Ambiguous, partial, tied, all-day, malformed, or unsupported selections pause.
+
+That is a meaningful capability because its conditions are stated. It is not a claim to understand arbitrary scheduling language.
+
+A narrow parser becomes dangerous when the product silently treats a partial match as full understanding. Unsupported wording needs clarification or another supported route. It should not be squeezed through a grammar that has already lost an important constraint.
+
+
+
+The point is to constrain the unresolved part without asking the person to repeat everything already established.
+
+## Personality and task state are different layers
+
+A companion can be warm, expressive, and quiet. Its task state still needs precise meanings.
+
+Waiting for a date, waiting for approval, saved, failed, and unknown describe different execution conditions. Conversational language should express those conditions rather than smooth them into the same reassuring response.
+
+This matters because completion transfers attention. A person told that a reminder exists may stop remembering to create it. The assistant's final sentence is part of the functional behavior, not just a stylistic flourish.
+
+The controller should therefore derive completion from retained evidence and prevent speculative success narration from preceding the tool result.
+
+## Proactivity requires a host and a scope
+
+Morning briefs, saved searches, and monitors extend the same requirements over time. They need an approved recurring scope, a schedule, a responsible executor, retained results, and a delivery policy.
+
+A saved due time is not an executor. A local task cannot promise continuous progress while its process is quit unless another execution host exists. Recovery of overdue work is a different promise from on-time delivery.
+
+The interface should also distinguish a meaningful change from an unchanged check. A monitoring agreement is useful when it protects attention, not when every interval creates another unnecessary update.
+
+## The acceptance test should cross the whole boundary
+
+A correct proposal is only part of an assistant workflow. The useful journey includes an edit, a cancellation, an approval, the destination effect, and its readback. Recovery needs a separate check after dispatch and before confirmation.
+
+Controller fixtures can establish state-machine behavior with synthetic evidence. Live model probes can expose argument and routing failures. Real destination acceptance needs controlled records on the actual device.
+
+A personal assistant earns breadth by preserving those distinctions across increasingly useful tasks. The architecture should be judged by the reliability of the everyday promise, not the number of app names in the integration picker.
+1b:T1253,The usual way to limit an agent is to cap one request: maximum output tokens, a timeout, or a maximum number of turns.
+
+Those are useful controls. They do not describe the whole task when the task can retry, spawn children, run tools, or submit external jobs.
+
+Autonomy needs an aggregate contract. The system has to know which resources are available, which have been reserved, which were consumed, and which remain uncertain. Otherwise each component can obey its local limit while the overall task exceeds the user's agreement.
+
+## A limit needs a unit and a scope
+
+Several independent resources can grow:
+
+- model requests and generated tokens;
+- agent steps and repair attempts;
+- delegated workers and recursion depth;
+- tool calls, scans, and remote jobs;
+- elapsed time and the user's attention.
+
+The workspace harness bounded steps, per-category retries, fan-out, and depth. Each cap addressed a particular path through which work could multiply. No single one established the cost of every possible external operation.
+
+That is the useful discipline: name the resource, name the scope, and put the check where the resource is committed.
+
+## Delegation requires allocation
+
+Suppose a parent has an illustrative twelve-dollar allowance and gives the same twelve-dollar allowance to each of three children. Every child can comply while their combined spend reaches thirty-six dollars.
+
+The arithmetic is not a measured bill. It demonstrates that copying a limit is different from dividing an allowance.
+
+A task-level budget needs shared reservations before dispatch:
+
+
+
+The reservation has to be coordinated. If parallel workers can all read the same available amount before any reservation lands, the ledger describes the overrun after it happens instead of enforcing the boundary.
+
+A bounded run tree alone does not provide that accounting. Hierarchical reservation is a design requirement I would add before claiming an aggregate delegated-spend guarantee.
+
+## Retry policy is resource policy
+
+A policy denial, rejected approval, unavailable runtime, and uncertain write should not share one retry loop.
+
+A second attempt is useful only if it has a plausible chance of changing the outcome without violating authority or duplicating an effect. A denial does not become permission because the loop has iterations remaining.
+
+The workspace classified failures before applying attempt limits and backoff. The companion separately allowed defined read recovery while blocking automatic retry of failed or unknown writes where the effect could be uncertain.
+
+This turns retry from a generic resilience mechanism into a decision with a reason. The reason should remain visible beside the count.
+
+## Unknown usage cannot be treated as zero
+
+Provider responses can be incomplete after the provider has accepted work. A disconnected request may lack final usage data while still consuming resources.
+
+The companion's accounting fix retains the reservation when complete usage is absent. Explicit zero usage and missing usage are different observations.
+
+
+
+This is the resource version of an unknown external write. Missing confirmation does not establish absence. Automatically refunding incomplete responses makes the budget least conservative when its observation is least complete.
+
+## Progress needs its own check
+
+An agent can remain inside a resource limit and still waste work. It can reread the same source, regenerate the same invalid proposal, or continue planning after the requested effects are already verified.
+
+For supported action-only companion tasks, completion from verified outcomes gives the controller a reason to stop. The model does not need to keep inventing activity after the task has evidence.
+
+Open-ended investigation needs a less mechanical progress signal. It still benefits from explicit repetition limits and a defined transition to clarification, a changed approach, or a partial result.
+
+The budget sets an outer boundary. Progress checks decide whether another iteration is worth spending inside it.
+
+## What the user should be able to agree to
+
+The interface can summarize a multidimensional contract as a useful scope: which work, which effects, how much resource use, and when another decision is required.
+
+The user should not have to approve every token or child call. The execution system should be able to honor the larger agreement without treating every worker as a fresh source of permission and money.
+
+This is the infrastructure cost of meaningful autonomy. An assistant that can choose more actions also needs an account of why it may continue choosing them. Otherwise a spending cap is a label in the interface, not a property of the run.
+1c:T1290,An agent evaluation is a program around another program. It has authentication, fixtures, transport, event parsing, scoring, and reporting. Any of those can be wrong.
+
+That makes a clean pass rate less informative than it first appears. The system may have completed the task, or the test may have failed to reach the state in which failure was possible.
+
+A useful evaluation has to establish its preconditions before interpreting its assertions. That is especially important for agent safety and lifecycle tests, where doing nothing can look like correct restraint.
+
+## A stop test with nothing running
+
+An early live runtime record reported a successful stop test even though the worker had not authenticated. The harness treated an authentication-error event labeled as assistant output as evidence that a streaming turn had started.
+
+No useful streaming turn existed. The interruption result was invalid.
+
+A separate restart result was weak for a related reason: a subsequent run produced no events. Failing to recall a sentinel did not prove safe history behavior if the worker had failed before meaningful recall could occur.
+
+The defects were in the harness's interpretation of the run, not in the model's ability to perform the task.
+
+
+
+The old record stayed invalid after the predicate was repaired. Later reruns supplied new evidence. Keeping those records separate prevents a convenient pass label from surviving after its meaning has been disproved.
+
+## Negative assertions need positive controls
+
+No forbidden tool ran can mean that the boundary worked. It can also mean that no tool could run at all.
+
+A confinement test should establish a permitted path inside the intended boundary. A revocation test should establish that the capability was available before revocation. An interruption test should establish active work before stopping it.
+
+These positive controls make the negative result interpretable. They do not turn one prompt into a universal guarantee. They establish that the test exercised the property it names under the recorded conditions.
+
+A minimal interruption sequence is:
+
+
+
+A generic assistant event is not a substitute for the second line.
+
+## Certify the answer key too
+
+The earlier SQL evaluation ran canonical queries against the real engine on controlled fixtures before comparing generated results. That tested the expected answers rather than assuming they were correct.
+
+The comparison contract also matters. Row order, duplicate rows, numeric tolerance, and date representation can each turn a correct result into an apparent failure or an incorrect result into a pass.
+
+An end-to-end Python evaluation exposed a different boundary: dates were serialized into internal representations that SQL checks had not exercised. That is a useful reminder that component correctness does not establish agreement between components.
+
+The evaluation should follow the path whose behavior it claims to measure.
+
+## Keep the evidence layers distinct
+
+There are three different kinds of evidence in the companion's evaluation approach.
+
+**Controller fixtures.** Real controller logic receives synthetic observations and receipts. These can test approval consumption, unknown-write blocking, cancellation transitions, and completion checks.
+
+**Live model probes.** A tested model receives controlled requests and evidence. These can measure tool and argument selection for those cases, without necessarily dispatching real effects.
+
+**Controlled device journeys.** The actual application performs supported operations against disposable destination records. The resulting state is read back and compared with the request and approved fields.
+
+Passing one layer does not certify the others. A synthetic receipt cannot prove a real Calendar write. A correct model proposal does not prove restart recovery. A successful app write does not establish interpretation quality across arbitrary requests.
+
+## Report failure categories instead of hiding them in one score
+
+Task success, false success, unintended effects, duplicate writes, human intervention, and latency describe different product properties.
+
+A correctly handled injected failure can pass its scenario without completing the requested task. A model can select the right tool and use the wrong deadline. A final answer can sound correct while its destination receipt is missing.
+
+Collapsing those cases into one rate removes the information needed to decide what to fix next.
+
+The evaluator should produce a trace from result to diagnosis: which prerequisite existed, which boundary was exercised, which assertion failed, and what evidence supports the classification. That is what makes an evaluation useful after the model, provider, or operating system changes.
+1d:T1363,Agent systems often let the model decide when to stop and what to say about the result. That is reasonable for open-ended reasoning. It is insufficient as the only completion check for work with external effects.
+
+The model can describe an action that never ran. A tool can succeed while the request remains incomplete. A citation can resolve to a real page without supporting the sentence beside it.
+
+The completion layer needs to distinguish those cases. Its job is to connect evidence to the obligations in the task, rather than inherit the status of the most recent operation.
+
+## What a receipt actually proves
+
+A receipt has a verification scope.
+
+For a supported reminder write, it can identify a destination object and confirm its requested fields. For a browser handoff, it may establish only that navigation was requested. For a shortcut, it may establish only a reported command outcome.
+
+Treating all three as equivalent success gives the final answer permission to claim more than the executor knows.
+
+
+
+The model can help assess semantic requirements. The controller can enforce concrete requirements such as the presence of a verified write receipt. Neither should silently claim to establish what the other has not checked.
+
+## Outcomes must remain separate
+
+A request to create a note, create a reminder, and explain a decision has several obligations. The note receipt satisfies one. It cannot hide the reminder or remove the requested explanation.
+
+The companion's task contract records read, write, and answer outcomes with dependencies. Results are attached to the outcomes they satisfy. A task remains unfinished when a required effect lacks evidence, even if its latest tool returned success.
+
+The contract is an interpretation of intent, so it can be incomplete. The original request and clarifications need to remain inspectable. An explicit wrong contract is not a correct task; it is at least a specific thing the person can correct.
+
+This distinction is also useful for research. Opening a search tab is complete navigation. It is not complete comparison, and it should not unlock a dependent write merely because a browser operation succeeded.
+
+## Read evidence needs a coverage contract
+
+A returned list is not necessarily the complete source. A complete record list is not necessarily complete record content. An unknown total is not zero.
+
+Useful observations retain:
+
+- the resource and selection scope;
+- when the observation was made;
+- the records returned and the total when known;
+- whether the result set is complete;
+- whether individual contents were truncated.
+
+Those fields let the controller reject an observation that cannot satisfy a required source read. They also give the answer a truthful basis for explaining limited coverage.
+
+The interface does not need to expose every field. It does need to avoid turning bounded evidence into an unbounded claim.
+
+## Citation validation is not factual entailment
+
+The research controller can check that every citation refers to a page actually read. It can require sources for comparisons and reject malformed references. Those are useful structural checks.
+
+They do not independently establish that every claim follows from the page. Multiple hosts do not establish source independence. The model's statement that coverage is complete does not independently verify that all user constraints were applied.
+
+
+
+Naming that boundary matters. A status called verified can imply more than reference validation supplies. A useful evidence model says which check passed and leaves the remaining judgment visible.
+
+## Final language should follow execution
+
+A model can narrate success before a proposed tool has run. Streaming that narration immediately creates a completion claim the application may later have to contradict.
+
+The companion withholds speculative tool narration and reconciles final output with retained outcomes and receipts. Missing or unknown writes cannot support a success claim. A task with verified partial progress can report that progress without claiming the whole request is complete.
+
+This is the same architectural move as [putting refusal in the orchestration layer](/writing/refusal-is-the-feature): the system controls which claims it is prepared to return, using the evidence it actually has.
+
+## What this leaves open
+
+Mechanical completion checks do not eliminate semantic judgment. A written note can match the approved fields while containing a poor explanation. A comparison can cite real sources and still miss the important distinction.
+
+The architecture should make those remaining questions easier to inspect, not hide them beneath a success label.
+
+The useful output of a completion layer is a scoped account: these effects have receipts, these requirements remain open, and this uncertainty prevents continuation. That is a stronger foundation for trust than letting the model's final sentence be the only record that the job was done.
+1e:T13e7,
+I think trust is the problem of the next decade.
+
+Not AI. Not agents. Not models. Trust.
+
+Because intelligence is rapidly becoming abundant, and trust is becoming scarce.
+
+Twenty years ago, information was scarce. Google won because it helped people find it. Today information is effectively infinite, and the question became: which information can I trust?
+
+AI accelerates that question dramatically.
+
+## Signal is already collapsing in three places
+
+**Code.** Before AI, the answer to &ldquo;who wrote this?&rdquo; was a name. John on the platform team. Today the honest answer is some mixture of John, Claude, Copilot, Cursor, a contractor, three interns, and nobody quite remembers. Attribution is becoming a fog.
+
+**Documents.** Before AI you could assume the author understood what they wrote. Today a document could be human-written, AI-generated, AI-edited, AI-summarized, AI-translated, or AI-stitched together from five other documents. Authorship as a guarantor of meaning is dissolving.
+
+**Recruiting.** Resume inflation existed. Now AI writes the resume, the cover letter, the LinkedIn posts, the portfolio, and the take-home assignment. Every candidate looks amazing. The signal collapses entirely.
+
+
+
+## What knowledge work used to lean on
+
+Companies trusted credentials, resumes, references, and brand. All four are weakening.
+
+A credential certifies attendance, not capability. A resume narrates whatever the writer (or their AI) wants narrated. References are increasingly LLM-summarized themselves. Brand still matters, but it concentrates power in fewer institutions and tells you less and less about the individual contribution underneath.
+
+The question stops being &ldquo;is this person impressive?&rdquo; and becomes &ldquo;how do I know this person, system, or agent is reliable?&rdquo;
+
+That&apos;s a different question. Nobody has a good answer for it yet.
+
+## Provenance is more interesting than &ldquo;memory&rdquo;
+
+This is the deeper idea underneath what I&apos;m building inside [Relay](/projects/relay). The shorthand for that work is usually &ldquo;agent memory,&rdquo; but memory is the smaller version. The actual idea is whether we can preserve provenance for AI-assisted work. Not just what happened, but:
+
+- why it happened
+- who (or what) decided it
+- what evidence existed at decision time
+- what alternatives were considered
+- what changed afterward, and whether the original decision still holds
+
+That&apos;s trust infrastructure. It looks unglamorous next to &ldquo;we generated 10x more code.&rdquo; It is also probably the thing the next decade ends up valuing most.
+
+## Three layers, only one of which is mostly solved
+
+
+
+**Identity.** Who are you? LinkedIn handles it imperfectly for people. OAuth and SSO handle it for systems. Mostly solved.
+
+**Capability.** What can you do? Resumes try, portfolios try, benchmarks try. Most of the attempts are noisy and getting noisier.
+
+**Trust.** Can I rely on your work? Mostly unsolved. This is the layer everything actually depends on, and it has the worst tooling.
+
+## More intelligence can reduce trust
+
+This is the part most AI-product roadmaps haven&apos;t internalized.
+
+Imagine a future agent that writes code, legal documents, and financial models better than the best humans. The hard question isn&apos;t &ldquo;can it generate the output?&rdquo; That question is already being answered. The hard question is &ldquo;why should I trust the output?&rdquo;
+
+Generation is being solved. Verification isn&apos;t. Every additional unit of intelligence makes the verification problem harder, not easier, because more plausible output means more output that has to be checked.
+
+## The accidental commodity
+
+A lot of AI startups are quietly competing in what&apos;s becoming a commodity layer. Better generation, better prompting, better workflows. The long-term value probably lives somewhere else: provenance, verification, auditability, reputation, trust networks.
+
+The internet solved information discovery. AI is solving information generation. The next wave is about information trustworthiness, and more broadly, decision trustworthiness, which applies equally to people, teams, AI agents, software systems, and organizations.
+
+## Trust can&apos;t be declared
+
+You can&apos;t launch &ldquo;we are the trust platform.&rdquo; Trust emerges from repeated, verifiable interactions over time. That&apos;s why the durable trust signals on the internet look the way they do:
+
+- credit scores
+- GitHub contribution history
+- Stack Overflow reputation
+- package ecosystem maintainer histories
+- academic citations
+
+None of them measure claims. All of them measure accumulated evidence.
+
+That&apos;s the distinction, and it&apos;s the one I find myself coming back to most often when building anything in the AI era. The interesting product surfaces are the ones that capture provenance as a side effect of the work actually happening, rather than the ones that ask users to assert it after the fact.
+
+The generation problem is being solved. The verification problem is open. I&apos;d build on the open one.
+1f:T1572,
+There&apos;s a recurring pattern in RAG products where the response to &ldquo;the model invented an answer because the corpus didn&apos;t actually have one&rdquo; is to make the prompt nicer. Add &ldquo;only answer if you&apos;re sure.&rdquo; Add &ldquo;cite your sources.&rdquo; Add a worked example of an honest refusal. Switch models. Re-tune the temperature.
+
+This is a losing game. The model is doing exactly what it was trained to do, which is produce fluent text continuations. The fluent continuation in the absence of relevant context is a confidently-wrong answer. You can soften the slope by being polite to it, but you can&apos;t change the destination.
+
+The winning move is to handle refusal in the orchestration layer.
+
+## The shape
+
+Before any answer is generated, the retrieval pipeline produces a confidence signal. How well the top result actually matches the question. If that signal falls below a calibrated threshold, the orchestration layer returns the literal sentence &ldquo;I don&apos;t have enough information to answer that&rdquo; instead of running an answer step at all. No fluent continuation gets a chance to invent something.
+
+This is the primary defense against confidently-wrong answers on out-of-corpus questions. Everything else. Better prompting, better models, better retrieval. Moves the failure rate around the edges. The threshold gate sets the ceiling on it.
+
+
+
+## Why the gate goes after the precision step, not the recall step
+
+A natural impulse is to gate on the initial retrieval. If the recall step returns nothing relevant, refuse. Two reasons that&apos;s the wrong place.
+
+The recall step optimizes for recall. It returns top-k candidates including a long tail of semi-relevant matches that look reasonable to a similarity score and read as completely off-topic to a human. A recall-stage threshold either fires constantly (recall is doing its job) or you turn it down so far it stops gating anything.
+
+The precision step optimizes for precision. It produces a calibrated signal about &ldquo;is the top result actually relevant?&rdquo;. Which is the only signal in the pipeline that&apos;s aligned with the question the gate is actually asking. So the threshold goes after the precision step. The cost of running it on a query that will refuse is real but small. The cost of skipping it is fluent hallucination on the cases the corpus doesn&apos;t support. That&apos;s the exact failure mode the gate exists to prevent.
+
+## The companion: don&apos;t trust the model to invent citations
+
+The threshold gate handles &ldquo;the corpus has nothing.&rdquo; The other failure mode is &ldquo;the corpus has something, but the model invented additional citations to make the answer feel more authoritative.&rdquo; Different problem, same family.
+
+The fix is parallel. The model is required to mark every claim with a citation token that points to a specific retrieved passage. After the answer comes back, a deterministic step walks every citation token and verifies it maps to a real retrieved passage. Anything that doesn&apos;t map is dropped from the answer.
+
+We don&apos;t trust the model to invent citations. The orchestration layer is the source of truth on what was actually grounded.
+
+
+
+This sounds like a small detail. It&apos;s the difference between a confident-looking answer with a fabricated reference next to a sentence the corpus doesn&apos;t actually support, and an answer that simply elides that sentence. The first is worse than refusing. The second is what users can build trust on.
+
+## What this trades off
+
+Three things, honestly.
+
+Some legitimate questions get refused because the corpus does support them but the precision signal doesn&apos;t cross the threshold. The fix is corpus engineering. Better chunking, better question expansion. Not lowering the threshold. The threshold is the dial you keep your hands off of.
+
+A refused query still pays the cost of the retrieval pipeline. That feels worse than a snappy &ldquo;I don&apos;t know&rdquo; that doesn&apos;t check anything. We accept it because the alternative is an answer step (more cost, plus the hallucination risk).
+
+Users have been trained to expect an answer to every question. A product that refuses occasionally feels worse on the first day and better on the tenth, because every answer that does come back is one users can trust. Optimize for day ten.
+
+## The general lesson
+
+When you&apos;re combining a probabilistic component with a deterministic orchestration layer, put the safety primitive in the orchestration layer. Don&apos;t try to make the probabilistic component safe by talking to it nicely. The probabilistic component is doing what it&apos;s built for; the orchestration layer is where you get to decide what gets returned.
+
+This is the same shape as putting [enforcement in the request path](/writing/mcp-proxy-as-enforcement-primitive) rather than in a tool the agent voluntarily calls. The model gets to do its job. The orchestration layer gets to say &ldquo;yes, this is fine&rdquo; or &ldquo;no, this is not.&rdquo;
+
+For RAG specifically: a refusal threshold and a citation post-processor are the two cheapest, most effective defenses against the failure mode that breaks user trust. They&apos;re less interesting than model selection or embedding choice, which is exactly why teams skip them. They&apos;re also what separates a product users come back to from a demo that won&apos;t survive its first month with skeptical reviewers.
+20:T1262,
+When you wire a policy layer into an MCP-using agent stack, there are roughly two paths.
+
+The first looks elegant. You expose a tool the agent calls voluntarily before doing anything destructive. &ldquo;please check this command before running it.&rdquo; The check returns allow, warn, review, or block. The agent does the right thing.
+
+The second path looks heavier. A process sits between the agent and the tools it uses. Every action the agent attempts flows through. The proxy evaluates the same policy and decides whether to forward, forward with a note, or return a refusal the agent has to react to.
+
+The first path is the only one that fails. The second is the only one that works.
+
+
+
+## Why voluntary fails
+
+Three failure modes that show up almost immediately.
+
+The agent forgets. Not every time. Most of the time the check fires and everything is fine. But the variance over thousands of tool calls is non-zero, and the one call it forgets is the one with a destructive command in the argument. The base rate doesn&apos;t matter once you&apos;re past a meaningful number of operations; the tail does.
+
+There&apos;s a window between the check and the action. An agent that asks the policy layer for permission and then makes the destructive call has time between the two in which conditions can change. A different file gets staged, a context flips, a branch updates. The check passes against state A; the action fires against state B.
+
+The trust boundary is in the wrong place. A safety check that depends on the thing being checked to call it is not a safety check. It&apos;s a request for a status update. If your safety primitive is advisory, you&apos;re not enforcing anything; you&apos;re documenting intent.
+
+## The shape that works
+
+Put the policy layer in the request path. The agent doesn&apos;t know it&apos;s there. Every action the agent attempts is intercepted, evaluated, and either forwarded to the downstream tool or returned to the agent as a refusal it has to handle. Destructive operations stop being advisory because there is no path through the system that bypasses the check.
+
+The agent gets a structured refusal it can react to. Apologize, try a different tool, escalate to the human. There&apos;s no window in which the destructive thing happens because the policy was optional.
+
+## Capture as a byproduct
+
+The non-obvious consequence: once the policy layer is in the path, you also have a capture point.
+
+Every action becomes a record. What was attempted, what the policy said, what actually happened. That&apos;s the team&apos;s shared context, accumulated automatically as work proceeds. No separate instrumentation pipeline. No agent that has to remember to call a logging tool.
+
+This is why building enforcement and capture as separate things is a mistake. They&apos;re the same observation. If you&apos;ve put the layer in the path, you&apos;ve built both.
+
+## Static rules plus contextual judgement
+
+Static rules cover the obvious destructive cases. Clearly destructive shell commands, schema changes, force pushes, writes to credential files. They fall apart on the cases that need context. A write to a production system that&apos;s legitimate during a planned migration and illegitimate the rest of the time. A force push that&apos;s correct when the operator said &ldquo;rewrite my last three commits&rdquo; and wrong otherwise.
+
+The right shape is two layers in sequence. Static rules fire first. Fast, free, deterministic, auditable. Most decisions never need anything more. For the cases that genuinely require contextual judgement, the policy layer can defer to a model with the captured context. The deterministic layer is the floor; the contextual layer is the exception. Most teams skip this and try to use one or the other for everything; both directions end badly.
+
+
+
+## What this generalizes to
+
+The pattern reaches beyond agents. Any system where a process makes decisions you&apos;ll need to reason about later benefits from the same shape. Capture in the request path, enforce there, audit there. Voluntary instrumentation is a documentation artifact. Load-bearing instrumentation is a control.
+
+For agent stacks specifically: if your policy layer&apos;s primary surface is &ldquo;a tool the agent calls when it remembers to,&rdquo; you&apos;re not done yet. The proxy in the path is the enforcement primitive. The capture layer falls out of having put it there.
+
+That&apos;s been the most surprising lesson for me. I came in thinking the harder problem was the substrate. What to capture, how to type it, how to retrieve it. It is hard. But the substrate is downstream. The enforcement primitive is what makes everything built on top of it real.
+21:T147b,A tool catalog tells you what an agent could call. It does not tell you what the agent should be able to call in the current task state.
+
+The distinction becomes visible when a failed source read is followed by a write that depended on that source. The model can produce valid arguments for an action the application has no evidence to justify.
+
+Adding another sentence to the tool description can help selection. It does not make the prerequisite exist. The tool interface needs a contract the controller can evaluate before the next model turn and again before execution.
+
+## A schema is one part of a contract
+
+A useful tool contract describes several things:
+
+- **Input shape.** Required fields, allowed values, and their types.
+- **Eligibility.** Which task outcome and successful prerequisites permit this call.
+- **Effect scope.** What resources the operation reads or changes.
+- **Result meaning.** What a successful return actually establishes.
+- **Recovery.** Whether failure or uncertainty permits a retry.
+
+The companion's tool definitions carry routing and verification information beyond their public argument schemas. That lets the controller narrow eligible tools while giving the model an accurate account of the remaining choices.
+
+The two views should agree. A model-facing description cannot be the sole authority, and a dispatcher should not implement an undocumented interpretation that the model has to discover through repeated errors.
+
+## Selection and execution need different checks
+
+Selection asks which tools are relevant and eligible for the next unfinished outcome. Dispatch asks whether this particular call may happen now.
+
+
+
+The first check removes choices that should not be offered. The second catches stale proposals, permission changes, and adapter mistakes that could have widened the model-facing schema.
+
+This is a useful division because the failure modes differ. An irrelevant proposal is a selection problem. A correctly selected operation with changed arguments is a dispatch problem. They should not be hidden behind one tool-call success rate.
+
+## Failed prerequisites change the action space
+
+A reminder based on a calendar event needs usable event evidence. A permission error does not supply a time. A malformed response does not establish an empty calendar. A partial observation may not support a claim about the whole day.
+
+The controller can make the dependent write ineligible until those conditions are satisfied. It can offer a bounded read recovery or request missing information instead.
+
+This is stronger than returning the error as ordinary text and leaving the full catalog available. The application knows the prerequisite failed; it should use that fact structurally.
+
+In the companion's controlled probes, unwanted reminder proposals after failed reads and read-only work made that need concrete. The resulting guards have a defined scope. They constrain the saved task interpretation; they do not prove that arbitrary human intent was understood correctly.
+
+## Determinism belongs at the settled edges
+
+An explicit timer duration or a supported calculation from a typed timestamp does not need an unconstrained planning loop.
+
+The companion uses narrow deterministic routes for supported forms. Literal titles and bodies remain literal. A derived calendar deadline can retain the source event and checked arithmetic. Missing or ambiguous inputs stay unresolved.
+
+The limit must be honest. A narrow binder should not silently extend itself to unsupported phrasing. Clarification or another supported path is preferable to a plausible action assembled from an incomplete parse.
+
+The architecture can combine deterministic operations with model interpretation. The goal is to spend flexibility where the task needs it and preserve exactness where the semantics are already settled.
+
+## Capabilities need end-to-end meaning
+
+The earlier workspace's router used an exhaustive capability-to-lane mapping. Adding a capability without a route could fail at compile time rather than fall into an unrelated default.
+
+That prevents a routing omission. It does not prove the new capability runs. The rest of the path still needs a runtime, valid prerequisites, an executor, and a result contract.
+
+A browser tool illustrates the distinction. Opening a page, reading its relevant contents, and satisfying a research request are different capabilities. A handoff receipt for the first cannot establish the third.
+
+The same applies to generated artifacts. Producing a pipeline definition does not establish that its sink was written. A supported claim should be attached to the stage the implementation actually exercises.
+
+## The tradeoff
+
+Richer tool contracts create maintenance work. Adding an operation requires decisions about eligibility, effects, evidence, and recovery. Provider adapters have to preserve restrictions instead of restoring broader schemas.
+
+That is useful friction. It makes the cost of a capability visible before the product advertises it.
+
+For an agent, the tool interface is part of the operating environment. Accurate contracts reduce the amount of reality the model has to infer, and dispatch keeps the parts that must be enforced outside inference altogether.
+22:T1cba,
+This started as a graduate project at UMD and grew into a small reference architecture for a question I find genuinely interesting: how much of New York&apos;s road safety story can you actually pull out of public data, and what does it cost to build the pipeline?
+
+The short answer: a surprising amount, and less than you&apos;d think. Provided you&apos;re willing to throw out the parts of the modern data stack you don&apos;t need.
+
+## What we were trying to answer
+
+Five questions, all observable from public data:
+
+- Does weather actually correlate with crash severity, and if so, by how much?
+- Are taxi-heavy boroughs over-represented in serious crashes?
+- Have year-on-year fatalities trended up or down once you control for traffic volume?
+- Which turning maneuvers and speed bands carry the worst outcomes?
+- Are particular vehicle-registration states over-represented in high-impact incidents?
+
+Each question becomes a different join, but they all want the same shape underneath: a long-form fact table of crashes, joined to context tables (weather windows, traffic counts, taxi trip density) at the right grain.
+
+## The architecture, end to end
+
+Six GCP services, glued together by shell scripts and `crontab` rather than a workflow orchestrator. That&apos;s the controversial choice; I&apos;ll defend it below.
+
+
+
+Three things to call out from that picture.
+
+**Cloud Functions, not Dataflow, for ingest.** The data we needed was REST-fetched in 15-day windows. That&apos;s a script with offset tracking, not a streaming pipeline. A Cloud Function with a Cloud Scheduler cron is roughly fifty lines of code and zero infrastructure to manage. Dataflow would have been the &quot;right&quot; tool by a textbook reading and the wrong tool by every practical measure.
+
+**Dataproc, not Composer.** Composer (managed Airflow) is great when you have ten teams sharing dependencies and a real ops budget. We had four people and a deadline. A bash script that spins up a Dataproc cluster, runs a PySpark job, and tears the cluster down again costs nothing when nothing is running and reads about as well as a DAG would. The trade-off is that you don&apos;t get a UI, and that&apos;s fine. `crontab -l` is the UI.
+
+**Compute Engine as the orchestrator.** We put Superset and the cron jobs on the same VM. That&apos;s heretical from a microservices angle and obvious from a cost angle (we paid for one tiny machine and got both a dashboard host and an orchestrator out of it).
+
+## The non-obvious gotcha: batching to avoid OOM
+
+The first ingest function we wrote pulled the full traffic dataset in one go, ran out of memory, and died politely. The fix was a windowing layer that splits the fetch into 15-day chunks and writes each chunk to GCS independently before the next one starts:
+
+
+
+Two effects from this. First, the function never holds more than one window in memory, so we can run it on the smallest function size. Second, when something fails halfway through (and it does, because public APIs flake), the next run resumes from the last successful window without double-counting.
+
+The execution log in BigQuery (`df_catalog`) is doing more work than it looks like in the diagram. Every run writes a row with status, duration, row count, and any error message. When ingest goes sideways at 2 a.m., that log is the only thing standing between you and a cold-start debugging session.
+
+## Storage layout
+
+Two physical tiers, each chosen for what it&apos;s actually good at.
+
+**Cloud Storage with schema-on-read.** Raw and intermediate files live in GCS partitioned by `landing/ / /`. The schema is whatever the API returned. This is cheap, durable, and Spark-friendly. Schema-on-read is the right discipline at this layer because the upstream APIs do change shapes occasionally and we&apos;d rather find out at the transform stage than at ingest time.
+
+**BigQuery with schema-on-write.** The analytical layer is three datasets:
+
+| Dataset      | What lives there                                   | Schema  |
+| ------------ | -------------------------------------------------- | ------- |
+| `df_raw`     | One-to-one with GCS landings, casts applied        | Strict  |
+| `df_prd`     | Joined, de-duped, partitioned by year/month        | Strict  |
+| `df_catalog` | Run logs, ingestion offsets, lineage events        | Strict  |
+
+Partitioning `df_prd` by year/month is the single biggest cost lever in the project. Most of our queries hit a 6–12 month window; partition pruning means we&apos;re not scanning a decade of data to answer a quarterly question.
+
+## Why PySpark over Apache Beam
+
+Beam is the obvious GCP-native answer, and we benchmarked it. Two reasons we went the other way:
+
+1. **The workload is batch.** Beam&apos;s strength is the unified batch + streaming model. We had no streaming requirement, and Spark&apos;s batch primitives are more mature in practice. Particularly the BigQuery and Iceberg connectors.
+2. **JSON munging at scale.** Most of our raw data was JSON-shaped, and PySpark&apos;s `from_json` + struct manipulation was honestly more pleasant than the equivalent in Beam Python. Subjective, but it added up across the surface area.
+
+If we&apos;d had a streaming source we&apos;d have reconsidered. We didn&apos;t.
+
+## Dashboards: Superset over Looker
+
+We needed something we could deploy on the same VM as the orchestrator, that talked to BigQuery natively, and that didn&apos;t require us to file a procurement ticket. Superset hit all three. Looker would have been better polish; Superset was good enough and let us keep moving.
+
+The interesting visualizations turned out to be the network graph (how vehicle types co-occur in serious crashes) and the donut overlay of weather conditions against severity bands. Both shipped insights we wouldn&apos;t have surfaced from a dashboard built around bar charts.
+
+## What I&apos;d do differently in v2
+
+A short list, because every project earns one of these:
+
+- **Land in Iceberg, not raw GCS files.** Schema-on-read served us, but Iceberg gives us schema evolution + time travel + partition pruning at the lake layer. Spark works with both; the cost of Iceberg is one extra dependency, and we&apos;d earn it back the first time we needed to roll back a bad ingestion.
+- **Replace `crontab` with Dagster.** Not Composer (still too heavy), but a lightweight orchestrator that gives us asset-aware lineage and a UI that&apos;s actually pleasant. The shell scripts worked; they&apos;d also be the first thing to fall over with a fifth pipeline.
+- **Move the dashboards to Lightdash.** Superset&apos;s metric layer is fine for ad-hoc; once you have a real semantic spec, Lightdash treats your dbt project as the source of truth and the dashboards stop drifting from it.
+
+## The repo
+
+Everything is open: [github.com/sagar8080/data-fusion-engineering](https://github.com/sagar8080/data-fusion-engineering). The Terraform module at the root will stand up the whole stack on a new GCP project in about ten minutes. Costs roughly $40/month at the cadence we ran it, most of which is the VM.
+
+The thesis I&apos;d underline from doing the project: most data-engineering decisions are about saying no to tools you&apos;re &quot;supposed&quot; to use. The modern data stack is large; the right cut for any given project is small. The hardest part is getting comfortable with that.
+23:T127b,Most integration permission models focus on the initial read. The user allows Calendar, selects a folder, or enables browser context. The application checks that permission and retrieves the information.
+
+Agent systems reuse the result. They summarize it, save it in a conversation, attach it to a task, and retrieve it later for another model turn.
+
+If the restriction disappears during any of those transformations, the original permission gate no longer controls the whole path. History becomes an indirect disclosure channel.
+
+This is why provenance has to participate in context assembly. Remembered information needs a source category and an eligible destination, not just a relevance score.
+
+## The indirect path
+
+Consider a local model that reads an allowed calendar event and mentions it in a saved answer. The user later selects a cloud model and continues the conversation.
+
+The calendar integration did not make a cloud request. The next model call can still disclose calendar content if the saved answer is treated as unrestricted text.
+
+
+
+That is a possible architecture failure, not evidence of an observed breach. Its importance is that the direct integration can be correct while the derived path is wrong.
+
+The companion's provenance work carries source categories through included context, saved history, and proposed actions. Browser-derived evidence remains browser-derived when a task is reopened. The next request still has to respect the current sharing setting.
+
+## Retention and disclosure are separate controls
+
+A user can want a local record without wanting every future model to receive it.
+
+The storage layer therefore answers whether the application retains a record. The context layer answers whether that record is eligible for this request, under the current provider and permissions.
+
+Combining those decisions produces bad choices. Either useful history must be deleted to prevent sharing, or permission to retain history becomes an implicit grant to disclose it to a new destination.
+
+The stronger design keeps the data-flow decision explicit:
+
+
+
+The context can be useful to the person and ineligible for a particular model at the same time.
+
+## Summarization is not declassification
+
+A summary can be shorter than a source while revealing the same sensitive fact. A list of commitments is still calendar information even if it no longer resembles an event record.
+
+A conservative rule is that derived context retains the relevant restrictions of its inputs unless a specific reviewed transformation justifies a different treatment. Compression alone is not that transformation.
+
+This is not a complete semantic information-flow proof. Mixed-source summaries and inferred details are difficult. The point is to make the policy explicit rather than let a text transformation erase it accidentally.
+
+Anthropic's [context-engineering discussion](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) describes maintaining useful context across inference turns. In a personal assistant, relevance is only one selection criterion. Source restrictions and the current destination have to be evaluated as well.
+
+## Revocation has to reach saved work
+
+Checking permissions only when a source is read leaves a gap for paused tasks. The journal may already contain the needed information, and resume may never call the source tool again.
+
+The companion rechecks sharing before resuming saved work. A provider change or revoked source category can require a fresh request rather than silently carrying the journal into another model.
+
+That can interrupt an otherwise convenient continuation. It is the expected consequence of making revocation meaningful. Saved progress does not grant permanent disclosure rights.
+
+This also changes how to think about a model picker. Local versus cloud is a destination choice for context, not just a quality or latency preference.
+
+## What this costs
+
+Provenance has to travel with information across storage, summaries, context assembly, and recovery. Every new context producer becomes part of the policy surface. A string-only history representation is no longer sufficient.
+
+There are also deletion semantics to explain. Clearing a conversation can remove local journals without removing a reminder already created in another application. Exported files and backups have their own lifetimes. Calling all of those memory does not make them one object.
+
+The benefit is a system where retention, reuse, disclosure, and deletion can have distinct, truthful meanings. As assistants accumulate longer histories, that distinction becomes more important. A useful memory should not become a permanent exception to the user's current permissions.
+24:T111e,
+There is a quiet assumption in most AI-on-data products: that the model needs to see the data to be useful. Sometimes that's stated outright ("just give the LLM access to your warehouse"), more often it's implied by the architecture. A vector store fed by raw rows, an agent with a database connection string, an embedding pipeline running over PII columns "just in case."
+
+The assumption is wrong, and it gets more wrong the more regulated the environment is.
+
+## What the model actually needs
+
+To answer a real analytics question. "what's our churn rate this week?". The model does not need to see customer rows. It needs to know:
+
+- **The shape.** Which tables exist, what columns, what types, what relationships.
+- **The semantics.** That `cancelled_at` defines churn, that "this week" is a calendar week aligned to Monday in this org, that the metric is `count(cancelled) / count(active)`.
+- **The constraints.** Which columns are PII, which queries require approval, which time windows are allowed.
+- **The lineage.** Where the data came from, when it was last refreshed, whether the upstream contract has changed.
+
+All of that is *metadata*. It's structured. It's small. It can be retrieved, validated, and reasoned over with deterministic tools. It also doesn't leak when it leaves the perimeter. Because there's nothing in it to leak.
+
+
+
+## What happens when you give the model raw rows
+
+Three failure modes show up, in order of severity:
+
+1. **Hallucinated structure.** The model invents a column, joins on a key that doesn't exist, or assumes a relationship that the schema doesn't support. Without metadata as a hard constraint, the LLM treats SQL as creative writing.
+2. **Leaked PII.** Embeddings of raw rows are PII. Logs of LLM calls become PII. Caching layers become PII. Every surface that touches the bytes becomes part of the compliance perimeter, whether you intended it or not.
+3. **Untraceable answers.** The model says "2.4%." Where did that come from? Which rows? Which definition? Without grounding in metadata, there's no audit trail you can defend to security, legal, or the analyst who reads it.
+
+
+
+Metadata-first architecture avoids all three by construction. The model doesn't hallucinate structure because the structure is a hard input. PII doesn't leak because PII never reaches the model. Answers are traceable because every answer cites the contracts and lineage events it depended on.
+
+## The boundary, made concrete
+
+In a metadata-first system, here is the operational rule:
+
+> The AI surface reads from the metadata layer. The execution surface reads from the data. They are different processes.
+
+Everything else follows from that. Planning happens in the metadata surface. Intent decomposition, SQL drafting, policy evaluation. Execution happens elsewhere. DataFusion, DuckDB, the warehouse, whatever runs the actual query. The model never sees the result rows; it sees an evidence pack: which contracts were used, which lineage was traversed, which policies fired.
+
+If a question requires reading sensitive content (say, free-text PII), routing changes: that step runs through *local* inference, on hardware you control, and the model never round-trips through an external API.
+
+## What this looks like in practice
+
+This is the product direction I keep coming back to: AI should help teams reason through data work without making the actual system harder to inspect. The public story can stay simple. Keep sensitive data controlled, keep review visible, and make every useful answer easier to defend.
+
+None of these mechanisms is novel on its own. The discipline is in refusing to break the boundary. Once you grant the model access to raw data "just for this one feature," the architecture stops being defensible and starts being a story you tell auditors.
+
+## Where this is going
+
+The next move, I think, is treating metadata as a first-class product surface. Not an engineering convenience. Semantic specs as code, with PR review. Lineage as a queryable contract, not a passive log. Policy gates that evaluate at plan-time, not at runtime. The metadata layer becomes the place where data and AI meet, and the raw data stays where it belongs: in your object store, behind your perimeter, under your access controls.
+
+If you're working on this. Or on a place where the metadata-vs-raw line is being drawn poorly. I'd like to compare notes.
+25:T1222,There is a common shortcut in agent interfaces: Stop means stop displaying the response. The text stops, the spinner disappears, and the task looks cancelled.
+
+That says little about the execution underneath it.
+
+The worker may still be running. A tool call may already be in flight. A late result may still trigger the next step. An external application may have applied a write whose receipt has not arrived.
+
+Cancellation needs to be part of the execution protocol. Otherwise the interface and the system can disagree about whether the agent is still allowed to act.
+
+## Three boundaries, three meanings of stopped
+
+**Acknowledgement.** The application received the user's decision and reflected it promptly.
+
+**Termination.** The processes and waits under the application's control have stopped, or have reached a defined shutdown bound.
+
+**Effect state.** The system knows which external operations completed, which did not, and which remain unknown.
+
+One number cannot stand in for all three. A fast acknowledgement is useful responsiveness evidence. It is not proof that a process group has exited or that a dispatched write had no effect.
+
+
+
+The run's terminal state has to account for all of those paths. Removing the streaming text is only the first one.
+
+## Cancellation has to reach the waits
+
+Checking a cancel flag between model turns works only if control returns to that check.
+
+Agent execution waits in several places: a queue, worker startup, a blocked input write, a response read, a tool operation, a provider stream. A cancellation protocol has to define what happens at each wait.
+
+The companion's blocked-worker tests made this concrete. A local worker that was not reading input could leave the controller waiting despite an outer cancellation flag. Queue waits, startup, writes, and reads had to observe cancellation themselves.
+
+For external runtimes, process-group shutdown mattered as well. A child can ignore graceful termination or outlive the immediate process. Tests included resistant children and races between stop and normal completion.
+
+Those tests establish behavior for the controlled paths and tested runtimes. They do not establish an unrestricted operating-system fence around every possible vendor effect. The scope of the cancellation promise needs to match the scope of control.
+
+## Late output must not regain authority
+
+A cancelled operation can still return information. That information belongs to the old attempt. It must not automatically advance the task.
+
+This is an execution rule, not a prompt convention. The controller needs to associate callbacks and streamed events with the attempt that produced them and check that attempt's state before allowing another effect.
+
+The same rule applies to fallbacks. Cancellation of browser research should not be interpreted as an ordinary read failure that starts another search route. An alternative route is future work; the user just stopped future work.
+
+
+
+Voice introduces another surface for the same problem. Queued speech can be replaced or cancelled. Speech already played cannot be withdrawn. Completion language should therefore wait for the evidence it claims to describe.
+
+## Stop does not imply rollback
+
+A completed external effect remains completed after cancellation. An unconfirmed effect remains uncertain.
+
+Treating either as absent can cause a duplicate write on recovery. Treating cancellation as automatic compensation can cause a different unauthorized effect. Undo needs its own supported operation and authority.
+
+The companion preserves verified receipts and blocks automatic replay of unknown writes. Subsequent work that depends on an unresolved effect stops too. That is less tidy than a single cancelled label, but it describes the destination state honestly.
+
+## Terminal states need to survive restart
+
+An interrupted task and a cancelled task may both end with unfinished steps. They should not have the same recovery behavior.
+
+An interrupted read may be retried under its policy. A pending approval may be restored. An unknown write needs reconciliation. An explicit cancellation keeps future steps stopped.
+
+Persisting those distinctions is what prevents a restart from reviving work the user already ended. It also makes stop-versus-completion races testable: one attempt should produce one terminal outcome, not a cancellation followed by a later success that overwrites it.
+
+The cost is lifecycle machinery across the whole stack. The benefit is a control the user can rely on without knowing which process currently holds the task. For an agent that can act, that is part of the basic execution contract.
+26:T162c,
+The default story for &quot;agent memory&quot; today is some version of: the model sees the recent conversation, plus maybe a vector store of older messages it can pull from on demand. That works for a while. It stops working at exactly the point you start needing memory to be useful. Which is when the agent crosses a boundary.
+
+A new chat session. A different tool. A new project. A handoff between two agents. At every one of those boundaries, the implicit contract of &quot;memory = chat history&quot; breaks, and what you actually need is something more like a database.
+
+## What chat history can&apos;t do
+
+Concretely, four things:
+
+1. **Cross-tool continuity.** Your editor agent decided last Tuesday that the team uses snake_case for new modules. Your CLI agent doesn&apos;t know that, because it&apos;s a different process with a different conversation log.
+2. **Structured retrieval.** &quot;What does the agent know about authentication in this codebase?&quot; is a question chat history can&apos;t answer cleanly. It has to scan a wall of dialogue and hope the relevant context resurfaces.
+3. **Trust differentiation.** A fact the user explicitly told the agent should outweigh a fact the agent inferred from a single file. Chat history flattens both into &quot;something that was said in a conversation.&quot;
+4. **Decay.** A decision made six months ago about an API that&apos;s since been refactored is actively wrong. Chat history has no concept of stale.
+
+Vector stores fronting chat history fix retrieval but inherit every other problem. The store is full of dialogue snippets with no contract about what they assert, no provenance, and no decay policy. It looks like memory; it&apos;s a search index over things that were said.
+
+## What memory-as-infrastructure looks like
+
+A different shape: treat memory as a typed, contracted, queryable surface that lives outside any one agent or session.
+
+
+
+Four pieces, each doing real work:
+
+**Typed writes.** When an agent records something, it has to declare what kind of thing it is. A fact, a decision, a convention, an ownership edge. Along with the scope it applies to (project, module, file) and where it came from (which agent, which tool, which commit). This is the part that makes memory queryable months later. An untyped write is a junk-drawer entry; a typed write is a row.
+
+**Provenance on every write.** Every entry carries a small bundle: which agent wrote it, in which tool, at which commit, prompted by which user action. This is what lets you answer &quot;why does the agent think this?&quot; six weeks later when something is wrong. Without it, you have a model that&apos;s confidently citing things it can&apos;t defend.
+
+**Intent-scoped retrieval.** Reads aren&apos;t &quot;here&apos;s a query embedding, give me the top 10 nearest neighbors.&quot; Reads are &quot;the agent is about to refactor module X. What facts, decisions, conventions, and ownership edges scope to that module?&quot; Vector similarity is one input. The graph structure of the memory does most of the work.
+
+**Decay policy.** Beliefs go stale. Without explicit decay, memory becomes a fossil record of every wrong guess the agent ever made. Per-fact decay timestamps let retrieval favor recent, reinforced knowledge. And let memory honestly say &quot;I used to think X, but I last wrote that 90 days ago and nothing has reinforced it since.&quot;
+
+## The contract is the part that matters
+
+Of those four pieces, the contract layer is the one that earns its keep over time and the one most projects skip because it&apos;s tedious.
+
+A contract on writes does three things: it forces the agent to be specific about what it&apos;s claiming (which improves the writes), it makes the memory legible to humans who weren&apos;t in the conversation that produced it (which is what makes it useful), and it gives you a rejection point for low-quality writes (which is what stops the store from filling up with garbage).
+
+Without it, you get a memory that grows without limit, contradicts itself, and can&apos;t be queried except by similarity search. Eventually you stop trusting it, and at that point you may as well not have it.
+
+## What &quot;query memory&quot; should mean
+
+Not this:
+
+
+
+This:
+
+
+
+The first is a search. The second is what an experienced colleague would tell you in two minutes if you asked. That&apos;s the gap the infrastructure has to close.
+
+
+
+## Why this matters now
+
+Every agent product I&apos;ve looked at has, at some level, recognized that the chat-history-as-memory model isn&apos;t quite working. The responses are usually one of: longer context windows, better RAG over conversation logs, or a side-channel notes file the agent maintains.
+
+All three are workarounds for the underlying issue, which is that &quot;a wall of past dialogue&quot; isn&apos;t the right primitive. The right primitive is closer to a typed graph with provenance, decay, and intent-scoped retrieval. That&apos;s a database. It belongs outside any one agent, behind a contract that&apos;s the same regardless of which tool is reading from or writing to it.
+
+## What I&apos;m building toward
+
+This is the thesis behind one of my current product explorations for AI-assisted engineering teams: make shared context and verification visible enough that humans can rely on the workflow. The companion post on [why enforcement has to be in the request path](/writing/mcp-proxy-as-enforcement-primitive) covers the broader idea without tying it to product internals.
+
+Email me if you&apos;re working on something adjacent. I&apos;d like to compare notes. Especially with anyone running multi-tool agentic coding workflows in earnest.
+27:T131a,A Boolean named approved is too small to represent permission in an agent system.
+
+Approved what? Which operation, against which destination, with which arguments? Does the approval cover the proposal before or after the user edited it? Can it be used twice? Does it remain valid after the underlying artifact changes?
+
+Those questions are the approval model. The dialog is its interface.
+
+If the model is implicit, the product can ask for confirmation repeatedly while still executing something different from what the person reviewed.
+
+## The object being approved
+
+An action approval needs to identify a bounded proposal. At minimum, that includes the task intent, operation, target, reviewed arguments or artifact revision, and the relevant authority scope.
+
+For a reminder, the title and due time are part of the effect. For a code change, the relevant revision and target matter. Permission for an earlier proposal should not silently expand to cover a later one.
+
+A simplified contract is:
+
+
+
+This is a design sketch rather than a universal schema. The important property is that dispatch can compare the proposed effect with the reviewed one.
+
+
+
+The check belongs where the effect can still be stopped. A valid approval screen does not eliminate the need for dispatch-time validation.
+
+## Consent and provenance establish different things
+
+An action field can come from the user's literal instruction, a source observation, a deterministic calculation, or an unverified model proposal.
+
+Approval authorizes the reviewed value. It does not change where the value came from.
+
+If the model guessed a reminder time and the user accepted it, the record can establish consent. It cannot truthfully relabel that time as extracted from Calendar. A successful executor receipt adds evidence that the value was written. It still does not prove the original interpretation was correct.
+
+The companion preserves argument origins and edits for this reason. User literal, calculated field, approved proposal, and verified execution are related records with different meanings.
+
+That distinction is useful during correction. A field derived from an event can retain its source record. A field changed in the approval sheet can retain its earlier value without pretending the change was present in the original request.
+
+## The proposal must belong to the task
+
+A schema-valid action can be unrelated to the user's goal.
+
+The assistant's controlled probes produced unwanted reminder proposals after read-only work and failed prerequisite reads. An approval dialog alone does not solve that problem. It can simply present an irrelevant effect with a convincing explanation.
+
+The task contract therefore constrains which outcomes may be pursued. A dependent write needs usable evidence for its prerequisite. A failed calendar read is not an event time, and an instruction-like sentence inside a source document does not authorize another action.
+
+These checks reduce the burden on the person reviewing proposals. They do not solve arbitrary intent extraction. They make the application's interpretation explicit enough to constrain and correct.
+
+## A waiting state needs a supported decision path
+
+An early workspace hook marked arbitrary agent steps as requiring approval. The interface could only approve particular plan steps. Runs entered a waiting state with no usable continuation.
+
+The defect was a mismatch between the execution state machine and the interaction model. Adding a block had not added an approval workflow.
+
+The fix separated optional advisory signals from supported hard decisions. Mandatory authorization remained on the action path. Optional advice could no longer invent a waiting state the application could not resolve.
+
+For every approval state, the implementation should be able to identify the decision owner, the exact proposal, the available choices, and the continuation each choice permits. Otherwise the product can look more governed while giving the user less control.
+
+## Approval consumption is execution state
+
+Repeated clicks, delayed callbacks, and restart recovery can all reach the same approved intent again.
+
+For supported companion writes, the intent is durably claimed before dispatch. A repeated approval returns the saved task state instead of dispatching another copy. Invalid edits leave the sheet correctable rather than consuming a request that cannot run.
+
+This is local coordination, not universal exactly-once execution. If a destination applies an effect and its response is lost, the outcome can still be unknown. A second click should not erase that uncertainty or authorize replay automatically.
+
+The tradeoff is additional state and occasional reconciliation. The benefit is that approval means something precise after the interface disappears. The system can establish what was reviewed, what ran, and where those two records diverged.
+28:T16dd,
+The default shape of a &quot;semantic layer&quot; in 2024 is a hosted service that sits between your warehouse and your BI tool. You point it at Snowflake or BigQuery, define metrics and dimensions in YAML, wire SSO, and pay per query.
+
+This is the right shape for some companies. It is the wrong shape for more companies than the vendors selling it would prefer to admit.
+
+## What a hosted semantic layer actually buys you
+
+Three things, broadly:
+
+1. **A consistent metric definition** across everyone in the org who queries the same data. &quot;weekly active users&quot; means the same SQL whether the question came from Looker, Superset, or a Slackbot.
+2. **An access-control surface** that&apos;s separate from the warehouse. Analysts can query metrics without having `SELECT *` rights on the underlying tables.
+3. **A caching layer** that fronts the warehouse and amortizes expensive aggregates.
+
+That&apos;s real value. None of it is free, and almost none of it requires the layer to be hosted somewhere other than the analyst&apos;s machine.
+
+## What it costs
+
+Pricing models vary, but the operational shape is consistent. You&apos;re adding:
+
+- A vendor relationship and a procurement process to start using it
+- An SSO integration to maintain
+- A control plane that sits in the request path on every query
+- A tail-latency tax. Usually 50–250ms per query, on top of the warehouse round-trip
+- A bill that grows with usage
+
+For a 50-person company querying their own data warehouse, this is fine. For a 5-person team that genuinely just needs metric consistency between three notebooks and a dashboard, it&apos;s a sledgehammer. The team adopts it because the alternative looks like &quot;everyone writes their own SQL and hopes it agrees with everyone else&apos;s,&quot; and that alternative is correctly identified as bad.
+
+The mistake is assuming those are the only two options.
+
+## A third shape: local-first
+
+The semantic layer doesn&apos;t have to be a service. It can be a binary, plus a YAML spec, plus a git repo. It compiles on the analyst&apos;s laptop, runs against open table formats in their object store, and writes its results back to the same place.
+
+
+
+The spec lives in git. The binary is a single executable. The data lives in Iceberg or Delta tables in S3 / GCS / R2. Queries run in-process via DuckDB or DataFusion. The analyst gets metric consistency, the team gets a PR review process for metric changes, and there&apos;s nothing in the request path that needs a credit card.
+
+## The trade-off everyone gets wrong
+
+People assume the trade-off is &quot;hosted = scale, local = small.&quot; That&apos;s not where the actual seam is.
+
+The seam is **whether you have a centralized cache that everyone hits**. If your team has a hundred analysts running the same heavy aggregate every morning, a hosted layer with a shared cache earns its keep on day one. If your team is five people running slightly different aggregates against largely fresh data, the cache wasn&apos;t doing much for you and now you&apos;re paying for a cache.
+
+DuckDB on a laptop will happily push a multi-billion-row aggregate over Iceberg in seconds. The constraint isn&apos;t compute. The constraint is &quot;does the same expensive query happen across enough users to make centralized caching valuable.&quot;
+
+For a lot of companies. Especially the ones running an analytics function with under twenty people. The answer is no.
+
+
+
+## What you give up
+
+Honest list:
+
+- **Cross-tool query history.** A hosted layer logs every query centrally, which is useful for audit and for &quot;who else has asked this question recently?&quot; You can build this on top of a local-first system, but it doesn&apos;t come for free.
+- **Live access control.** With a centralized service you can revoke a user&apos;s access in one place, instantly. With a local-first system, access is enforced at the object-store level (which is the right place for it, but the workflow is different).
+- **The convenience of a SaaS dashboard for your spec.** You manage the spec in a repo. PR review is the UI.
+- **A single throat to choke when something is slow.** When the layer is your team&apos;s laptops, &quot;why is this query slow?&quot; is your problem.
+
+For my money, the second and third trade-offs are features. Object-store-level access control is what your security team would have asked you to build anyway. PR review on metric definitions is the right discipline regardless of where the layer runs.
+
+## When local-first is actually wrong
+
+I&apos;m not arguing it always wins. The cases where I&apos;d unambiguously pick a hosted layer:
+
+- You&apos;re north of about 50 analysts and the same 20 metrics get pulled hundreds of times a day. Centralized caching is real money.
+- You have a regulatory requirement for centralized query audit that&apos;s easier to satisfy with a managed service than to build.
+- Your team genuinely doesn&apos;t want to think about infrastructure, even one binary&apos;s worth, and your BI vendor has a serviceable layer baked in.
+
+Outside those, the math is closer than the marketing makes it look.
+
+## The version of this I&apos;m building
+
+A product in this category should make the semantic layer feel close to the user, keep review workflows visible, and avoid turning AI into an opaque control plane. The specific implementation details are less important than the discipline: keep the workflow inspectable and make trust a product behavior, not a marketing claim.
+
+If you&apos;re running a 5–20 person analytics function and the modern data stack feels like more weight than your team&apos;s problem deserves, the local-first cut is worth a serious look. The vendors won&apos;t tell you that. They&apos;re not wrong; they&apos;re just selling the hosted shape, and the hosted shape is wrong for more teams than they&apos;d like.
+29:T1341,The default answer to agent continuity is to save the conversation and put it back into context on the next run.
+
+That preserves the discussion. It does not establish the execution state.
+
+A request can leave the application, change something elsewhere, and lose its response before the receipt is saved. The conversation contains the intention to act and no confirmed result. Neither retry nor success is justified by that record alone.
+
+Recovery starts by representing the missing information correctly. An uncertain effect is a state of the system, not a gap for the model to fill with a plausible explanation.
+
+## The state the transcript cannot supply
+
+There are at least three outcomes after dispatch:
+
+- **Succeeded.** The supported verification has confirmed the intended effect.
+- **Failed.** The operation failed, with enough information to apply its recovery policy.
+- **Unknown.** The application cannot establish whether the effect occurred.
+
+Unknown cannot be collapsed into failed. Doing so makes automatic retry available exactly when retry may duplicate an action. It cannot be collapsed into succeeded either. That creates a completion claim without evidence.
+
+
+
+A local journal cannot invent a missing external receipt. Its job is to keep the uncertainty intact until a supported reconciliation path can resolve it.
+
+## Task and conversation are different objects
+
+A conversation groups related turns. A task owns the obligations arising from a request. One conversation can contain several tasks, and one task can cross several turns and approvals.
+
+The distinction matters for a request that creates a note and a reminder. A verified note receipt satisfies one outcome. The reminder can remain pending. Reopening another conversation must not move that approval into a new thread or cause the completed note to be created again.
+
+The companion's design separates conversation membership from the task journal. The journal retains requested outcomes, dependencies, inputs, approvals, observations, and receipts. Membership associates that work with the right conversation.
+
+That is a small database design with a large behavioral consequence: the assistant resumes from recorded obligations rather than asking a model to reconstruct progress from dialogue.
+
+The interpretation of the request can still be wrong. The task contract must therefore be inspectable and correctable. Durable state makes an interpretation stable; it does not make it accurate.
+
+## Recovery should preserve effects and recheck authority
+
+Completed work and future permission have different lifetimes.
+
+An action completed yesterday remains part of the record. The permission to perform the next action may have changed. The user may revoke an integration, switch models, or edit the pending proposal.
+
+A resume path needs both the saved execution state and current authorization. Reusing a receipt does not require repeating the action. Reusing private source context with another provider requires checking the new destination's sharing policy.
+
+A useful recovery record looks closer to this than to a transcript excerpt:
+
+
+
+The last item is deliberately current. Persistence must not become a way to bypass revocation.
+
+## Different interruptions need different continuations
+
+A pending approval can restore its exact fields. An interrupted read may be eligible for a bounded retry. An unknown write needs reconciliation. An explicit cancellation should keep future work stopped.
+
+Putting all four behind an undifferentiated Resume operation forces the implementation to guess what kind of incompleteness it is handling.
+
+The companion's synthetic restart fixtures exercise several of these distinctions, including continuity between approvals and refusal of duplicate dispatch. That is evidence about the controller. Real destination behavior still needs controlled app journeys and readback.
+
+The test should follow the boundary the claim concerns. A fabricated receipt is useful for testing a transition and insufficient for establishing that a real reminder exists.
+
+## Persistence does not create an executor
+
+There is another distinction worth keeping out of the model's hands: saved work and running work.
+
+A local application can persist a schedule while doing nothing when its process is quit or its machine is asleep. Due-time recovery can process overdue work when execution returns. It cannot retroactively guarantee on-time delivery.
+
+If a product promises continuous work, it needs to name the responsible executor: a background process, another machine, or a hosted worker. The schedule is input to that executor, not a replacement for it.
+
+This is the cost of durable agents. They need an execution state machine, a host, and a reconciliation policy in addition to memory. The gain is a system that can explain its unfinished work without relying on the next model response to remember what reality might have done.
+2a:T1bf2,
+The reason partitioning gets confusing is that &quot;partitioning&quot; covers four distinct decisions that are usually discussed as one. They&apos;re related, but you can pick them somewhat independently, and the right answer to each depends on the read pattern of the system you&apos;re building, not on the database you happened to start with.
+
+The four decisions:
+
+1. **How do you assign rows to partitions**. By key range, by key hash, by something else?
+2. **How do you handle secondary indexes** when the primary partitioning is by some other column?
+3. **How do you rebalance** when nodes come and go or hot spots emerge?
+4. **How does the client find the right partition** for a given key?
+
+I&apos;ll go through each one with the trade-off that actually bites in production, then close with a real case study.
+
+## Decision 1: how to assign rows to partitions
+
+The two common choices and the third one nobody talks about:
+
+
+
+**Key range** keeps physically-adjacent keys on the same node. Range scans are fast (`WHERE created_at BETWEEN ...` doesn&apos;t leave the partition). The cost is hot spots. If you partition by timestamp, today&apos;s node takes all the writes. If you partition by user ID and your top user has 10× the activity of the median, that node burns.
+
+**Key hash** spreads writes evenly by hashing the key first. No hot spots from skewed keys. The cost is that range queries on the partitioning key now have to scatter across every node and gather the result, which is exactly as expensive as it sounds.
+
+**Compound keys** (Cassandra calls them this; DynamoDB calls them &quot;partition + sort key&quot;) split the difference. The first part of the key picks the node; the rest orders rows within that partition. You get range scans within a partition while still distributing the workload across the cluster. Most workloads I&apos;ve seen are better served by this than by either of the previous two.
+
+The right default for a new system is usually compound: hash on something high-cardinality and stable (`user_id`, `tenant_id`), order on something queryable within that scope (`created_at`, `event_id`).
+
+## Decision 2: secondary indexes
+
+The moment you need to look up rows by something other than the partition key, you have a problem. Two strategies, both with real costs:
+
+**Local index (scatter-gather).** Each partition keeps its own index over its own rows. Reads by the indexed column have to fan out to every partition and merge the results. This is the default in Cassandra and most NoSQL stores; it&apos;s cheap to write and expensive to read.
+
+**Global index.** A separate, partitioned index over the indexed column, distributed by the indexed column&apos;s hash. Reads are fast (one network hop). Writes are expensive. Every insert into the base table has to also write to the index, possibly on a different node, and now you have a two-phase write to reason about.
+
+The trade-off matters because most people pick local indexes by accident (they&apos;re the default) and then wonder why a particular query pattern is slow. If a secondary lookup is on a hot path, you almost certainly want a global index. Or, more often, you want to denormalize and stop calling it an index at all.
+
+## Decision 3: rebalancing
+
+Eventually a node fills up, a node dies, or you add capacity and want the cluster to use it. Two schemes:
+
+**Fixed partitions.** Pre-create more partitions than you have nodes. Say, 1024 partitions across 4 nodes. When a fifth node joins, it takes 256 partitions over from the existing four. Data moves once per topology change and predictably. The downside is you have to size the partition count up front; too few and you can&apos;t scale, too many and metadata overhead bites.
+
+**Dynamic partitioning.** Partitions split when they grow past a threshold and merge when they shrink. You don&apos;t pre-size anything. The cost is that splits happen during writes, briefly hurting tail latency, and the topology is harder to reason about because it&apos;s always shifting.
+
+I lean fixed for systems where the data shape is predictable (an analytics warehouse, a metrics store) and dynamic for systems where you genuinely don&apos;t know the distribution in advance (a multi-tenant SaaS in early growth).
+
+## Decision 4: service discovery
+
+The client has a key. It needs to know which node to talk to. Three approaches:
+
+
+
+**Client-driven** is the simplest deployment. Any node can answer; if it isn&apos;t the right one, it forwards. The trade-off is one extra hop on the wrong-node case, and the assumption that nodes know about each other&apos;s topology (usually via gossip).
+
+**Routing tier** puts a dedicated layer between client and storage. Clean separation, easy to scale the router independently. The cost is that the router now has to be highly available, and it adds a hop on every request.
+
+**Client-cached** has the client maintain its own partition map, refreshed periodically. Fastest in the steady state. The cost is staleness. When topology changes, the client gets a few wrong-node responses before refreshing. Most production drivers (Cassandra, Mongo, Kafka) do this with a token-aware policy and a coordinator-fallback.
+
+ZooKeeper, etcd, and consul keep showing up because someone has to be the source of truth on topology, and they&apos;re built for exactly that job.
+
+## Case study: Discord&apos;s migration from Cassandra to ScyllaDB
+
+Discord stores trillions of messages. They were on Cassandra and ran into two problems that scale exposes: tail latency on hot partitions (a single channel taking writes faster than Cassandra&apos;s compactor could keep up) and ongoing operational cost (constant compaction tuning, GC pressure, manual repairs after node failures).
+
+They migrated to ScyllaDB, which is broadly Cassandra-compatible at the wire level but rewritten in C++ with a shard-per-core architecture and no JVM. They also built a Rust data service in front of it that coalesces requests. Many concurrent reads of the same hot key collapse into one storage read, then fan back out to the requesters.
+
+The migration moved trillions of messages without downtime. The result they reported: lower tail latency, less operational toil, and the same data model. Worth reading: Discord&apos;s [own writeup](https://discord.com/blog/how-discord-stores-trillions-of-messages) is unusually candid about what didn&apos;t work the first time.
+
+The lesson I take from it: the database choice matters less than the &quot;extra layer in front of it&quot; choice. Coalescing requests, batching writes, picking a tighter partition key. Those are decisions you make at the application layer, and they&apos;re what determine whether your storage layer survives the next 10× in load.
+
+## A short closing opinion
+
+Most teams I&apos;ve seen pick a partition key based on what&apos;s convenient at insert time and then live with the consequences for years. The half hour you spend at the start mapping read patterns to partitioning strategy is some of the highest-leverage thinking you&apos;ll do on the system. If you can only afford to do one of the four decisions deliberately, do that one.
+2b:T1612,The usual diagram of an agent is a loop. The model receives a goal, chooses a tool, reads the result, and chooses another tool. Repeat until done.
+
+That is a reasonable description of how reasoning progresses. It leaves out most of what makes the system dependable.
+
+Who decides which data the model may see? What happens when a tool times out after applying a change? Does a restarted run retain the same budget? Can a different model resume without repeating an approved action? What makes done more than a sentence the model generated?
+
+Those are harness questions. They remain even if the model gets substantially better.
+
+## What the model supplies
+
+A model contributes interpretation, planning, generation, and adaptation. Given the available evidence, it proposes what to do next. That flexibility is the reason to put it in the system.
+
+It does not follow that the model should own the conditions under which its proposal becomes an effect.
+
+A model's judgment that an action is useful does not authorize it. A statement that a tool ran does not establish that it ran. A decision to retry does not establish that the previous attempt had no effect.
+
+The architecture needs a place where those distinctions are enforced. The useful boundary is between **proposing work** and **owning its execution**.
+
+
+
+The model is inside the loop. The contract and the ledger give the loop boundaries that survive a model turn.
+
+## Six concerns that should not share one setting
+
+One of the architectural problems in the data workspace was that runtime profile meant two different things: a reasoning configuration and a compute destination. Different paths could resolve execution independently.
+
+The replacement contract separated six axes:
+
+1. **Agent.** Which reasoning runtime, model, and transport are used.
+2. **Execution.** Where computation runs: local, on-premises, or cloud.
+3. **Authority.** Which operations are allowed and where approval is required.
+4. **Context.** Which information may enter the reasoning process.
+5. **Capabilities.** Which tools and role-specific operations are available.
+6. **Artifacts.** Which durable outputs the task is expected to produce.
+
+These choices interact, but they are not interchangeable. Switching to a cloud model should not automatically move execution to a cloud account. Allowing a source read should not automatically allow disclosure to every provider. Adding a specialist should not create an independent approval system.
+
+Separating the axes makes those changes explicit. It also makes a run record useful after the workspace defaults change. A resumed task needs its execution context, not an accidental reconstruction from today's settings.
+
+## The runtime contract is part of the prompt
+
+The most direct evidence for this came from a Python-generation evaluation.
+
+The prompt described DataFrames named `step_ _df` and told the model to print the answer. The runner supplied `load_table(...)` and a primary `df`, then read the answer from a `result` variable.
+
+The prompt and the executor described different environments.
+
+On the recorded fifteen-case synthetic ecommerce suite, the Python path passed one case initially, thirteen after the runtime contract was corrected, and fifteen after date serialization was repaired. The model was held fixed. Those counts describe that small historical suite, not general Python accuracy.
+
+The lesson was more useful than the score. A model can follow the instructions it receives and fail because the application supplied the wrong instructions. The harness has to keep the model-facing contract aligned with the actual environment.
+
+
+
+A shared description reduces drift. An execution test establishes that the description is true. Both are necessary; a single wrong contract can otherwise distribute the same mistake consistently.
+
+## What belongs outside the model turn
+
+The durable state should include the task, approved scope, consumed budget, attempted effects, retained receipts, and unresolved outcomes. These records cannot depend on the next generated response remembering them correctly.
+
+The model can help decide whether a result is useful. The controller can establish whether a required receipt exists. The model can suggest a retry. The execution layer can establish whether the operation is repeatable. The model can request more context. The context layer can decide whether the current provider may receive it.
+
+That division does not make the system fully deterministic. It puts deterministic checks where the relevant facts are available and lets the model reason within them.
+
+It also exposes what remains uncertain. A correct schema does not prove correct intent. A successful tool does not prove a finished task. A citation that resolves does not prove that every sentence follows from its source.
+
+## The cost of owning the harness
+
+A real harness is more expensive than a prompt and a tool list. It needs state transitions, versioned contracts, provider adapters, failure classification, and tests that exercise interruption and recovery. The implementation has to reconcile several things that a chat-only application can leave implicit.
+
+That cost is not justified for every request. A one-shot summary may need only one model call and an appropriate disclosure policy. Work that mutates external state, survives interruption, or delegates to other workers needs more of the machinery.
+
+The decision is about the promise the product makes. If the promise is that the system will carry a piece of work to a verifiable outcome, the harness is part of the product's core. It cannot remain incidental glue around a model API.
+2c:T17aa,
+Most data tools today are services. You point them at your warehouse, you sign in, and your queries make a round trip to someone else&apos;s control plane before they reach your own data. For a lot of work. Large teams, shared dashboards, centralized governance. That&apos;s the right shape.
+
+It&apos;s also wrong for more situations than the industry admits. Single operators. Small analytics teams. Products that need to go where sensitive data already lives instead of asking the data to come to them. For those cases the right shape is a single application the user can run on their own machine, against their own files, with nothing in the request path that needs a credit card.
+
+Two storage decisions sit at the heart of building one of those applications, and they look more independent than they are.
+
+## The metadata problem
+
+The first decision is what holds everything that isn&apos;t the data itself.
+
+A working catalog is document-shaped. Schemas, columns, types, descriptions, contracts. Lineage is graph-shaped. Datasets connected to transforms connected to outputs, with edges carrying their own metadata. Workspace memory is key-value-shaped. Approved facts, prior queries, user-tagged notes. Policy is document-shaped with cross-references. Audit is append-only.
+
+The textbook answer is one store per shape. Document database for the catalog, graph database for lineage, key-value store for memory, another database for policy. Four processes to deploy, four backup stories, three query languages, and an operational footprint that defeats the entire premise of shipping as a single application.
+
+The honest answer for a local-first product is one embedded multi-model store that handles all four shapes. The trade is real. Multi-model embedded stores have younger ecosystems, fewer drivers, occasional sharp edges. The benefit is one process to deploy, one backup file, one query language across the surfaces that have to be joined at decision time. For a desktop application the user owns the lifecycle of, that simplification is the whole game.
+
+
+
+## The compute problem
+
+The second decision is where queries actually run.
+
+The textbook answer for an analytics product is &ldquo;point at a hosted warehouse.&rdquo; You get scale, you get the warehouse vendor&apos;s ecosystem, you get someone else operating the compute. You also get a per-query round trip to a hosted control plane and a runtime cost that doesn&apos;t go to zero when nobody is using the product.
+
+For a local-first product the answer flips. An in-process columnar engine over open file formats. Parquet, the open table formats, CSV when you have to. Gives you multi-gigabyte analytics on a laptop in seconds, with no external compute to provision and no warehouse round trip for the prototype queries that make up most actual analytical work. The trade-off is no auto-scale to petabyte ranges, which sounds bad until you remember that a desktop analytics tool isn&apos;t the right shape for a petabyte workload anyway.
+
+
+
+## What you give up
+
+Honest list. A hosted shape gives you a centralized cache that everyone hits, a managed query history, automatic credential rotation, and a vendor relationship that&apos;s also someone to call when things break. You give all of that up.
+
+Whether the trade is worth it comes down to one question. Are the same expensive queries being made by enough users that a centralized cache earns its keep? For a 50-analyst team running the same 20 metrics hundreds of times a day, the answer is yes. For a 5-person team running mostly different queries against largely fresh data, the answer is no. And you were paying for cache infrastructure that wasn&apos;t doing anything for you.
+
+The boundary is closer to the middle than the marketing suggests. Plenty of analytics teams that today run a hosted semantic layer plus a hosted warehouse plus a hosted BI tool would have shipped a year sooner with one binary on their analyst&apos;s machine.
+
+## What it looks like when the two seams work together
+
+A multi-model metadata store sitting next to an in-process query engine, both inside one process the user runs, talking to data that lives in formats anyone can read in storage the user controls. The metadata layer answers all the questions the AI surface needs to ask. The query engine handles the actual work against the actual data. The boundary between &ldquo;what the AI knows about the data&rdquo; and &ldquo;what runs against the data&rdquo; is the boundary between the two storage decisions.
+
+Once you have both, a lot of architectural debates resolve themselves. You don&apos;t need to choose between &ldquo;the AI sees raw data&rdquo; and &ldquo;the AI is useless&rdquo;. The AI works with the metadata store; the query engine handles the bytes; they&apos;re different processes inside the same binary. You don&apos;t need to choose between &ldquo;hosted service with auth and SSO and SLAs&rdquo; and &ldquo;CSV files and Python notebooks&rdquo;. There&apos;s a third option, and it&apos;s where a lot of work that doesn&apos;t need either should live.
+
+## What I&apos;d still revisit
+
+The honest list of open questions for anyone trying this:
+
+When the multi-model embedded store you picked matures its replication story, multi-workspace use cases become much easier. Until then they&apos;re a notable gap.
+
+When in-process columnar engines stabilize their writers for the open table formats you care about, parts of the dual-engine setup might collapse to single-engine. That&apos;s a complexity reduction worth waiting for.
+
+If a serious local graph engine emerges that&apos;s lighter than what currently dominates the multi-model space, it&apos;s worth re-running the comparison. The right answer for a 2026 local-first product is not necessarily the right answer for a 2027 one.
+
+Good architecture is a live document. The shape works. The specific picks under it should be stress-tested every six months against the question &ldquo;is this still the right cut?&rdquo; If the answer turns no, that&apos;s the next post.
+d:["$","div",null,{"className":"theme-page theme-writing","children":["$","div",null,{"className":"theme-content writing-content","children":[["$","header",null,{"className":"space-y-5","children":[["$","p",null,{"className":"eyebrow","style":"$undefined","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true,"style":"$undefined"}],"The writing desk"]}],["$","h1",null,{"className":"font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg","children":["Notes on the",["$","br",null,{}],["$","em",null,{"children":"systems I build."}]]}],["$","p",null,{"className":"section-lede","children":"Decisions, experiments, and lessons from building AI and data systems. An evolving record of how I think about the work."}]]}],["$","$L17",null,{"posts":[{"slug":"where-i-think-useful-ai-delegation-is-heading","title":"The next AI interface is a work contract","date":"2026-11-02","excerpt":"As AI products move from producing answers to carrying out work, the useful interface has to express outcomes, authority, evidence, and unfinished obligations. Chat is one surface over that contract.","status":"published","tags":["ai-direction","agentic-ai","product-architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":12,"searchText":"$18"},{"slug":"multiple-agents-need-shared-rules-and-clear-ownership","title":"Multi-agent systems need one execution model","date":"2026-10-02","excerpt":"Specialized reasoning does not require separate truths about permission, budgets, revisions, and task state. Those responsibilities need a common execution contract before delegation becomes dependable.","status":"published","tags":["multi-agent","architecture","orchestration"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":11,"searchText":"$19"},{"slug":"the-personal-assistant-test-is-an-ordinary-request","title":"Personal assistants need deterministic edges","date":"2026-09-02","excerpt":"Natural language is a useful entry point. Exact titles, event identities, time arithmetic, permissions, and destination effects still need contracts that do not depend on conversational fluency.","status":"published","tags":["personal-assistants","architecture","agentic-ai"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":10,"searchText":"$1a"},{"slug":"autonomy-needs-a-resource-model","title":"Autonomy is a resource contract","date":"2026-08-02","excerpt":"A token cap does not bound an agent task. Steps, retries, delegated workers, tool costs, and uncertain provider usage need a shared account of what the system is allowed to consume.","status":"published","tags":["agentic-ai","autonomy","systems-design"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":9,"searchText":"$1b"},{"slug":"evaluate-the-system-around-the-model","title":"Agent evaluations need to test the harness","date":"2026-07-02","excerpt":"A passing test can establish the wrong property when authentication, transport, scoring, or fixtures are broken. The evaluator needs its own contracts and positive controls.","status":"published","tags":["evaluations","agentic-ai","harnesses"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":8,"searchText":"$1c"},{"slug":"a-tool-receipt-is-not-a-completed-task","title":"Completion is an evidence check","date":"2026-06-02","excerpt":"A successful tool call establishes a bounded fact. Completing an agent task requires evidence for the outcomes the user requested, including the ones the last tool did not address.","status":"published","tags":["agentic-ai","verification","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":7,"searchText":"$1d"},{"slug":"trust-is-the-next-decades-problem","title":"Trust is the next decade's problem","date":"2026-05-22","excerpt":"Intelligence is rapidly becoming abundant. Trust is becoming scarce. The interesting products of the next ten years won't be about generating better output. They'll be about figuring out which output to rely on.","status":"published","tags":["trust","provenance","ai-infrastructure","product"],"mediumUrl":"$undefined","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"$1e"},{"slug":"refusal-is-the-feature","title":"Refusal is the feature grounded RAG actually needs","date":"2026-05-13","excerpt":"Trying to make the model better at admitting uncertainty is a losing game. Refusing in the orchestration layer. When the retrieval signal is too weak to support an answer. Is a winning one. Plus the companion move that matters at least as much.","status":"published","tags":["rag","retrieval","product"],"mediumUrl":"$undefined","readingTime":5,"series":"$undefined","seriesOrder":"$undefined","searchText":"$1f"},{"slug":"mcp-proxy-as-enforcement-primitive","title":"The MCP proxy is the enforcement primitive","date":"2026-05-04","excerpt":"Voluntary safety checks don't survive contact with a real agent. If you want a policy layer that actually stops destructive tools, it has to be in the request path. And once it is, you also get the team's shared context for free.","status":"published","tags":["mcp","agent-infrastructure","policy"],"mediumUrl":"$undefined","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"$20"},{"slug":"tool-selection-is-part-of-the-architecture","title":"Tool contracts are the agent interface","date":"2026-05-02","excerpt":"A tool schema describes the shape of a call. A dependable agent also needs prerequisites, effect scope, result meaning, and retry policy. Those contracts should drive both selection and dispatch.","status":"published","tags":["tool-use","agentic-ai","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":6,"searchText":"$21"},{"slug":"nyc-vehicle-crashes","title":"Analyzing NYC vehicle crashes. A cloud-native data engineering build","date":"2026-04-15","excerpt":"A GCP build that pulls NYC's open crash, taxi, traffic, and weather feeds into a single analytical surface. Notes on why we picked Compute Engine + Dataproc over Composer + Dataflow, where the batching limits actually bit, and what would change in v2.","status":"published","tags":["data-engineering","gcp","dataproc","bigquery","architecture"],"mediumUrl":"https://medium.com/@sgx08/data-engineering-deep-dive-f8370c89a90c","readingTime":8,"series":"$undefined","seriesOrder":"$undefined","searchText":"$22"},{"slug":"agent-memory-has-to-remember-permissions","title":"Context provenance is a privacy boundary","date":"2026-04-02","excerpt":"Permission checks at source-read time are insufficient when information survives in summaries, conversation history, and task journals. The restriction has to survive with the information.","status":"published","tags":["agent-memory","privacy","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":5,"searchText":"$23"},{"slug":"why-metadata-not-raw-data","title":"Why AI should reason over metadata, not raw data","date":"2026-03-18","excerpt":"Schemas, contracts, lineage, and policies carry the structure an LLM needs to be useful inside a regulated environment. The bytes don't. And shouldn't leave the perimeter.","status":"published","tags":["metadata","governance","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"$undefined","seriesOrder":"$undefined","searchText":"$24"},{"slug":"stopping-an-agent-is-a-systems-problem","title":"Cancellation belongs in the execution protocol","date":"2026-03-02","excerpt":"Stopping token output, terminating a worker, and establishing the state of an external effect are different operations. An agent needs explicit rules for all three.","status":"published","tags":["agentic-ai","cancellation","reliability"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":4,"searchText":"$25"},{"slug":"agent-memory-as-infrastructure","title":"Agent memory as infrastructure, not chat history","date":"2026-02-18","excerpt":"Treating agent memory as persistent infrastructure. With typed writes, provenance, retrieval policy, and decay. Changes what agents can do across sessions and tools. Chat history is a symptom, not a system.","status":"published","tags":["agent-memory","infrastructure","relay"],"mediumUrl":"$undefined","readingTime":8,"series":"$undefined","seriesOrder":"$undefined","searchText":"$26"},{"slug":"approval-needs-a-data-model","title":"Approval is a contract over an action","date":"2026-02-02","excerpt":"A confirmation dialog collects a decision. The execution system needs to know which intent, revision, arguments, and destination that decision authorizes, and whether it has already been consumed.","status":"published","tags":["agentic-ai","permissions","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":3,"searchText":"$27"},{"slug":"local-first-semantic-layers","title":"The case for local-first semantic layers","date":"2026-01-21","excerpt":"When the operator is the user, a single binary on their laptop beats a hosted control plane more often than the industry admits. Iceberg + DuckDB on hardware you already own does more than expected. And the trade-offs aren't where you'd guess.","status":"published","tags":["semantic-layer","local-first","architecture"],"mediumUrl":"$undefined","readingTime":7,"series":"$undefined","seriesOrder":"$undefined","searchText":"$28"},{"slug":"why-agent-work-needs-a-life-outside-chat","title":"Agent recovery is a state-machine problem","date":"2026-01-02","excerpt":"Saving the conversation preserves what was said. Recovering an agent requires a separate account of what was authorized, what ran, and which external effects are still uncertain.","status":"published","tags":["agentic-ai","durable-execution","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":2,"searchText":"$29"},{"slug":"database-partitioning","title":"A working note on database partitioning","date":"2025-12-17","excerpt":"Partitioning strategies, secondary index trade-offs, rebalancing, and service discovery. The four decisions you actually have to make when a single node stops being enough. Plus what Discord learned moving trillions of messages from Cassandra to ScyllaDB.","status":"published","tags":["databases","distributed-systems","partitioning"],"mediumUrl":"https://medium.com/@sgx08/dont-get-partied-out-a-deep-dive-into-database-partitioning-af61e83b8d07","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"$2a"},{"slug":"what-an-agent-harness-has-to-own","title":"The agent harness is the product","date":"2025-12-02","excerpt":"A model can choose the next action. Something else has to own permission, execution, recovery, and proof that the action happened. That system is where an agent becomes a product.","status":"published","tags":["agentic-ai","harnesses","architecture"],"mediumUrl":"$undefined","readingTime":4,"series":"Notes on agentic architecture","seriesOrder":1,"searchText":"$2b"},{"slug":"shape-of-a-local-first-data-product","title":"The shape of a local-first data product","date":"2025-11-19","excerpt":"Two storage decisions sit at the heart of any local-first analytics tool. Get them right and you ship as a single application the user can trust on their own machine. Get them wrong and you've reinvented a hosted service somebody has to operate.","status":"published","tags":["local-first","architecture","data-products"],"mediumUrl":"$undefined","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"$2c"},{"slug":"introduction-to-linux","title":"Introduction to Linux","date":"2020-07-15","excerpt":"A starter cheatsheet for working in a shell. Terminal controls, file management, permissions, process inspection, services, and the small set of commands you'll reach for daily. Written for someone moving from a GUI-only OS.","status":"archive","tags":["linux","shell","notes"],"mediumUrl":"https://medium.com/@sgx08/introduction-to-linux-329a9ca18782","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"\nA 2020 cheatsheet I built while moving most of my workflow into a Linux shell. Terminal controls, file navigation, permissions math (`r=4 w=2 x=1`), process inspection, and `systemctl`.\n\nIf you live in a terminal already this won&apos;t teach you anything new. If you&apos;re moving from a GUI-only environment, the original on Medium is a reasonable place to start.\n"},{"slug":"the-data-engineering-guide","title":"The data engineering guide","date":"2020-07-15","excerpt":"A learning roadmap I wish I'd had when I started. Programming & data structures, SQL and database internals, big-data systems, data stores, and the DevOps surface area you can't avoid. Five years later most of it still holds.","status":"archive","tags":["data-engineering","learning","notes"],"mediumUrl":"https://medium.com/@sgx08/the-data-engineering-guide-8da1f500acc6","readingTime":4,"series":"$undefined","seriesOrder":"$undefined","searchText":"\nA 2020 roadmap aimed at someone breaking into data engineering. What to learn, in roughly what order, and which resources I found worth the time. The five sections are programming &amp; data structures, SQL and database internals, big-data systems (Hadoop, Spark, Kafka), data stores (warehouses vs lakes, NoSQL, Delta), and DevOps fundamentals (Linux, CI/CD, containers).\n\nFive years later the resources I&apos;d swap are the streaming chapter (Kafka still good, but I&apos;d add Iceberg + a modern lakehouse) and the storage chapter (DuckDB and Iceberg deserve top billing). The skeleton holds up.\n\nOriginal on Medium.\n"},{"slug":"the-web-architecture","title":"The web architecture","date":"2020-07-15","excerpt":"A walkthrough of three-tier web architecture, request lifecycle, and the trade-offs between single-server, multi-server, and serverless deployments. Notes from when I was learning to design backend systems.","status":"archive","tags":["web-architecture","systems","notes"],"mediumUrl":"https://medium.com/@sgx08/the-web-architecture-77d1c19a309a","readingTime":6,"series":"$undefined","seriesOrder":"$undefined","searchText":"\nThis is an early-career study note from 2020. Written while I was working through how production web applications fit together. It covers the three-tier model (presentation / business / data), the request-response cycle, single vs multiple server topologies, single-page apps, microservices, and serverless.\n\nThe substance is still useful as a starting point if you&apos;re mapping the territory. The voice is from a different version of me. Earlier, more enthusiastic, less opinionated. I&apos;ve left it intact rather than rewriting it.\n\nRead the full piece on Medium.\n"},{"slug":"version-control-git","title":"Version control. Git","date":"2020-07-15","excerpt":"A practical walk through local, centralized, and distributed VCS, then a working command reference for Git. Branching, stashing, the commit object model. Written for someone learning the tool from first principles.","status":"archive","tags":["git","tooling","notes"],"mediumUrl":"https://medium.com/@sgx08/version-control-git-6c05f5c93a5a","readingTime":5,"series":"$undefined","seriesOrder":"$undefined","searchText":"\nA 2020 reference I wrote while teaching myself Git&apos;s internals. The difference between local, centralized, and distributed VCS, the commit object model (blob → tree → commit), and the everyday command surface (`add`, `commit`, `branch`, `stash`, `checkout`).\n\nIt still gets occasional use as a quick reference when I&apos;m onboarding someone new. The original on Medium has the full command list.\n"}]}]]}]}]
