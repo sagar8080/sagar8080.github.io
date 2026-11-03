@@ -1,166 +1,61 @@
 'use client'
 
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
+import { Expand, X } from 'lucide-react'
 
-// Renders a Mermaid diagram client-side. Mermaid is loaded via dynamic import
-// so it stays out of the initial bundle for routes that don't use it. Themed
-// for the light paper palette: ink text, line borders, terracotta accent,
-// sage and ochre supports.
 export default function Mermaid({ chart }: { chart: string }) {
-  const reactId = useId().replace(/[^a-zA-Z0-9]/g, '_')
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '_')
   const [svg, setSvg] = useState<string | null>(null)
-  const [err, setErr] = useState<string | null>(null)
+  const [error, setError] = useState(false)
+  const [large, setLarge] = useState(false)
+  const dialog = useRef<HTMLDialogElement>(null)
+  const svgIds = new Set(Array.from((svg ?? '').matchAll(/\bid="([^"]+)"/g), match => match[1]))
+  const expandedSvg = svg?.replace(/(id="|url\(#|href="#|#)([A-Za-z_][\w:-]*)/g, (match, prefix, name) => svgIds.has(name) ? `${prefix}${name}_expanded` : match)
 
   useEffect(() => {
     let cancelled = false
-
+    setSvg(null)
+    setError(false)
     ;(async () => {
       try {
-        const m = await import('mermaid')
-        const mermaid = m.default
-
+        const { default: mermaid } = await import('mermaid')
         mermaid.initialize({
           startOnLoad: false,
           theme: 'base',
-          securityLevel: 'loose',
-          // Small console-style text keeps long labels inside Mermaid's
-          // generated node boxes without stretching the diagram vertically.
-          fontFamily:
-            'Consolas, "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, monospace',
+          securityLevel: 'strict',
+          htmlLabels: false,
+          fontFamily: 'Consolas, SFMono-Regular, monospace',
           themeVariables: {
-            // Surfaces (paper)
-            background: '#faf7f2',
-            primaryColor: '#faf7f2',
-            primaryTextColor: '#1c1917',
-            primaryBorderColor: '#d4cdbe',
-
-            // Lines + edges (ink)
-            lineColor: '#78716c',
-            edgeLabelBackground: '#faf7f2',
-
-            // Accent (terracotta)
-            secondaryColor: '#f4e6dd',
-            secondaryBorderColor: '#b45a3c',
-            secondaryTextColor: '#1c1917',
-            tertiaryColor: '#f3efe7',
-            tertiaryBorderColor: '#e5e0d6',
-            tertiaryTextColor: '#44403c',
-
-            // Cluster (subgraph) backgrounds
-            clusterBkg: 'rgba(28, 25, 23, 0.02)',
-            clusterBorder: '#d4cdbe',
-
-            // Text
-            textColor: '#1c1917',
-            fontSize: '9px',
-            mainBkg: '#faf7f2',
-            nodeBorder: '#d4cdbe',
-
-            // Sequence diagrams
-            actorBkg: '#faf7f2',
-            actorBorder: '#b45a3c',
-            actorTextColor: '#1c1917',
-            actorLineColor: '#78716c',
-            signalColor: '#44403c',
-            signalTextColor: '#1c1917',
-            labelBoxBkgColor: '#faf7f2',
-            labelBoxBorderColor: '#b45a3c',
-            labelTextColor: '#1c1917',
-            loopTextColor: '#78716c',
-            noteBkgColor: '#f4e6dd',
-            noteBorderColor: '#b45a3c',
-            noteTextColor: '#1c1917',
-
-            // ER / state
-            attributeBackgroundColorOdd: '#faf7f2',
-            attributeBackgroundColorEven: 'rgba(28, 25, 23, 0.02)',
+            background: '#f8f4eb', primaryColor: '#f3efe7', primaryTextColor: '#302b24',
+            primaryBorderColor: '#d4cdbe', lineColor: '#817361', textColor: '#302b24',
+            edgeLabelBackground: '#f8f4eb', secondaryColor: '#f4e6dd', tertiaryColor: '#e8eadb',
+            fontSize: '13px', clusterBkg: '#f2ecdf', clusterBorder: '#d4cdbe',
+            actorBkg: '#f3efe7', actorBorder: '#a45037', actorTextColor: '#302b24',
+            signalColor: '#746b5e', signalTextColor: '#302b24',
+            noteBkgColor: '#f4e6dd', noteTextColor: '#302b24', noteBorderColor: '#b45a3c',
           },
-          flowchart: {
-            curve: 'basis',
-            padding: 14,
-            nodeSpacing: 44,
-            rankSpacing: 56,
-            useMaxWidth: true,
-            htmlLabels: true,
-            // Wrap long node labels at ~160px so they stay inside the
-            // shape; the matching CSS in globals.css applies the actual
-            // word-wrap to the rendered foreignObject text.
-            wrappingWidth: 160,
-          },
-          sequence: {
-            useMaxWidth: true,
-            actorMargin: 56,
-            messageMargin: 36,
-            boxMargin: 10,
-          },
-          themeCSS: `
-            .nodeLabel, .edgeLabel, .label, text,
-            foreignObject div, foreignObject span, foreignObject p {
-              font-family: Consolas, "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, monospace !important;
-              font-size: 9px !important;
-              letter-spacing: 0;
-              line-height: 1.25 !important;
-              text-align: center !important;
-              text-anchor: middle !important;
-            }
-            /* Wrap long labels inside their node shape rather than letting
-               them spill horizontally. The 160px ceiling matches the
-               wrappingWidth set in the flowchart config above. */
-            .node .label > div,
-            .node .nodeLabel,
-            foreignObject p {
-              max-width: 160px !important;
-              white-space: normal !important;
-              overflow-wrap: break-word !important;
-              word-break: normal !important;
-              hyphens: auto;
-            }
-            .node foreignObject { overflow: visible !important; }
-            .node rect, .node polygon, .node circle, .node ellipse {
-              stroke-width: 1.25px;
-            }
-          `,
+          flowchart: { htmlLabels: false, curve: 'basis', padding: 18, nodeSpacing: 35, rankSpacing: 48, useMaxWidth: true, wrappingWidth: 190 },
+          sequence: { useMaxWidth: true, actorMargin: 40, messageMargin: 30 },
         })
-
-        const id = `mmd_${reactId}`
-        const { svg } = await mermaid.render(id, chart)
-        if (!cancelled) setSvg(svg)
-      } catch (e) {
-        if (!cancelled) {
-          const msg = e instanceof Error ? e.message : 'Diagram render failed.'
-          setErr(msg)
-        }
+        const result = await mermaid.render(`diagram_${id}`, chart)
+        if (!cancelled) setSvg(result.svg)
+      } catch {
+        if (!cancelled) setError(true)
       }
     })()
-
-    return () => {
-      cancelled = true
-    }
-  }, [chart, reactId])
+    return () => { cancelled = true }
+  }, [chart, id])
 
   return (
-    <figure className="mermaid-block my-10 overflow-hidden rounded-md border border-line bg-paper">
-      <div className="flex items-center justify-between border-b border-line px-4 py-2 font-mono text-[10.5px] uppercase tracking-eyebrow text-ink-3">
-        <span>diagram</span>
-        <span className="hidden text-ink-4 sm:inline">scroll horizontally if needed</span>
+    <figure className="mermaid-block not-prose">
+      <figcaption className="diagram-toolbar"><span>Architecture / diagram</span><button type="button" disabled={!svg} onClick={() => { setLarge(false); dialog.current?.showModal() }} aria-label="Expand diagram"><Expand size={13} aria-hidden="true" /> Expand</button></figcaption>
+      <div className="diagram-scroll" tabIndex={0} role="region" aria-label="Architecture diagram, scroll horizontally to explore">
+        {svg ? <div className="mermaid-rendered" dangerouslySetInnerHTML={{ __html: svg }} /> : error ? <div className="diagram-fallback"><p>Diagram preview unavailable. The definition is available below.</p><details><summary>View diagram source</summary><pre>{chart}</pre></details></div> : <p className="diagram-loading" role="status">Drawing the diagram…</p>}
       </div>
-      <div className="overflow-x-auto px-3 py-5 md:px-6 md:py-6">
-        {svg ? (
-          <div
-            className="mermaid-rendered flex w-full justify-center"
-            // SVG is generated by mermaid, which we trust.
-            dangerouslySetInnerHTML={{ __html: svg }}
-          />
-        ) : err ? (
-          <pre className="whitespace-pre-wrap font-mono text-[12px] text-terracotta">
-            {err}
-          </pre>
-        ) : (
-          <div className="grid h-32 place-items-center font-mono text-[11px] uppercase tracking-eyebrow text-ink-3">
-            rendering diagram…
-          </div>
-        )}
-      </div>
+      <dialog ref={dialog} className="diagram-dialog" aria-label="Expanded architecture diagram">
+        <div className="diagram-dialog-head"><span>Architecture diagram</span><div className="diagram-dialog-actions"><button type="button" aria-pressed={!large} onClick={() => setLarge(false)}>Fit</button><button type="button" aria-pressed={large} onClick={() => setLarge(true)}>Larger</button><button type="button" onClick={() => dialog.current?.close()} aria-label="Close diagram"><X size={20} /></button></div></div>
+        {expandedSvg && <div className={`diagram-dialog-content${large ? ' diagram-dialog-large' : ''}`} dangerouslySetInnerHTML={{ __html: expandedSvg }} />}
+      </dialog>
     </figure>
   )
 }

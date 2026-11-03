@@ -21,6 +21,8 @@ export type PostFrontmatter = {
   mediumUrl?: string
   // Estimated reading time in minutes (optional. Falls back to a word count).
   readingTime?: number
+  series?: string
+  seriesOrder?: number
 }
 
 export type Post = PostFrontmatter & {
@@ -52,7 +54,7 @@ function parsePost(slug: string, raw: string): Post {
   return {
     slug,
     title: String(data.title ?? slug),
-    date: String(data.date ?? ''),
+    date: data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date ?? ''),
     excerpt: String(data.excerpt ?? ''),
     status: (data.status as PostStatus) ?? 'draft',
     tags: Array.isArray(data.tags) ? data.tags.map(String) : undefined,
@@ -61,25 +63,20 @@ function parsePost(slug: string, raw: string): Post {
         ? data.mediumUrl
         : undefined,
     readingTime:
-      typeof data.readingTime === 'number' ? data.readingTime : undefined,
+      typeof data.readingTime === 'number' ? data.readingTime : Math.max(1, Math.ceil(content.replace(/```[\s\S]*?```/g, '').split(/\s+/).length / 220)),
+    series: typeof data.series === 'string' ? data.series : undefined,
+    seriesOrder: typeof data.seriesOrder === 'number' ? data.seriesOrder : undefined,
     content,
   }
 }
 
-// Sort: published first (newest first), then drafts (newest first), then
-// archive (newest first). Within each bucket we order by date descending.
-function statusRank(s: PostStatus): number {
-  if (s === 'published') return 0
-  if (s === 'draft') return 1
-  return 2 // archive
-}
-
+// Chronological across every status. Same-day series retain their reading order.
 function sortPosts(posts: Post[]): Post[] {
   return [...posts].sort((a, b) => {
-    const sa = statusRank(a.status)
-    const sb = statusRank(b.status)
-    if (sa !== sb) return sa - sb
-    return b.date.localeCompare(a.date)
+    const date = b.date.localeCompare(a.date)
+    if (date) return date
+    if (a.series && a.series === b.series) return (a.seriesOrder ?? 0) - (b.seriesOrder ?? 0)
+    return a.title.localeCompare(b.title)
   })
 }
 

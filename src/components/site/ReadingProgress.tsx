@@ -31,7 +31,11 @@ export default function ReadingProgress() {
     update()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll, { passive: true })
+    const observer = new ResizeObserver(onScroll)
+    const article = document.querySelector('article')
+    if (article) observer.observe(article)
     return () => {
+      observer.disconnect()
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
       if (raf) window.cancelAnimationFrame(raf)
