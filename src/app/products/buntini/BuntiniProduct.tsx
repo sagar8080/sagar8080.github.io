@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useId, useState } from 'react'
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Download, Heart, LockKeyhole, Pause, Play, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check, Download, Heart, LockKeyhole, Pause, Play, Sparkles } from 'lucide-react'
 import Cat, { type CatAccessory, type CatCoat } from '@/components/buntini/Cat'
 import { buntini } from '@/lib/buntini'
 import './buntini.css'
@@ -37,7 +37,6 @@ export default function BuntiniProduct() {
   const [scene, setScene] = useState(0)
   const [approved, setApproved] = useState(false)
   const [brain, setBrain] = useState(0)
-  const [walkthrough, setWalkthrough] = useState(false)
   const selectedScene = scenes[scene]
 
   return (
@@ -49,7 +48,7 @@ export default function BuntiniProduct() {
           <p className="bun-lede">Meet Buntini. A little cat that lives on your Mac, keeps you company, and lends a paw with everyday things. Private by default. Powered by the AI you choose.</p>
           <div className="bun-actions">
             <a className="bun-button bun-button-dark" href={buntini.downloadUrl}><Download size={17} /> Get Buntini for Mac</a>
-            <a className="bun-text-link" href="#playground">Meet your companion <ArrowDown size={15} /></a>
+            <a className="bun-text-link" href="#walkthrough"><Play size={15} /> Watch the 30-second film</a>
           </div>
           <p className="bun-requirements">Apple silicon · macOS 13+ <span>Open source. Made with care.</span></p>
         </div>
@@ -88,9 +87,14 @@ export default function BuntiniProduct() {
         </div>
       </section>
 
-      <section className="bun-walkthrough" aria-labelledby="walkthrough-title">
-        <div className="bun-walkthrough-heading"><div><span className="bun-kicker">02 / OUT IN THE WILD</span><h2 id="walkthrough-title">Small cat. <em>Actual app.</em></h2></div><button className="bun-text-link" type="button" onClick={() => setWalkthrough(!walkthrough)}>{walkthrough ? <><Pause size={15} /> Close walkthrough</> : <><Play size={15} /> Play app walkthrough</>}</button></div>
-        <div className={`bun-film ${walkthrough ? 'is-playing' : ''}`}>{walkthrough ? <img src="/buntini/demo.webp" width="960" height="617" alt="Buntini’s app walkthrough: playing music, summarizing a page, reading a calendar, approving a reminder, setting a timer, and configuring app access." /> : <button type="button" onClick={() => setWalkthrough(true)} aria-label="Play Buntini app walkthrough"><img src="/buntini/icon.svg" width="104" height="104" alt="Buntini" /><span className="bun-film-title">A day in the life of a desktop cat.</span><span className="bun-play-circle"><Play size={22} fill="currentColor" /></span><span>Watch the app walkthrough</span></button>}</div>
+      <section id="walkthrough" className="bun-walkthrough" aria-labelledby="walkthrough-title">
+        <div className="bun-walkthrough-heading"><div><span className="bun-kicker">02 / OUT IN THE WILD</span><h2 id="walkthrough-title">Small cat. <em>Actual app.</em></h2></div><span className="bun-film-length">A little introduction · 30 seconds</span></div>
+        <div className="bun-film">
+          <video controls playsInline preload="metadata" width="3840" height="2160" aria-labelledby="walkthrough-title">
+            <source src="/buntini/walkthrough.webm" type="video/webm" />
+            Your browser doesn’t support this video. <a href="/buntini/walkthrough.webm">Download the Buntini film</a> to watch it.
+          </video>
+        </div>
       </section>
 
       <section className="bun-brain-section" aria-labelledby="brain-title">

@@ -2,7 +2,7 @@
 .buntini-page { --bun-purple: #74608f; --bun-ink: #302b35; --bun-muted: #706774; --bun-line: #ded6dc; --bun-lilac: #eae3f0; color: var(--bun-ink); padding-top: 64px; }
 .buntini-page h1, .buntini-page h2, .buntini-page h3, .buntini-page p { margin: 0; }
 .buntini-page button, .buntini-page a { -webkit-tap-highlight-color: transparent; }
-.buntini-page button:focus-visible, .buntini-page a:focus-visible { outline: 3px solid #8867a8; outline-offset: 5px; }
+.buntini-page button:focus-visible, .buntini-page a:focus-visible, .buntini-page video:focus-visible { outline: 3px solid #8867a8; outline-offset: 5px; }
 .bun-kicker { display: flex; align-items: center; gap: 18px; font: 9px var(--font-mono), monospace; letter-spacing: .1em; color: #77637f; text-decoration: none; }
 .bun-kicker > span { color: #827b7d; font-size: 8px; }
 .bun-hero { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 60px; padding-bottom: 64px; }
@@ -76,15 +76,11 @@
 .bun-result .bun-button { font-size: 10px; padding: 10px 12px; align-self: flex-start; margin-top: 7px; }
 .buntini-page .bun-preview-note { font-size: 10px; line-height: 1.7; color: #968894; margin: 15px 0 0 37px; }
 .bun-demo-caption { padding: 12px 18px; background: #f3edf5; color: #8e7f94; font-size: 9px; line-height: 1.7; }
-.bun-walkthrough { padding-top: 10px; }
+.bun-walkthrough { padding-top: 10px; scroll-margin-top: 110px; }
 .bun-walkthrough-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 35px; }
-.bun-film { border-radius: 14px; border: 1px solid #d5c9db; overflow: hidden; background: #e5dceb; }
-.bun-film > button { width: 100%; min-height: 340px; padding: 38px 20px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; border: 0; background: radial-gradient(ellipse at 45% 45%, #fff1d6, #e8dff0 65%); cursor: pointer; color: #7d668a; }
-.bun-film-title { font-family: var(--font-editorial), Georgia, serif; font-size: 30px; font-style: italic; letter-spacing: -.03em; color: #6b5279; text-align: center; }
-.bun-film > button > span:last-child { font-size: 10px; }
-.bun-play-circle { display: grid; place-items: center; width: 48px; height: 48px; background: #fcf9f5; border-radius: 50%; color: #8e72a1; border: 1px solid #d6c6df; transition: transform .2s; }
-.bun-film > button:hover .bun-play-circle { transform: scale(1.13); }
-.bun-film > img { display: block; width: 100%; height: auto; }
+.bun-film-length { color: var(--bun-muted); font-size: 11px; line-height: 1.7; }
+.bun-film { border-radius: 14px; border: 1px solid #d5c9db; overflow: hidden; background: #faf7f2; }
+.bun-film > video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
 .bun-brain-section { padding-top: 110px; }
 .bun-brain-picker { border: 1px solid #ddd0e2; border-radius: 13px; overflow: hidden; background: #f4eef6; }
 .bun-brain-tabs { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 3px; padding: 7px; background: #e8dfed; }
@@ -168,7 +164,6 @@
   .bun-conversation-bar > span { font-size: 6px; }
   .bun-brain-detail { padding: 24px; }
   .bun-brain-tabs button { font-size: 9px; }
-  .bun-film-title { font-size: 26px; }
   .bun-privacy { padding: 30px 24px; }
   .bun-download { padding: 32px 22px; gap: 30px; }
   .bun-install { padding: 20px; }
