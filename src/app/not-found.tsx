@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <main className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-start justify-center gap-6 px-6 py-24">
+    <section className="theme-page flex min-h-[60vh] flex-col items-start justify-center gap-6">
       <p className="eyebrow">
         <span className="eyebrow-rule" aria-hidden />
         404 · not found
@@ -34,6 +34,6 @@ export default function NotFound() {
           </li>
         ))}
       </ul>
-    </main>
+    </section>
   )
 }

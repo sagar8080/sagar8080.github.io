@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import { mdxComponents } from '@/components/site/MdxComponents'
 import ReadingProgress from '@/components/site/ReadingProgress'
+import ScrollEngraving from '@/components/site/ScrollEngraving'
 import SectionMarkers from '@/components/site/SectionMarkers'
 import { getAllPosts, getPostBySlug, getPostSlugs } from '@/lib/writing'
 import { getArticleHeadings, remarkSectionIds } from '@/lib/writing-outline'
@@ -36,7 +37,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <ReadingProgress />
       <div className="article-content">
         <Link href="/writing" className="reader-back">← All writing</Link>
-        <header className="reader-header">
+        <header className="reader-header engraving-scene engraving-scene-page">
+          <ScrollEngraving variant="writing" />
           <div className="reader-meta">
             <time dateTime={post.date}>{formatDate(post.date)}</time><span>·</span><span>{post.readingTime} min read</span>
             {post.status !== 'published' && <span className="entry-status">{post.status === 'draft' ? 'Draft' : 'Archive'}</span>}

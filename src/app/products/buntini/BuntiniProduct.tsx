@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useId, useState } from 'react'
 import { ArrowRight, ArrowUpRight, Check, Download, Heart, LockKeyhole, Pause, Play, Sparkles } from 'lucide-react'
 import Cat, { type CatAccessory, type CatCoat } from '@/components/buntini/Cat'
+import ScrollEngraving from '@/components/site/ScrollEngraving'
+import { useBackdropMotion } from '@/components/site/SiteBackdrop'
 import { buntini } from '@/lib/buntini'
 import './buntini.css'
 
@@ -37,11 +39,13 @@ export default function BuntiniProduct() {
   const [scene, setScene] = useState(0)
   const [approved, setApproved] = useState(false)
   const [brain, setBrain] = useState(0)
+  const { paused } = useBackdropMotion()
   const selectedScene = scenes[scene]
 
   return (
     <div className={`theme-page buntini-page ${motion ? '' : 'buntini-still'}`}>
-      <section className="bun-hero" aria-labelledby="bun-title">
+      <section className="bun-hero engraving-scene engraving-scene-page" aria-labelledby="bun-title">
+        <ScrollEngraving variant="contact" className="product-etching" />
         <div className="bun-intro">
           <Link href="/projects" className="bun-kicker">02 / BUNTINI <span>DESKTOP COMPANION</span></Link>
           <h1 id="bun-title">A little company.<br /><em>A little superpower.</em></h1>
@@ -54,7 +58,18 @@ export default function BuntiniProduct() {
         </div>
 
         <div id="playground" className="bun-playground">
-          <div className="bun-stage-top"><span><i /> A SMALL FRIEND FOR YOUR DESKTOP</span><button type="button" onClick={() => setMotion(!motion)} aria-pressed={!motion} aria-label={motion ? 'Pause character animation' : 'Resume character animation'}>{motion ? <Pause size={14} /> : <Play size={14} />}</button></div>
+          <div className="bun-stage-top">
+            <span><i /> A SMALL FRIEND FOR YOUR DESKTOP</span>
+            <button
+              type="button"
+              onClick={() => setMotion(!motion)}
+              disabled={paused}
+              aria-pressed={paused || !motion}
+              aria-label={paused ? 'Character animation paused' : motion ? 'Pause character animation' : 'Resume character animation'}
+            >
+              {paused || !motion ? <Play size={14} aria-hidden /> : <Pause size={14} aria-hidden />}
+            </button>
+          </div>
           <div className="bun-stage">
             <span className="bun-star bun-star-one" aria-hidden="true">✳</span><span className="bun-star bun-star-two" aria-hidden="true">✦</span>
             <p className="bun-speech" aria-live="polite">{pets === 0 ? 'Oh, hi. I saved you a little space.' : ['Prrr. An excellent use of your time.', 'More of that, please.', 'Officially your desk buddy.'][((pets - 1) % 3)]}<Heart size={15} /></p>

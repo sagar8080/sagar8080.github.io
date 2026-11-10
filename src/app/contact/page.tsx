@@ -10,32 +10,33 @@ const helpfulAreas = [
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-[90rem] px-6 pb-24 pt-12 md:pt-16">
-      <div className="mx-auto max-w-4xl space-y-14">
+    <div className="theme-page theme-contact">
+      <div className="theme-content space-y-14">
       <PageHeader
+        engraving="contact"
         eyebrow="Contact"
-        title="Always happy to hear from you."
+        title={<>Always happy to<br /><em>hear from you.</em></>}
         lede="Consulting, full-time roles, collaborations, or just a friendly chat about a problem you're thinking through. Email tends to be the easiest way to start; I try to reply within a working day."
       />
 
       <Section>
         <Eyebrow label="Channels" />
-        <ul className="grid gap-3 sm:grid-cols-3">
+        <ul className="contact-channels">
           {contactLinks.map((link) => (
             <li key={link.id}>
               <a
                 href={link.href}
                 target={link.id === 'email' ? undefined : '_blank'}
                 rel={link.id === 'email' ? undefined : 'noopener noreferrer'}
-                className="surface group flex h-full flex-col justify-between p-5"
+                className="contact-channel group"
               >
                 <p className="font-mono text-[10.5px] uppercase tracking-eyebrow text-zinc-500">
                   {link.label}
                 </p>
-                <p className="mt-3 truncate text-[14.5px] font-medium text-white">
+                <p className="contact-address">
                   {link.display}
                 </p>
-                <span className="mt-3 text-[12px] text-zinc-500 transition-colors group-hover:text-accent">
+                <span className="text-[12px] text-zinc-500 transition-colors group-hover:text-accent">
                   {link.id === 'email' ? 'Compose →' : 'Open ↗'}
                 </span>
               </a>
@@ -67,11 +68,7 @@ export default function ContactPage() {
         </p>
       </Section>
 
-      <div className="surface relative overflow-hidden p-7 md:p-9">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -top-px left-12 right-12 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"
-        />
+      <div className="contact-note p-7 md:p-9">
         <p className="font-display text-[18px] leading-[1.5] text-zinc-200 md:text-[20px]">
           A couple of lines about what you&apos;re working on and what would be helpful
           is plenty to start. We can take it from there at whatever pace works for

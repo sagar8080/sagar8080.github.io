@@ -14,6 +14,7 @@ export default async function WritingIndex() {
     <div className="theme-page theme-writing">
       <div className="theme-content writing-content">
         <PageHeader
+          engraving="writing"
           eyebrow="The writing desk"
           title={<>Notes on the<br /><em>systems I build.</em></>}
           lede="Decisions, experiments, and lessons from building AI and data systems. An evolving record of how I think about the work."

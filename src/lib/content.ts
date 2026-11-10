@@ -98,10 +98,10 @@ export type Telemetry = {
 }
 
 export const telemetry: Telemetry[] = [
-  { label: 'LEGACY_MODERNIZATION', value: '900+', unit: '', caption: 'Java modules → Spark + Beam' },
-  { label: 'STREAMING_SCALE', value: '20', unit: 'M/day', caption: 'events into BigQuery' },
-  { label: 'DATASETS_ONBOARDED', value: '35+', unit: '', caption: 'financial datasets → lakehouse' },
-  { label: 'INGEST_RUNTIME', value: '6h→45m', unit: '', caption: '119-table CDC + validation' },
+  { label: 'STREAMING_SCALE', value: '20M+', unit: '/day', caption: 'Live learning-platform events streamed into BigQuery' },
+  { label: 'EMAIL_FRESHNESS', value: '65', unit: '%', caption: 'Improvement in email-data freshness' },
+  { label: 'GOVERNANCE_GUARDRAILS', value: '43', unit: '', caption: 'Governance guardrails for sensitive email records' },
+  { label: 'ONBOARDING_TIME', value: '4 days', unit: '→ hours', caption: 'Data onboarding turnaround' },
 ]
 
 // Navigation: anchor → label. Labels are uppercase short codes for the status bar.
@@ -253,38 +253,38 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'quantiphi',
     index: '00',
-    company: 'Quantiphi',
+    company: 'Quantiphi Inc.',
     position: 'Senior Data Engineer',
     duration: 'Aug 2026 – Present',
-    location: 'Marlborough, MA',
-    summary: 'Building scalable batch and streaming data platforms for analytics and AI, with a focus on healthcare data interoperability.',
+    location: 'Boston, MA',
+    summary: 'Data infrastructure for healthcare retrieval and AI workflows.',
     achievements: [
-      'Designing and building scalable ETL/ELT pipelines and batch plus real-time processing systems, tuned for performance, scalability, and cost efficiency across large structured and semi-structured datasets.',
-      'Building and maintaining data integration workflows across heterogeneous source systems, with quality, integrity, and reliability controls spanning the full data lifecycle.',
-      'Designing data models that support downstream analytics and AI use cases, translating stakeholder requirements into technical design.',
-      'Supporting healthcare data ingestion and transformation against interoperability standards, with CI/CD, testing, and pipeline monitoring built into delivery.',
+      'Building the data foundation for a healthcare RAG platform. Bringing clinical, operational, and knowledge content into Cloud Storage and BigQuery, with lineage, access controls, and vector indexes for retrieval.',
+      'Developing multi-step agents with LangGraph, FastAPI, Vertex AI, and Cloud Run. Adding tool calling, memory, audit logs, and human approvals so teams can review what the agents do.',
     ],
-    technologies: [],
+    technologies: ['Python', 'Cloud Storage', 'BigQuery', 'Dataflow', 'Vertex AI', 'LangGraph', 'FastAPI', 'Cloud Run'],
   },
   {
     id: 'wells-fargo-capgemini',
     index: '01',
-    company: 'Wells Fargo · via Capgemini America Inc.',
+    company: 'Wells Fargo · via Capgemini America',
     position: 'Data Engineer',
     duration: 'Oct 2025 – Aug 2026',
     location: 'Charlotte, NC',
-    summary: 'Leading GenAI-assisted modernization, lakehouse architecture, and event-driven ingestion for regulated financial data.',
+    summary: 'Cloud data engineering for regulated email records.',
     metrics: [
-      { value: '900+', caption: 'Java modules migrated' },
-      { value: '35+', caption: 'financial datasets' },
-      { value: '20+ yrs', caption: 'reporting context' },
+      { value: '65%', caption: 'improvement in data freshness' },
+      { value: '43', caption: 'email governance guardrails' },
+      { value: '20', caption: 'teams with on-demand access' },
     ],
     achievements: [
-      'Led a GenAI-assisted modernization initiative using GitHub Copilot to migrate 900+ legacy Java modules into Spark and Apache Beam pipelines in roughly 7 months versus a 2+ year manual rewrite estimate.',
-      'Architected an Apache Iceberg + BigQuery lakehouse for an on-prem-to-GCP migration POC, onboarding 35+ financial datasets with SAR/CSAR compliance considerations.',
-      'Built event-driven ingestion on GCS, Airflow, and Dataflow with schema enforcement, DQ checks, curated lakehouse outputs, and a BigQuery semantic layer over 20+ years of financial data.',
+      'Moved on-premises batch email governance to Google Cloud, giving 20 downstream teams on-demand access.',
+      'Connected Pub/Sub and Dataflow with Airflow and Cloud Functions for near-real-time email ingestion. Tuned autoscaling, batching, and message acknowledgments, improving data freshness by 65%.',
+      'Added 43 guardrails for PII, legal, finance, and cybersecurity requirements using redaction, exclusion, and audit tagging.',
+      'Helped build a layered lakehouse with BigQuery, Spark, and Apache Iceberg, serving 14 teams across three domains and refreshing 20+ views hourly.',
+      'Stabilized Spark loads across 10 workstreams by fixing skew, memory pressure, shuffle spills, and schema drift.',
     ],
-    technologies: ['GCP', 'GitHub Copilot', 'Apache Beam', 'Spark', 'Airflow', 'Dataflow', 'BigQuery', 'Apache Iceberg'],
+    technologies: ['Pub/Sub', 'Dataflow', 'Airflow', 'Cloud Functions', 'BigQuery', 'Spark', 'Apache Iceberg'],
   },
   {
     id: 'umd-data-specialist',
@@ -293,39 +293,40 @@ export const experience: ExperienceEntry[] = [
     position: 'Data Specialist',
     duration: 'Sep 2023 – May 2025',
     location: 'College Park, MD',
-    summary: 'Built high-throughput analytics and AI systems for academic operations and research.',
+    summary: 'Data pipelines and retrieval tools for academic operations.',
     metrics: [
-      { value: '20M/day', caption: 'ELMS events → BQ' },
-      { value: '6h→45m', caption: '119-table CDC' },
-      { value: '5d→2d', caption: 'survey RAG review' },
+      { value: '20M+/day', caption: 'live learning-platform events' },
+      { value: '12+', caption: 'departments using a shared data source' },
+      { value: '100K+', caption: 'survey responses in a retrieval prototype' },
     ],
     achievements: [
-      'Engineered a Pub/Sub + Dataflow streaming pipeline ingesting 20M+ daily ELMS events into BigQuery for real-time Superset dashboards tracking 15 KPIs across 230 academic programs.',
-      'Overhauled 119 Redshift ingestion workflows in Python, SQL, and AWS with CDC and validation, cutting runtime from 6 hours to 45 minutes.',
-      'Prepared an LLM-powered RAG POC over 100K+ open-ended survey responses using Python, LangChain, and Elasticsearch, reducing qualitative review effort by 60%.',
+      'Streamed 20M+ live learning-platform events daily into BigQuery, creating a shared data source for 12+ departments.',
+      'Replaced weekly snapshots with hourly incremental loads using Parquet, Amazon S3, and Redshift, reducing data latency from days to hours.',
+      'Built a retrieval-augmented generation (RAG) prototype over 100K+ survey responses. Used semantic chunking, retrieval, and knowledge graphs to surface themes and quotes, reducing manual review.',
     ],
-    technologies: ['BigQuery', 'Pub/Sub', 'Dataflow', 'LangChain', 'Elasticsearch', 'Python'],
+    technologies: ['Google Cloud', 'BigQuery', 'Parquet', 'Amazon S3', 'Redshift'],
   },
   {
     id: 'tiger-analytics',
     index: '03',
     company: 'Tiger Analytics',
-    position: 'Senior Software Engineer. Data Platform',
+    position: 'Senior Software Engineer — Data Engineering',
     duration: 'Jul 2021 – Jul 2023',
     location: 'Chennai, India',
-    summary: 'Led delivery of a self-serve data fabric used by Fortune 500 clients.',
+    summary: 'Self-serve data infrastructure for enterprise clients.',
     metrics: [
       { value: '6', caption: 'enterprise clients' },
-      { value: '75%', caption: 'onboarding time cut' },
-      { value: '85+', caption: 'analysts + ML engineers' },
+      { value: '30+', caption: 'data quality rules' },
+      { value: '4 days → hours', caption: 'data onboarding turnaround' },
     ],
     achievements: [
-      'Led a 7-engineer team building a self-serve AWS data platform that enabled data mesh adoption across 6 enterprise clients.',
-      'Designed an Apache Iceberg lakehouse on S3 with Glue Catalog, schema evolution, ACID transactions, and time-travel queries for reproducible ML training datasets and historical analytics.',
-      'Developed Airbyte/Airflow batch and streaming ingestion with CDC, encryption, Macie PII detection, and a Spark + Deequ DQ framework with 30+ rules, reducing onboarding time by 75% and blocking 85% of bad data before downstream ML.',
-      'Shipped FastAPI microservices on Kubernetes exposing ELT orchestration as self-serve REST APIs for 85+ analysts and ML engineers.',
+      'Worked with a senior architect from design through rollout on a cloud data platform adopted by six enterprise clients over two years.',
+      'Built containerized FastAPI services behind a self-service interface, using Elastic Load Balancing and API Gateway to connect ingestion, source configuration, and asset monitoring.',
+      'Built a data quality engine with Scala, Spark, and Deequ. Added 30+ business rules and dashboards that made anomalies easier to find and investigate.',
+      'Built an Apache Iceberg lakehouse on S3 with AWS Glue. Used partition pruning, compaction, and type 2 slowly changing dimensions for Athena queries and QuickSight reporting.',
+      'Built metadata-driven ingestion with PostgreSQL, Airbyte, Airflow, and Spark, cutting data onboarding from four days to hours.',
     ],
-    technologies: ['AWS', 'Spark', 'Airflow', 'Airbyte', 'FastAPI', 'Kubernetes', 'Apache Iceberg', 'Deequ'],
+    technologies: ['FastAPI', 'AWS', 'Scala', 'Spark', 'Deequ', 'Apache Iceberg', 'PostgreSQL', 'Airbyte', 'Airflow'],
   },
 ]
 
@@ -350,7 +351,7 @@ export const education: EducationEntry[] = [
     location: 'College Park, MD',
     duration: 'Aug 2023 – May 2025',
     highlights: [
-      'Graduate assistantship as Data Specialist. Built analytics + AI systems across 230 academic programs.',
+      'Graduate assistantship as Data Specialist.',
       'Coursework: distributed systems, retrieval, applied ML, data governance.',
     ],
   },
@@ -494,33 +495,36 @@ export const featuredProject: FeaturedProject = {
 
 export type Photo = {
   src: string
+  preview: string
   caption: string
-  meta: string
 }
 
-// EXIF-style metadata is illustrative. The photos are real, lens/aperture strings are styling.
 export const photos: Photo[] = [
-  { src: '/photography/1.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/1.8 · iso400' },
-  { src: '/photography/2.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.0 · iso200' },
-  { src: '/photography/3.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/4.0 · iso800' },
-  { src: '/photography/4.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/1.8 · iso100' },
-  { src: '/photography/5.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/6.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.4 · iso200' },
-  { src: '/photography/7.jpeg', caption: 'Olympus EM 10', meta: '28mm · f/4.0 · iso100' },
-  { src: '/photography/8.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/9.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.0 · iso200' },
-  { src: '/photography/10.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/8.0 · iso100' },
-  { src: '/photography/11.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/1.8 · iso800' },
-  { src: '/photography/12.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso400' },
-  { src: '/photography/13.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.8 · iso200' },
-  { src: '/photography/14.jpeg', caption: 'Olympus EM 10', meta: '24mm · f/4.0 · iso400' },
-  { src: '/photography/15.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/1.8 · iso200' },
-  { src: '/photography/16.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/2.8 · iso800' },
-  { src: '/photography/17.jpeg', caption: 'Olympus EM 10', meta: '28mm · f/4.0 · iso100' },
-  { src: '/photography/18.jpeg', caption: 'Olympus EM 10', meta: '85mm · f/2.0 · iso400' },
-  { src: '/photography/19.jpeg', caption: 'Olympus EM 10', meta: '35mm · f/2.8 · iso200' },
-  { src: '/photography/20.jpeg', caption: 'Olympus EM 10', meta: '50mm · f/1.8 · iso400' },
-]
+  'Ferris wheel',
+  'Autumn roadside',
+  'Open water',
+  'Lakeside dock',
+  'Manhattan Bridge',
+  'On approach',
+  'Through the window',
+  'Lower Manhattan',
+  'The small door',
+  'Fireworks',
+  'Last light at the airport',
+  'A walk in the woods',
+  'Snow along the road',
+  'Outside the Tonight Show',
+  'Tree-lined path',
+  'Macy’s on 34th Street',
+  'The corner newsstand',
+  'At the top of the stairs',
+  'Red stone facade',
+  'Under the railing',
+].map((caption, index) => ({
+  src: `/photography/${index + 1}.jpeg`,
+  preview: `/portfolio/${index + 1}.webp`,
+  caption,
+}))
 
 export type ContactLink = {
   id: 'email' | 'linkedin' | 'github'

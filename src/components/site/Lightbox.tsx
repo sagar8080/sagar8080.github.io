@@ -1,12 +1,49 @@
 'use client'
 
-import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { Aperture, ArrowLeft, ArrowRight, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import type { Photo } from '@/lib/content'
+import { photoAssets } from '@/components/site/photo-assets'
 
-// Modal that opens when a photo is clicked from the strip. Shows the full
-// photo with EXIF caption. Closes on ESC, on backdrop click, or on the close
-// button. Locks body scroll while open.
+function Projection({ photo }: { photo: Photo }) {
+  const asset = photoAssets[photo.src]
+  const [ratio, setRatio] = useState(() => asset ? asset.width / asset.height : null)
+  const [ready, setReady] = useState(false)
+  const [failed, setFailed] = useState(false)
+
+  return (
+    <div
+      className="lightbox-print"
+      style={ratio ? { aspectRatio: ratio, width: `min(100%, ${ratio * 100}cqh)` } : undefined}
+      data-ready={ready}
+    >
+      {/* Checked-in srcset keeps the static export responsive. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        alt={photo.caption}
+        width={asset?.width}
+        height={asset?.height}
+        loading="eager"
+        decoding="async"
+        sizes={`min(92vw, ${((ratio ?? 9 / 16) * 86).toFixed(2)}dvh)`}
+        srcSet={asset?.srcSet}
+        src={asset ? photo.preview : photo.src}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+        onLoad={({ currentTarget }) => {
+          if (!asset) setRatio(currentTarget.naturalWidth / currentTarget.naturalHeight)
+          setReady(true)
+        }}
+        onError={() => setFailed(true)}
+      />
+      {!ready && (
+        <p className="lightbox-print-status" role="status">
+          {failed ? 'This frame couldn’t load.' : 'Loading frame…'}
+        </p>
+      )}
+    </div>
+  )
+}
+
 export default function Lightbox({
   photo,
   index,
@@ -23,123 +60,96 @@ export default function Lightbox({
   onNext: () => void
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
+  const swipeStart = useRef<{ x: number; y: number } | null>(null)
+
   useEffect(() => {
     const dialog = dialogRef.current
-    const trigger = document.activeElement as HTMLElement | null
-    dialog?.showModal()
+    if (!dialog) return
+    const trigger = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const root = document.documentElement
+    const overflow = root.style.overflow
+    dialog.showModal()
+    root.style.overflow = 'hidden'
     return () => {
-      dialog?.close()
+      root.style.overflow = overflow
+      dialog.close()
       trigger?.focus({ preventScroll: true })
     }
   }, [])
 
-  useEffect(() => {
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose()
-      if (e.key === 'ArrowLeft') onPrev()
-      if (e.key === 'ArrowRight') onNext()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => {
-      window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = prev
-    }
-  }, [onClose, onPrev, onNext])
+  const frame = String(index + 1).padStart(2, '0')
 
   return (
     <dialog
       ref={dialogRef}
+      className="lightbox-backdrop"
+      aria-label="Camera roll photo viewer"
       onCancel={(event) => {
         event.preventDefault()
         onClose()
       }}
-      className="lightbox-backdrop flex flex-col items-center justify-center gap-6 p-6 md:p-12"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`Photo ${index + 1} of ${total}: ${photo.caption}`}
-      onClick={onClose}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose()
+      }}
+      onKeyDown={(event) => {
+        if (event.altKey || event.ctrlKey || event.metaKey) return
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault()
+          if (event.key === 'ArrowLeft') onPrev()
+          else onNext()
+        }
+      }}
     >
-      {/* Close (top-right) */}
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation()
-          onClose()
+      <header className="lightbox-header">
+        <p className="lightbox-mark"><Aperture size={17} aria-hidden="true" /> Camera roll</p>
+        <p className="lightbox-count" aria-hidden="true">
+          <span>Frame</span> <strong>{frame}</strong> / {String(total).padStart(2, '0')}
+        </p>
+        <button className="lightbox-button lightbox-close" type="button" onClick={onClose} aria-label="Close photo viewer">
+          <X size={22} aria-hidden="true" />
+        </button>
+      </header>
+
+      <div
+        className="lightbox-stage"
+        onTouchStart={(event) => {
+          const point = event.touches.length === 1 ? event.touches[0] : undefined
+          swipeStart.current = point ? { x: point.clientX, y: point.clientY } : null
         }}
-        className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
-        aria-label="Close"
+        onTouchCancel={() => { swipeStart.current = null }}
+        onTouchEnd={(event) => {
+          const start = swipeStart.current
+          swipeStart.current = null
+          const point = event.changedTouches[0]
+          if (!start || !point || event.touches.length > 0) return
+          const dx = point.clientX - start.x
+          const dy = point.clientY - start.y
+          if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.4) return
+          if (dx < 0) onNext()
+          else onPrev()
+        }}
       >
-        ✕
-      </button>
-
-      {/* Counter (top-left) */}
-      <div className="absolute left-5 top-5 font-mono text-[11px] uppercase tracking-eyebrow text-zinc-400">
-        {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+        <Projection key={photo.src} photo={photo} />
       </div>
 
-      {/* Image. Clicking the image itself doesn't close (only backdrop does) */}
-      <div
-        className="relative flex max-h-[80vh] max-w-[min(1200px,90vw)] items-center justify-center"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Image
-          src={photo.src}
-          alt={photo.caption}
-          width={1600}
-          height={2000}
-          className="h-auto max-h-[80vh] w-auto rounded-md object-contain"
-          priority
-        />
-      </div>
-
-      {/* Caption */}
-      <div
-        className="z-10 max-w-2xl space-y-1 text-center"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <p className="font-mono text-[12px] uppercase tracking-eyebrow text-paper">
-          {photo.caption}
+      <footer className="lightbox-footer">
+        <div className="lightbox-caption">
+          <p className="lightbox-caption-label" aria-hidden="true">From the archive</p>
+          <p>{photo.caption}</p>
+        </div>
+        <p className="sr-only" role="status" aria-atomic="true">
+          Photo {index + 1} of {total}. {photo.caption}
         </p>
-        <p className="font-mono text-[11px] tracking-wide text-zinc-500">
-          {photo.meta}
-        </p>
-      </div>
-
-      {/* Prev / next */}
-      <div className="absolute bottom-4 left-0 flex items-center md:inset-y-0">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation()
-            onPrev()
-          }}
-          className="ml-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
-          aria-label="Previous photo"
-        >
-          ←
-        </button>
-      </div>
-      <div className="absolute bottom-4 right-0 flex items-center md:inset-y-0">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation()
-            onNext()
-          }}
-          className="mr-4 grid h-12 w-12 place-items-center rounded-md border border-hairline-strong bg-paper text-ink transition-colors hover:border-line-2 hover:text-terracotta"
-          aria-label="Next photo"
-        >
-          →
-        </button>
-      </div>
-
-      {/* Hint */}
-      <p className="absolute bottom-5 hidden md:block font-mono text-[10px] uppercase tracking-eyebrow text-zinc-600">
-        ESC to close · ← → to navigate
-      </p>
+        <div className="lightbox-controls" role="group" aria-label="Photo navigation">
+          <button className="lightbox-button" type="button" onClick={onPrev} aria-label="Previous photo">
+            <ArrowLeft size={21} aria-hidden="true" />
+          </button>
+          <button className="lightbox-button" type="button" onClick={onNext} aria-label="Next photo">
+            <ArrowRight size={21} aria-hidden="true" />
+          </button>
+        </div>
+        <p className="lightbox-hint" aria-hidden="true"><kbd>←</kbd> <kbd>→</kbd> Browse <kbd>Esc</kbd> Close</p>
+      </footer>
     </dialog>
   )
 }

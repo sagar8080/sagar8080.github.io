@@ -7,44 +7,39 @@ import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const NAV = [
   { href: '/projects', label: 'Work' },
-  { href: '/products/kivi', label: 'Kivi' },
-  { href: '/products/buntini', label: 'Buntini' },
   { href: '/writing', label: 'Writing' },
+  { href: '/#photographs', label: 'Photos' },
   { href: '/resume', label: 'Résumé' },
 ]
 
 export default function SiteNav() {
   const pathname = usePathname() || '/'
+  const isHome = pathname === '/'
   const [open, setOpen] = useState(false)
   return (
     <header
       onKeyDown={(event) => {
-        if (event.key === 'Escape') {
+        if (open && event.key === 'Escape') {
           setOpen(false)
           event.currentTarget
             .querySelector<HTMLButtonElement>('.nav-toggle')
             ?.focus()
         }
       }}
-      className={`folio-nav ${pathname === '/' ? 'folio-nav-home' : ''}`}
+      className="folio-nav"
     >
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
-      <div className="folio-nav-inner">
+      <div className="folio-shell folio-nav-inner">
         <Link
           href="/"
           onClick={() => setOpen(false)}
           aria-label="Sagar Das. Home"
           className="folio-wordmark"
         >
-          sagar das<span>✳</span>
+          SD<span aria-hidden="true">.</span>
         </Link>
-        <span className="nav-caption">
-          ENGINEER BY TRADE.
-          <br />
-          CURIOUS BY DEFAULT.
-        </span>
         <button
           type="button"
           className="nav-toggle"
@@ -63,8 +58,9 @@ export default function SiteNav() {
           {NAV.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
-              aria-current={pathname.startsWith(item.href) ? 'page' : undefined}
+              href={isHome && item.href === '/projects' ? '#selected-work' : item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
+              data-active={pathname.startsWith(`${item.href}/`) || (item.href === '/projects' && pathname.startsWith('/products/')) ? '' : undefined}
               onClick={() => setOpen(false)}
             >
               {item.label}
@@ -76,7 +72,7 @@ export default function SiteNav() {
             aria-current={pathname === '/contact' ? 'page' : undefined}
             onClick={() => setOpen(false)}
           >
-            Let’s talk <ArrowUpRight size={15} />
+            Contact <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </nav>
       </div>

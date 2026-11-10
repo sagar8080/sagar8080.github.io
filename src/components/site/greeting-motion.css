@@ -1,0 +1,14 @@
+@media (prefers-reduced-motion: no-preference) {
+  .greeting-backdrop .ink-plate-imprint {
+    animation: greeting-imprint-drift 16s ease-in-out infinite alternate;
+  }
+
+  .hero-greeting:has(.is-still) .ink-plate-imprint {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes greeting-imprint-drift {
+  from { transform: none; }
+  to { transform: translate(12px, -7px); }
+}

@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import {
   Eyebrow,
   Section,
@@ -12,6 +9,7 @@ import {
   StatusPill,
   ProductPanel,
 } from '@/components/site/Atoms'
+import ScrollEngraving from '@/components/site/ScrollEngraving'
 import { featuredProject } from '@/lib/content'
 
 const features = [
@@ -82,12 +80,8 @@ export default function KiviProductPage() {
 
 function Hero() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="product-hero relative grid items-center gap-12 pb-8"
-    >
+    <section className="product-hero engraving-scene engraving-scene-page grid items-center gap-12 pb-8">
+      <ScrollEngraving variant="work" className="product-etching" />
       <div className="max-w-[760px] space-y-8">
         <div className="flex flex-wrap items-center gap-2">
           <StatusPill kind="in-development">Kivi · In development</StatusPill>
@@ -134,7 +128,7 @@ function Hero() {
       </div>
 
       <LaunchPanel />
-    </motion.section>
+    </section>
   )
 }
 

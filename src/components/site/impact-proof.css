@@ -1,0 +1,193 @@
+.impact-proof {
+  --impact-proof-copper: #e8b38e;
+  --impact-proof-cream: #f3eee1;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(22px, 4.2vw, 68px);
+  padding-block: clamp(25px, 3.5vw, 52px);
+  border-block: 1px solid #d5ddcb40;
+  color: var(--impact-proof-cream);
+}
+
+.impact-proof-label {
+  color: var(--impact-proof-copper);
+  font: 600 11px/1.4 var(--font-mono), monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.impact-proof-metric {
+  display: flex;
+  align-items: baseline;
+  gap: .24em;
+  margin-top: 10px;
+  font: 750 clamp(40px, 5.25vw, 68px)/1.05 var(--font-display), sans-serif;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+}
+
+.impact-proof-arrow {
+  color: var(--impact-proof-copper);
+  font-size: .64em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.impact-proof-method {
+  margin-top: 10px;
+  color: #d8e0d2;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.impact-proof-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.impact-proof-diagram :is(path, circle) {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.impact-proof-guides {
+  stroke: #d5ddcb35;
+  stroke-width: 1px;
+}
+
+.impact-proof-ghost {
+  stroke: #e8b38e6b;
+  stroke-width: 1px;
+}
+
+.impact-proof-trace {
+  stroke: var(--impact-proof-copper);
+  stroke-width: 1.8px;
+}
+
+.impact-proof-packet {
+  opacity: 0;
+  stroke: #f7d8bd;
+  stroke-width: 4.3px;
+}
+
+.impact-proof-packet-trail {
+  stroke: var(--impact-proof-copper);
+  stroke-width: 2.7px;
+}
+
+.impact-proof-ring {
+  opacity: 0;
+  stroke: var(--impact-proof-copper);
+  stroke-width: 1.2px;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.impact-proof-nodes {
+  fill: #26362d;
+  stroke: var(--impact-proof-copper);
+  stroke-width: 1.15px;
+}
+
+.impact-proof-symbols {
+  stroke: var(--impact-proof-cream);
+  stroke-width: 1.35px;
+}
+
+.impact-proof-symbols circle { fill: #26362d; }
+
+.impact-proof-stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 2px;
+  font: 500 11px/1.35 var(--font-mono), monospace;
+  text-align: center;
+}
+
+.impact-proof-stages span {
+  max-width: 18ch;
+  padding-inline: 4px;
+  justify-self: center;
+  text-wrap: balance;
+}
+
+@media (max-width: 760px) {
+  .impact-proof { grid-template-columns: minmax(0, 1fr); }
+  .impact-proof-metric { font-size: clamp(36px, 10.5vw, 55px); }
+}
+
+@supports (animation-timeline: view()) and (animation-range: cover 8% cover 44%) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Cover spans from first visible entry to last visible exit. */
+    .impact-proof-trace-source { --impact-range: cover 8% cover 45%; }
+    .impact-proof-trace-dataset { --impact-range: cover 44% cover 86%; }
+    .impact-proof-packet-source { --impact-range: cover 9% cover 47%; }
+    .impact-proof-packet-source-trail { --impact-range: cover 15% cover 51%; }
+    .impact-proof-packet-dataset { --impact-range: cover 44% cover 87%; }
+    .impact-proof-packet-dataset-trail { --impact-range: cover 50% cover 92%; }
+    .impact-proof-activate-source { --impact-range: cover 3% cover 24%; }
+    .impact-proof-activate-ingestion { --impact-range: cover 37% cover 64%; }
+    .impact-proof-activate-dataset { --impact-range: cover 79% cover 100%; }
+
+    .site-backdrop:not([data-paused]) ~ main .impact-proof-diagram {
+      view-timeline: --impact-trace block;
+      view-timeline-inset: var(--folio-nav-height, 0px) 0px;
+    }
+
+    .site-backdrop:not([data-paused]) ~ main .impact-proof-trace {
+      stroke-dasharray: 1;
+      animation: impact-proof-draw 1ms linear both;
+    }
+
+    .site-backdrop:not([data-paused]) ~ main .impact-proof-packet {
+      stroke-dasharray: .06 1;
+      animation: impact-proof-packet-move 1ms linear both;
+    }
+
+    .site-backdrop:not([data-paused]) ~ main .impact-proof-ring {
+      animation: impact-proof-ring-arrival 1ms ease-out both;
+    }
+
+    .site-backdrop:not([data-paused]) ~ main .impact-proof-node {
+      animation: impact-proof-node-arrival 1ms ease-out both;
+    }
+
+    .site-backdrop:not([data-paused]) ~ main :is(
+      .impact-proof-trace,
+      .impact-proof-packet,
+      .impact-proof-ring,
+      .impact-proof-node
+    ) {
+      animation-timeline: --impact-trace;
+      animation-range: var(--impact-range);
+    }
+  }
+}
+
+@keyframes impact-proof-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes impact-proof-packet-move {
+  0% { opacity: 0; stroke-dashoffset: .06; }
+  9%, 87% { opacity: 1; }
+  100% { opacity: 0; stroke-dashoffset: -1; }
+}
+
+@keyframes impact-proof-ring-arrival {
+  0% { opacity: 0; transform: scale(.81); }
+  22% { opacity: .94; }
+  100% { opacity: 0; transform: scale(1.24); }
+}
+
+@keyframes impact-proof-node-arrival {
+  0% { fill: #26362d; stroke-width: 1.15px; }
+  27% { fill: #624b35; stroke-width: 2.6px; }
+  100% { fill: #343a2c; stroke-width: 1.4px; }
+}

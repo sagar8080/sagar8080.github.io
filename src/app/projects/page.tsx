@@ -65,6 +65,7 @@ export default function ProjectsIndexPage() {
     <div className="theme-page theme-work">
       <div className="theme-content space-y-20">
       <PageHeader
+        engraving="work"
         eyebrow="Work"
         title={<>Case studies &amp;<br /><em>other work.</em></>}
         lede="Headline systems get a public product summary: problem, requirements, product choices, and outcome. The summaries stay product-level by design."

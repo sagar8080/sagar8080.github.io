@@ -1,0 +1,210 @@
+.engraving-scene {
+  position: relative;
+  isolation: isolate;
+}
+
+.scroll-engraving {
+  --engraving-copper: #a15e42;
+  --engraving-density: .72;
+  --engraving-packet-length: .075;
+  position: absolute;
+  z-index: -1;
+  inset: -18% 0 auto auto;
+  width: min(66%, 810px);
+  height: auto;
+  color: #46617a;
+  opacity: var(--engraving-density);
+  mask-image: linear-gradient(90deg, transparent 23%, #000 45%, #000 94%, transparent);
+  pointer-events: none;
+}
+
+.engraving-line,
+.engraving-guide,
+.engraving-match,
+.engraving-packet { vector-effect: non-scaling-stroke; }
+
+.engraving-line { stroke-width: 1.3px; }
+.engraving-line:nth-child(3n + 1) { stroke: var(--engraving-copper); }
+.engraving-guide { stroke-width: .8px; }
+
+.engraving-match,
+.engraving-packet { stroke: var(--engraving-copper); }
+
+.engraving-match { stroke-width: 5px; opacity: .32; }
+.engraving-packet { stroke-width: 2.8px; opacity: 0; }
+.engraving-packet + .engraving-packet { stroke-width: 2px; }
+
+.engraving-node {
+  fill: var(--engraving-copper);
+  stroke: none;
+  opacity: .58;
+}
+
+.engraving-hero {
+  --engraving-density: .58;
+  inset: 40% auto auto -19%;
+  width: min(56%, 690px);
+}
+
+.engraving-scene-record > .scroll-engraving {
+  --engraving-copper: #9e573f;
+  --engraving-density: .55;
+  inset: -6% 0 auto auto;
+  width: min(72%, 1050px);
+  color: #46617a;
+}
+
+.engraving-photos {
+  --engraving-density: .65;
+  inset: -86% 25% auto auto;
+  width: min(45%, 630px);
+}
+
+.scroll-engraving[data-variant='photos'] { --engraving-packet-length: .028; }
+
+.engraving-scene-contact > .scroll-engraving {
+  --engraving-density: .55;
+  inset: -10% var(--folio-gutter) auto auto;
+  color: #6f483e;
+}
+
+.engraving-scene-page { overflow: clip; }
+
+.engraving-scene-page > .scroll-engraving {
+  inset-block-start: -9%;
+  width: min(69%, 900px);
+}
+
+@supports (animation-timeline: view()) and (animation-range: entry 5% cover 61%) {
+  @media (prefers-reduced-motion: no-preference) {
+    .site-backdrop:not([data-paused]) ~ main {
+      .engraving-scene {
+        --engraving-start: entry 4%;
+        --engraving-end: exit 82%;
+        view-timeline: --section-engraving block;
+        view-timeline-inset: var(--folio-nav-height) 0px;
+      }
+
+      .engraving-scene-hero {
+        --engraving-start: exit 0%;
+        --engraving-end: exit 78%;
+      }
+
+      .engraving-scene-record { --engraving-end: cover 70%; }
+      .engraving-scene-contact { --engraving-end: exit 72%; }
+
+      .engraving-scene-page {
+        --engraving-start: cover 0%;
+        --engraving-end: exit 94%;
+        /* Page headers are already visible on arrival. Time them against the band below the nav. */
+        view-timeline-inset: var(--folio-nav-height) max(0px, calc(100% - var(--folio-nav-height) - clamp(100px, 14vw, 200px)));
+      }
+
+      :where(.scroll-engraving) {
+        transform-origin: 75% 42%;
+        animation: engraving-register 1ms ease-out both;
+        animation-timeline: --section-engraving;
+        animation-range: var(--engraving-start) var(--engraving-end);
+      }
+
+      :where(.engraving-line, .engraving-match, .engraving-packet, .engraving-node) {
+        animation-duration: 1ms;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: inherit;
+        animation-range: var(--engraving-start) var(--engraving-end);
+      }
+
+      :where(.engraving-line) {
+        stroke-dasharray: 1 1;
+        animation-name: engraving-draw;
+      }
+
+      :where(.engraving-line:nth-child(3n + 1)) { animation-name: engraving-detail; }
+      :where(.engraving-match) { animation-name: engraving-match; }
+
+      :where(.engraving-packet) {
+        stroke-dasharray: var(--engraving-packet-length) 2;
+        animation-name: engraving-packet-flow;
+      }
+
+      :where(.engraving-packet + .engraving-packet) {
+        animation-timing-function: cubic-bezier(.64, .14, .57, .8);
+      }
+
+      :where(.engraving-node) {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation-name: engraving-node-arrival;
+      }
+
+      :where(.engraving-node[data-stage='source']) { animation-name: engraving-node-source; }
+    }
+  }
+}
+
+@keyframes engraving-register {
+  from { translate: 20px 9px; scale: 1.07; opacity: calc(var(--engraving-density) * .66); }
+  to { translate: none; scale: 1; opacity: var(--engraving-density); }
+}
+
+@keyframes engraving-draw {
+  from { stroke-dashoffset: .76; }
+  76%, 100% { stroke-dashoffset: 0; }
+}
+
+@keyframes engraving-detail {
+  0%, 12% { stroke-dashoffset: .88; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes engraving-packet-flow {
+  0%, 9% { stroke-dashoffset: var(--engraving-packet-length); opacity: 0; }
+  21%, 86% { opacity: 1; }
+  100% { stroke-dashoffset: -1; opacity: 0; }
+}
+
+@keyframes engraving-node-source {
+  0%, 39%, 100% { scale: 1; opacity: .58; }
+  21% { scale: 1.55; opacity: 1; }
+}
+
+@keyframes engraving-node-arrival {
+  0%, 75%, 100% { scale: 1; opacity: .58; }
+  91% { scale: 1.55; opacity: 1; }
+}
+
+@keyframes engraving-match {
+  0%, 14% { opacity: .16; }
+  38%, 63% { opacity: .62; }
+  100% { opacity: .32; }
+}
+
+@media (max-width: 760px) {
+  .scroll-engraving {
+    --engraving-density: .46;
+    inset-block-start: -5%;
+    width: 87%;
+    mask-image: linear-gradient(90deg, transparent 29%, #000 56%);
+  }
+
+  .engraving-hero {
+    --engraving-density: .31;
+    inset: 13% 0 auto auto;
+    width: 74%;
+  }
+
+  .engraving-scene-record > .scroll-engraving {
+    --engraving-density: .35;
+    inset-block-start: 1%;
+    width: 100%;
+  }
+
+  :where(.folio-heading) > .scroll-engraving { inset-block-start: -43%; }
+  .engraving-photos {
+    inset: -28% calc(var(--folio-gutter) / 2) auto auto;
+    width: 76%;
+  }
+  .engraving-scene-contact > .scroll-engraving { --engraving-density: .42; }
+  .engraving-scene-page > .scroll-engraving { width: 87%; }
+}

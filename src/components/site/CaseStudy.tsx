@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Tag, Eyebrow, StatusPill, TextLink } from '@/components/site/Atoms'
+import ScrollEngraving from '@/components/site/ScrollEngraving'
 
 export type CaseStudySection = {
   heading: string
@@ -84,7 +85,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       </Link>
 
       {/* Header */}
-      <header className="mt-10 max-w-4xl space-y-5">
+      <header className="folio-page-heading engraving-scene engraving-scene-page mt-10 max-w-4xl space-y-5">
+        <ScrollEngraving variant="work" />
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{data.eyebrow}</p>
           <StatusPill kind={statusKind(data.status)}>{data.status}</StatusPill>
@@ -119,6 +121,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
+                    aria-current={isActive ? 'location' : undefined}
                     className={`-ml-px block border-l py-1 pl-3 text-[12.5px] transition-all duration-200 ${
                       isActive
                         ? 'border-accent bg-accent/5 text-white'

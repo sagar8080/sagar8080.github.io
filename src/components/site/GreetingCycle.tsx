@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Pause, Play } from 'lucide-react'
 import { greetings } from '@/lib/content'
+import { useBackdropMotion } from '@/components/site/SiteBackdrop'
 
 const LANGUAGES = [
   'en',
@@ -44,6 +46,7 @@ export default function GreetingCycle() {
   const [reduced, setReduced] = useState(false)
   const [visible, setVisible] = useState(true)
   const [tabVisible, setTabVisible] = useState(true)
+  const { paused, toggle } = useBackdropMotion()
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -64,7 +67,7 @@ export default function GreetingCycle() {
     }
   }, [])
 
-  const running = !reduced && visible && tabVisible
+  const running = !paused && !reduced && visible && tabVisible
   useEffect(() => {
     if (!running) return
     const timer = window.setInterval(
@@ -119,6 +122,16 @@ export default function GreetingCycle() {
       <div className="greeting-caption" aria-hidden="true">
         {greeting.language}
       </div>
+      {!reduced && (
+        <button
+          type="button"
+          className="greeting-motion"
+          onClick={toggle}
+          aria-label={paused ? 'Play greeting and background motion' : 'Pause greeting and background motion'}
+        >
+          {paused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+        </button>
+      )}
     </div>
   )
 }

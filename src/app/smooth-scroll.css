@@ -1,0 +1,13 @@
+#main-content {
+  scroll-margin-top: var(--folio-nav-height);
+}
+
+html:has(.site-backdrop[data-paused]) {
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-scroll-behavior='smooth'] {
+    scroll-behavior: auto;
+  }
+}

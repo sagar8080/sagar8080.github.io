@@ -11,6 +11,7 @@
 import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import type { ReactNode, HTMLAttributes } from 'react'
+import ScrollEngraving, { type EngravingVariant } from '@/components/site/ScrollEngraving'
 
 // ─── Eyebrow ───────────────────────────────────────────────────────────────
 // A small caps caption above section titles. Leads with the terracotta
@@ -110,17 +111,18 @@ export function PageHeader({
   eyebrow,
   title,
   lede,
+  engraving,
 }: {
   eyebrow: string
   title: ReactNode
   lede?: ReactNode
+  engraving: EngravingVariant
 }) {
   return (
-    <header className="space-y-5">
+    <header className="folio-page-heading engraving-scene engraving-scene-page space-y-5">
+      <ScrollEngraving variant={engraving} />
       <Eyebrow label={eyebrow} />
-      <h1 className="font-display text-display-md font-semibold leading-[1.05] tracking-tight text-terracotta sm:text-[44px] lg:text-display-lg">
-        {title}
-      </h1>
+      <h1>{title}</h1>
       {lede && <p className="section-lede">{lede}</p>}
     </header>
   )

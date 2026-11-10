@@ -1,122 +1,212 @@
 'use client'
 
-import Image from 'next/image'
-import { useState } from 'react'
-import { SectionHeader } from '@/components/site/Atoms'
+import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { useReducedMotion } from 'framer-motion'
 import { photos } from '@/lib/content'
 import Lightbox from '@/components/site/Lightbox'
+import { photoAssets } from '@/components/site/photo-assets'
 
-// Infinite auto-scrolling marquee. Photos are grayscale by default and pop
-// to color on hover. Click any photo to open the lightbox. Hover anywhere on
-// the strip pauses the scroll. Lightbox open also pauses.
-export default function PhotoStrip({
-  showHeader = true,
-}: {
-  showHeader?: boolean
-}) {
-  const [paused, setPaused] = useState(false)
-  const [openIdx, setOpenIdx] = useState<number | null>(null)
+function frameNumber(index: number) {
+  return String(index + 1).padStart(2, '0')
+}
 
-  // Render the photos twice. The CSS animation translates the track by -50%,
-  // which lands the duplicate at the visual origin for a seamless loop.
-  const doubled = [...photos, ...photos]
+export default function PhotoStrip() {
+  const reelRef = useRef<HTMLDivElement>(null)
+  const firstRunRef = useRef<HTMLUListElement>(null)
+  const resumeAt = useRef(0)
+  const alignment = useRef({ pitch: 0, offset: 0 })
+  const [centered, setCentered] = useState(0)
+  const [motion, setMotion] = useState<boolean | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const reduced = useReducedMotion()
+  const playing = motion ?? !reduced
+  const lightboxOpen = openIndex !== null
 
-  function open(i: number) {
-    setOpenIdx(i % photos.length)
+  useEffect(() => {
+    const reel = reelRef.current
+    const firstRun = firstRunRef.current
+    if (!reel || !firstRun) return
+
+    let lastCentered = -1
+    const syncCentered = () => {
+      const { pitch, offset } = alignment.current
+      if (!pitch) return
+
+      const slot = Math.round((reel.scrollLeft - offset) / pitch)
+      const index = (slot % photos.length + photos.length) % photos.length
+      if (index !== lastCentered) {
+        lastCentered = index
+        setCentered(index)
+      }
+    }
+
+    const resize = new ResizeObserver(() => {
+      const run = firstRun.getBoundingClientRect()
+      const pitch = run.width / photos.length
+      const start = run.left - reel.getBoundingClientRect().left + reel.scrollLeft
+      alignment.current = { pitch, offset: start + (pitch - reel.clientWidth) / 2 }
+      syncCentered()
+    })
+    resize.observe(reel)
+    resize.observe(firstRun)
+    reel.addEventListener('scroll', syncCentered, { passive: true })
+
+    return () => {
+      resize.disconnect()
+      reel.removeEventListener('scroll', syncCentered)
+    }
+  }, [])
+
+  useEffect(() => {
+    const reel = reelRef.current
+    if (!reel || !playing || lightboxOpen) return
+
+    let frame = 0
+    let lastTime = 0
+    let position = reel.scrollLeft
+    let lastWrite = position
+
+    function roll(now: number) {
+      if (!reel) return
+      const elapsed = lastTime ? Math.min(now - lastTime, 50) : 0
+      lastTime = now
+      const loopWidth = alignment.current.pitch * photos.length
+      if (loopWidth && now >= resumeAt.current && !reel.matches(':focus-visible, :has(:focus-visible)')) {
+        if (reel.scrollLeft !== lastWrite) position = reel.scrollLeft
+        position = (position + elapsed * .038) % loopWidth
+        reel.scrollLeft = position
+        lastWrite = reel.scrollLeft
+      }
+      frame = requestAnimationFrame(roll)
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      cancelAnimationFrame(frame)
+      lastTime = 0
+      if (entry.isIntersecting) frame = requestAnimationFrame(roll)
+    })
+    observer.observe(reel)
+
+    return () => {
+      observer.disconnect()
+      cancelAnimationFrame(frame)
+    }
+  }, [playing, lightboxOpen])
+
+  function step(direction: number) {
+    const reel = reelRef.current
+    const { pitch, offset } = alignment.current
+    if (!reel || !pitch) return
+
+    resumeAt.current = performance.now() + 700
+    const slot = Math.round((reel.scrollLeft - offset) / pitch)
+    let destination = offset + (slot + direction) * pitch
+    const loopWidth = pitch * photos.length
+
+    if (destination < 0) {
+      reel.scrollLeft += loopWidth
+      destination += loopWidth
+    } else if (destination > reel.scrollWidth - reel.clientWidth) {
+      reel.scrollLeft -= loopWidth
+      destination -= loopWidth
+    }
+
+    reel.scrollTo({ left: destination, behavior: reduced ? 'instant' : 'smooth' })
   }
-  function close() {
-    setOpenIdx(null)
-  }
-  function prev() {
-    setOpenIdx((i) =>
-      i === null ? null : (i - 1 + photos.length) % photos.length,
-    )
-  }
-  function next() {
-    setOpenIdx((i) => (i === null ? null : (i + 1) % photos.length))
-  }
+
+  const close = useCallback(() => setOpenIndex(null), [])
+  const previous = useCallback(() => {
+    setOpenIndex((index) => index === null ? null : (index - 1 + photos.length) % photos.length)
+  }, [])
+  const next = useCallback(() => {
+    setOpenIndex((index) => index === null ? null : (index + 1) % photos.length)
+  }, [])
 
   return (
-    <section
-      className="photo-carousel space-y-8"
-      aria-label="Photography carousel"
-    >
-      {showHeader && (
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeader
-            eyebrow="Offline"
-            title="Field notes. Analog photography."
-            lede="Shot on an Olympus EM-10 between trips and walks. A quieter counterweight to the systems work: composition, patience, and noticing what the frame leaves out."
-          />
-        </div>
-      )}
-
-      <div className="carousel-controls">
-        <span>20 frames · An ongoing collection</span>
-        <button
-          type="button"
-          onClick={() => setPaused(!paused)}
-          aria-pressed={paused}
-        >
-          {paused ? 'Resume motion' : 'Pause motion'}
-          <span aria-hidden>{paused ? ' ▷' : ' Ⅱ'}</span>
+    <div className="film-carousel" role="region" aria-roledescription="carousel" aria-label="Photography">
+      <div className="folio-shell film-rail">
+        <button type="button" className="folio-link" onClick={() => setOpenIndex(0)}>
+          Browse all {photos.length} frames <ArrowUpRight size={16} aria-hidden="true" />
         </button>
+        <span className="film-counter" aria-hidden="true">
+          Frame <b>{frameNumber(centered)}</b> / {photos.length}
+        </span>
+        <div className="film-controls" role="group" aria-label="Carousel controls">
+          <button type="button" onClick={() => step(-1)} aria-label="Previous frame"><ArrowLeft size={17} aria-hidden="true" /></button>
+          <button type="button" onClick={() => setMotion(!playing)} aria-label={playing ? 'Pause carousel' : 'Play carousel'}>
+            {playing ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
+          </button>
+          <button type="button" onClick={() => step(1)} aria-label="Next frame"><ArrowRight size={17} aria-hidden="true" /></button>
+        </div>
       </div>
-
-      {/* Strip */}
-      <div
-        className="marquee-mask photo-strip-bleed"
-        data-paused={openIdx !== null || paused ? 'true' : 'false'}
-      >
-        <ul className="marquee-track">
-          {doubled.map((p, i) => {
-            const realIdx = i % photos.length
-            return (
-              <li
-                key={`${p.src}-${i}`}
-                aria-hidden={i >= photos.length ? true : undefined}
-              >
-                <button
-                  type="button"
-                  tabIndex={i >= photos.length ? -1 : 0}
-                  onClick={() => open(realIdx)}
-                  className="photo-frame group relative block aspect-[4/5] w-[260px] sm:w-[300px]"
-                  aria-label={`Open photo ${realIdx + 1}: ${p.caption}`}
-                >
-                  <Image
-                    src={p.src}
-                    alt={p.caption}
-                    fill
-                    sizes="(min-width: 640px) 300px, 260px"
-                    className="object-cover"
-                    priority={i < 2}
-                  />
-                  {/* Frame number. Soft mono label in the top-left */}
-                  <span className="absolute left-2.5 top-2.5 z-10 rounded bg-black/55 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-paper backdrop-blur">
-                    {String(realIdx + 1).padStart(2, '0')} /{' '}
-                    {String(photos.length).padStart(2, '0')}
-                  </span>
-                  {/* Pop-out affordance. Visible only on hover */}
-                  <span className="absolute right-2.5 top-2.5 z-10 grid h-6 w-6 place-items-center rounded bg-black/55 font-mono text-[11px] text-paper opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
-                    ⤢
-                  </span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
+      <div className="film-stage">
+        <div className="film-perforations" aria-hidden="true" />
+        <div
+          className="film-viewport"
+          ref={reelRef}
+          data-playing={playing}
+          tabIndex={0}
+          role="group"
+          aria-label="Photographs. Use the arrow keys or swipe to scroll."
+          onKeyDown={(event) => {
+            if (event.target !== event.currentTarget || (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight')) return
+            event.preventDefault()
+            step(event.key === 'ArrowLeft' ? -1 : 1)
+          }}
+          onTouchStart={() => { resumeAt.current = performance.now() + 1200 }}
+          onTouchMove={() => { resumeAt.current = performance.now() + 1200 }}
+          onWheel={(event) => {
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) resumeAt.current = performance.now() + 850
+          }}
+        >
+          <div className="film-track">
+            {[false, true].map((duplicate) => (
+              <ul className="film-run" ref={duplicate ? undefined : firstRunRef} aria-hidden={duplicate || undefined} key={String(duplicate)}>
+                {photos.map((photo, index) => {
+                  const asset = photoAssets[photo.src]
+                  return (
+                    <li className="film-frame" data-centered={centered === index || undefined} key={photo.src}>
+                      <button
+                        type="button"
+                        tabIndex={duplicate ? -1 : undefined}
+                        aria-label={`Open photograph ${index + 1}: ${photo.caption}`}
+                        onMouseDown={(event) => { if (duplicate) event.preventDefault() }}
+                        onClick={() => setOpenIndex(index)}
+                      >
+                        <span className="film-image">
+                          {/* Checked-in srcset keeps the static export responsive. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            alt=""
+                            width={asset?.width}
+                            height={asset?.height}
+                            loading="lazy"
+                            decoding="async"
+                            sizes="(max-width: 620px) min(calc(70vw - 26px), 320px), 300px"
+                            srcSet={asset?.srcSet}
+                            src={photo.preview}
+                            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+                          />
+                        </span>
+                        <span className="film-caption" aria-hidden="true">
+                          <span className="film-number">{frameNumber(index)}</span>
+                          <span>{photo.caption}</span>
+                          <ArrowUpRight size={14} />
+                        </span>
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            ))}
+          </div>
+        </div>
+        <div className="film-perforations" aria-hidden="true" />
       </div>
-
-      {openIdx !== null && (
-        <Lightbox
-          photo={photos[openIdx]}
-          index={openIdx}
-          total={photos.length}
-          onClose={close}
-          onPrev={prev}
-          onNext={next}
-        />
+      {openIndex !== null && (
+        <Lightbox photo={photos[openIndex]} index={openIndex} total={photos.length} onClose={close} onPrev={previous} onNext={next} />
       )}
-    </section>
+    </div>
   )
 }

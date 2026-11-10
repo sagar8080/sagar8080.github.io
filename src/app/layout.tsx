@@ -3,9 +3,12 @@ import { Manrope, JetBrains_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
 import './secondary-theme.css'
 import './writing.css'
+import './engraving.css'
+import './smooth-scroll.css'
 import SiteNav from '@/components/site/SiteNav'
 import SiteFooter from '@/components/site/SiteFooter'
-import AtmosphereBackground from '@/components/site/AtmosphereBackground'
+import SiteBackdrop from '@/components/site/SiteBackdrop'
+import SmoothScroll from '@/components/site/SmoothScroll'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -53,24 +56,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body
-        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} ${editorial.variable} font-sans bg-paper text-ink-2 min-h-screen flex flex-col antialiased`}
+        className={`${manrope.variable} ${manropeDisplay.variable} ${jetbrainsMono.variable} ${editorial.variable} font-sans min-h-screen flex flex-col antialiased`}
       >
-        {/* Edge-anchored concentric rings + Claude-style warm blobs that
-            breathe in the corners. The middle of the viewport is left
-            clean so content reads on plain paper. z-index 0 so it sits
-            above body's bg-paper, below the grain (z 1) and content (z 10). */}
-        <AtmosphereBackground />
-        {/* Quiet paper grain on top of the atmosphere. */}
-        <div className="grain-overlay" aria-hidden />
-        <SiteNav />
-        <main id="main-content" tabIndex={-1} className="relative z-10 flex-1">
-          {children}
-        </main>
-        <div className="relative z-10">
-          <SiteFooter />
-        </div>
+        <SiteBackdrop>
+          <SmoothScroll />
+          <SiteNav />
+          <main id="main-content" tabIndex={-1} className="relative z-10 flex-1">
+            {children}
+          </main>
+          <div className="relative z-10">
+            <SiteFooter />
+          </div>
+        </SiteBackdrop>
       </body>
     </html>
   )

@@ -6,16 +6,16 @@ module.exports = {
       colors: {
         // Paper (light backgrounds)
         paper: {
-          DEFAULT: '#faf7f2',
+          DEFAULT: '#f5f2ea',
           2: '#f3efe7',
           3: '#ebe5d9',
         },
         // Ink (text)
         ink: {
-          DEFAULT: '#1c1917',
+          DEFAULT: '#181a17',
           2: '#44403c',
-          3: '#78716c',
-          4: '#a8a29e',
+          3: '#595b53',
+          4: '#716d63',
         },
         // Hairlines
         line: {
@@ -24,7 +24,7 @@ module.exports = {
         },
         // Terracotta (primary accent)
         terracotta: {
-          DEFAULT: '#b45a3c',
+          DEFAULT: '#bb361f',
           2: '#8e4329',
           3: '#f4e6dd',
         },
@@ -45,24 +45,24 @@ module.exports = {
         // Compatibility shims so existing class names continue to work but now
         // resolve to the paper palette. Older code uses bg-background, text-zinc-*,
         // border-hairline, bg-accent, etc; these aliases keep them rendering.
-        background: '#faf7f2', // was dark slate; now paper
-        foreground: '#1c1917',
+        background: '#f5f2ea', // was dark slate; now paper
+        foreground: '#181a17',
         muted: '#ebe5d9',
         surface: {
-          1: '#faf7f2',
+          1: '#f5f2ea',
           2: '#f3efe7',
           3: '#ebe5d9',
         },
         hairline: {
           DEFAULT: '#e5e0d6',
           strong: '#d4cdbe',
-          accent: 'rgba(180, 90, 60, 0.30)',
+          accent: 'rgba(187, 54, 31, 0.30)',
         },
         accent: {
-          DEFAULT: '#b45a3c',
-          soft: 'rgba(180, 90, 60, 0.10)',
-          glow: 'rgba(180, 90, 60, 0.16)',
-          ring: 'rgba(180, 90, 60, 0.35)',
+          DEFAULT: '#bb361f',
+          soft: 'rgba(187, 54, 31, 0.10)',
+          glow: 'rgba(187, 54, 31, 0.16)',
+          ring: 'rgba(187, 54, 31, 0.35)',
         },
         warm: {
           DEFAULT: '#b58a3a',
@@ -77,14 +77,14 @@ module.exports = {
         // Repointing to ink/line tones keeps the visual hierarchy consistent
         // on a light background without rewriting every file.
         zinc: {
-          50:  '#faf7f2',
+          50:  '#f5f2ea',
           100: '#f3efe7',
-          200: '#1c1917', // dark text on paper (was light)
-          300: '#1c1917',
+          200: '#181a17', // dark text on paper (was light)
+          300: '#181a17',
           400: '#44403c',
-          500: '#78716c',
-          600: '#a8a29e',
-          700: '#a8a29e',
+          500: '#595b53',
+          600: '#716d63',
+          700: '#716d63',
           800: '#d4cdbe',
           900: '#e5e0d6',
         },
@@ -94,8 +94,8 @@ module.exports = {
         // and `black` to ink so legacy classNames stay legible. Dark mockup
         // interiors (LaunchPanel, PhotoStrip overlay, Lightbox) explicitly
         // use `text-paper` / `bg-paper` to get the light-on-dark contrast.
-        white: '#1c1917',
-        black: '#1c1917',
+        white: '#181a17',
+        black: '#181a17',
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
