@@ -1,6 +1,39 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/0zb-111y6cz1x.js","/_next/static/chunks/0n4z.7yu76je-.js"],""]
-3:I[97367,["/_next/static/chunks/0zb-111y6cz1x.js","/_next/static/chunks/0n4z.7yu76je-.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"theme-page theme-content space-y-6 py-24","children":[["$","meta",null,{"httpEquiv":"refresh","content":"0;url=/products/kivi/"}],["$","h1",null,{"className":"font-display text-4xl text-terracotta","children":"Continue to Kivi."}],["$","p",null,{"children":"This page has moved."}],["$","$L2",null,{"href":"/products/kivi/","className":"text-terracotta underline","children":"Explore Kivi →"}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"AMegD4P4kGg-OnvN26xx6"}
-5:null
+2:"/_next/static/chunks/3qfy96eoyh-ek.js"
+3:"/_next/static/chunks/3zxmxmx60scws.js"
+4:I[36005,["$2","$3"],"default"]
+5:I[4602,["$2","$3"],"default"]
+6:I[66149,["$2","$3"],"default"]
+7:I[39756,["$2","$3"],"default"]
+8:I[37457,["$2","$3"],"default"]
+9:I[22016,["$2","$3"],""]
+a:I[36005,["$2","$3"],"BackdropControl"]
+15:"ViewportBoundary"
+16:I[97367,["$2","$3"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$2","$3"],"$17"]
+19:"$Sreact.suspense"
+:HL["/_next/static/chunks/2-935ld7i5oo4.css","style"]
+c:X
+f:X
+f:C
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":"$L13","p":"$@14","v":null,"s":"$c"}}]]
+10:[["children",{"s":"pulseql","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@11","v":"$f","s":"$c"},"c":"$Q12"}]]
+d:[["children",{"s":"products","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2-935ld7i5oo4.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3qfy96eoyh-ek.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3zxmxmx60scws.js","async":true}]],["$","html",null,{"lang":"en","className":"scroll-smooth","data-scroll-behavior":"smooth","children":["$","body",null,{"className":"_6PYvkq_variable N8DoJG_variable D88TVW_variable BT-uOq_variable font-sans min-h-screen flex flex-col antialiased","children":["$","$L4",null,{"children":[["$","$L5",null,{}],["$","$L6",null,{}],["$","main",null,{"id":"main-content","tabIndex":-1,"className":"relative z-10 flex-1","children":["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}],"notFound":[["$","section",null,{"className":"theme-page flex min-h-[60vh] flex-col items-start justify-center gap-6","children":[["$","p",null,{"className":"eyebrow","children":[["$","span",null,{"className":"eyebrow-rule","aria-hidden":true}],"404 · not found"]}],["$","h1",null,{"className":"font-display text-display-md font-semibold tracking-tight text-terracotta sm:text-display-lg","children":"Page not found."}],["$","p",null,{"className":"text-[15px] leading-[1.7] text-ink-2 md:text-[16px]","children":"The page you're looking for either doesn't exist, has moved, or was never on this site to begin with. Try one of the routes below."}],["$","ul",null,{"className":"flex flex-wrap gap-2 pt-2","children":[["$","li","/",{"children":["$","$L9",null,{"href":"/","className":"btn btn--md btn--ghost","children":["Home"," →"]}]}],["$","li","/projects",{"children":["$","$L9",null,{"href":"/projects","className":"btn btn--md btn--ghost","children":["Projects"," →"]}]}],["$","li","/products/kivi",{"children":["$","$L9",null,{"href":"/products/kivi","className":"btn btn--md btn--accent","children":["Kivi"," →"]}]}],["$","li","/products/buntini",{"children":["$","$L9",null,{"href":"/products/buntini","className":"btn btn--md btn--ghost","children":["Buntini"," →"]}]}],["$","li","/writing",{"children":["$","$L9",null,{"href":"/writing","className":"btn btn--md btn--ghost","children":["Writing"," →"]}]}],["$","li","/contact",{"children":["$","$L9",null,{"href":"/contact","className":"btn btn--md btn--ghost","children":["Contact"," →"]}]}]]}]]}],[]]}]}],["$","div",null,{"className":"relative z-10","children":["$","footer",null,{"className":"border-t border-line bg-paper","children":["$","div",null,{"className":"folio-shell flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between","children":[["$","div",null,{"className":"space-y-1","children":[["$","p",null,{"className":"inline-flex items-baseline gap-[2px] font-display text-[17px] font-semibold leading-none tracking-tight text-ink","children":["Sagar Das",["$","span",null,{"aria-hidden":true,"className":"mb-[3px] ml-[2px] h-[5px] w-[5px] self-end bg-terracotta"}]]}],["$","p",null,{"className":"text-[12.5px] text-ink-3","children":"Data & AI Engineer"}]]}],["$","nav",null,{"aria-label":"Footer","className":"flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-ink-2","children":[["$","$L9",null,{"href":"/projects","className":"transition-colors hover:text-terracotta","children":"Projects"}],["$","$L9",null,{"href":"/writing","className":"transition-colors hover:text-terracotta","children":"Writing"}],["$","$L9",null,{"href":"/#photographs","className":"transition-colors hover:text-terracotta","children":"Photos"}],["$","$L9",null,{"href":"/resume","className":"transition-colors hover:text-terracotta","children":"Résumé"}],["$","$L9",null,{"href":"/contact","className":"transition-colors hover:text-terracotta","children":"Contact"}],["$","a",null,{"href":"https://github.com/sagar8080","target":"_blank","rel":"noopener noreferrer","className":"transition-colors hover:text-terracotta","children":["GitHub"," ↗"]}]]}],["$","div",null,{"className":"flex flex-wrap items-center gap-4 font-mono text-[11px] tracking-wide text-ink-4","children":[["$","$La",null,{}],["$","p",null,{"suppressHydrationWarning":true,"children":["© ",2026]}]]}]]}]}]}]]}]}]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$19",null,{"name":"Next.Metadata","children":"$L1a"}]}],"$L1b"]}],"$L1c"]}],"p":"$@1d","v":null,"s":"$c"}},"a":"$@1e","u":"$@1f","b":"r5WNW57Igm0kHWEjyeprN"}
+20:I[97367,["$2","$3"],"OutletBoundary"]
+22:I[27201,["$2","$3"],"IconMark"]
+13:["$","$1","c",{"children":[["$","section",null,{"className":"theme-page theme-content space-y-6 py-24","children":[["$","meta",null,{"httpEquiv":"refresh","content":"0;url=/products/kivi/"}],["$","h1",null,{"className":"font-display text-4xl text-terracotta","children":"Continue to Kivi."}],["$","p",null,{"children":"This page has moved."}],["$","$L9",null,{"href":"/products/kivi/","className":"text-terracotta underline","children":"Explore Kivi →"}]]}],null,["$","$L20",null,{"children":["$","$19",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]]}]
+1a:[["$","title","0",{"children":"Continue to Kivi · Sagar Das"}],["$","meta","1",{"name":"description","content":"Data & AI Engineer building scalable data platforms, modernization systems, and Rust + TypeScript infrastructure for trusted agentic AI workflows."}],["$","meta","2",{"name":"author","content":"Sagar Das"}],["$","meta","3",{"name":"keywords","content":"Data Engineer, AI Engineer, Data Platforms, AI Workflows, Cloud Modernization, Kivi, Buntini"}],["$","meta","4",{"name":"robots","content":"noindex"}],["$","link","5",{"rel":"canonical","href":"https://sagar8080.github.io/products/kivi/"}],["$","meta","6",{"property":"og:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","7",{"property":"og:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","meta","8",{"property":"og:type","content":"website"}],["$","meta","9",{"name":"twitter:card","content":"summary"}],["$","meta","10",{"name":"twitter:title","content":"Sagar Das · Data & AI Engineer"}],["$","meta","11",{"name":"twitter:description","content":"Scalable data platforms, cloud modernization, semantic layers, RAG systems, and trusted agentic AI infrastructure."}],["$","link","12",{"rel":"icon","href":"/icon.svg?icon.0bajy0519gc-s.svg","sizes":"any","type":"image/svg+xml"}],["$","$L22","13",{}]]
+1b:null
+1c:["$","meta",null,{"name":"next-size-adjust","content":""}]
+c:300
+21:null
+1f:true
+c:C
+1e:0
+11:"$undefined"
+e:"$undefined"
+b:"$undefined"
+1d:"$undefined"
+14:"$undefined"
